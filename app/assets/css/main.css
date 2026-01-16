@@ -34,14 +34,9 @@
 }
 
 
-h1 {
+/* Base typography - overridden by component styles */
+h1, h2, h3, h4, h5, h6 {
     font-family: "Manrope", sans-serif;
-    background: var(--degrad-gold);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent;
-    font-size: 3.5rem;
 }
 
 p {
