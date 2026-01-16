@@ -1,6 +1,7 @@
 <script setup lang="ts">
 
 import Navbar from "../layouts/Navbar.vue";
+
 </script>
 
 <template>
@@ -8,7 +9,7 @@ import Navbar from "../layouts/Navbar.vue";
     <Navbar />
 
     <div class="mt-26 text-center text-white">
-      <h1 class="text-5xl mb-4" >On ne crée pas des sites. <br> On construit des expériences</h1>
+      <h1 class="mb-4">Design & Développement pour <br> lancer vite, et bien.</h1>
 
     </div>
   </div>

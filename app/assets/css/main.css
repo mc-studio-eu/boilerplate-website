@@ -5,18 +5,45 @@
 @theme {
     --color-black-light: #232323;
     --color-gold: #F0BF6C;
+    --degrad-gold: linear-gradient(270deg, #F0BF6C 0%, #FFF 67.31%);
     --color-grey: #5D5D5D;
     --color-black: #0F0F0F;
     --color-white: #FFFFFF;
     --color-grey-light: #62748E;
     --font-host-grotesk: 'Host Grotesk', sans-serif;
     --font-inter: Inter, sans-serif;
+    --font-manrope: Manrope, sans-serif;
 }
 
-h1{
-    font-family: "Host Grotesk", sans-serif;
+:root {
+  --ui-primary: var(--color-gold);
+  --ui-secondary: var(--color-grey);
+  --ui-success: var(--color-black);
+  --ui-info: var(--color-black);
+  --ui-warning: var(--color-black);
+  --ui-error: var(--color-black);
 }
 
-p{
+.dark {
+  --ui-primary: var(--color-gold);
+  --ui-secondary: var(--color-grey);
+  --ui-success: var(--color-black);
+  --ui-info: var(--color-black);
+  --ui-warning: var(--color-black);
+  --ui-error: var(--color-black);
+}
+
+
+h1 {
+    font-family: "Manrope", sans-serif;
+    background: var(--degrad-gold);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    font-size: 3.5rem;
+}
+
+p {
     font-family: "Inter", sans-serif;
 }
