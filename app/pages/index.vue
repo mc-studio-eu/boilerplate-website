@@ -1,5 +1,6 @@
 <script setup lang="ts">
 // Auto-imports from Nuxt - no need to import components manually
+import ScrollingMarquee from "../components/hero/ScrollingMarquee.vue"
 </script>
 
 <template>
@@ -18,24 +19,35 @@
       <!-- Projects Section -->
       <div class="section-separator"></div>
       <ProjectSection id="projets" />
+
       <div class="section-separator"></div>
-      
+
+      <div class="section-separator"></div>  
       
       <!-- Services Section -->
       <ServicesSection id="services" />
+ 
       <div class="section-separator"></div>
       
+      <div class="section-separator"></div>  
+      
       <!-- Process Section -->
-      <ProcessSection id="process" />
-      <div class="section-separator"></div>
+      <!-- <ProcessSection id="process" />
+      <div class="section-separator"></div> -->
       
       <!-- Testimonials Section -->
       <TestimonialSection id="avis" />
+   
       <div class="section-separator"></div>
+      
+      <div class="section-separator"></div>  
       
       <!-- FAQ Section -->
       <FaqSection id="faq" />
+  
       <div class="section-separator"></div>
+      
+      <div class="section-separator"></div>  
       
       <!-- CTA Section -->
       <CtaSection />
@@ -69,7 +81,9 @@
 .section-separator {
   height: 1px;
   background: linear-gradient(90deg, transparent 0%, var(--border-color) 20%, var(--border-color) 80%, transparent 100%);
-  margin: 0 auto;
+  margin-bottom: 40px;
+  margin-left: auto;
+  margin-right: auto;
   max-width: calc(100% - 146px);
 }
 

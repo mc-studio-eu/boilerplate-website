@@ -14,25 +14,17 @@ const projects = ref<Project[]>([
   {
     id: 1,
     title: 'Souji Nova',
-    description: 'Développement d\'une landing page pour la société de nettoyage Souji Nova',
+    description: 'Création d\'une landing page pour la société de nettoyage Souji Nova',
     image: '/img/project/souji-nova.png',
-    tags: ['Landing Page', 'Responsive', 'Nuxt.js', 'Figma', 'Tailwind CSS', 'Framer Motion'],
-    link: '#'
-  },
-  {
-    id: 2,
-    title: 'Clinique des Marques',
-    description: 'Refonte complète de l\'identité visuelle et du site web',
-    image: '/img/project/clinique-des-marques.png',
-    tags: ['Branding', 'Web Design', 'UI/UX', 'Vue.js'],
+    tags: ['Landing Page', 'Branding', 'Design', 'UI/UX', 'Copywriting', 'Société de nettoyage'],
     link: '#'
   },
   {
     id: 3,
     title: 'Arises',
-    description: 'Application SaaS de gestion de projets',
+    description: 'AI SaaS pour l\'automatisation de la gestion du calendrier',
     image: '/img/project/arises.png',
-    tags: ['SaaS', 'Full-Stack', 'Nuxt.js', 'Stripe'],
+    tags: ['Launch', 'AI SaaS', 'Landing Page', 'Design', 'UI/UX', 'Copywriting', 'Branding'],
     link: '#'
   }
 ])
