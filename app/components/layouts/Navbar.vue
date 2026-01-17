@@ -101,7 +101,7 @@ const closeMenu = () => isMenuOpen.value = false
           </NuxtLink>
         </div>
 
-        <!-- Language Selector -->
+        <!-- Language Selector (desktop) -->
         <div class="hidden md:flex items-center gap-0.5 bg-[#f5f5f5] rounded-full p-0.5">
           <button 
             v-for="lang in ['FR', 'EN']" 
@@ -118,8 +118,19 @@ const closeMenu = () => isMenuOpen.value = false
           </button>
         </div>
 
-        <!-- CTA -->
-        <button class="flex items-center gap-2 bg-[#1a1a1a] border-none rounded-full py-1 pr-3 pl-1 md:py-1.5 md:pr-4 md:pl-1.5 cursor-pointer transition-all duration-200 shrink-0 hover:bg-[#2a2a2a] hover:scale-[1.02]">
+        <!-- Mobile Menu Button -->
+        <button 
+          @click="toggleMenu"
+          class="md:hidden flex items-center justify-center w-9 h-9 bg-[#1a1a1a] rounded-full cursor-pointer transition-all duration-200 hover:bg-[#2a2a2a]"
+          aria-label="Menu"
+        >
+          <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+
+        <!-- CTA (desktop) -->
+        <button class="hidden md:flex items-center gap-2 bg-[#1a1a1a] border-none rounded-full py-1 pr-3 pl-1 md:py-1.5 md:pr-4 md:pl-1.5 cursor-pointer transition-all duration-200 shrink-0 hover:bg-[#2a2a2a] hover:scale-[1.02]">
           <div class="w-6 h-6 md:w-7 md:h-7 rounded-full bg-gradient-to-br from-[#f0bf6c] to-[#e8a84c] flex items-center justify-center font-inter font-semibold text-[9px] md:text-[10px] text-[#0f0f0f]">MC</div>
           <div class="flex flex-col items-start gap-px">
             <span class="font-inter font-semibold text-[11px] md:text-xs text-white leading-tight">Réserver un call</span>

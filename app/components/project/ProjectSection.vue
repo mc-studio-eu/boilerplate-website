@@ -53,35 +53,37 @@ const currentProject = computed(() => projects.value[currentIndex.value])
 </script>
 
 <template>
-  <section id="projets" class="project-section">
-    <div class="project-container">
+  <section id="projets" class="py-16 md:py-20 px-6 bg-[#0f0f0f]">
+    <div class="max-w-[832px] mx-auto">
       <!-- Header -->
-      <div class="project-header">
-        <h2 class="project-title">Nos Projets</h2>
-        <p class="project-subtitle">
+      <div class="text-center mb-10 md:mb-16">
+        <h2 class="font-manrope font-medium text-2xl sm:text-3xl md:text-[32px] text-white mb-3">
+          Nos <span class="text-gradient">Projets</span>
+        </h2>
+        <p class="text-white/60 text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
           Une sélection de projets où design, code et stratégie se rencontrent.
         </p>
       </div>
 
       <!-- Project Showcase -->
-      <div class="project-showcase">
-        <div class="project-content">
+      <div class="flex flex-col gap-6">
+        <div class="flex flex-col md:flex-row md:items-start gap-8">
           <!-- Project Image -->
-          <div class="project-image-wrapper">
+          <div class="shrink-0 w-full max-w-[398px] rounded-xl overflow-hidden">
             <NuxtImg 
               :src="currentProject.image" 
               :alt="currentProject.title"
-              class="project-image"
+              class="w-full h-auto object-cover"
             />
           </div>
 
           <!-- Project Info -->
-          <div class="project-info">
-            <h3 class="project-name">{{ currentProject.title }}</h3>
-            <p class="project-description">{{ currentProject.description }}</p>
+          <div class="flex flex-col gap-4">
+            <h3 class="font-manrope text-2xl font-semibold text-white">{{ currentProject.title }}</h3>
+            <p class="font-inter text-sm leading-relaxed text-[#a3a3a3]">{{ currentProject.description }}</p>
 
             <!-- Tags -->
-            <div class="project-tags">
+            <div class="flex flex-wrap gap-2">
               <UBadge 
                 v-for="tag in currentProject.tags" 
                 :key="tag"

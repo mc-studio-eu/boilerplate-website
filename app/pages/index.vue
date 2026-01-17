@@ -10,15 +10,16 @@
     <!-- Main Content with Border Frame -->
     <div class="relative mx-auto max-w-[1440px]">
       <!-- Left Border Line -->
-      <div class="absolute left-[73px] top-0 bottom-0 w-px bg-gradient-to-b from-[#f0bf6c]/40 via-[#f0bf6c]/20 to-transparent hidden lg:block"></div>
+      <div class="absolute left-[50px] top-0 bottom-0 w-px bg-gradient-to-b from-[#f0bf6c]/40 via-[#f0bf6c]/20 to-transparent hidden lg:block"></div>
       
       <!-- Right Border Line -->
-      <div class="absolute right-[73px] top-0 bottom-0 w-px bg-gradient-to-b from-[#f0bf6c]/40 via-[#f0bf6c]/20 to-transparent hidden lg:block"></div>
+      <div class="absolute right-[50px] top-0 bottom-0 w-px bg-gradient-to-b from-[#f0bf6c]/40 via-[#f0bf6c]/20 to-transparent hidden lg:block"></div>
       
       <!-- Projects Section -->
       <div class="section-separator"></div>
       <ProjectSection id="projets" />
       <div class="section-separator"></div>
+      
       
       <!-- Services Section -->
       <ServicesSection id="services" />

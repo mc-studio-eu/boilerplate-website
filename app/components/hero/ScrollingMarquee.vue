@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const keywords = [
-  "design", "SaaS", "mvp", "devops", "développement", "design", "SaaS", 
+  "design", "SaaS", "mvp", "développement", "design", "SaaS", 
   "branding", "SEO", "développement", "branding", "UI/UX", "AI", 
   "développement", "déploiement", "wireframe", "UI/UX", "AI",
 ]
