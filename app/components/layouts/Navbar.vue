@@ -48,7 +48,7 @@ const closeMenu = () => isMenuOpen.value = false
       <NuxtLink to="/" class="flex items-center">
         <NuxtImg src="/img/main/logo.svg" alt="MC Studio" class="w-9 h-[34px] md:w-[50px] md:h-12 object-contain" />
       </NuxtLink>
-      <span class="font-inter font-normal text-sm md:text-[18px] bg-[linear-gradient(to_left,#f0bf6c_20.308%,white)] bg-clip-text text-transparent">Studio</span>
+      <span class="font-inter font-normal text-sm md:text-[18px] text-white">Studio</span>
     </div>
 
     <!-- Nav desktop -->
@@ -202,27 +202,6 @@ const closeMenu = () => isMenuOpen.value = false
             {{ lang }}
           </button>
         </div>
-
-        <!-- Dark Mode Toggle Button -->
-        <button 
-          @click="toggleColorMode"
-          :class="[
-            'flex items-center justify-center w-9 h-9 rounded-full cursor-pointer transition-all duration-300',
-            colorMode.value === 'dark' 
-              ? 'bg-[#f0bf6c]/20 hover:bg-[#f0bf6c]/30' 
-              : 'bg-[#1a1a1a]/10 hover:bg-[#1a1a1a]/20'
-          ]"
-          aria-label="Toggle dark mode"
-        >
-          <!-- Sun icon (show in dark mode) -->
-          <svg v-if="colorMode.value === 'dark'" class="w-4 h-4 text-[#f0bf6c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-          </svg>
-          <!-- Moon icon (show in light mode) -->
-          <svg v-else class="w-4 h-4 text-[#1a1a1a]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-          </svg>
-        </button>
 
         <!-- Mobile Menu Button -->
         <button 

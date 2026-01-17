@@ -15,7 +15,7 @@ const socialLinks = [
     ></div>
     
     <!-- Content -->
-    <div class="relative z-10 flex flex-col gap-16 items-start pt-6 pb-[25px] px-6">
+    <div class="relative flex flex-col gap-16 items-start pt-6 pb-[25px] px-6">
       <!-- Social Links -->
       <div class="flex items-center justify-center w-full">
         <div class="flex gap-8 items-baseline">
@@ -42,7 +42,7 @@ const socialLinks = [
               alt="MC Studio" 
               class="w-[74px] h-[71px] object-contain shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
             />
-            <span class="logo-text font-inter font-normal text-[26px] text-center">
+            <span class="font-inter font-normal text-[26px] text-center text-white">
               Studio
             </span>
           </div>
@@ -61,10 +61,4 @@ const socialLinks = [
 </template>
 
 <style scoped>
-.logo-text {
-  background: linear-gradient(to left, #f0bf6c 67.308%, white);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
 </style>

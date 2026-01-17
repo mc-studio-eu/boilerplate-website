@@ -13,18 +13,26 @@ interface Project {
 const projects = ref<Project[]>([
   {
     id: 1,
+    title: 'Arises',
+    description: 'AI SaaS pour l\'automatisation de la gestion du calendrier',
+    image: '/img/project/arises-tablet.jpeg',
+    tags: ['Launch', 'AI SaaS', 'Landing Page', 'Design', 'UI/UX', 'Copywriting', 'Branding'],
+    link: '#'
+  },
+  {
+    id: 2,
     title: 'Souji Nova',
     description: 'Création d\'une landing page pour la société de nettoyage Souji Nova',
-    image: '/img/project/souji-nova.png',
+    image: '/img/project/souji-nova-desktop.png',
     tags: ['Landing Page', 'Branding', 'Design', 'UI/UX', 'Copywriting', 'Société de nettoyage'],
     link: '#'
   },
   {
     id: 3,
-    title: 'Arises',
-    description: 'AI SaaS pour l\'automatisation de la gestion du calendrier',
-    image: '/img/project/arises.png',
-    tags: ['Launch', 'AI SaaS', 'Landing Page', 'Design', 'UI/UX', 'Copywriting', 'Branding'],
+    title: 'R&A Energy',
+    description: 'Création d\'un site vitrine pour la société de vente d\'énergie R&A Energy',
+    image: '/img/project/ra-energy-nohandl.jpeg',
+    tags: ['Site Vitrine', 'Branding', 'Design', 'UI/UX', 'Copywriting', 'Société de vente d\'énergie'],
     link: '#'
   }
 ])
@@ -88,15 +96,12 @@ const currentProject = computed(() => projects.value[currentIndex.value])
             </div>
 
             <!-- CTA -->
-            <UButton 
-              :to="currentProject.link"
-              variant="outline"
-              color="primary"
-              size="sm"
-              class="project-cta"
+            <a 
+              :href="currentProject.link"
+              class="project-cta-link"
             >
               Voir le site
-            </UButton>
+            </a>
           </div>
         </div>
 
@@ -213,8 +218,42 @@ const currentProject = computed(() => projects.value[currentIndex.value])
   gap: 8px;
 }
 
-.project-cta {
+.project-cta-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  font-family: var(--font-inter);
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.2s ease;
   width: fit-content;
+}
+
+/* Dark mode button */
+:global(.dark) .project-cta-link {
+  background: transparent;
+  border: 1px solid var(--color-gold);
+  color: var(--color-gold);
+}
+
+:global(.dark) .project-cta-link:hover {
+  background: var(--color-gold);
+  color: var(--color-black);
+}
+
+/* Light mode button */
+:global(.light) .project-cta-link {
+  background: var(--text-primary);
+  border: 1px solid var(--text-primary);
+  color: var(--bg-primary);
+}
+
+:global(.light) .project-cta-link:hover {
+  background: transparent;
+  color: var(--text-primary);
 }
 
 .project-navigation {
