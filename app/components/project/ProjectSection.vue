@@ -230,38 +230,23 @@ const currentProject = computed(() => projects.value[currentIndex.value])
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 20px;
+  padding: 12px 24px;
   font-family: var(--font-inter);
   font-size: 14px;
   font-weight: 500;
-  border-radius: 8px;
+  border-radius: 10px;
   text-decoration: none;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
   width: fit-content;
+  background: linear-gradient(90deg, #F0BF6C 0%, #FFF8E7 100%);
+  color: #1a1a1a;
+  border: none;
+  box-shadow: 0 4px 15px rgba(240, 191, 108, 0.3);
 }
 
-/* Dark mode button */
-:global(.dark) .project-cta-link {
-  background: transparent;
-  border: 1px solid var(--color-gold);
-  color: var(--color-gold);
-}
-
-:global(.dark) .project-cta-link:hover {
-  background: var(--color-gold);
-  color: var(--color-black);
-}
-
-/* Light mode button */
-:global(.light) .project-cta-link {
-  background: var(--text-primary);
-  border: 1px solid var(--text-primary);
-  color: var(--bg-primary);
-}
-
-:global(.light) .project-cta-link:hover {
-  background: transparent;
-  color: var(--text-primary);
+.project-cta-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(240, 191, 108, 0.4);
 }
 
 .project-navigation {

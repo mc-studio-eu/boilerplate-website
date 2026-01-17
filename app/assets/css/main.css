@@ -7,16 +7,16 @@ html {
 }
 
 @theme {
-    --color-black-light: #232323;
-    --color-gold: #F0BF6C;
-    --degrad-gold: linear-gradient(270deg, #F0BF6C 0%, #FFF 67.31%);
-    --color-grey: #5D5D5D;
-    --color-black: #0F0F0F;
-    --color-white: #FFFFFF;
-    --color-grey-light: #62748E;
-    --font-host-grotesk: 'Host Grotesk', sans-serif;
-    --font-inter: Inter, sans-serif;
-    --font-manrope: Manrope, sans-serif;
+  --color-black-light: #232323;
+  --color-gold: #F0BF6C;
+  --degrad-gold: linear-gradient(270deg, #F0BF6C 0%, #FFF 67.31%);
+  --color-grey: #5D5D5D;
+  --color-black: #0F0F0F;
+  --color-white: #FFFFFF;
+  --color-grey-light: #62748E;
+  --font-host-grotesk: 'Host Grotesk', sans-serif;
+  --font-inter: Inter, sans-serif;
+  --font-manrope: Manrope, sans-serif;
 }
 
 :root {
@@ -26,7 +26,7 @@ html {
   --ui-info: var(--color-black);
   --ui-warning: var(--color-black);
   --ui-error: var(--color-black);
-  
+
   /* Theme colors - Default dark */
   --bg-primary: #0F0F0F;
   --bg-secondary: #151515;
@@ -49,7 +49,7 @@ html {
   --border-color: rgba(26, 26, 26, 0.1);
   --border-subtle: rgba(26, 26, 26, 0.08);
   --gold-gradient: linear-gradient(270deg, #F0BF6C 0%, #1a1a1a 67.31%);
-  
+
   /* Override Tailwind's color variables */
   --color-black-light: #f5f5f5;
   --color-white: #1a1a1a;
@@ -63,7 +63,7 @@ html {
   --ui-info: var(--color-black);
   --ui-warning: var(--color-black);
   --ui-error: var(--color-black);
-  
+
   --bg-primary: #0F0F0F;
   --bg-secondary: #151515;
   --bg-card: #232323;
@@ -73,7 +73,7 @@ html {
   --border-color: rgba(240, 191, 108, 0.2);
   --border-subtle: rgba(255, 255, 255, 0.1);
   --gold-gradient: linear-gradient(270deg, #F0BF6C 0%, #FFF 67.31%);
-  
+
   --color-black-light: #232323;
   --color-white: #FFFFFF;
   --color-grey-light: #62748E;
@@ -108,15 +108,28 @@ body {
 }
 
 h1 {
-    font-family: "Manrope", sans-serif;
-    background: var(--gold-gradient);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent;
-    font-size: 3.5rem;
+  font-family: "Manrope", sans-serif;
+  background: var(--gold-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  font-size: 3.5rem;
 }
 
 p {
-    font-family: "Inter", sans-serif;
+  font-family: "Inter", sans-serif;
+}
+
+/* Hide scrollbar but keep functionality */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari and Opera */
 }
