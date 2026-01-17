@@ -16,7 +16,7 @@ const projects = ref<Project[]>([
     title: 'Arises',
     description: 'AI SaaS pour l\'automatisation de la gestion du calendrier',
     image: '/img/project/arises-tablet.jpeg',
-    tags: ['Launch', 'AI SaaS', 'Landing Page', 'Design', 'UI/UX', 'Copywriting', 'Branding'],
+    tags: ['Sprint', 'AI SaaS', 'Landing Page', 'Design', 'UI/UX', 'Copywriting', 'Branding'],
     link: '#'
   },
   {
@@ -32,7 +32,15 @@ const projects = ref<Project[]>([
     title: 'R&A Energy',
     description: 'Création d\'un site vitrine pour la société de vente d\'énergie R&A Energy',
     image: '/img/project/ra-energy-nohandl.jpeg',
-    tags: ['Site Vitrine', 'Branding', 'Design', 'UI/UX', 'Copywriting', 'Société de vente d\'énergie'],
+    tags: ['Landing Page', 'Branding', 'Design', 'UI/UX', 'Copywriting', 'Logo', 'Société de courtage en énergie'],
+    link: '#'
+  },
+  {
+    id: 3,
+    title: 'Fontaines VTC',
+    description: 'Création d\'un site vitrine pour la société de vente de fontaines VTC',
+    image: '/img/project/ra-energy-nohandl.jpeg',
+    tags: ['Landing Page', 'Branding', 'Design', 'UI/UX', 'Copywriting', 'Logo', 'Société de courtage en énergie'],
     link: '#'
   }
 ])
@@ -69,7 +77,7 @@ const currentProject = computed(() => projects.value[currentIndex.value])
       <div class="flex flex-col gap-6">
         <div class="flex flex-col md:flex-row md:items-start gap-8">
           <!-- Project Image -->
-          <div class="shrink-0 w-full max-w-[398px] rounded-xl overflow-hidden">
+          <div class="shrink-0 w-full max-w-[510px] rounded-xl overflow-hidden">
             <NuxtImg 
               :src="currentProject.image" 
               :alt="currentProject.title"
