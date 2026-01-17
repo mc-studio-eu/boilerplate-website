@@ -8,7 +8,7 @@ import ScrollingMarquee from "./ScrollingMarquee.vue"
 </script>
 
 <template>
-  <section class="relative w-full min-h-[780px] sm:min-h-[600px] md:min-h-[620px] lg:min-h-[643px] rounded-lg overflow-hidden">
+  <section class="hero-section relative w-full rounded-lg overflow-hidden">
     <!-- Background Image -->
     <div 
       class="absolute inset-0 bg-cover bg-center rounded-lg"
@@ -16,7 +16,7 @@ import ScrollingMarquee from "./ScrollingMarquee.vue"
     ></div>
     
     <!-- Content Container -->
-    <div class="relative z-10 flex flex-col items-center h-full px-4 sm:px-6 sm:pb-10">
+    <div class="relative z-10 flex flex-col items-center h-full px-4 sm:px-6 pb-14 sm:pb-16 md:pb-10">
       <Navbar />
       <GoogleBadge />
       <HeroContent />
@@ -27,3 +27,34 @@ import ScrollingMarquee from "./ScrollingMarquee.vue"
     <ScrollingMarquee />
   </section>
 </template>
+
+<style scoped>
+.hero-section {
+  /* Mobile first - puis ajuster pour les écrans plus grands */
+  min-height: calc(100svh - 48px); /* svh pour iOS Safari */
+}
+
+@media (min-width: 480px) {
+  .hero-section {
+    min-height: 620px;
+  }
+}
+
+@media (min-width: 640px) {
+  .hero-section {
+    min-height: 600px;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero-section {
+    min-height: 620px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-section {
+    min-height: 643px;
+  }
+}
+</style>
