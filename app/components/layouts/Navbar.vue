@@ -67,7 +67,7 @@ const closeMenu = () => isMenuOpen.value = false
 
   <!-- Floating Navbar -->
   <Transition enter-active-class="transition-all duration-400 ease-[cubic-bezier(0.16,1,0.3,1)]" leave-active-class="transition-all duration-400 ease-[cubic-bezier(0.16,1,0.3,1)]" enter-from-class="opacity-0 translate-y-24" leave-to-class="opacity-0 translate-y-24">
-    <nav v-if="isScrolled" class="fixed bottom-3 md:bottom-6 left-1/2 -translate-x-1/2 z-[1000] px-3 md:px-6 w-full max-w-[850px] pointer-events-none">
+    <nav v-if="isScrolled" class="fixed bottom-3 md:bottom-6 left-1/2 -translate-x-1/2 z-[1000] px-3 md:px-6 w-full max-w-[700px] pointer-events-none">
       <div 
         :class="[
           'backdrop-blur-[20px] rounded-full pointer-events-auto transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] overflow-hidden',

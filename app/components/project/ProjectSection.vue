@@ -39,7 +39,7 @@ const projects = ref<Project[]>([
     id: 4,
     title: 'Fontaines VTC',
     description: "Site vitrine conçu pour présenter et vendre l’offre clairement.\nMise en confiance et call-to-action pour capter des leads.",
-    image: '/img/project/fontaine-vtc.jpeg',
+    image: '/img/project/fontaines-vtc-dark.jpeg',
     tags: ['SEO', 'Optimisation CTA', 'Design', 'Copywriting','Entreprise VTC'],
     link: '#'
   }
