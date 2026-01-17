@@ -67,10 +67,12 @@ const closeMenu = () => isMenuOpen.value = false
 
   <!-- Floating Navbar -->
   <Transition enter-active-class="transition-all duration-400 ease-[cubic-bezier(0.16,1,0.3,1)]" leave-active-class="transition-all duration-400 ease-[cubic-bezier(0.16,1,0.3,1)]" enter-from-class="opacity-0 translate-y-24" leave-to-class="opacity-0 translate-y-24">
-    <nav v-if="isScrolled" class="fixed bottom-3 md:bottom-6 left-1/2 -translate-x-1/2 z-[1000] px-3 md:px-6 w-full max-w-[700px] pointer-events-none">
+    <nav v-if="isScrolled" class="fixed bottom-3 md:bottom-6 left-1/2 -translate-x-1/2 z-[1000] px-3 md:px-6 w-full pointer-events-none" :class="[isMenuOpen ? 'max-w-[340px]' : 'max-w-[700px]']">
       <div 
         :class="[
-          'backdrop-blur-[20px] rounded-full pointer-events-auto transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] overflow-hidden',
+          'backdrop-blur-[20px] pointer-events-auto overflow-hidden',
+          'transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)]',
+          isMenuOpen ? 'rounded-[24px] md:rounded-full' : 'rounded-full',
           colorMode.value === 'dark' 
             ? 'bg-[#1a1a1a]/95 shadow-[0_8px_32px_rgba(0,0,0,0.4),0_2px_8px_rgba(0,0,0,0.3),inset_0_0_0_1px_rgba(255,255,255,0.1)]' 
             : 'bg-white/95 shadow-[0_8px_32px_rgba(0,0,0,0.12),0_2px_8px_rgba(0,0,0,0.08),inset_0_0_0_1px_rgba(255,255,255,0.5)]'
@@ -80,7 +82,7 @@ const closeMenu = () => isMenuOpen.value = false
         <div 
           :class="[
             'transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)]',
-            isMenuOpen ? 'py-3 px-3' : 'py-1.5 pr-1.5 pl-1.5 md:py-2 md:pr-2 md:pl-2'
+            isMenuOpen ? 'py-4 px-4' : 'py-1.5 pr-1.5 pl-1.5 md:py-2 md:pr-2 md:pl-2'
           ]"
         >
           <!-- Top row: Always visible (Logo + Burger/Close) -->
@@ -96,7 +98,7 @@ const closeMenu = () => isMenuOpen.value = false
               <NuxtImg src="/img/main/logo.svg" alt="MC Studio" class="w-6 h-6 md:w-7 md:h-7 object-contain" />
               <span 
                 :class="[
-                  'font-inter font-medium text-xs md:text-sm hidden min-[400px]:inline',
+                  'font-inter font-medium text-xs md:text-sm',
                   colorMode.value === 'dark' ? 'text-white' : 'text-[#1a1a1a]'
                 ]"
               >Studio</span>
@@ -145,15 +147,17 @@ const closeMenu = () => isMenuOpen.value = false
             <button 
               @click="toggleMenu"
               :class="[
-                'md:hidden flex items-center justify-center w-9 h-9 rounded-full cursor-pointer transition-all duration-200',
-                colorMode.value === 'dark' ? 'bg-white hover:bg-gray-100' : 'bg-[#1a1a1a] hover:bg-[#2a2a2a]'
+                'md:hidden flex items-center justify-center w-9 h-9 rounded-full cursor-pointer transition-all duration-300',
+                isMenuOpen 
+                  ? (colorMode.value === 'dark' ? 'bg-[#2a2a2a] hover:bg-[#333]' : 'bg-[#f0f0f0] hover:bg-[#e5e5e5]')
+                  : (colorMode.value === 'dark' ? 'bg-white hover:bg-gray-100' : 'bg-[#1a1a1a] hover:bg-[#2a2a2a]')
               ]"
               :aria-label="isMenuOpen ? 'Close Menu' : 'Open Menu'"
             >
               <svg v-if="!isMenuOpen" :class="['w-4 h-4', colorMode.value === 'dark' ? 'text-[#1a1a1a]' : 'text-white']" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
               </svg>
-              <svg v-else :class="['w-4 h-4', colorMode.value === 'dark' ? 'text-[#1a1a1a]' : 'text-white']" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg v-else :class="['w-4 h-4 transition-transform duration-300', colorMode.value === 'dark' ? 'text-white' : 'text-[#1a1a1a]']" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
@@ -173,36 +177,47 @@ const closeMenu = () => isMenuOpen.value = false
             </button>
           </div>
 
-          <!-- Expanded content (mobile only) - Slides in smoothly -->
-          <Transition
-            enter-active-class="transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)]"
-            leave-active-class="transition-all duration-400 ease-[cubic-bezier(0.34,1.56,0.64,1)]"
-            enter-from-class="opacity-0 max-h-0 -translate-y-4"
-            enter-to-class="opacity-100 max-h-[500px] translate-y-0"
-            leave-from-class="opacity-100 max-h-[500px] translate-y-0"
-            leave-to-class="opacity-0 max-h-0 -translate-y-4"
+          <!-- Expanded content (mobile only) - Smooth expansion like the SUNDAY reference -->
+          <div 
+            :class="[
+              'md:hidden overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)]',
+              isMenuOpen ? 'max-h-[400px] opacity-100 mt-4' : 'max-h-0 opacity-0 mt-0'
+            ]"
           >
-            <div v-if="isMenuOpen" class="md:hidden flex flex-col gap-3 mt-3">
-              <!-- Navigation Links -->
-              <div class="flex flex-wrap gap-2 justify-center">
+            <div class="flex flex-col gap-4">
+              <!-- Navigation Links - Vertical list like the reference -->
+              <div class="flex flex-col gap-1">
                 <NuxtLink 
-                  v-for="link in ['Projets', 'Services', 'Avis', 'FAQ']" 
+                  v-for="(link, index) in ['Projets', 'Services', 'Avis', 'FAQ']" 
                   :key="link" 
                   :to="`/#${link.toLowerCase()}`"
                   @click="closeMenu"
                   :class="[
-                    'font-inter font-medium text-sm px-4 py-2 rounded-full no-underline transition-all duration-200',
+                    'font-inter font-medium text-lg py-2 px-3 rounded-xl no-underline transition-all duration-200',
+                    'transform transition-all duration-500',
+                    isMenuOpen ? 'translate-x-0 opacity-100' : '-translate-x-4 opacity-0',
                     activeSection === link.toLowerCase() 
-                      ? (colorMode.value === 'dark' ? 'bg-[#333] text-white' : 'bg-[#e8e8e8] text-[#1a1a1a]')
-                      : (colorMode.value === 'dark' ? 'bg-[#2a2a2a] text-white/80 hover:bg-[#333]' : 'bg-[#f5f5f5] text-[#1a1a1a] hover:bg-[#e8e8e8]')
+                      ? (colorMode.value === 'dark' ? 'bg-[#2a2a2a] text-white' : 'bg-[#f0f0f0] text-[#1a1a1a]')
+                      : (colorMode.value === 'dark' ? 'text-white/80 hover:bg-[#2a2a2a] hover:text-white' : 'text-[#1a1a1a] hover:bg-[#f5f5f5]')
                   ]"
+                  :style="{ transitionDelay: isMenuOpen ? `${index * 50}ms` : '0ms' }"
                 >
                   {{ link }}
                 </NuxtLink>
               </div>
 
-              <!-- Language Selector + CTA -->
-              <div class="flex items-center gap-2 justify-center">
+              <!-- Divider -->
+              <div :class="['h-px', colorMode.value === 'dark' ? 'bg-white/10' : 'bg-black/10']"></div>
+
+              <!-- Bottom row: Language + CTA -->
+              <div 
+                :class="[
+                  'flex items-center justify-between gap-3 transition-all duration-500',
+                  isMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
+                ]"
+                :style="{ transitionDelay: isMenuOpen ? '200ms' : '0ms' }"
+              >
+                <!-- Language Selector -->
                 <div 
                   :class="[
                     'flex items-center gap-0.5 rounded-full p-0.5',
@@ -224,13 +239,14 @@ const closeMenu = () => isMenuOpen.value = false
                   </button>
                 </div>
 
+                <!-- CTA Button -->
                 <button 
                   :class="[
                     'flex items-center gap-2 border-none rounded-full py-1.5 pr-4 pl-1.5 cursor-pointer transition-all duration-200 hover:scale-[1.02]',
                     colorMode.value === 'dark' ? 'bg-white hover:bg-gray-100' : 'bg-[#1a1a1a] hover:bg-[#2a2a2a]'
                   ]"
                 >
-                  <div class="w-7 h-7 rounded-full bg-gradient-to-br from-[#f0bf6c] to-[#e8a84c] flex items-center justify-center font-inter font-semibold text-[10px] text-[#0f0f0f]">MC</div>
+                  <div class="w-7 h-7 rounded-full bg-gradient-to-br from-[#f0bf6c] to-[#e8a84c] flex items-center justify-center font-inter font-semibold text-[10px] text-[#0f0f0f]"><NuxtImg src="/img/main/founder.png" alt="MC Studio" class="w-6 h-6 md:w-7 md:h-7 object-contain" /></div>
                   <div class="flex flex-col items-start gap-px">
                     <span :class="['font-inter font-semibold text-xs leading-tight', colorMode.value === 'dark' ? 'text-[#1a1a1a]' : 'text-white']">Réserver un call</span>
                     <span :class="['font-inter font-normal text-[9px] leading-tight', colorMode.value === 'dark' ? 'text-[#1a1a1a]/60' : 'text-white/60']">Discussion gratuite</span>
@@ -238,7 +254,7 @@ const closeMenu = () => isMenuOpen.value = false
                 </button>
               </div>
             </div>
-          </Transition>
+          </div>
         </div>
       </div>
     </nav>
