@@ -70,157 +70,59 @@ const closeMenu = () => isMenuOpen.value = false
     <nav v-if="isScrolled" class="fixed bottom-3 md:bottom-6 left-1/2 -translate-x-1/2 z-[1000] px-3 md:px-6 w-full max-w-[850px] pointer-events-none">
       <div 
         :class="[
-          'backdrop-blur-[20px] rounded-full pointer-events-auto transition-all duration-300',
+          'backdrop-blur-[20px] rounded-full pointer-events-auto transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] overflow-hidden',
           colorMode.value === 'dark' 
             ? 'bg-[#1a1a1a]/95 shadow-[0_8px_32px_rgba(0,0,0,0.4),0_2px_8px_rgba(0,0,0,0.3),inset_0_0_0_1px_rgba(255,255,255,0.1)]' 
-            : 'bg-white/95 shadow-[0_8px_32px_rgba(0,0,0,0.12),0_2px_8px_rgba(0,0,0,0.08),inset_0_0_0_1px_rgba(255,255,255,0.5)]',
-          isMenuOpen ? 'py-3 px-3' : 'py-1.5 pr-1.5 pl-1.5 md:py-2 md:pr-2 md:pl-2'
+            : 'bg-white/95 shadow-[0_8px_32px_rgba(0,0,0,0.12),0_2px_8px_rgba(0,0,0,0.08),inset_0_0_0_1px_rgba(255,255,255,0.5)]'
         ]"
       >
-        <!-- Collapsed state (default) -->
-        <div v-if="!isMenuOpen" class="flex items-center justify-between gap-2 md:gap-3">
-          <!-- Logo with Studio -->
-          <NuxtLink 
-            to="/" 
-            :class="[
-              'flex items-center gap-1.5 rounded-full py-1 px-2 md:py-1.5 md:px-3 shrink-0 transition-colors',
-              colorMode.value === 'dark' ? 'bg-[#2a2a2a] hover:bg-[#333]' : 'bg-[#f5f5f5] hover:bg-[#ebebeb]'
-            ]"
-          >
-            <NuxtImg src="/img/main/logo.svg" alt="MC Studio" class="w-6 h-6 md:w-7 md:h-7 object-contain" />
-            <span 
-              :class="[
-                'font-inter font-medium text-xs md:text-sm hidden min-[400px]:inline',
-                colorMode.value === 'dark' ? 'text-white' : 'text-[#1a1a1a]'
-              ]"
-            >Studio</span>
-          </NuxtLink>
-
-          <!-- Links (desktop only) -->
-          <div class="hidden md:flex items-center gap-1">
-            <NuxtLink 
-              v-for="link in ['Projets', 'Services', 'Avis', 'FAQ']" 
-              :key="link" 
-              :to="`/#${link.toLowerCase()}`" 
-              :class="[
-                'font-inter font-medium text-[13px] px-3 py-1.5 rounded-full no-underline transition-all duration-200 whitespace-nowrap',
-                activeSection === link.toLowerCase() 
-                  ? (colorMode.value === 'dark' ? 'bg-[#333] text-white' : 'bg-[#e8e8e8] text-[#1a1a1a]')
-                  : (colorMode.value === 'dark' ? 'text-white/80 hover:bg-[#2a2a2a]' : 'text-[#1a1a1a] hover:bg-[#f0f0f0]')
-              ]"
-            >
-              {{ link }}
-            </NuxtLink>
-          </div>
-
-          <!-- Language Selector (desktop only) -->
-          <div 
-            :class="[
-              'hidden md:flex items-center gap-0.5 rounded-full p-0.5 shrink-0',
-              colorMode.value === 'dark' ? 'bg-[#2a2a2a]' : 'bg-[#f5f5f5]'
-            ]"
-          >
-            <button 
-              v-for="lang in ['FR', 'EN']" 
-              :key="lang"
-              @click="language = lang"
-              :class="[
-                'font-inter font-medium text-xs px-2.5 py-1 rounded-full transition-all duration-200',
-                language === lang 
-                  ? (colorMode.value === 'dark' ? 'bg-[#3a3a3a] text-white shadow-sm' : 'bg-white text-[#1a1a1a] shadow-sm')
-                  : (colorMode.value === 'dark' ? 'text-white/60 hover:text-white' : 'text-[#666] hover:text-[#1a1a1a]')
-              ]"
-            >
-              {{ lang }}
-            </button>
-          </div>
-
-          <!-- Mobile Menu Button -->
-          <button 
-            @click="toggleMenu"
-            :class="[
-              'md:hidden flex items-center justify-center w-9 h-9 rounded-full cursor-pointer transition-all duration-200',
-              colorMode.value === 'dark' ? 'bg-white hover:bg-gray-100' : 'bg-[#1a1a1a] hover:bg-[#2a2a2a]'
-            ]"
-            aria-label="Menu"
-          >
-            <svg :class="['w-4 h-4 transition-transform duration-200', colorMode.value === 'dark' ? 'text-[#1a1a1a]' : 'text-white', isMenuOpen ? 'rotate-180' : '']" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
-
-          <!-- CTA (desktop only) -->
-          <button 
-            :class="[
-              'hidden md:flex items-center gap-2 border-none rounded-full py-1 pr-3 pl-1 md:py-1.5 md:pr-4 md:pl-1.5 cursor-pointer transition-all duration-200 shrink-0 hover:scale-[1.02]',
-              colorMode.value === 'dark' ? 'bg-white hover:bg-gray-100' : 'bg-[#1a1a1a] hover:bg-[#2a2a2a]'
-            ]"
-          >
-            <div class="w-6 h-6 md:w-7 md:h-7 rounded-full bg-gradient-to-br from-[#f0bf6c] to-[#e8a84c] flex items-center justify-center font-inter font-semibold text-[9px] md:text-[10px] text-[#0f0f0f]">MC</div>
-            <div class="flex flex-col items-start gap-px">
-              <span :class="['font-inter font-semibold text-[11px] md:text-xs leading-tight', colorMode.value === 'dark' ? 'text-[#1a1a1a]' : 'text-white']">Réserver un call</span>
-              <span :class="['font-inter font-normal text-[8px] md:text-[9px] leading-tight', colorMode.value === 'dark' ? 'text-[#1a1a1a]/60' : 'text-white/60']">Discussion gratuite</span>
-            </div>
-          </button>
-        </div>
-
-        <!-- Expanded state (mobile only) -->
-        <div v-else class="flex flex-col gap-3">
-          <!-- Top row: Logo + Close button -->
-          <div class="flex items-center justify-between">
+        <!-- Main container with smooth height transition -->
+        <div 
+          :class="[
+            'transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)]',
+            isMenuOpen ? 'py-3 px-3' : 'py-1.5 pr-1.5 pl-1.5 md:py-2 md:pr-2 md:pl-2'
+          ]"
+        >
+          <!-- Top row: Always visible (Logo + Burger/Close) -->
+          <div class="flex items-center justify-between gap-2 md:gap-3">
+            <!-- Logo with Studio -->
             <NuxtLink 
               to="/" 
               :class="[
-                'flex items-center gap-1.5 rounded-full py-1 px-2 shrink-0 transition-colors',
+                'flex items-center gap-1.5 rounded-full py-1 px-2 md:py-1.5 md:px-3 shrink-0 transition-colors',
                 colorMode.value === 'dark' ? 'bg-[#2a2a2a] hover:bg-[#333]' : 'bg-[#f5f5f5] hover:bg-[#ebebeb]'
               ]"
             >
-              <NuxtImg src="/img/main/logo.svg" alt="MC Studio" class="w-6 h-6 object-contain" />
+              <NuxtImg src="/img/main/logo.svg" alt="MC Studio" class="w-6 h-6 md:w-7 md:h-7 object-contain" />
               <span 
                 :class="[
-                  'font-inter font-medium text-xs',
+                  'font-inter font-medium text-xs md:text-sm hidden min-[400px]:inline',
                   colorMode.value === 'dark' ? 'text-white' : 'text-[#1a1a1a]'
                 ]"
               >Studio</span>
             </NuxtLink>
 
-            <button 
-              @click="toggleMenu"
-              :class="[
-                'flex items-center justify-center w-9 h-9 rounded-full cursor-pointer transition-all duration-200',
-                colorMode.value === 'dark' ? 'bg-white hover:bg-gray-100' : 'bg-[#1a1a1a] hover:bg-[#2a2a2a]'
-              ]"
-              aria-label="Close Menu"
-            >
-              <svg :class="['w-4 h-4', colorMode.value === 'dark' ? 'text-[#1a1a1a]' : 'text-white']" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-          </div>
+            <!-- Desktop Links -->
+            <div class="hidden md:flex items-center gap-1">
+              <NuxtLink 
+                v-for="link in ['Projets', 'Services', 'Avis', 'FAQ']" 
+                :key="link" 
+                :to="`/#${link.toLowerCase()}`" 
+                :class="[
+                  'font-inter font-medium text-[13px] px-3 py-1.5 rounded-full no-underline transition-all duration-200 whitespace-nowrap',
+                  activeSection === link.toLowerCase() 
+                    ? (colorMode.value === 'dark' ? 'bg-[#333] text-white' : 'bg-[#e8e8e8] text-[#1a1a1a]')
+                    : (colorMode.value === 'dark' ? 'text-white/80 hover:bg-[#2a2a2a]' : 'text-[#1a1a1a] hover:bg-[#f0f0f0]')
+                ]"
+              >
+                {{ link }}
+              </NuxtLink>
+            </div>
 
-          <!-- Navigation Links -->
-          <div class="flex flex-wrap gap-2 justify-center">
-            <NuxtLink 
-              v-for="link in ['Projets', 'Services', 'Avis', 'FAQ']" 
-              :key="link" 
-              :to="`/#${link.toLowerCase()}`"
-              @click="closeMenu"
-              :class="[
-                'font-inter font-medium text-sm px-4 py-2 rounded-full no-underline transition-all duration-200',
-                activeSection === link.toLowerCase() 
-                  ? (colorMode.value === 'dark' ? 'bg-[#333] text-white' : 'bg-[#e8e8e8] text-[#1a1a1a]')
-                  : (colorMode.value === 'dark' ? 'bg-[#2a2a2a] text-white/80 hover:bg-[#333]' : 'bg-[#f5f5f5] text-[#1a1a1a] hover:bg-[#e8e8e8]')
-              ]"
-            >
-              {{ link }}
-            </NuxtLink>
-          </div>
-
-          <!-- Language Selector + CTA -->
-          <div class="flex items-center gap-2 justify-center">
+            <!-- Desktop Language Selector -->
             <div 
               :class="[
-                'flex items-center gap-0.5 rounded-full p-0.5',
+                'hidden md:flex items-center gap-0.5 rounded-full p-0.5 shrink-0',
                 colorMode.value === 'dark' ? 'bg-[#2a2a2a]' : 'bg-[#f5f5f5]'
               ]"
             >
@@ -229,7 +131,7 @@ const closeMenu = () => isMenuOpen.value = false
                 :key="lang"
                 @click="language = lang"
                 :class="[
-                  'font-inter font-medium text-xs px-3 py-1.5 rounded-full transition-all duration-200',
+                  'font-inter font-medium text-xs px-2.5 py-1 rounded-full transition-all duration-200',
                   language === lang 
                     ? (colorMode.value === 'dark' ? 'bg-[#3a3a3a] text-white shadow-sm' : 'bg-white text-[#1a1a1a] shadow-sm')
                     : (colorMode.value === 'dark' ? 'text-white/60 hover:text-white' : 'text-[#666] hover:text-[#1a1a1a]')
@@ -239,19 +141,104 @@ const closeMenu = () => isMenuOpen.value = false
               </button>
             </div>
 
+            <!-- Mobile Menu Button / Close Button -->
+            <button 
+              @click="toggleMenu"
+              :class="[
+                'md:hidden flex items-center justify-center w-9 h-9 rounded-full cursor-pointer transition-all duration-200',
+                colorMode.value === 'dark' ? 'bg-white hover:bg-gray-100' : 'bg-[#1a1a1a] hover:bg-[#2a2a2a]'
+              ]"
+              :aria-label="isMenuOpen ? 'Close Menu' : 'Open Menu'"
+            >
+              <svg v-if="!isMenuOpen" :class="['w-4 h-4', colorMode.value === 'dark' ? 'text-[#1a1a1a]' : 'text-white']" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+              <svg v-else :class="['w-4 h-4', colorMode.value === 'dark' ? 'text-[#1a1a1a]' : 'text-white']" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+
+            <!-- Desktop CTA -->
             <button 
               :class="[
-                'flex items-center gap-2 border-none rounded-full py-1.5 pr-4 pl-1.5 cursor-pointer transition-all duration-200 hover:scale-[1.02]',
+                'hidden md:flex items-center gap-2 border-none rounded-full py-1 pr-3 pl-1 md:py-1.5 md:pr-4 md:pl-1.5 cursor-pointer transition-all duration-200 shrink-0 hover:scale-[1.02]',
                 colorMode.value === 'dark' ? 'bg-white hover:bg-gray-100' : 'bg-[#1a1a1a] hover:bg-[#2a2a2a]'
               ]"
             >
-              <div class="w-7 h-7 rounded-full bg-gradient-to-br from-[#f0bf6c] to-[#e8a84c] flex items-center justify-center font-inter font-semibold text-[10px] text-[#0f0f0f]">MC</div>
+              <div class="w-6 h-6 md:w-7 md:h-7 rounded-full bg-gradient-to-br from-[#f0bf6c] to-[#e8a84c] flex items-center justify-center font-inter font-semibold text-[9px] md:text-[10px] text-[#0f0f0f]">MC</div>
               <div class="flex flex-col items-start gap-px">
-                <span :class="['font-inter font-semibold text-xs leading-tight', colorMode.value === 'dark' ? 'text-[#1a1a1a]' : 'text-white']">Réserver un call</span>
-                <span :class="['font-inter font-normal text-[9px] leading-tight', colorMode.value === 'dark' ? 'text-[#1a1a1a]/60' : 'text-white/60']">Discussion gratuite</span>
+                <span :class="['font-inter font-semibold text-[11px] md:text-xs leading-tight', colorMode.value === 'dark' ? 'text-[#1a1a1a]' : 'text-white']">Réserver un call</span>
+                <span :class="['font-inter font-normal text-[8px] md:text-[9px] leading-tight', colorMode.value === 'dark' ? 'text-[#1a1a1a]/60' : 'text-white/60']">Discussion gratuite</span>
               </div>
             </button>
           </div>
+
+          <!-- Expanded content (mobile only) - Slides in smoothly -->
+          <Transition
+            enter-active-class="transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)]"
+            leave-active-class="transition-all duration-400 ease-[cubic-bezier(0.34,1.56,0.64,1)]"
+            enter-from-class="opacity-0 max-h-0 -translate-y-4"
+            enter-to-class="opacity-100 max-h-[500px] translate-y-0"
+            leave-from-class="opacity-100 max-h-[500px] translate-y-0"
+            leave-to-class="opacity-0 max-h-0 -translate-y-4"
+          >
+            <div v-if="isMenuOpen" class="md:hidden flex flex-col gap-3 mt-3">
+              <!-- Navigation Links -->
+              <div class="flex flex-wrap gap-2 justify-center">
+                <NuxtLink 
+                  v-for="link in ['Projets', 'Services', 'Avis', 'FAQ']" 
+                  :key="link" 
+                  :to="`/#${link.toLowerCase()}`"
+                  @click="closeMenu"
+                  :class="[
+                    'font-inter font-medium text-sm px-4 py-2 rounded-full no-underline transition-all duration-200',
+                    activeSection === link.toLowerCase() 
+                      ? (colorMode.value === 'dark' ? 'bg-[#333] text-white' : 'bg-[#e8e8e8] text-[#1a1a1a]')
+                      : (colorMode.value === 'dark' ? 'bg-[#2a2a2a] text-white/80 hover:bg-[#333]' : 'bg-[#f5f5f5] text-[#1a1a1a] hover:bg-[#e8e8e8]')
+                  ]"
+                >
+                  {{ link }}
+                </NuxtLink>
+              </div>
+
+              <!-- Language Selector + CTA -->
+              <div class="flex items-center gap-2 justify-center">
+                <div 
+                  :class="[
+                    'flex items-center gap-0.5 rounded-full p-0.5',
+                    colorMode.value === 'dark' ? 'bg-[#2a2a2a]' : 'bg-[#f5f5f5]'
+                  ]"
+                >
+                  <button 
+                    v-for="lang in ['FR', 'EN']" 
+                    :key="lang"
+                    @click="language = lang"
+                    :class="[
+                      'font-inter font-medium text-xs px-3 py-1.5 rounded-full transition-all duration-200',
+                      language === lang 
+                        ? (colorMode.value === 'dark' ? 'bg-[#3a3a3a] text-white shadow-sm' : 'bg-white text-[#1a1a1a] shadow-sm')
+                        : (colorMode.value === 'dark' ? 'text-white/60 hover:text-white' : 'text-[#666] hover:text-[#1a1a1a]')
+                    ]"
+                  >
+                    {{ lang }}
+                  </button>
+                </div>
+
+                <button 
+                  :class="[
+                    'flex items-center gap-2 border-none rounded-full py-1.5 pr-4 pl-1.5 cursor-pointer transition-all duration-200 hover:scale-[1.02]',
+                    colorMode.value === 'dark' ? 'bg-white hover:bg-gray-100' : 'bg-[#1a1a1a] hover:bg-[#2a2a2a]'
+                  ]"
+                >
+                  <div class="w-7 h-7 rounded-full bg-gradient-to-br from-[#f0bf6c] to-[#e8a84c] flex items-center justify-center font-inter font-semibold text-[10px] text-[#0f0f0f]">MC</div>
+                  <div class="flex flex-col items-start gap-px">
+                    <span :class="['font-inter font-semibold text-xs leading-tight', colorMode.value === 'dark' ? 'text-[#1a1a1a]' : 'text-white']">Réserver un call</span>
+                    <span :class="['font-inter font-normal text-[9px] leading-tight', colorMode.value === 'dark' ? 'text-[#1a1a1a]/60' : 'text-white/60']">Discussion gratuite</span>
+                  </div>
+                </button>
+              </div>
+            </div>
+          </Transition>
         </div>
       </div>
     </nav>

@@ -14,7 +14,7 @@ const projects = ref<Project[]>([
   {
     id: 1,
     title: 'Arises',
-    description: 'AI SaaS pour l\'automatisation de la gestion du calendrier',
+    description: "SaaS IA qui automatise la planification et la priorisation.\nUn copilote de calendrier pour rester focus et gagner du temps.",
     image: '/img/project/arises-tablet.jpeg',
     tags: ['Sprint', 'AI SaaS', 'Landing Page', 'Design', 'UI/UX', 'Copywriting', 'Branding'],
     link: '#'
@@ -22,7 +22,7 @@ const projects = ref<Project[]>([
   {
     id: 2,
     title: 'Souji Nova',
-    description: 'Création d\'une landing page pour la société de nettoyage Souji Nova',
+    description: "Landing page sur-mesure pour une société de nettoyage.\nDesign rassurant + parcours optimisé pour générer plus de demandes.",
     image: '/img/project/souji-nova-desktop.png',
     tags: ['Landing Page', 'Branding', 'Design', 'UI/UX', 'Copywriting', 'Société de nettoyage'],
     link: '#'
@@ -30,17 +30,17 @@ const projects = ref<Project[]>([
   {
     id: 3,
     title: 'R&A Energy',
-    description: 'Création d\'un site vitrine pour la société de vente d\'énergie R&A Energy',
+    description: "Site vitrine premium pour un courtier en énergie.\nOffre clarifiée, crédibilité renforcée, conversion orientée prise de contact.",
     image: '/img/project/ra-energy-nohandl.jpeg',
-    tags: ['Landing Page', 'Branding', 'Design', 'UI/UX', 'Copywriting', 'Logo', 'Société de courtage en énergie'],
+    tags: ['Landing Page', 'Branding', 'Design', 'UI/UX', 'Copywriting', 'Logo', 'Courtage en énergie'],
     link: '#'
   },
   {
-    id: 3,
+    id: 4,
     title: 'Fontaines VTC',
-    description: 'Création d\'un site vitrine pour la société de vente de fontaines VTC',
-    image: '/img/project/ra-energy-nohandl.jpeg',
-    tags: ['Landing Page', 'Branding', 'Design', 'UI/UX', 'Copywriting', 'Logo', 'Société de courtage en énergie'],
+    description: "Site vitrine conçu pour présenter et vendre l’offre clairement.\nMise en confiance et call-to-action pour capter des leads.",
+    image: '/img/project/fontaine-vtc.jpeg',
+    tags: ['SEO', 'Optimisation CTA', 'Design', 'Copywriting','Entreprise VTC'],
     link: '#'
   }
 ])
