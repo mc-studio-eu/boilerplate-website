@@ -27,7 +27,7 @@ const closeMenu = () => isMenuOpen.value = false
 
     <!-- Nav desktop -->
     <nav class="hidden md:flex items-center gap-[26px]">
-      <NuxtLink v-for="link in ['Projets', 'Services', 'Process', 'Avis', 'FAQ']" :key="link" :to="`/#${link.toLowerCase()}`" class="font-inter font-medium text-base text-white no-underline transition-colors duration-200 hover:text-[#f0bf6c]">{{ link }}</NuxtLink>
+      <NuxtLink v-for="link in ['Projets', 'Services', 'Process', 'Avis', 'FAQ']" :key="link" :to="`/#${link.toLowerCase()}`" class="font-inter font-medium text-sm text-white no-underline transition-colors duration-200 hover:text-[#f0bf6c]">{{ link }}</NuxtLink>
     </nav>
 
     <!-- CTA Desktop -->
