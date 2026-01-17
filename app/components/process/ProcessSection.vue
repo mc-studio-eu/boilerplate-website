@@ -97,7 +97,8 @@ const projectDuration = ref('15 jours')
 
 .process-section {
   padding: 80px 24px;
-  background: var(--color-black);
+  background: var(--bg-primary);
+  transition: background-color 0.3s ease;
 }
 
 .process-container {
@@ -113,14 +114,16 @@ const projectDuration = ref('15 jours')
   font-family: var(--font-manrope);
   font-size: 36px;
   font-weight: 600;
-  color: var(--color-white);
+  color: var(--text-primary);
   margin-bottom: 12px;
+  transition: color 0.3s ease;
 }
 
 .process-subtitle {
   font-family: var(--font-inter);
   font-size: 16px;
-  color: var(--color-grey);
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
 }
 
 /* Tabs */
@@ -136,9 +139,9 @@ const projectDuration = ref('15 jours')
   font-family: var(--font-inter);
   font-size: 14px;
   font-weight: 500;
-  color: var(--color-grey);
+  color: var(--text-secondary);
   background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--border-subtle);
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -146,13 +149,13 @@ const projectDuration = ref('15 jours')
 
 .tab-button:hover {
   border-color: var(--color-gold);
-  color: var(--color-white);
+  color: var(--text-primary);
 }
 
 .tab-button--active {
   background: var(--color-gold);
   border-color: var(--color-gold);
-  color: var(--color-black);
+  color: #0f0f0f;
 }
 
 /* Timeline Grid */
@@ -181,7 +184,7 @@ const projectDuration = ref('15 jours')
   left: 0;
   right: 0;
   height: 1px;
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--border-subtle);
 }
 
 .grid-line-horizontal:nth-child(1) { top: 0; }
@@ -195,7 +198,7 @@ const projectDuration = ref('15 jours')
   top: 0;
   bottom: 0;
   width: 1px;
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--border-subtle);
 }
 
 .grid-line-vertical:nth-child(6) { left: 0; }
@@ -211,8 +214,8 @@ const projectDuration = ref('15 jours')
   align-items: center;
   justify-content: center;
   padding: 16px 24px;
-  background: var(--color-black-light);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
   border-radius: 12px;
   margin: 8px;
   transition: all 0.2s ease;
@@ -227,8 +230,9 @@ const projectDuration = ref('15 jours')
   font-family: var(--font-inter);
   font-size: 14px;
   font-weight: 500;
-  color: var(--color-white);
+  color: var(--text-primary);
   white-space: nowrap;
+  transition: color 0.3s ease;
 }
 
 /* Duration Badge */
@@ -260,9 +264,10 @@ const projectDuration = ref('15 jours')
   font-size: 28px;
   font-weight: 500;
   line-height: 1.4;
-  color: var(--color-white);
+  color: var(--text-primary);
   max-width: 726px;
   margin: 0 auto;
+  transition: color 0.3s ease;
 }
 
 /* Responsive */

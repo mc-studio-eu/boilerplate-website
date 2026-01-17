@@ -54,7 +54,8 @@ const ctaSubtitle = 'Notre mission : aider les entrepreneurs et les entreprises 
 
 .cta-section {
   padding: 80px 24px;
-  background: var(--color-black);
+  background: var(--bg-primary);
+  transition: background-color 0.3s ease;
 }
 
 .cta-container {
@@ -71,16 +72,18 @@ const ctaSubtitle = 'Notre mission : aider les entrepreneurs et les entreprises 
   font-family: var(--font-manrope);
   font-size: 36px;
   font-weight: 600;
-  color: var(--color-white);
+  color: var(--text-primary);
   margin-bottom: 16px;
+  transition: color 0.3s ease;
 }
 
 .cta-subtitle {
   font-family: var(--font-inter);
   font-size: 16px;
-  color: var(--color-grey);
+  color: var(--text-secondary);
   max-width: 842px;
   margin: 0 auto;
+  transition: color 0.3s ease;
 }
 
 /* Visual */
@@ -122,14 +125,16 @@ const ctaSubtitle = 'Notre mission : aider les entrepreneurs et les entreprises 
   font-family: var(--font-manrope);
   font-size: 24px;
   font-weight: 600;
-  color: var(--color-white);
+  color: var(--text-primary);
+  transition: color 0.3s ease;
 }
 
 .visual-text {
   font-family: var(--font-inter);
   font-size: 16px;
-  color: var(--color-grey-light);
+  color: var(--text-secondary);
   max-width: 400px;
+  transition: color 0.3s ease;
 }
 
 .visual-ctas {
@@ -152,8 +157,9 @@ const ctaSubtitle = 'Notre mission : aider les entrepreneurs et les entreprises 
 }
 
 .cta-btn-secondary {
-  border-color: rgba(255, 255, 255, 0.2);
-  color: var(--color-white);
+  border-color: var(--border-subtle);
+  color: var(--text-primary);
+  transition: all 0.2s ease;
 }
 
 .cta-btn-secondary:hover {

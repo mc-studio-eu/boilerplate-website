@@ -120,7 +120,8 @@ const founder = {
 
 .faq-section {
   padding: 80px 24px;
-  background: var(--color-black);
+  background: var(--bg-primary);
+  transition: background-color 0.3s ease;
 }
 
 .faq-container {
@@ -152,14 +153,16 @@ const founder = {
   font-family: var(--font-manrope);
   font-size: 36px;
   font-weight: 600;
-  color: var(--color-white);
+  color: var(--text-primary);
+  transition: color 0.3s ease;
 }
 
 .faq-subtitle {
   font-family: var(--font-inter);
   font-size: 16px;
-  color: var(--color-grey);
+  color: var(--text-secondary);
   margin-bottom: 16px;
+  transition: color 0.3s ease;
 }
 
 /* Founder Card */
@@ -194,21 +197,24 @@ const founder = {
   font-family: var(--font-inter);
   font-size: 14px;
   font-weight: 600;
-  color: var(--color-white);
+  color: var(--text-primary);
+  transition: color 0.3s ease;
 }
 
 .founder-role {
   font-family: var(--font-inter);
   font-size: 13px;
-  color: var(--color-grey);
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
 }
 
 .contact-text {
   font-family: var(--font-inter);
   font-size: 14px;
   line-height: 1.6;
-  color: var(--color-grey-light);
+  color: var(--text-secondary);
   margin-top: 16px;
+  transition: color 0.3s ease;
 }
 
 .whatsapp-btn {
@@ -223,7 +229,8 @@ const founder = {
 }
 
 .accordion-item {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid var(--border-subtle);
+  transition: border-color 0.3s ease;
 }
 
 .accordion-header {
@@ -243,8 +250,9 @@ const founder = {
   font-family: var(--font-inter);
   font-size: 15px;
   font-weight: 500;
-  color: var(--color-white);
+  color: var(--text-primary);
   line-height: 1.5;
+  transition: color 0.3s ease;
 }
 
 .accordion-icon {
@@ -255,14 +263,14 @@ const founder = {
   height: 32px;
   flex-shrink: 0;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.05);
-  color: var(--color-grey);
+  background: var(--border-subtle);
+  color: var(--text-secondary);
   transition: all 0.2s ease;
 }
 
 .accordion-item--open .accordion-icon {
   background: var(--color-gold);
-  color: var(--color-black);
+  color: #0f0f0f;
 }
 
 .accordion-content {
@@ -274,7 +282,8 @@ const founder = {
   font-family: var(--font-inter);
   font-size: 14px;
   line-height: 1.7;
-  color: var(--color-grey-light);
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
 }
 
 /* Accordion Animation */

@@ -53,14 +53,14 @@ const currentProject = computed(() => projects.value[currentIndex.value])
 </script>
 
 <template>
-  <section id="projets" class="py-16 md:py-20 px-6 bg-[#0f0f0f]">
+  <section id="projets" class="py-16 md:py-20 px-6 transition-colors duration-300" style="background-color: var(--bg-primary);">
     <div class="max-w-[832px] mx-auto">
       <!-- Header -->
       <div class="text-center mb-10 md:mb-16">
-        <h2 class="font-manrope font-medium text-2xl sm:text-3xl md:text-[32px] text-white mb-3">
+        <h2 class="font-manrope font-medium text-2xl sm:text-3xl md:text-[32px] mb-3 transition-colors duration-300" style="color: var(--text-primary);">
           Nos <span class="text-gradient">Projets</span>
         </h2>
-        <p class="text-white/60 text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
+        <p class="text-sm sm:text-base max-w-xl mx-auto leading-relaxed transition-colors duration-300" style="color: var(--text-secondary);">
           Une sélection de projets où design, code et stratégie se rencontrent.
         </p>
       </div>
@@ -79,8 +79,8 @@ const currentProject = computed(() => projects.value[currentIndex.value])
 
           <!-- Project Info -->
           <div class="flex flex-col gap-4">
-            <h3 class="font-manrope text-2xl font-semibold text-white">{{ currentProject.title }}</h3>
-            <p class="font-inter text-sm leading-relaxed text-[#a3a3a3]">{{ currentProject.description }}</p>
+            <h3 class="font-manrope text-2xl font-semibold transition-colors duration-300" style="color: var(--text-primary);">{{ currentProject.title }}</h3>
+            <p class="font-inter text-sm leading-relaxed transition-colors duration-300" style="color: var(--text-secondary);">{{ currentProject.description }}</p>
 
             <!-- Tags -->
             <div class="flex flex-wrap gap-2">
@@ -237,9 +237,9 @@ const currentProject = computed(() => projects.value[currentIndex.value])
   width: 44px;
   height: 42px;
   background: transparent;
-  border: 1px solid var(--color-grey);
+  border: 1px solid var(--border-subtle);
   border-radius: 8px;
-  color: var(--color-white);
+  color: var(--text-primary);
   cursor: pointer;
   transition: all 0.2s ease;
 }

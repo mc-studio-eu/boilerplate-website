@@ -3,17 +3,17 @@
 </script>
 
 <template>
-  <main class="min-h-screen p-6 bg-[#0f0f0f]">
+  <main class="main-container min-h-screen p-6 transition-colors duration-300">
     <!-- Hero Section -->
     <HeroSection />
     
     <!-- Main Content with Border Frame -->
     <div class="relative mx-auto max-w-[1440px]">
       <!-- Left Border Line -->
-      <div class="absolute left-[50px] top-0 bottom-0 w-px bg-gradient-to-b from-[#f0bf6c]/40 via-[#f0bf6c]/20 to-transparent hidden lg:block"></div>
+      <div class="border-line absolute left-[50px] top-0 bottom-0 w-px hidden lg:block"></div>
       
       <!-- Right Border Line -->
-      <div class="absolute right-[50px] top-0 bottom-0 w-px bg-gradient-to-b from-[#f0bf6c]/40 via-[#f0bf6c]/20 to-transparent hidden lg:block"></div>
+      <div class="border-line absolute right-[50px] top-0 bottom-0 w-px hidden lg:block"></div>
       
       <!-- Projects Section -->
       <div class="section-separator"></div>
@@ -47,18 +47,43 @@
 </template>
 
 <style scoped>
+/* Main container */
+.main-container {
+  background-color: var(--bg-primary);
+}
+
+/* Border lines */
+.border-line {
+  background: linear-gradient(to bottom, var(--border-color) 0%, var(--border-color) 50%, transparent 100%);
+}
+
+:global(.dark) .border-line {
+  background: linear-gradient(to bottom, rgba(240, 191, 108, 0.4) 0%, rgba(240, 191, 108, 0.2) 50%, transparent 100%);
+}
+
+:global(.light) .border-line {
+  background: linear-gradient(to bottom, rgba(26, 26, 26, 0.15) 0%, rgba(26, 26, 26, 0.08) 50%, transparent 100%);
+}
+
 /* Section separator line */
 .section-separator {
   height: 1px;
-  background: linear-gradient(90deg, transparent 0%, #f0bf6c40 20%, #f0bf6c40 80%, transparent 100%);
+  background: linear-gradient(90deg, transparent 0%, var(--border-color) 20%, var(--border-color) 80%, transparent 100%);
   margin: 0 auto;
   max-width: calc(100% - 146px);
+}
+
+:global(.dark) .section-separator {
+  background: linear-gradient(90deg, transparent 0%, rgba(240, 191, 108, 0.25) 20%, rgba(240, 191, 108, 0.25) 80%, transparent 100%);
+}
+
+:global(.light) .section-separator {
+  background: linear-gradient(90deg, transparent 0%, rgba(26, 26, 26, 0.12) 20%, rgba(26, 26, 26, 0.12) 80%, transparent 100%);
 }
 
 @media (max-width: 1024px) {
   .section-separator {
     max-width: 100%;
-    background: linear-gradient(90deg, transparent 0%, #f0bf6c30 10%, #f0bf6c30 90%, transparent 100%);
   }
 }
 

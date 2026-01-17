@@ -2,6 +2,10 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
 
+html {
+  scroll-behavior: smooth;
+}
+
 @theme {
     --color-black-light: #232323;
     --color-gold: #F0BF6C;
@@ -22,6 +26,34 @@
   --ui-info: var(--color-black);
   --ui-warning: var(--color-black);
   --ui-error: var(--color-black);
+  
+  /* Theme colors - Default dark */
+  --bg-primary: #0F0F0F;
+  --bg-secondary: #151515;
+  --bg-card: #232323;
+  --text-primary: #FFFFFF;
+  --text-secondary: #a1a1a1;
+  --text-muted: #6b7280;
+  --border-color: rgba(240, 191, 108, 0.2);
+  --border-subtle: rgba(255, 255, 255, 0.1);
+  --gold-gradient: linear-gradient(270deg, #F0BF6C 0%, #FFF 67.31%);
+}
+
+.light {
+  --bg-primary: #EEEEF4;
+  --bg-secondary: #FFFFFF;
+  --bg-card: #FFFFFF;
+  --text-primary: #1a1a1a;
+  --text-secondary: #5D5D5D;
+  --text-muted: #6b7280;
+  --border-color: rgba(26, 26, 26, 0.1);
+  --border-subtle: rgba(26, 26, 26, 0.08);
+  --gold-gradient: linear-gradient(270deg, #F0BF6C 0%, #1a1a1a 67.31%);
+  
+  /* Override Tailwind's color variables */
+  --color-black-light: #f5f5f5;
+  --color-white: #1a1a1a;
+  --color-grey-light: #5D5D5D;
 }
 
 .dark {
@@ -31,12 +63,53 @@
   --ui-info: var(--color-black);
   --ui-warning: var(--color-black);
   --ui-error: var(--color-black);
+  
+  --bg-primary: #0F0F0F;
+  --bg-secondary: #151515;
+  --bg-card: #232323;
+  --text-primary: #FFFFFF;
+  --text-secondary: #a1a1a1;
+  --text-muted: #6b7280;
+  --border-color: rgba(240, 191, 108, 0.2);
+  --border-subtle: rgba(255, 255, 255, 0.1);
+  --gold-gradient: linear-gradient(270deg, #F0BF6C 0%, #FFF 67.31%);
+  
+  --color-black-light: #232323;
+  --color-white: #FFFFFF;
+  --color-grey-light: #62748E;
 }
 
+/* Base body transition for smooth theme switching */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.4s ease, color 0.3s ease;
+}
+
+/* Utility classes for theme colors */
+.theme-bg {
+  background-color: var(--bg-primary);
+}
+
+.theme-bg-card {
+  background-color: var(--bg-card);
+}
+
+.theme-text {
+  color: var(--text-primary);
+}
+
+.theme-text-secondary {
+  color: var(--text-secondary);
+}
+
+.theme-border {
+  border-color: var(--border-subtle);
+}
 
 h1 {
     font-family: "Manrope", sans-serif;
-    background: var(--degrad-gold);
+    background: var(--gold-gradient);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

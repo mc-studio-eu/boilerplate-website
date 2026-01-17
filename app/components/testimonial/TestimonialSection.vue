@@ -110,7 +110,8 @@ const currentTestimonial = computed(() => testimonials.value[currentIndex.value]
 
 .testimonial-section {
   padding: 80px 24px;
-  background: var(--color-black);
+  background: var(--bg-primary);
+  transition: background-color 0.3s ease;
 }
 
 .testimonial-container {
@@ -127,7 +128,8 @@ const currentTestimonial = computed(() => testimonials.value[currentIndex.value]
   font-family: var(--font-manrope);
   font-size: 36px;
   font-weight: 600;
-  color: var(--color-white);
+  color: var(--text-primary);
+  transition: color 0.3s ease;
 }
 
 /* Testimonial Card */
@@ -135,9 +137,14 @@ const currentTestimonial = computed(() => testimonials.value[currentIndex.value]
   max-width: 460px;
   margin: 0 auto;
   padding: 24px;
-  background: var(--color-black-light);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
   border-radius: 16px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+:global(.light) .testimonial-card {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
 .card-content {
@@ -150,7 +157,8 @@ const currentTestimonial = computed(() => testimonials.value[currentIndex.value]
   font-family: var(--font-inter);
   font-size: 14px;
   line-height: 1.7;
-  color: var(--color-grey-light);
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
 }
 
 .card-footer {
@@ -191,13 +199,15 @@ const currentTestimonial = computed(() => testimonials.value[currentIndex.value]
   font-family: var(--font-inter);
   font-size: 14px;
   font-weight: 600;
-  color: var(--color-white);
+  color: var(--text-primary);
+  transition: color 0.3s ease;
 }
 
 .author-role {
   font-family: var(--font-inter);
   font-size: 12px;
-  color: var(--color-grey);
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
 }
 
 /* Navigation */
@@ -214,7 +224,7 @@ const currentTestimonial = computed(() => testimonials.value[currentIndex.value]
   height: 24px;
   background: transparent;
   border: none;
-  color: var(--color-grey);
+  color: var(--text-secondary);
   cursor: pointer;
   transition: color 0.2s ease;
 }
