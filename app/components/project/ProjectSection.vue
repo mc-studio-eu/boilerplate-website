@@ -103,13 +103,13 @@ const currentProject = computed(() => projects.value[currentIndex.value])
               </UBadge>
             </div>
 
-            <!-- CTA -->
-            <a 
+            
+            <!-- <a 
               :href="currentProject.link"
               class="project-cta-link"
             >
               Voir le site
-            </a>
+            </a> -->
           </div>
         </div>
 
