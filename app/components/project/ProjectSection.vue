@@ -22,7 +22,7 @@ const projects = ref<Project[]>([
     id: 1,
     title: 'Arises',
     description:
-        "Arises est un SaaS IA qui transforme ton calendrier en plan d’action.\nOn a conçu ce SaaS du logo jusqu'au lancement en ligne, tout sur mesure pour maximiser l’activation.",
+        "Arises est un SaaS IA qui transforme votre calendrier en plan d’action.\nOn a conçu ce SaaS du logo jusqu'au lancement en ligne, tout sur mesure pour maximiser l’activation.",
     image: '/img/project/arises-tablet.jpeg',
     tags: ['Sprint', 'AI SaaS', 'Landing Page', 'Design', 'UI/UX', 'Copywriting', 'Branding'],
     testimonials: false,

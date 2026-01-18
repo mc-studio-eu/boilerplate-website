@@ -12,7 +12,7 @@ const faqItems = ref<FaqItem[]>([
     id: 0,
     question: 'Quels types de clients accompagnez-vous ?',
     answer:
-        "Nous accompagnons des entrepreneurs, startups et entreprises qui veulent un site ou un produit web premium. Nos projets vont de la landing page orientée conversion à des plateformes plus complètes (SaaS, dashboards, e-commerce), avec une approche centrée sur le design, la clarté de l’offre et la performance."
+        "Nous accompagnons des entrepreneurs, startups et entreprises. Nos projets vont de la landing page orientée conversion à des plateformes plus complètes (SaaS, dashboards, e-commerce), avec une approche centrée sur le design, la clarté de l’offre et la performance."
   },
   {
     id: 1,

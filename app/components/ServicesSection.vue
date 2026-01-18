@@ -3,6 +3,7 @@ const services = [
   {
     title: "Landing Page",
     subtitle: "Une page premium conçue pour convertir.",
+    image: "/img/services/lp.png",
     features: [
       "Design premium (Figma)",
       "Copy & structure orientés conversion",
@@ -15,6 +16,7 @@ const services = [
   {
     title: "Launch : SaaS",
     subtitle: "Une base solide pour scaler",
+    image: "/img/services/launch.png",
     features: [
       "Branding + design complet (UI/UX)",
       "3 fonctionnalités clés",
@@ -27,6 +29,7 @@ const services = [
   {
     title: "Sprint : MVP",
     subtitle: "Valider son produit en production",
+    image: "/img/services/sprint.png",
     features: [
       "UI/UX minimal (écrans essentiels)",
       "1 fonctionnalité clé",
@@ -68,32 +71,19 @@ const otherServices = [
           style="border-color: var(--border-subtle);"
         >
           <!-- Card Content -->
-          <div class="relative z-10 flex flex-col h-full">
+          <div class="relative flex flex-col h-full">
             <!-- Title -->
             <h3 class="font-semibold text-xl sm:text-2xl mb-1 transition-colors duration-300" style="color: var(--text-primary);">{{ service.title }}</h3>
             <p class="text-xs mb-5 transition-colors duration-300" style="color: var(--text-secondary);">{{ service.subtitle }}</p>
 
             <!-- Image placeholder -->
-            <div class="w-full max-w-[244px] h-[100px] sm:h-[119px] rounded-lg mb-5 overflow-hidden transition-colors duration-300" style="background-color: var(--bg-card);">
-              <div class="w-full h-full bg-gradient-to-br from-white/5 to-transparent flex items-center justify-center">
-                <svg class="w-10 h-10 opacity-20 transition-colors duration-300" style="color: var(--text-primary);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                </svg>
-              </div>
+            <div class="w-full max-w-[244px] h-[100px] sm:h-[180px] rounded-lg mb-5 overflow-hidden transition-colors duration-300" style="background-color: var(--bg-card);">
+              <NuxtImg
+                :src="service.image"
+                alt="Service Image"
+                class="w-full h-full object-cover"
+              />
             </div>
-
-            <!-- Inclus -->
-            <p class="font-bold text-sm sm:text-[15px] mb-2 transition-colors duration-300" style="color: var(--text-primary);">Inclus :</p>
-            <ul class="space-y-1.5 sm:space-y-2 mb-5 flex-grow">
-              <li 
-                v-for="feature in service.features" 
-                :key="feature"
-                class="text-sm sm:text-[15px] leading-relaxed transition-colors duration-300"
-                style="color: var(--text-secondary);"
-              >
-                {{ feature }}
-              </li>
-            </ul>
 
             <!-- Livrables -->
             <div class="mt-auto">
@@ -113,7 +103,7 @@ const otherServices = [
       </div>
 
       <!-- Other Services -->
-      <div class="p-6 sm:p-8 rounded-2xl border transition-colors duration-300" style="background-color: var(--bg-card); border-color: var(--border-subtle);">
+      <div class="p-6 sm:p-8 rounded-2xl border transition-colors duration-300" style="border-color: var(--border-subtle);">
         <div class="mb-5">
           <h4 class="font-manrope font-semibold text-lg mb-1 transition-colors duration-300" style="color: var(--text-primary);">Autres Services</h4>
           <p class="text-sm transition-colors duration-300" style="color: var(--text-secondary);">Besoin d'un service sur mesure ? On s'adapte.</p>
@@ -136,13 +126,10 @@ const otherServices = [
 <style scoped>
 
 .service-card {
-  background: var(--bg-card);
-  backdrop-filter: blur(10px);
 }
 
 :global(.light) .service-card {
-  background: var(--bg-secondary);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+
 }
 </style>
 
