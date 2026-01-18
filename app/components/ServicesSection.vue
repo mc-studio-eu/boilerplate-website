@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const services = [
   {
-    title: "Landing Page",
+    title: "Launch : Landing Page",
     subtitle: "Une page premium conçue pour convertir.",
     image: "/img/services/lp.png",
     features: [
@@ -10,21 +10,8 @@ const services = [
       "Dev sur mesure (mobile et desktop)",
       "Tracking (GA) + Déploiement"
     ],
-    deliverables: ["Landing page live", "Perf + Conversion"],
+    deliverables: ["Landing page live", "Tracking & analytics"],
     highlighted: false
-  },
-  {
-    title: "Launch : SaaS",
-    subtitle: "Une base solide pour scaler",
-    image: "/img/services/launch.png",
-    features: [
-      "Branding + design complet (UI/UX)",
-      "3 fonctionnalités clés",
-      "Paiement & abonnements (Stripe) + onboarding",
-      "Déploiement + QA + base scalable"
-    ],
-    deliverables: ["SaaS en production", "Prêt à scaler"],
-    highlighted: true
   },
   {
     title: "Sprint : MVP",
@@ -38,12 +25,24 @@ const services = [
     ],
     deliverables: ["MVP en production", "Prêt à itérer"],
     highlighted: false
-  }
+  },
+  {
+    title: "Launch : SaaS",
+    subtitle: "Un produit complet, prêt à scaler.",
+    image: "/img/services/launch.png",
+    features: [
+      "Branding + design complet (UI/UX)",
+      "3 fonctionnalités clés",
+      "Paiement & abonnements (Stripe) + onboarding",
+      "Déploiement + QA + base scalable"
+    ],
+    deliverables: ["SaaS en production", "Prêt à scaler"],
+    highlighted: false
+  },
 ];
 
 const otherServices = [
-  "Site Vitrine", "Refonte", "Application Web", "E-commerce", 
-  "SEO", "Maintenance", "API", "Dashboard"
+  "Branding", "Web Design", "Site multi-pages", "Dev Ponctuel", "SEO", "Copywriting", "Accompagnement Stratégique",
 ];
 </script>
 
@@ -87,7 +86,7 @@ const otherServices = [
 
             <!-- Livrables -->
             <div class="mt-auto">
-              <p class="font-bold text-sm sm:text-[15px] mb-2 transition-colors duration-300" style="color: var(--text-primary);">Livrables :</p>
+              <p class="font-light text-sm sm:text-[15px] mb-2 transition-colors duration-300" style="color: var(--text-primary);">Livrables :</p>
               <div class="flex flex-wrap gap-2">
                 <span 
                   v-for="deliverable in service.deliverables" 
@@ -98,6 +97,8 @@ const otherServices = [
                 </span>
               </div>
             </div>
+
+            <UButton class="bg-[#232323] mt-5 w-32 text-white cursor-pointer" icon="i-heroicons-plus-small-solid">de détails</UButton>
           </div>
         </div>
       </div>
@@ -112,8 +113,7 @@ const otherServices = [
           <span 
             v-for="svc in otherServices" 
             :key="svc"
-            class="inline-flex items-center px-3 sm:px-4 py-2 bg-transparent border rounded-lg text-sm hover:border-[#f0bf6c] hover:text-[#f0bf6c] transition-colors cursor-default"
-            style="border-color: var(--border-subtle); color: var(--text-secondary);"
+            class="inline-flex items-center px-3 sm:px-4 py-2 bg-white text-black border rounded-lg text-sm hover:border-[#f0bf6c] hover:text-[#f0bf6c] transition-colors cursor-default"
           >
             {{ svc }}
           </span>
