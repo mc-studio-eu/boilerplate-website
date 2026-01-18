@@ -14,7 +14,8 @@ const projects = ref<Project[]>([
   {
     id: 1,
     title: 'Arises',
-    description: "SaaS IA qui automatise la planification et la priorisation.\nUn copilote de calendrier pour rester focus et gagner du temps.",
+    description:
+        "Arises est un SaaS IA qui transforme ton calendrier en plan d’action.\nOn a conçu le branding + la landing et le design produit pour maximiser l’activation.",
     image: '/img/project/arises-tablet.jpeg',
     tags: ['Sprint', 'AI SaaS', 'Landing Page', 'Design', 'UI/UX', 'Copywriting', 'Branding'],
     link: '#'
@@ -22,7 +23,8 @@ const projects = ref<Project[]>([
   {
     id: 2,
     title: 'Souji Nova',
-    description: "Landing page sur-mesure pour une société de nettoyage.\nDesign rassurant + parcours optimisé pour générer plus de demandes.",
+    description:
+        "Souji Nova est une société de nettoyage pour particuliers et professionnels.\nLanding page sur-mesure : design rassurant, offre claire, parcours optimisé pour générer plus de demandes.",
     image: '/img/project/souji-nova-desktop.png',
     tags: ['Landing Page', 'Branding', 'Design', 'UI/UX', 'Copywriting', 'Société de nettoyage'],
     link: '#'
@@ -30,20 +32,23 @@ const projects = ref<Project[]>([
   {
     id: 3,
     title: 'R&A Energy',
-    description: "Site vitrine premium pour un courtier en énergie.\nOffre clarifiée, crédibilité renforcée, conversion orientée prise de contact.",
-    image: '/img/project/ra-energy-nohandl.jpeg',
+    description:
+        "R&A Energy est un courtier en énergie qui accompagne entreprises et pros.\nSite vitrine premium : crédibilité renforcée, offre simplifiée, CTA orientés prise de contact.",
+    image: '/img/project/ra-energy.png',
     tags: ['Landing Page', 'Branding', 'Design', 'UI/UX', 'Copywriting', 'Logo', 'Courtage en énergie'],
     link: '#'
   },
   {
     id: 4,
     title: 'Fontaines VTC',
-    description: "Site vitrine conçu pour présenter et vendre l’offre clairement.\nMise en confiance et call-to-action pour capter des leads.",
+    description:
+        "Fontaines VTC est une entreprise de transport privé (réservations en ligne).\nOptimisation SEO + CTA : meilleure visibilité locale et plus de conversions sur la prise de réservation.",
     image: '/img/project/fontaines-vtc-dark.jpeg',
-    tags: ['SEO', 'Optimisation CTA', 'Design', 'Copywriting','Entreprise VTC'],
+    tags: ['SEO', 'Optimisation CTA', 'Design', 'Copywriting', 'Entreprise VTC'],
     link: '#'
   }
 ])
+
 
 const currentIndex = ref(0)
 
@@ -62,7 +67,7 @@ const currentProject = computed(() => projects.value[currentIndex.value])
 
 <template>
   <section id="projets" class="py-16 md:py-20 px-6 transition-colors duration-300" style="background-color: var(--bg-primary);">
-    <div class="max-w-[832px] mx-auto">
+    <div class="max-w-[1000px] mx-auto">
       <!-- Header -->
       <div class="text-center mb-10 md:mb-16">
         <h2 class="font-manrope font-medium text-2xl sm:text-3xl md:text-[32px] mb-3 transition-colors duration-300" style="color: var(--text-primary);">
@@ -81,7 +86,7 @@ const currentProject = computed(() => projects.value[currentIndex.value])
             <NuxtImg 
               :src="currentProject.image" 
               :alt="currentProject.title"
-              class="w-full h-auto object-cover"
+              class="w-full h-[400px] object-cover"
             />
           </div>
 

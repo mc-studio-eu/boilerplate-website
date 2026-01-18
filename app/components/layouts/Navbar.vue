@@ -169,10 +169,9 @@ const closeMenu = () => isMenuOpen.value = false
                 colorMode.value === 'dark' ? 'bg-white hover:bg-gray-100' : 'bg-[#1a1a1a] hover:bg-[#2a2a2a]'
               ]"
             >
-              <div class="w-6 h-6 md:w-7 md:h-7 rounded-full bg-gradient-to-br from-[#f0bf6c] to-[#e8a84c] flex items-center justify-center font-inter font-semibold text-[9px] md:text-[10px] text-[#0f0f0f]">MC</div>
+              <NuxtImg src="/img/main/founder.png" alt="MC Studio" class="w-6 h-6 md:w-7 md:h-7 rounded-full bg-gradient-to-br from-[#f0bf6c] to-[#e8a84c] flex items-center justify-center font-inter font-semibold text-[9px] md:text-[10px] text-[#0f0f0f] object-contain" />
               <div class="flex flex-col items-start gap-px">
                 <span :class="['font-inter font-semibold text-[11px] md:text-xs leading-tight', colorMode.value === 'dark' ? 'text-[#1a1a1a]' : 'text-white']">Réserver un call</span>
-                <span :class="['font-inter font-normal text-[8px] md:text-[9px] leading-tight', colorMode.value === 'dark' ? 'text-[#1a1a1a]/60' : 'text-white/60']">Discussion gratuite</span>
               </div>
             </button>
           </div>

@@ -9,26 +9,37 @@ interface FaqItem {
 // Data
 const faqItems = ref<FaqItem[]>([
   {
+    id: 0,
+    question: 'Quels types de clients accompagnez-vous ?',
+    answer:
+        "Nous accompagnons des entrepreneurs, startups et entreprises qui veulent un site ou un produit web premium. Nos projets vont de la landing page orientée conversion à des plateformes plus complètes (SaaS, dashboards, e-commerce), avec une approche centrée sur le design, la clarté de l’offre et la performance."
+  },
+  {
     id: 1,
     question: 'Comment obtenir un devis et sous combien de temps répondez-vous ?',
-    answer: 'Vous pouvez nous contacter via le formulaire de contact ou directement par WhatsApp. Nous répondons généralement sous 24h avec une première estimation. Un devis détaillé est fourni après notre premier échange.'
+    answer:
+        "Contactez-nous via le formulaire ou WhatsApp. Nous répondons généralement sous 24h avec quelques questions rapides et une première estimation. Un devis détaillé est ensuite envoyé après un échange de cadrage (objectifs, contenu, délais, périmètre)."
   },
   {
     id: 2,
-    question: 'Que se passe-t-il si le design ne correspond pas à vos attentes ?',
-    answer: 'Nous travaillons de manière itérative avec des validations à chaque étape. Si le design ne vous convient pas, nous effectuons les révisions nécessaires jusqu\'à votre satisfaction complète.'
+    question: "Que se passe-t-il si le design ne correspond pas à vos attentes ?",
+    answer:
+        "On avance étape par étape avec des validations (direction créative, maquettes, itérations). Chaque projet inclut des révisions pour ajuster jusqu’à obtenir un rendu aligné avec votre vision. L’objectif : un design qui vous ressemble et qui convertit."
   },
   {
     id: 3,
-    question: 'Quel est le coût d\'un projet ?',
-    answer: 'Le coût dépend de la complexité et du scope du projet. Une landing page démarre à partir de 2000€, un MVP à partir de 5000€, et un SaaS complet à partir de 10000€. Chaque projet est unique et fait l\'objet d\'un devis personnalisé.'
+    question: "Quel est le coût d'un projet ?",
+    answer:
+        "Le budget dépend du périmètre (nombre de pages, fonctionnalités, animations, contenu, intégrations). Après un premier échange, on vous propose une recommandation claire avec un devis transparent — sans surprise."
   },
   {
     id: 4,
     question: 'Qui est derrière MC Studio ?',
-    answer: 'MC Studio est fondé par Mohamed Chettah, développeur et designer avec plus de 5 ans d\'expérience. Passionné par le produit et l\'entrepreneuriat, il accompagne startups et entreprises dans leur transformation digitale.'
+    answer:
+        "MC Studio réunit une équipe de 4 experts (direction produit, design, dev frontend, dev backend et gestion de projet). Fondé et dirigé par Mohamed Chettah, le studio accompagne entrepreneurs, startups et entreprises de la stratégie au lancement."
   }
 ])
+
 
 // Track open items
 const openItems = ref<number[]>([])
