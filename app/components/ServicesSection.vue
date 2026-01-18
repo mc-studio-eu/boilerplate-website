@@ -1,7 +1,31 @@
 <script setup lang="ts">
+import { ref, computed } from 'vue';
+
+// Modal state
+const activeModal = ref<string | null>(null);
+
+const isLandingModalOpen = computed({
+  get: () => activeModal.value === 'landing',
+  set: (val: boolean) => { activeModal.value = val ? 'landing' : null; }
+});
+
+const isSprintModalOpen = computed({
+  get: () => activeModal.value === 'sprint',
+  set: (val: boolean) => { activeModal.value = val ? 'sprint' : null; }
+});
+
+const isSaasModalOpen = computed({
+  get: () => activeModal.value === 'saas',
+  set: (val: boolean) => { activeModal.value = val ? 'saas' : null; }
+});
+
+const openModal = (modalType: string) => {
+  activeModal.value = modalType;
+};
+
 const services = [
   {
-    title: "Launch : Landing Page",
+    title: "Landing Page",
     subtitle: "Une page premium conçue pour convertir.",
     image: "/img/services/lp.png",
     features: [
@@ -11,7 +35,8 @@ const services = [
       "Tracking (GA) + Déploiement"
     ],
     deliverables: ["Landing page live", "Tracking & analytics"],
-    highlighted: false
+    highlighted: false,
+    modalKey: "landing"
   },
   {
     title: "Sprint : MVP",
@@ -24,7 +49,8 @@ const services = [
       "Déploiement + QA"
     ],
     deliverables: ["MVP en production", "Prêt à itérer"],
-    highlighted: false
+    highlighted: false,
+    modalKey: "sprint"
   },
   {
     title: "Launch : SaaS",
@@ -37,7 +63,8 @@ const services = [
       "Déploiement + QA + base scalable"
     ],
     deliverables: ["SaaS en production", "Prêt à scaler"],
-    highlighted: false
+    highlighted: false,
+    modalKey: "saas"
   },
 ];
 
@@ -55,7 +82,7 @@ const otherServices = [
           Nos <span class="text-gradient">Services</span>
         </h2>
         <p class="text-sm sm:text-base max-w-xl mx-auto leading-relaxed transition-colors duration-300" style="color: var(--text-secondary);">
-          Branding, sites & applications<br class="sm:hidden">
+          Branding, sites &amp; applications<br class="sm:hidden">
           de la landing au MVP, jusqu'au SaaS prêt à être lancé.
         </p>
       </div>
@@ -98,7 +125,13 @@ const otherServices = [
               </div>
             </div>
 
-            <UButton class="bg-[#232323] mt-5 w-32 text-white cursor-pointer" icon="i-heroicons-plus-small-solid">de détails</UButton>
+            <UButton 
+              class="bg-[#232323] mt-5 w-32 text-white cursor-pointer" 
+              icon="i-heroicons-plus-small-solid"
+              @click="openModal(service.modalKey)"
+            >
+              Détails
+            </UButton>
           </div>
         </div>
       </div>
@@ -120,16 +153,16 @@ const otherServices = [
         </div>
       </div>
     </div>
+
+    <!-- Modals -->
+    <ServicesServiceModalLanding v-model:open="isLandingModalOpen" />
+    <ServicesServiceModalSprint v-model:open="isSprintModalOpen" />
+    <ServicesServiceModalSaas v-model:open="isSaasModalOpen" />
   </section>
 </template>
 
 <style scoped>
-
-.service-card {
-}
-
-:global(.light) .service-card {
-
+.service-modal :deep(.modal-content) {
+  max-width: 680px;
 }
 </style>
-
