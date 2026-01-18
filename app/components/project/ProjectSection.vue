@@ -22,7 +22,7 @@ const projects = ref<Project[]>([
     id: 1,
     title: 'Arises',
     description:
-        "Arises est un SaaS IA qui transforme ton calendrier en plan d’action.\nOn a conçu le branding + la landing et le design produit pour maximiser l’activation.",
+        "Arises est un SaaS IA qui transforme ton calendrier en plan d’action.\nOn a conçu ce SaaS du logo jusqu'au lancement en ligne, tout sur mesure pour maximiser l’activation.",
     image: '/img/project/arises-tablet.jpeg',
     tags: ['Sprint', 'AI SaaS', 'Landing Page', 'Design', 'UI/UX', 'Copywriting', 'Branding'],
     testimonials: false,
@@ -36,32 +36,28 @@ const projects = ref<Project[]>([
     image: '/img/project/souji-nova-desktop.png',
     tags: ['Landing Page', 'Branding', 'Design', 'UI/UX', 'Copywriting', 'Société de nettoyage'],
     testimonials: true,
-    testimonial:
-      {
-        avis: "MC Studio a transformé notre site web. Grâce à leur expertise, nous avons vu une augmentation significative des réservations en ligne. Leur approche professionnelle et leur souci du détail sont impressionnants.",
-        name: "Jean Dupont",
-        job: "Fondateur de Fontaines VTC",
-        avatar: "/img/project/avis-fontaines-vtc.jpg"
-      }
-    ,
+    testimonial: {
+      avis: "MC Studio nous a réalisé un super site internet, très intuitif et très pro. De bons conseils et à l’écoute de ses clients, je recommande !",
+      name: "Nelson Maghoun",
+      job: "Co-fondateur Souji Nova",
+      avatar: "/img/project/avis-souji-nova.jpg"
+    },
     link: 'https://soujinova.fr/'
   },
   {
     id: 3,
     title: 'R&A Energy',
     description:
-        "R&A Energy est un courtier en énergie qui accompagne entreprises et pros.\nSite vitrine premium : crédibilité renforcée, offre simplifiée, CTA orientés prise de contact.",
+        "R&A Energy est un courtier en énergie dédié aux entreprises et aux pros.\n\nBranding & landing page premium : message simplifié, réassurance renforcée et parcours orienté prise de contact.",
     image: '/img/project/ra-energy.png',
     tags: ['Landing Page', 'Branding', 'Design', 'UI/UX', 'Copywriting', 'Logo', 'Courtage en énergie'],
     testimonials: true,
-    testimonial:
-      {
-        avis: "MC Studio a transformé notre site web. Grâce à leur expertise, nous avons vu une augmentation significative des réservations en ligne. Leur approche professionnelle et leur souci du détail sont impressionnants.",
-        name: "Jean Dupont",
-        job: "Fondateur de Fontaines VTC",
-        avatar: "/img/project/avis-fontaines-vtc.jpg"
-      }
-    ,
+    testimonial: {
+      avis: "MC Studio a réalisé notre site internet et le résultat est excellent. Travail rapide, professionnel et très soigné. Le site est moderne, fluide et parfaitement adapté à notre activité.",
+      name: "Yazid Chettah",
+      job: "Co-fondateur R&A Energy",
+      avatar: "/img/project/avis-ra-energy.jpg"
+    },
     link: 'https://ra-energy.fr/'
   },
   {
@@ -72,17 +68,16 @@ const projects = ref<Project[]>([
     image: '/img/project/fontaines-vtc-dark.jpeg',
     tags: ['SEO', 'Optimisation CTA', 'Design', 'Copywriting', 'Entreprise VTC'],
     testimonials: true,
-    testimonial:
-      {
-        avis: "MC Studio a transformé notre site web. Grâce à leur expertise, nous avons vu une augmentation significative des réservations en ligne. Leur approche professionnelle et leur souci du détail sont impressionnants.",
-        name: "Jean Dupont",
-        job: "Fondateur de Fontaines VTC",
-        avatar: "/img/project/avis-fontaines-vtc.jpg"
-    }
-    ,
+    testimonial: {
+      avis: "MC studio m’a accompagné dans mon projet digital, entreprise très sérieuse professionnelle je la recommande !",
+      name: "Mario Convertino",
+      job: "Dirigeant Fontaines VTC",
+      avatar: "/img/project/avis-fontaines-vtc.jpg"
+    },
     link: 'https://fontaines-vtc.fr/'
   }
 ])
+
 
 const currentIndex = ref(0)
 
@@ -135,7 +130,7 @@ const currentProject = computed(() => projects.value[currentIndex.value])
                 v-for="tag in currentProject.tags" 
                 :key="tag"
                 variant="outline"
-                color="neutral"
+                class="font-inter bg-white text-black"
                 size="sm"
               >
                 {{ tag }}
@@ -143,17 +138,18 @@ const currentProject = computed(() => projects.value[currentIndex.value])
             </div>
 
             <!-- Call to Action -->
-            <a
-              :href="currentProject.link"
-              class="project-cta-link"
+            <UButton :to="currentProject.link"
+                     target="_blank"
+                     class="w-34 flex items-center justify-center h-[30px] bg-[linear-gradient(to_right,white_50%,#f0bf6c)] border-none rounded-lg font-inter font-medium text-sm text-[#0f0f0f] cursor-pointer backdrop-blur-[12px] shadow-[0_4px_4px_rgba(0,0,0,0.25),0_10px_10px_rgba(11,32,103,0.05)] transition-all duration-200 hover:brightness-105"
+                     trailing-icon="i-heroicons-arrow-right-20-solid"
             >
               Voir le projet
-            </a>
+            </UButton>
 
             <!-- Testimonials -->
 
             <div v-if="currentProject.testimonials && currentProject?.testimonial">
-              <div class="flex flex-col gap-3 rounded-xl text-white mt-5">
+              <div class="flex flex-col p-3 gap-3 rounded-xl text-white bg-[#232323]">
 
                 <p class="text-xs xl:whitespace-pre-line"> {{ currentProject?.testimonial.avis }}</p>
 
@@ -195,112 +191,6 @@ const currentProject = computed(() => projects.value[currentIndex.value])
 <style scoped>
 @reference "@/assets/css/main.css";
 
-.project-section {
-  padding: 80px 24px;
-  background: var(--color-black);
-}
-
-.project-container {
-  max-width: 832px;
-  margin: 0 auto;
-}
-
-.project-header {
-  text-align: center;
-  margin-bottom: 48px;
-}
-
-.project-title {
-  font-family: var(--font-manrope);
-  font-size: 36px;
-  font-weight: 600;
-  color: var(--color-white);
-  margin-bottom: 12px;
-}
-
-.project-subtitle {
-  font-family: var(--font-inter);
-  font-size: 16px;
-  color: var(--color-grey);
-}
-
-.project-showcase {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.project-content {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-}
-
-@media (min-width: 768px) {
-  .project-content {
-    flex-direction: row;
-    align-items: flex-start;
-  }
-}
-
-.project-image-wrapper {
-  flex-shrink: 0;
-  width: 100%;
-  max-width: 398px;
-  border-radius: 12px;
-  overflow: hidden;
-}
-
-.project-image {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-
-.project-info {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.project-name {
-  font-family: var(--font-manrope);
-  font-size: 24px;
-  font-weight: 600;
-  color: var(--color-white);
-}
-
-.project-description {
-  font-family: var(--font-inter);
-  font-size: 14px;
-  line-height: 1.6;
-  color: var(--color-grey-light);
-}
-
-.project-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.project-cta-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 8px 24px;
-  font-family: var(--font-inter);
-  font-size: 14px;
-  font-weight: 500;
-  border-radius: 10px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  width: fit-content;
-  background: linear-gradient(90deg, #FFF8E7 0, #F0BF6C 100%);
-  color: #1a1a1a;
-  border: none;
-  box-shadow: 0 4px 15px rgba(240, 191, 108, 0.3);
-}
-
 .project-navigation {
   display: flex;
   gap: 18px;
@@ -312,7 +202,7 @@ const currentProject = computed(() => projects.value[currentIndex.value])
   justify-content: center;
   width: 44px;
   height: 42px;
-  background: transparent;
+  background: #232323;
   border: 1px solid var(--border-subtle);
   border-radius: 8px;
   color: var(--text-primary);

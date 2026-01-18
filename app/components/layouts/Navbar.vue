@@ -59,7 +59,7 @@ const closeMenu = () => isMenuOpen.value = false
     <!-- CTA Desktop -->
     <div class="hidden lg:flex items-center gap-[11px] shrink-0">
       <USelect v-model="language" :items="languages" class="flex items-center justify-center w-[70px] h-[30px] bg-[#010201] border border-[#f0bf6c] rounded-lg font-inter font-medium text-xs text-[#f0eadb] cursor-pointer backdrop-blur-[12px] shadow-[0_4px_4px_rgba(0,0,0,0.25),0_10px_10px_rgba(11,32,103,0.05)] transition-all duration-200 hover:bg-[#1a1a1a]" />
-      <UButton class="flex items-center justify-center w-[164px] h-[30px] bg-[linear-gradient(to_right,white_50%,#f0bf6c)] border-none rounded-lg font-inter font-medium text-base text-[#0f0f0f] cursor-pointer backdrop-blur-[12px] shadow-[0_4px_4px_rgba(0,0,0,0.25),0_10px_10px_rgba(11,32,103,0.05)] transition-all duration-200 hover:brightness-105">Réserver un call</UButton>
+      <UButton class="flex items-center justify-center w-[164px] h-[30px] bg-[linear-gradient(to_right,white_50%,#f0bf6c)] border-none rounded-lg font-inter font-medium text-sm text-[#0f0f0f] cursor-pointer backdrop-blur-[12px] shadow-[0_4px_4px_rgba(0,0,0,0.25),0_10px_10px_rgba(11,32,103,0.05)] transition-all duration-200 hover:brightness-105">Réserver un appel</UButton>
     </div>
 
   </header>
@@ -67,7 +67,7 @@ const closeMenu = () => isMenuOpen.value = false
 
   <!-- Floating Navbar -->
   <Transition enter-active-class="transition-all duration-400 ease-[cubic-bezier(0.16,1,0.3,1)]" leave-active-class="transition-all duration-400 ease-[cubic-bezier(0.16,1,0.3,1)]" enter-from-class="opacity-0 translate-y-24" leave-to-class="opacity-0 translate-y-24">
-    <nav v-if="isScrolled" class="fixed bottom-3 md:bottom-6 left-1/2 -translate-x-1/2 z-[1000] px-3 md:px-6 w-full pointer-events-none" :class="[isMenuOpen ? 'max-w-[340px]' : 'max-w-[750px]']">
+    <nav v-if="isScrolled" class="fixed bottom-3 md:bottom-6 left-1/2 -translate-x-1/2 z-[1000] px-3 md:px-6 w-full pointer-events-none" :class="[isMenuOpen ? 'max-w-[340px]' : 'max-w-[700px]']">
       <div 
         :class="[
           'backdrop-blur-[20px] pointer-events-auto overflow-hidden',
@@ -143,9 +143,6 @@ const closeMenu = () => isMenuOpen.value = false
               </button>
             </div>
 
-            <UColorModeButton />
-
-
             <!-- Mobile Menu Button / Close Button -->
             <button 
               @click="toggleMenu"
@@ -174,7 +171,7 @@ const closeMenu = () => isMenuOpen.value = false
             >
               <NuxtImg src="/img/main/founder.png" alt="MC Studio" class="w-6 h-6 md:w-7 md:h-7 rounded-full bg-gradient-to-br from-[#f0bf6c] to-[#e8a84c] flex items-center justify-center font-inter font-semibold text-[9px] md:text-[10px] text-[#0f0f0f] object-contain" />
               <div class="flex flex-col items-start gap-px">
-                <span :class="['font-inter font-semibold text-[11px] md:text-xs leading-tight', colorMode.value === 'dark' ? 'text-[#1a1a1a]' : 'text-white']">Réserver un call</span>
+                <span :class="['font-inter font-semibold text-[11px] md:text-xs leading-tight', colorMode.value === 'dark' ? 'text-[#1a1a1a]' : 'text-white']">Réserver un appel</span>
               </div>
             </button>
           </div>
@@ -250,7 +247,7 @@ const closeMenu = () => isMenuOpen.value = false
                 >
                   <div class="w-7 h-7 rounded-full bg-gradient-to-br from-[#f0bf6c] to-[#e8a84c] flex items-center justify-center font-inter font-semibold text-[10px] text-[#0f0f0f]"><NuxtImg src="/img/main/founder.png" alt="MC Studio" class="w-6 h-6 md:w-7 md:h-7 object-contain" /></div>
                   <div class="flex flex-col items-start gap-px">
-                    <span :class="['font-inter font-semibold text-xs leading-tight', colorMode.value === 'dark' ? 'text-[#1a1a1a]' : 'text-white']">Réserver un call</span>
+                    <span :class="['font-inter font-semibold text-xs leading-tight', colorMode.value === 'dark' ? 'text-[#1a1a1a]' : 'text-white']">Réserver un appel</span>
                     <span :class="['font-inter font-normal text-[9px] leading-tight', colorMode.value === 'dark' ? 'text-[#1a1a1a]/60' : 'text-white/60']">Discussion gratuite</span>
                   </div>
                 </button>

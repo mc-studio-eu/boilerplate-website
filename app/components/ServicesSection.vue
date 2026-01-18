@@ -134,12 +134,6 @@ const otherServices = [
 </template>
 
 <style scoped>
-.text-gradient {
-  background: linear-gradient(270deg, #f0bf6c 0%, white 67.308%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
 
 .service-card {
   background: var(--bg-card);
