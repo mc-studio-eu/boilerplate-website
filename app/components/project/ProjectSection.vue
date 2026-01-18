@@ -6,7 +6,14 @@ interface Project {
   description: string
   image: string
   tags: string[]
-  link: string
+  link: string,
+  testimonials?: boolean,
+  testimonial?: {
+    avis: string
+    name: string
+    job: string
+    avatar: string
+  }
 }
 
 // Data
@@ -18,7 +25,8 @@ const projects = ref<Project[]>([
         "Arises est un SaaS IA qui transforme ton calendrier en plan d’action.\nOn a conçu le branding + la landing et le design produit pour maximiser l’activation.",
     image: '/img/project/arises-tablet.jpeg',
     tags: ['Sprint', 'AI SaaS', 'Landing Page', 'Design', 'UI/UX', 'Copywriting', 'Branding'],
-    link: '#'
+    testimonials: false,
+    link: 'https://arises.app/'
   },
   {
     id: 2,
@@ -27,7 +35,16 @@ const projects = ref<Project[]>([
         "Souji Nova est une société de nettoyage pour particuliers et professionnels.\nLanding page sur-mesure : design rassurant, offre claire, parcours optimisé pour générer plus de demandes.",
     image: '/img/project/souji-nova-desktop.png',
     tags: ['Landing Page', 'Branding', 'Design', 'UI/UX', 'Copywriting', 'Société de nettoyage'],
-    link: '#'
+    testimonials: true,
+    testimonial:
+      {
+        avis: "MC Studio a transformé notre site web. Grâce à leur expertise, nous avons vu une augmentation significative des réservations en ligne. Leur approche professionnelle et leur souci du détail sont impressionnants.",
+        name: "Jean Dupont",
+        job: "Fondateur de Fontaines VTC",
+        avatar: "/img/project/avis-fontaines-vtc.jpg"
+      }
+    ,
+    link: 'https://soujinova.fr/'
   },
   {
     id: 3,
@@ -36,7 +53,16 @@ const projects = ref<Project[]>([
         "R&A Energy est un courtier en énergie qui accompagne entreprises et pros.\nSite vitrine premium : crédibilité renforcée, offre simplifiée, CTA orientés prise de contact.",
     image: '/img/project/ra-energy.png',
     tags: ['Landing Page', 'Branding', 'Design', 'UI/UX', 'Copywriting', 'Logo', 'Courtage en énergie'],
-    link: '#'
+    testimonials: true,
+    testimonial:
+      {
+        avis: "MC Studio a transformé notre site web. Grâce à leur expertise, nous avons vu une augmentation significative des réservations en ligne. Leur approche professionnelle et leur souci du détail sont impressionnants.",
+        name: "Jean Dupont",
+        job: "Fondateur de Fontaines VTC",
+        avatar: "/img/project/avis-fontaines-vtc.jpg"
+      }
+    ,
+    link: 'https://ra-energy.fr/'
   },
   {
     id: 4,
@@ -45,10 +71,18 @@ const projects = ref<Project[]>([
         "Fontaines VTC est une entreprise de transport privé (réservations en ligne).\nOptimisation SEO + CTA : meilleure visibilité locale et plus de conversions sur la prise de réservation.",
     image: '/img/project/fontaines-vtc-dark.jpeg',
     tags: ['SEO', 'Optimisation CTA', 'Design', 'Copywriting', 'Entreprise VTC'],
-    link: '#'
+    testimonials: true,
+    testimonial:
+      {
+        avis: "MC Studio a transformé notre site web. Grâce à leur expertise, nous avons vu une augmentation significative des réservations en ligne. Leur approche professionnelle et leur souci du détail sont impressionnants.",
+        name: "Jean Dupont",
+        job: "Fondateur de Fontaines VTC",
+        avatar: "/img/project/avis-fontaines-vtc.jpg"
+    }
+    ,
+    link: 'https://fontaines-vtc.fr/'
   }
 ])
-
 
 const currentIndex = ref(0)
 
@@ -79,7 +113,7 @@ const currentProject = computed(() => projects.value[currentIndex.value])
       </div>
 
       <!-- Project Showcase -->
-      <div class="flex flex-col gap-6">
+      <div class="flex flex-col gap-6" v-if="currentProject">
         <div class="flex flex-col md:flex-row md:items-start gap-8">
           <!-- Project Image -->
           <div class="shrink-0 w-full max-w-[510px] rounded-xl overflow-hidden">
@@ -108,13 +142,31 @@ const currentProject = computed(() => projects.value[currentIndex.value])
               </UBadge>
             </div>
 
-            
-            <!-- <a 
+            <!-- Call to Action -->
+            <a
               :href="currentProject.link"
               class="project-cta-link"
             >
-              Voir le site
-            </a> -->
+              Voir le projet
+            </a>
+
+            <!-- Testimonials -->
+
+            <div v-if="currentProject.testimonials && currentProject?.testimonial">
+              <div class="flex flex-col gap-3 rounded-xl text-white mt-5">
+
+                <p class="text-xs xl:whitespace-pre-line"> {{ currentProject?.testimonial.avis }}</p>
+
+                <div class="flex items-center gap-3">
+<!--                  <UAvatar :src="avisClient.avatar" size="xl"/>-->
+                  <div>
+                    <p class="absans xl:text-md text-sm font-semibold">{{ currentProject.testimonial.name }}</p>
+                    <p class="text-xs font-light">{{ currentProject.testimonial.job }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
 
@@ -235,7 +287,7 @@ const currentProject = computed(() => projects.value[currentIndex.value])
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 24px;
+  padding: 8px 24px;
   font-family: var(--font-inter);
   font-size: 14px;
   font-weight: 500;
@@ -243,15 +295,10 @@ const currentProject = computed(() => projects.value[currentIndex.value])
   text-decoration: none;
   transition: all 0.3s ease;
   width: fit-content;
-  background: linear-gradient(90deg, #F0BF6C 0%, #FFF8E7 100%);
+  background: linear-gradient(90deg, #FFF8E7 0, #F0BF6C 100%);
   color: #1a1a1a;
   border: none;
   box-shadow: 0 4px 15px rgba(240, 191, 108, 0.3);
-}
-
-.project-cta-link:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(240, 191, 108, 0.4);
 }
 
 .project-navigation {

@@ -67,7 +67,7 @@ const closeMenu = () => isMenuOpen.value = false
 
   <!-- Floating Navbar -->
   <Transition enter-active-class="transition-all duration-400 ease-[cubic-bezier(0.16,1,0.3,1)]" leave-active-class="transition-all duration-400 ease-[cubic-bezier(0.16,1,0.3,1)]" enter-from-class="opacity-0 translate-y-24" leave-to-class="opacity-0 translate-y-24">
-    <nav v-if="isScrolled" class="fixed bottom-3 md:bottom-6 left-1/2 -translate-x-1/2 z-[1000] px-3 md:px-6 w-full pointer-events-none" :class="[isMenuOpen ? 'max-w-[340px]' : 'max-w-[700px]']">
+    <nav v-if="isScrolled" class="fixed bottom-3 md:bottom-6 left-1/2 -translate-x-1/2 z-[1000] px-3 md:px-6 w-full pointer-events-none" :class="[isMenuOpen ? 'max-w-[340px]' : 'max-w-[750px]']">
       <div 
         :class="[
           'backdrop-blur-[20px] pointer-events-auto overflow-hidden',
@@ -142,6 +142,9 @@ const closeMenu = () => isMenuOpen.value = false
                 {{ lang }}
               </button>
             </div>
+
+            <UColorModeButton />
+
 
             <!-- Mobile Menu Button / Close Button -->
             <button 

@@ -1,6 +1,6 @@
 <template>
   <NuxtLink 
-    to="https://www.google.com/search?q=MC+Studio+Avis" 
+    to="https://share.google/yo1oHEU6RO9rgz5g8"
     target="_blank"
     class="google-badge"
   >

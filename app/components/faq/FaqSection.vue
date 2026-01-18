@@ -74,7 +74,13 @@ const founder = {
           <!-- Founder Card -->
           <div class="founder-card">
             <div class="founder-avatar">
-              <span>MC</span>
+              <NuxtImg
+                src="/img/main/founder.png"
+                alt="Avatar de Mohamed Chettah"
+                width="55"
+                height="55"
+                class="rounded-md object-cover"
+              />
             </div>
             <div class="founder-details">
               <span class="founder-name">{{ founder.name }}</span>
