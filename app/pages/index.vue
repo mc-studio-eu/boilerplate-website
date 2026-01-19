@@ -39,11 +39,14 @@ import ServicesInterMarquee from "../components/services/ServicesInterMarquee.vu
       
       <!-- Testimonials Section -->
       <TestimonialSection id="avis" />
-   
+
+
       <div class="section-separator"></div>
-      
-      <div class="section-separator"></div>  
-      
+
+      <ServicesInterMarquee />
+
+      <div class="section-separator mt-10"></div>
+
       <!-- FAQ Section -->
       <FaqSection id="faq" />
   

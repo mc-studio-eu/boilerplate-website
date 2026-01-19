@@ -17,29 +17,29 @@ interface Project {
 }
 
 // Data
-const projects = ref<Project[]>([
+const { t, tm } = useI18n();
+
+const projects = computed<Project[]>(() => [
   {
     id: 1,
     title: 'Arises',
-    description:
-        "Arises est un SaaS IA qui transforme votre calendrier en plan d’action.\nOn a conçu ce SaaS du logo jusqu'au lancement en ligne, tout sur mesure pour maximiser l’activation.",
+    description: t('projects.items.arises.description'),
     image: '/img/project/arises-tablet.jpeg',
-    tags: ['Sprint', 'AI SaaS', 'Landing Page', 'Design', 'UI/UX', 'Copywriting', 'Branding'],
+    tags: Object.values(tm('projects.items.arises.tags') as Record<string, string>),
     testimonials: false,
     link: 'https://arises.app/'
   },
   {
     id: 2,
     title: 'Souji Nova',
-    description:
-        "Souji Nova est une société de nettoyage pour particuliers et professionnels.\nLanding page sur-mesure : design rassurant, offre claire, parcours optimisé pour générer plus de demandes.",
+    description: t('projects.items.souji_nova.description'),
     image: '/img/project/souji-nova-desktop.png',
-    tags: ['Landing Page', 'Branding', 'Design', 'UI/UX', 'Copywriting', 'Société de nettoyage'],
+    tags: Object.values(tm('projects.items.souji_nova.tags') as Record<string, string>),
     testimonials: true,
     testimonial: {
-      avis: "MC Studio nous a réalisé un super site internet, très intuitif et très pro. De bons conseils et à l’écoute de ses clients, je recommande !",
+      avis: t('projects.items.souji_nova.testimonial.review'),
       name: "Nelson Maghoun",
-      job: "Co-fondateur Souji Nova",
+      job: t('projects.items.souji_nova.testimonial.job'),
       avatar: "/img/project/avis-souji-nova.jpg"
     },
     link: 'https://soujinova.fr/'
@@ -47,15 +47,14 @@ const projects = ref<Project[]>([
   {
     id: 3,
     title: 'R&A Energy',
-    description:
-        "R&A Energy est un courtier en énergie dédié aux entreprises et aux pros.\n\nBranding & landing page premium : message simplifié, réassurance renforcée et parcours orienté prise de contact.",
+    description: t('projects.items.ra_energy.description'),
     image: '/img/project/ra-energy.png',
-    tags: ['Landing Page', 'Branding', 'Design', 'UI/UX', 'Copywriting', 'Logo', 'Courtage en énergie'],
+    tags: Object.values(tm('projects.items.ra_energy.tags') as Record<string, string>),
     testimonials: true,
     testimonial: {
-      avis: "MC Studio a réalisé notre site internet et le résultat est excellent. Travail rapide, professionnel et très soigné. Le site est moderne, fluide et parfaitement adapté à notre activité.",
+      avis: t('projects.items.ra_energy.testimonial.review'),
       name: "Yazid Chettah",
-      job: "Co-fondateur R&A Energy",
+      job: t('projects.items.ra_energy.testimonial.job'),
       avatar: "/img/project/avis-ra-energy.jpg"
     },
     link: 'https://ra-energy.fr/'
@@ -63,15 +62,14 @@ const projects = ref<Project[]>([
   {
     id: 4,
     title: 'Fontaines VTC',
-    description:
-        "Fontaines VTC est une entreprise de transport privé (réservations en ligne).\nOptimisation SEO + CTA : meilleure visibilité locale et plus de conversions sur la prise de réservation.",
+    description: t('projects.items.fontaines_vtc.description'),
     image: '/img/project/fontaines-vtc-dark.jpeg',
-    tags: ['SEO', 'Optimisation CTA', 'Design', 'Copywriting', 'Entreprise VTC'],
+    tags: Object.values(tm('projects.items.fontaines_vtc.tags') as Record<string, string>),
     testimonials: true,
     testimonial: {
-      avis: "MC studio m’a accompagné dans mon projet digital, entreprise très sérieuse professionnelle je la recommande !",
+      avis: t('projects.items.fontaines_vtc.testimonial.review'),
       name: "Mario Convertino",
-      job: "Dirigeant Fontaines VTC",
+      job: t('projects.items.fontaines_vtc.testimonial.job'),
       avatar: "/img/project/avis-fontaines-vtc.jpg"
     },
     link: 'https://fontaines-vtc.fr/'
@@ -99,11 +97,9 @@ const currentProject = computed(() => projects.value[currentIndex.value])
     <div class="max-w-[1000px] mx-auto">
       <!-- Header -->
       <div class="text-center mb-10 md:mb-16">
-        <h2 class="font-manrope font-medium text-2xl sm:text-3xl md:text-[32px] mb-3 transition-colors duration-300" style="color: var(--text-primary);">
-          Nos <span class="text-gradient">Projets</span>
+        <h2 class="font-manrope font-medium text-2xl sm:text-3xl md:text-[32px] mb-3 transition-colors duration-300" style="color: var(--text-primary);" v-html="$t('projects.title')">
         </h2>
-        <p class="text-sm sm:text-base max-w-xl mx-auto leading-relaxed transition-colors duration-300" style="color: var(--text-secondary);">
-          Une sélection de projets où design, code et stratégie se rencontrent.
+        <p class="text-sm sm:text-base max-w-xl mx-auto leading-relaxed transition-colors duration-300" style="color: var(--text-secondary);" v-html="$t('projects.subtitle')">
         </p>
       </div>
 
@@ -143,7 +139,7 @@ const currentProject = computed(() => projects.value[currentIndex.value])
                      class="w-36 flex items-center justify-center h-[30px] bg-[linear-gradient(to_right,white_50%,#f0bf6c)] border-none rounded-lg font-inter font-medium text-sm text-[#0f0f0f] cursor-pointer backdrop-blur-[12px] shadow-[0_4px_4px_rgba(0,0,0,0.25),0_10px_10px_rgba(11,32,103,0.05)] transition-all duration-200 hover:brightness-105"
                      trailing-icon="i-heroicons-arrow-right-20-solid"
             >
-              Voir le projet
+              {{ $t('projects.cta') }}
             </UButton>
 
             <!-- Testimonials -->

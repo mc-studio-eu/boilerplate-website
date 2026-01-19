@@ -14,26 +14,29 @@ interface Testimonial {
 const testimonials = ref<Testimonial[]>([
   {
     id: 1,
-    content: 'MC Studio a réalisé notre site internet et le résultat est excellent. Travail rapide, professionnel et très soigné. Le site est moderne, fluide et parfaitement adapté à nos besoins. Un studio sérieux et réactif que l\'on recommande sans hésiter !',
+    content: 'MC Studio a réalisé notre site internet et le résultat est excellent. Travail rapide, professionnel et très soigné. Le site est moderne, fluide et parfaitement adapté à notre activité.',
     author: {
-      name: 'Sophie Martin',
-      role: 'CEO, Souji Nova'
-    }
+      name: 'Yazid Chettah',
+      role: 'Co-fondateur, R&A Energy',
+      avatar: '/img/testimonials/yazid-ra-energy.jpeg'
+    },
   },
   {
     id: 2,
-    content: 'Une collaboration exceptionnelle du début à la fin. L\'équipe a su comprendre nos besoins et les traduire en une solution technique élégante. Je recommande vivement !',
+    content: 'MC Studio nous a réalisé un super site internet, très intuitif et très pro. De bons conseils et à l’écoute de ses clients, je recommande !',
     author: {
-      name: 'Thomas Dupont',
-      role: 'Fondateur, TechStart'
-    }
+      name: 'Nelson Maghoun',
+      role: 'Co-fondateur, Souji Nova',
+      avatar: '/img/testimonials/nelson-souji-nova.jpg'
+    },
   },
   {
     id: 3,
-    content: 'Professionnalisme, créativité et réactivité. MC Studio a dépassé toutes nos attentes avec un design moderne et une expérience utilisateur fluide.',
+    content: 'MC studio m’a accompagné dans mon projet digital, entreprise très sérieuse professionnelle je la recommande !',
     author: {
-      name: 'Marie Bernard',
-      role: 'Directrice Marketing, InnovaHub'
+      name: 'Mario Convertino',
+      role: 'Dirigeant, Fontaines VTC',
+      avatar: '/img/testimonials/mario-fontaines-vtc.png'
     }
   }
 ])
@@ -66,10 +69,10 @@ const currentTestimonial = computed(() => testimonials.value[currentIndex.value]
       </h2>
 
       <!-- Testimonial Card -->
-      <div class="testimonial-card">
+      <div class="testimonial-card" v-if="currentTestimonial">
         <div class="card-content">
           <!-- Quote -->
-          <p class="testimonial-quote">
+          <p class="text-white text-sm">
             {{ currentTestimonial.content }}
           </p>
 
@@ -77,30 +80,28 @@ const currentTestimonial = computed(() => testimonials.value[currentIndex.value]
           <div class="card-footer">
             <!-- Author Info -->
             <div class="author-info">
-              <div class="author-avatar">
-                <span>{{ currentTestimonial.author.name.charAt(0) }}</span>
-              </div>
+              <NuxtImg :src="currentTestimonial.author.avatar" class="rounded-full max-h-12"/>
               <div class="author-details">
-                <span class="author-name">{{ currentTestimonial.author.name }}</span>
+                <span class="text-white">{{ currentTestimonial.author.name }}</span>
                 <span class="author-role">{{ currentTestimonial.author.role }}</span>
               </div>
             </div>
 
             <!-- Navigation -->
             <div class="testimonial-navigation">
-              <button 
-                class="nav-button"
-                @click="prevTestimonial"
-                aria-label="Avis précédent"
+              <button
+                  class="nav-button nav-prev"
+                  @click="prevTestimonial"
+                  aria-label="Projet précédent"
               >
-                <UIcon name="i-lucide-circle-chevron-left" />
+                <UIcon name="i-lucide-chevron-left" />
               </button>
-              <button 
-                class="nav-button"
-                @click="nextTestimonial"
-                aria-label="Avis suivant"
+              <button
+                  class="nav-button nav-next"
+                  @click="nextTestimonial"
+                  aria-label="Projet suivant"
               >
-                <UIcon name="i-lucide-circle-chevron-right" />
+                <UIcon name="i-lucide-chevron-right" />
               </button>
             </div>
           </div>
@@ -142,9 +143,11 @@ const currentTestimonial = computed(() => testimonials.value[currentIndex.value]
   max-width: 460px;
   margin: 0 auto;
   padding: 24px;
-  background: var(--bg-card);
+  background: #232323;
   border: 1px solid var(--border-subtle);
   border-radius: 16px;
+  height: 180px;
+  align-content: center;
   transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
@@ -225,19 +228,20 @@ const currentTestimonial = computed(() => testimonials.value[currentIndex.value]
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 24px;
-  height: 24px;
-  background: transparent;
-  border: none;
-  color: var(--text-secondary);
+  width: 44px;
+  height: 42px;
+  background: #232323;
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  color: var(--text-primary);
   cursor: pointer;
-  transition: color 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .nav-button:hover {
+  border-color: var(--color-gold);
   color: var(--color-gold);
 }
-
 /* Responsive */
 @media (max-width: 480px) {
   .card-footer {

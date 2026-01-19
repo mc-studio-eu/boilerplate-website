@@ -101,12 +101,9 @@ const founder = {
           </p>
 
           <UButton 
-            variant="outline"
-            color="primary"
             size="md"
-            class="whatsapp-btn"
+            class="whatsapp-btn w-43 cursor-pointer bg-[#232323] text-white"
           >
-            <UIcon name="i-lucide-message-circle" />
             Message sur WhatsApp
           </UButton>
         </div>
@@ -244,7 +241,6 @@ const founder = {
 
 .whatsapp-btn {
   margin-top: 8px;
-  width: fit-content;
 }
 
 /* Accordion */

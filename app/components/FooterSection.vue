@@ -7,7 +7,7 @@
           <component :is="item.icon" class="size-6" aria-hidden="true" />
         </a>
       </div>
-      <p class="mt-8 text-center text-sm/6 text-gray-600 md:order-1 md:mt-0 dark:text-gray-400">&copy; {{ new Date().getFullYear() }} MC Studio. All rights reserved.</p>
+      <p class="mt-8 text-center text-sm/6 text-gray-600 md:order-1 md:mt-0 dark:text-gray-400">&copy; {{ new Date().getFullYear() }} {{ $t('footer.copyright') }}</p>
     </div>
   </footer>
 </template>

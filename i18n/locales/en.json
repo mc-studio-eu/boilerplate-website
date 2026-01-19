@@ -1,0 +1,244 @@
+{
+    "welcome": "Welcome",
+    "nav": {
+        "projects": "Projects",
+        "services": "Services",
+        "reviews": "Reviews",
+        "faq": "FAQ",
+        "book_call": "Book a call",
+        "free_call": "Free discussion"
+    },
+    "footer": {
+        "copyright": "MC Studio. All rights reserved."
+    },
+    "hero": {
+        "title": "Design & Development to<br class=\"hidden xs:inline\"> launch fast, and well.",
+        "subtitle": "Branding, landing page and apps: we support<br> entrepreneurs and companies from concept to launch.",
+        "cta": {
+            "book": "Book a call",
+            "whatsapp": "Chat on WhatsApp"
+        },
+        "badges": {
+            "experience": "+5 years experience",
+            "projects": "+10 projects completed",
+            "location": "Lyon"
+        }
+    },
+    "services": {
+        "title": "Our <span class=\"text-gradient\">Services</span>",
+        "subtitle": "Branding, sites & applications<br class=\"sm:hidden\"> from landing to MVP, up to SaaS ready to launch.",
+        "other_services": {
+            "title": "Other Services",
+            "subtitle": "Need a custom service? We adapt.",
+            "list": {
+                "branding": "Branding",
+                "web_design": "Web Design",
+                "showcase": "Showcase Sites",
+                "seo": "SEO",
+                "copywriting": "Copywriting",
+                "strategy": "Strategic Support",
+                "ai": "AI Integration",
+                "web_dev": "Web Development"
+            }
+        },
+        "cards": {
+            "landing": {
+                "title": "Landing Page",
+                "subtitle": "A premium page designed to convert.",
+                "features": {
+                    "0": "Premium Design (Figma)",
+                    "1": "Conversion-oriented copy & structure",
+                    "2": "Custom Dev (mobile and desktop)",
+                    "3": "Tracking (GA) + Deployment"
+                },
+                "deliverables": {
+                    "0": "Live Landing Page",
+                    "1": "Ready to convert"
+                }
+            },
+            "sprint": {
+                "title": "Sprint: MVP",
+                "subtitle": "Validate your product in production",
+                "features": {
+                    "0": "Minimal UI/UX (essential screens)",
+                    "1": "1 key feature",
+                    "2": "Payment / Subscriptions (Stripe)",
+                    "3": "Deployment + QA"
+                },
+                "deliverables": {
+                    "0": "MVP in production",
+                    "1": "Ready to iterate"
+                }
+            },
+            "saas": {
+                "title": "Launch: SaaS",
+                "subtitle": "A complete product, ready to scale.",
+                "features": {
+                    "0": "Branding + Complete Design (UI/UX)",
+                    "1": "3 key features",
+                    "2": "Payment & Subscriptions (Stripe) + Onboarding",
+                    "3": "Deployment + QA + Scalable Base"
+                },
+                "deliverables": {
+                    "0": "SaaS in production",
+                    "1": "Ready to scale"
+                }
+            }
+        },
+        "common": {
+            "deliverables_label": "Deliverables:",
+            "details": "Details",
+            "for_who": "For whom",
+            "included": "Included",
+            "delay": "Delay"
+        },
+        "modals": {
+            "landing": {
+                "result": "A premium page designed to convert",
+                "for_who": {
+                    "0": "You have a clear offer and want more requests",
+                    "1": "You are launching a product/service and want to test an angle",
+                    "2": "You have traffic but the page doesn't convert"
+                },
+                "included": {
+                    "0": "Analysis (offer, USP, ICP, objections, proofs, competitors)",
+                    "1": "Page architecture (sections + flow)",
+                    "2": "Structural Copywriting (hooks, proofs, CTA)",
+                    "3": "Visual Identity",
+                    "4": "Premium UI Design (Figma) - Unlimited revisions until satisfaction",
+                    "5": "Front integration (perf + responsive): Custom Code or No-Code",
+                    "6": "SEO Optimization",
+                    "7": "Form (or Calendly)",
+                    "8": "Tracking: Google Analytics",
+                    "9": "Go live + QA (mobile/tablet/desktop)"
+                },
+                "delay": "7–10 days"
+            },
+            "sprint": {
+                "result": "Validate your product in production",
+                "for_who": {
+                    "0": "You have an idea and want to validate without burning 6 months",
+                    "1": "You need a \"serious\" prototype in production",
+                    "2": "You need to show a product to partners / early users"
+                },
+                "included": {
+                    "0": "Landing Page included",
+                    "1": "Scoping workshop (scope = 1 core value)",
+                    "2": "UI/UX on Figma (main flow)",
+                    "3": "Full-stack Dev (front + back)",
+                    "4": "Auth + user management",
+                    "5": "Database + essential CRUD",
+                    "6": "Deployment (staging + prod)",
+                    "7": "Basic Analytics / logs",
+                    "8": "1 iteration post-feedback (small improvement loop)"
+                },
+                "delay": "4–6 weeks (depending on complexity)"
+            },
+            "saas": {
+                "result": "A complete, robust product ready to scale.",
+                "for_who": {
+                    "0": "You have validated interest and want to accelerate time-to-market",
+                    "1": "You want a clean base (security, perf, maintenance) from the start",
+                    "2": "You need + features, payments, roles, admin, onboarding..."
+                },
+                "included": {
+                    "0": "Landing Page included",
+                    "1": "Product scoping (MVP++: short roadmap + priorities)",
+                    "2": "Design system + UI/UX (key screens + components)",
+                    "3": "Complete Full-stack Dev (front + back)",
+                    "4": "Auth + roles/permissions",
+                    "5": "Back-office / admin (user management, content, etc.)",
+                    "6": "Payments (Stripe): checkout + subscriptions (if needed)",
+                    "7": "Transactional emails + onboarding",
+                    "8": "CI/CD + deployment (staging + prod) + monitoring",
+                    "9": "Baseline security + backups + handover docs"
+                },
+                "delay": "6–10+ weeks (depending on scope)",
+                "scope": {
+                    "0": "Complete product",
+                    "1": "solid tech foundations",
+                    "2": "scalability"
+                }
+            }
+        },
+        "marquee": [
+            "Fast and Efficient",
+            "World Class",
+            "Tailor Made",
+            "Your Partner",
+            "Pixel Perfect",
+            "100% Satisfaction",
+            "Seamless Communication",
+            "Premium Quality",
+            "Coherent Branding",
+            "SaaS Ready",
+            "Conversion Boost",
+            "Clean & Modern",
+            "Impeccable Details"
+        ]
+    },
+    "projects": {
+        "title": "Our <span class=\"text-gradient\">Projects</span>",
+        "subtitle": "A selection of projects where design, code and strategy meet.",
+        "cta": "View project",
+        "items": {
+            "arises": {
+                "description": "Arises is an AI SaaS that turns your calendar into an action plan.\nWe designed this SaaS from logo to online launch, all custom-made to maximize activation.",
+                "tags": [
+                    "Sprint",
+                    "AI SaaS",
+                    "Landing Page",
+                    "Design",
+                    "UI/UX",
+                    "Copywriting",
+                    "Branding"
+                ]
+            },
+            "souji_nova": {
+                "description": "Souji Nova is a cleaning company for individuals and professionals.\nCustom landing page: reassuring design, clear offer, optimized path to generate more requests.",
+                "tags": [
+                    "Landing Page",
+                    "Branding",
+                    "Design",
+                    "UI/UX",
+                    "Copywriting",
+                    "Cleaning Company"
+                ],
+                "testimonial": {
+                    "review": "MC Studio created a great website for us, very intuitive and very professional. Good advice and attentive to its clients, I recommend!",
+                    "job": "Co-founder Souji Nova"
+                }
+            },
+            "ra_energy": {
+                "description": "R&A Energy is an energy broker dedicated to businesses and pros.\n\nPremium branding & landing page: simplified message, reinforced reassurance and contact-oriented path.",
+                "tags": [
+                    "Landing Page",
+                    "Branding",
+                    "Design",
+                    "UI/UX",
+                    "Copywriting",
+                    "Logo",
+                    "Energy Brokerage"
+                ],
+                "testimonial": {
+                    "review": "MC Studio created our website and the result is excellent. Fast, professional and very neat work. The site is modern, fluid and perfectly adapted to our activity.",
+                    "job": "Co-founder R&A Energy"
+                }
+            },
+            "fontaines_vtc": {
+                "description": "Fontaines VTC is a private transport company (online bookings).\nSEO Optimization + CTA: better local visibility and more conversions on booking.",
+                "tags": [
+                    "SEO",
+                    "CTA Optimization",
+                    "Design",
+                    "Copywriting",
+                    "VTC Company"
+                ],
+                "testimonial": {
+                    "review": "MC Studio accompanied me in my digital project, very serious professional company I recommend it!",
+                    "job": "Manager Fontaines VTC"
+                }
+            }
+        }
+    }
+}

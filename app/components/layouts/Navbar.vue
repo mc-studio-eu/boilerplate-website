@@ -1,7 +1,11 @@
 <script setup lang="ts">
 const isMenuOpen = ref(false)
 const isScrolled = ref(false)
-const language = ref('FR')
+const { locale, setLocale } = useI18n()
+const language = computed({
+  get: () => locale.value.toUpperCase(),
+  set: (value) => setLocale(value.toLowerCase() as 'en' | 'fr')
+})
 const languages = [
   { label: 'FR', value: 'FR' },
   { label: 'EN', value: 'EN' },
@@ -188,22 +192,22 @@ const closeMenu = () => isMenuOpen.value = false
             <div class="flex flex-col gap-4">
               <!-- Navigation Links - Vertical list like the reference -->
               <div class="flex flex-col gap-1">
-                <NuxtLink 
-                  v-for="(link, index) in ['Projets', 'Services', 'Avis', 'FAQ']" 
+                  <NuxtLink 
+                  v-for="(link, index) in ['projects', 'services', 'reviews', 'faq']" 
                   :key="link" 
-                  :to="`/#${link.toLowerCase()}`"
+                  :to="`/#${link}`"
                   @click="closeMenu"
                   :class="[
                     'font-inter font-medium text-lg py-2 px-3 rounded-xl no-underline transition-all duration-200',
                     'transform transition-all duration-500',
                     isMenuOpen ? 'translate-x-0 opacity-100' : '-translate-x-4 opacity-0',
-                    activeSection === link.toLowerCase() 
+                    activeSection === link 
                       ? (colorMode.value === 'dark' ? 'bg-[#2a2a2a] text-white' : 'bg-[#f0f0f0] text-[#1a1a1a]')
                       : (colorMode.value === 'dark' ? 'text-white/80 hover:bg-[#2a2a2a] hover:text-white' : 'text-[#1a1a1a] hover:bg-[#f5f5f5]')
                   ]"
                   :style="{ transitionDelay: isMenuOpen ? `${index * 50}ms` : '0ms' }"
                 >
-                  {{ link }}
+                  {{ $t(`nav.${link}`) }}
                 </NuxtLink>
               </div>
 
@@ -250,8 +254,8 @@ const closeMenu = () => isMenuOpen.value = false
                 >
                   <NuxtImg src="/img/main/founder.png" alt="MC Studio" class="w-6 h-6 md:w-7 md:h-7 object-contain rounded-full flex items-center justify-center font-inter font-semibold text-[10px] text-[#0f0f0f]" />
                   <div class="flex flex-col items-start gap-px">
-                    <span :class="['font-inter font-semibold text-xs leading-tight', colorMode.value === 'dark' ? 'text-[#1a1a1a]' : 'text-white']">Réserver un appel</span>
-                    <span :class="['font-inter font-normal text-[9px] leading-tight', colorMode.value === 'dark' ? 'text-[#1a1a1a]/60' : 'text-white/60']">Discussion gratuite</span>
+                    <span :class="['font-inter font-semibold text-xs leading-tight', colorMode.value === 'dark' ? 'text-[#1a1a1a]' : 'text-white']">{{ $t('nav.book_call') }}</span>
+                    <span :class="['font-inter font-normal text-[9px] leading-tight', colorMode.value === 'dark' ? 'text-[#1a1a1a]/60' : 'text-white/60']">{{ $t('nav.free_call') }}</span>
                   </div>
                 </NuxtLink>
               </div>

@@ -29,23 +29,25 @@ const projectDuration = ref('15 jours')
 </script>
 
 <template>
-  <section id="process" class="process-section">
-    <div class="process-container">
+  <section id="process" class="py-20 px-6 transition-colors duration-300 bg-[var(--bg-primary)]">
+    <div class="max-w-[1216px] mx-auto">
       <!-- Header -->
-      <div class="process-header text-center">
-        <h2 class="process-title">Pro<span class="text-gradient">cessus</span></h2>
-        <p class="process-subtitle">
+      <div class="mb-12 text-center">
+        <h2 class="font-manrope text-4xl font-semibold mb-3 transition-colors duration-300 text-[var(--text-primary)]">
+          Pro<span class="text-gradient">cessus</span>
+        </h2>
+        <p class="font-inter text-base transition-colors duration-300 text-[var(--text-secondary)]">
           Un process clair. Des livrables concrets. Zéro friction.
         </p>
       </div>
 
       <!-- Service Tabs -->
-      <div class="process-tabs">
+      <div class="flex flex-col md:flex-row justify-center items-center gap-4 mb-12">
         <button
           v-for="(tab, index) in serviceTabs"
           :key="tab"
-          class="tab-button"
-          :class="{ 'tab-button--active': activeTab === index }"
+          class="px-6 py-2 font-inter text-sm font-medium bg-transparent border border-[var(--border-subtle)] rounded-lg cursor-pointer transition-all duration-200 text-[var(--text-secondary)] hover:border-[var(--color-gold)] hover:text-[var(--text-primary)]"
+          :class="{ '!bg-[var(--color-gold)] !border-[var(--color-gold)] !text-[#0f0f0f]': activeTab === index }"
           @click="activeTab = index"
         >
           {{ tab }}
@@ -53,236 +55,38 @@ const projectDuration = ref('15 jours')
       </div>
 
       <!-- Timeline Grid -->
-      <div class="process-timeline">
-        <div class="timeline-grid">
+      <div class="relative mb-16">
+        <div class="grid grid-cols-3 md:grid-cols-6 md:grid-rows-[repeat(5,94px)] gap-0 relative p-5">
           <!-- Grid lines (visual) -->
-          <div class="grid-lines">
-            <div v-for="i in 5" :key="`row-${i}`" class="grid-line-horizontal"></div>
-            <div v-for="i in 6" :key="`col-${i}`" class="grid-line-vertical"></div>
+          <div class="absolute inset-0 pointer-events-none hidden md:block">
+            <div v-for="i in 5" :key="`row-${i}`" class="absolute left-0 right-0 h-px bg-[var(--border-subtle)]" :style="{ top: `${(i - 1) * 20}%` }"></div>
+            <div v-for="i in 6" :key="`col-${i}`" class="absolute top-0 bottom-0 w-px bg-[var(--border-subtle)]" :style="{ left: `${(i - 1) * 16.66}%` }"></div>
           </div>
 
           <!-- Process Steps -->
-          <div 
-            v-for="step in steps" 
+          <div
+            v-for="step in steps"
             :key="step.id"
-            class="process-step"
+            class="flex items-center justify-center px-6 py-4 bg-[var(--bg-card)] border border-[var(--border-subtle)] rounded-xl m-2 transition-all duration-200 hover:border-[var(--color-gold)] hover:scale-[1.02]"
+            :class="{ 'md:!col-auto md:!row-auto': false }"
             :style="{
               gridRow: step.row,
               gridColumn: step.col
             }"
           >
-            <span class="step-title">{{ step.title }}</span>
+            <span class="font-inter text-sm font-medium whitespace-nowrap transition-colors duration-300 text-[var(--text-primary)]">{{ step.title }}</span>
           </div>
         </div>
 
         <!-- Duration Badge -->
-        <div class="duration-badge">
-          <span>Temps du Projet : {{ projectDuration }}</span>
+        <div class="flex justify-center mt-6">
+          <span class="px-5 py-2 font-inter text-sm font-medium text-[var(--color-gold)] bg-[rgba(240,191,108,0.1)] border border-[var(--color-gold)] rounded-lg">
+            Temps du Projet : {{ projectDuration }}
+          </span>
         </div>
       </div>
 
     </div>
   </section>
 </template>
-
-<style scoped>
-@reference "@/assets/css/main.css";
-
-.process-section {
-  padding: 80px 24px;
-  background: var(--bg-primary);
-  transition: background-color 0.3s ease;
-}
-
-.process-container {
-  max-width: 1216px;
-  margin: 0 auto;
-}
-
-.process-header {
-  margin-bottom: 48px;
-}
-
-.process-title {
-  font-family: var(--font-manrope);
-  font-size: 36px;
-  font-weight: 600;
-  color: var(--text-primary);
-  margin-bottom: 12px;
-  transition: color 0.3s ease;
-}
-
-.process-subtitle {
-  font-family: var(--font-inter);
-  font-size: 16px;
-  color: var(--text-secondary);
-  transition: color 0.3s ease;
-}
-
-/* Tabs */
-.process-tabs {
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  margin-bottom: 48px;
-}
-
-.tab-button {
-  padding: 8px 24px;
-  font-family: var(--font-inter);
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--text-secondary);
-  background: transparent;
-  border: 1px solid var(--border-subtle);
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.tab-button:hover {
-  border-color: var(--color-gold);
-  color: var(--text-primary);
-}
-
-.tab-button--active {
-  background: var(--color-gold);
-  border-color: var(--color-gold);
-  color: #0f0f0f;
-}
-
-/* Timeline Grid */
-.process-timeline {
-  position: relative;
-  margin-bottom: 64px;
-}
-
-.timeline-grid {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(5, 94px);
-  gap: 0;
-  position: relative;
-  padding: 20px;
-}
-
-.grid-lines {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-
-.grid-line-horizontal {
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: var(--border-subtle);
-}
-
-.grid-line-horizontal:nth-child(1) { top: 0; }
-.grid-line-horizontal:nth-child(2) { top: 20%; }
-.grid-line-horizontal:nth-child(3) { top: 40%; }
-.grid-line-horizontal:nth-child(4) { top: 60%; }
-.grid-line-horizontal:nth-child(5) { top: 80%; }
-
-.grid-line-vertical {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 1px;
-  background: var(--border-subtle);
-}
-
-.grid-line-vertical:nth-child(6) { left: 0; }
-.grid-line-vertical:nth-child(7) { left: 16.66%; }
-.grid-line-vertical:nth-child(8) { left: 33.33%; }
-.grid-line-vertical:nth-child(9) { left: 50%; }
-.grid-line-vertical:nth-child(10) { left: 66.66%; }
-.grid-line-vertical:nth-child(11) { left: 83.33%; }
-
-/* Process Steps */
-.process-step {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 16px 24px;
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
-  border-radius: 12px;
-  margin: 8px;
-  transition: all 0.2s ease;
-}
-
-.process-step:hover {
-  border-color: var(--color-gold);
-  transform: scale(1.02);
-}
-
-.step-title {
-  font-family: var(--font-inter);
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--text-primary);
-  white-space: nowrap;
-  transition: color 0.3s ease;
-}
-
-/* Duration Badge */
-.duration-badge {
-  display: flex;
-  justify-content: center;
-  margin-top: 24px;
-}
-
-.duration-badge span {
-  padding: 8px 20px;
-  font-family: var(--font-inter);
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--color-gold);
-  background: rgba(240, 191, 108, 0.1);
-  border: 1px solid var(--color-gold);
-  border-radius: 8px;
-}
-
-/* Quote */
-.process-quote {
-  text-align: center;
-  padding: 40px;
-}
-
-.quote-text {
-  font-family: var(--font-manrope);
-  font-size: 28px;
-  font-weight: 500;
-  line-height: 1.4;
-  color: var(--text-primary);
-  max-width: 726px;
-  margin: 0 auto;
-  transition: color 0.3s ease;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .process-tabs {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .timeline-grid {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto;
-  }
-
-  .process-step {
-    grid-column: auto !important;
-    grid-row: auto !important;
-  }
-
-  .quote-text {
-    font-size: 22px;
-  }
-}
-</style>
 

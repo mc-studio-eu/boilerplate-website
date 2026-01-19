@@ -6,7 +6,7 @@
         <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
         <polyline points="22 4 12 14.01 9 11.01"/>
       </svg>
-      <span class="font-medium text-[11px] sm:text-xs md:text-sm text-[#474747] whitespace-nowrap">+5 ans d'expériences</span>
+      <span class="font-medium text-[11px] sm:text-xs md:text-sm text-[#474747] whitespace-nowrap">{{ $t('hero.badges.experience') }}</span>
     </div>
     
     <!-- Badge 2: Projects -->
@@ -15,7 +15,7 @@
         <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
         <polyline points="22 4 12 14.01 9 11.01"/>
       </svg>
-      <span class="font-medium text-[11px] sm:text-xs md:text-sm text-[#474747] whitespace-nowrap">+10 projets réalisés</span>
+      <span class="font-medium text-[11px] sm:text-xs md:text-sm text-[#474747] whitespace-nowrap">{{ $t('hero.badges.projects') }}</span>
     </div>
     
     <!-- Badge 3: Location -->
@@ -26,7 +26,7 @@
         <div class="w-1/3 bg-white"></div>
         <div class="w-1/3 bg-[#ED2939]"></div>
       </div>
-      <span class="font-medium text-[11px] sm:text-xs md:text-sm text-[#474747] whitespace-nowrap">Lyon</span>
+      <span class="font-medium text-[11px] sm:text-xs md:text-sm text-[#474747] whitespace-nowrap">{{ $t('hero.badges.location') }}</span>
     </div>
   </div>
 </template>

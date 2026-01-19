@@ -1,20 +1,7 @@
 <script setup lang="ts">
-const keywords = [
-  "Rapide et Efficace",
-  "World Class",
-  "Sur Mesure",
-  "Votre Partenaire",
-  "Pixel Perfect",
-  "100% de satisfaction",
-  "Communication Fluide",
-  "Qualité Premium",
-  "Branding Cohérent",
-  "SaaS Ready",
-  "Conversion Boost",
-  "Clean & Moderne",
-  "Détails Impeccables",
-];
+const { tm } = useI18n();
 
+const keywords = computed(() => tm('services.marquee') as string[]);
 </script>
 
 <template>
