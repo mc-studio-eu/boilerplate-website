@@ -13,7 +13,6 @@ const modalData = {
   ],
   inclus: [
     "Analyse (offre, USP, ICP, objections, preuves, conccurent)",
-    "Accompagnement Stratégique",
     "Architecture de page (sections + parcours)",
     "Copywriting structurel (hooks, preuves, CTA)",
     "Identité Visuelle",
@@ -43,20 +42,7 @@ const closeModal = () => {
             <p class="text-sm leading-relaxed" style="color: var(--text-secondary);">{{ modalData.result }}</p>
           </div>
           <div class="flex items-center gap-3">
-            <NuxtLink 
-              to="#contact"
-              @click="closeModal"
-              :class="[
-                'hidden sm:flex items-center gap-2 border-none rounded-full py-1 pr-3 pl-1 cursor-pointer transition-all duration-200 shrink-0 hover:scale-[1.02]',
-                colorMode.value === 'dark' ? 'bg-[linear-gradient(to_right,white_50%,#f0bf6c)] shadow-[0_4px_4px_rgba(0,0,0,0.25),0_10px_10px_rgba(11,32,103,0.05)] hover:brightness-105' : 'bg-[#1a1a1a] hover:bg-[#2a2a2a]'
-              ]"
-            >
-              <NuxtImg src="/img/main/founder.png" alt="MC Studio" class="w-6 h-6 rounded-full bg-gradient-to-br from-[#f0bf6c] to-[#e8a84c] flex items-center justify-center font-inter font-semibold text-[9px] text-[#0f0f0f] object-contain" />
-              <div class="flex flex-col items-start gap-px">
-                <span :class="['font-inter font-semibold text-[11px] leading-tight', colorMode.value === 'dark' ? 'text-[#1a1a1a]' : 'text-white']">Réserver un appel</span>
-                <span :class="['font-inter font-normal text-[9px] leading-tight', colorMode.value === 'dark' ? 'text-[#1a1a1a]/60' : 'text-white/60']">Discussion gratuite</span>
-              </div>
-            </NuxtLink>
+
 
             <div class="flex items-center gap-1">
               <button @click="emit('prev')" class="p-1.5 rounded-lg transition-colors hover:opacity-70" style="color: var(--text-secondary);">
@@ -101,23 +87,10 @@ const closeModal = () => {
             <div>
               <span class="text-xs uppercase tracking-wider" style="color: var(--text-secondary);">Délai</span>
               <p class="text-sm font-medium" style="color: var(--text-primary);">{{ modalData.delai }}</p>
-            </div>
           </div>
 
-
           </div>
 
-          <!-- Mobile CTA -->
-          <div class="pt-4 mt-2 border-t sm:hidden" style="border-color: var(--border-subtle);">
-            <UButton 
-              to="#contact"
-              @click="closeModal"
-              block
-              class="bg-[#f0bf6c] text-black hover:bg-[#d9ac60] font-semibold transition-colors"
-            >
-              Réserver un appel
-            </UButton>
-          </div>
         </div>
       </div>
     </template>
