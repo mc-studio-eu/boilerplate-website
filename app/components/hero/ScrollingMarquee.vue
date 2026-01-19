@@ -1,9 +1,6 @@
 <script setup lang="ts">
-const keywords = [
-  "design", "SaaS", "mvp", "développement", "design", "SaaS", 
-  "branding", "SEO", "développement", "branding", "UI/UX", "AI", 
-  "développement", "déploiement", "wireframe", "UI/UX", "AI",
-]
+const { tm, rt } = useI18n();
+const keywords = computed(() => Object.values(tm('hero.marquee') as Record<string, any> || {}).map(i => rt(i)));
 </script>
 
 <template>

@@ -8,24 +8,28 @@ interface ProcessStep {
 }
 
 // Process steps data based on Figma layout
-const steps = ref<ProcessStep[]>([
-  { id: 1, title: 'Meeting Call', row: 1, col: 1 },
-  { id: 2, title: 'Proposition', row: 2, col: 2 },
-  { id: 3, title: 'Kick-Off', row: 2, col: 3 },
-  { id: 4, title: 'Branding', row: 3, col: 3 },
-  { id: 5, title: 'UI & UX', row: 4, col: 3 },
-  { id: 6, title: 'Validation', row: 4, col: 4 },
-  { id: 7, title: 'Integration', row: 5, col: 4 },
-  { id: 8, title: 'Validation', row: 5, col: 5 },
-  { id: 9, title: 'Déploiement', row: 5, col: 6 }
+const { t } = useI18n();
+
+const steps = computed<ProcessStep[]>(() => [
+  { id: 1, title: t('process.steps.meeting'), row: 1, col: 1 },
+  { id: 2, title: t('process.steps.proposition'), row: 2, col: 2 },
+  { id: 3, title: t('process.steps.kickoff'), row: 2, col: 3 },
+  { id: 4, title: t('process.steps.branding'), row: 3, col: 3 },
+  { id: 5, title: t('process.steps.ui_ux'), row: 4, col: 3 },
+  { id: 6, title: t('process.steps.validation'), row: 4, col: 4 },
+  { id: 7, title: t('process.steps.integration'), row: 5, col: 4 },
+  { id: 8, title: t('process.steps.validation'), row: 5, col: 5 },
+  { id: 9, title: t('process.steps.deployment'), row: 5, col: 6 }
 ])
 
 // Service tabs
-const serviceTabs = ['Landing Page', 'Launch : SaaS', 'Sprint : MVP']
-const activeTab = ref(0)
+const serviceTabs = computed(() => [
+  t('process.tabs.landing'),
+  t('process.tabs.saas'),
+  t('process.tabs.sprint')
+]);
 
-// Timeline duration
-const projectDuration = ref('15 jours')
+const activeTab = ref(0)
 </script>
 
 <template>
@@ -33,11 +37,10 @@ const projectDuration = ref('15 jours')
     <div class="max-w-[1216px] mx-auto">
       <!-- Header -->
       <div class="mb-12 text-center">
-        <h2 class="font-manrope text-4xl font-semibold mb-3 transition-colors duration-300 text-[var(--text-primary)]">
-          Pro<span class="text-gradient">cessus</span>
+        <h2 class="font-manrope text-4xl font-semibold mb-3 transition-colors duration-300 text-[var(--text-primary)]" v-html="$t('process.title')">
         </h2>
         <p class="font-inter text-base transition-colors duration-300 text-[var(--text-secondary)]">
-          Un process clair. Des livrables concrets. Zéro friction.
+          {{ $t('process.subtitle') }}
         </p>
       </div>
 
@@ -81,7 +84,7 @@ const projectDuration = ref('15 jours')
         <!-- Duration Badge -->
         <div class="flex justify-center mt-6">
           <span class="px-5 py-2 font-inter text-sm font-medium text-[var(--color-gold)] bg-[rgba(240,191,108,0.1)] border border-[var(--color-gold)] rounded-lg">
-            Temps du Projet : {{ projectDuration }}
+            {{ $t('process.duration_label') }} {{ $t('process.duration_value') }}
           </span>
         </div>
       </div>

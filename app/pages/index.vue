@@ -31,7 +31,7 @@ import ServicesInterMarquee from "../components/services/ServicesInterMarquee.vu
       <ServicesSection id="services" />
 
       <!-- Process Section -->
-      <ProcessSection id="process" />
+<!--      <ProcessSection id="process" />-->
        
       <div class="section-separator"></div>  
       

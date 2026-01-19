@@ -3,12 +3,12 @@ const isOpen = defineModel<boolean>('open', { required: true });
 const emit = defineEmits(['next', 'prev']);
 const colorMode = useColorMode();
 
-const { t, tm } = useI18n();
+const { t, tm, rt } = useI18n();
 
 const modalData = computed(() => ({
   title: t('services.modals.sprint.title') || "Sprint : MVP",
   result: t('services.modals.sprint.result'),
-  forWho: Object.values(tm('services.modals.sprint.for_who') as Record<string, string>),
+  forWho: Object.values(tm('services.modals.sprint.for_who') as object || {}).map(i => rt(i)),
   inclus: [
     { text: t('services.modals.sprint.included.0'), icon: "i-heroicons-globe-alt" },
     { text: t('services.modals.sprint.included.1'), icon: "i-heroicons-puzzle-piece" },

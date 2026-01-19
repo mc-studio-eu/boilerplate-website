@@ -3,12 +3,12 @@ const isOpen = defineModel<boolean>('open', { required: true });
 const emit = defineEmits(['next', 'prev']);
 const colorMode = useColorMode();
 
-const { t, tm } = useI18n();
+const { t, tm, rt } = useI18n();
 
 const modalData = computed(() => ({
   title: t('services.modals.landing.title') || "Landing Page",
   result: t('services.modals.landing.result'),
-  forWho: Object.values(tm('services.modals.landing.for_who') as Record<string, string>),
+  forWho: Object.values(tm('services.modals.landing.for_who') as object || {}).map(i => rt(i)),
   inclus: [
     { text: t('services.modals.landing.included.0'), icon: "i-heroicons-magnifying-glass" },
     { text: t('services.modals.landing.included.1'), icon: "i-heroicons-squares-2x2" },

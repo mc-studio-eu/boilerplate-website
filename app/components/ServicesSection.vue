@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 
-const { t, tm } = useI18n();
+const { t, tm, rt } = useI18n();
 
 // Modal state
 const activeModal = ref<string | null>(null);
@@ -30,8 +30,8 @@ const services = computed(() => [
     title: t('services.cards.landing.title'),
     subtitle: t('services.cards.landing.subtitle'),
     image: "/img/services/lp.png",
-    features: Object.values(tm('services.cards.landing.features') as Record<string, string>),
-    deliverables: Object.values(tm('services.cards.landing.deliverables') as Record<string, string>),
+    features: Object.values(tm('services.cards.landing.features') as object || {}).map(i => rt(i)),
+    deliverables: Object.values(tm('services.cards.landing.deliverables') as object || {}).map(i => rt(i)),
     highlighted: false,
     modalKey: "landing"
   },
@@ -39,8 +39,8 @@ const services = computed(() => [
     title: t('services.cards.sprint.title'),
     subtitle: t('services.cards.sprint.subtitle'),
     image: "/img/services/sprint.png",
-    features: Object.values(tm('services.cards.sprint.features') as Record<string, string>),
-    deliverables: Object.values(tm('services.cards.sprint.deliverables') as Record<string, string>),
+    features: Object.values(tm('services.cards.sprint.features') as object || {}).map(i => rt(i)),
+    deliverables: Object.values(tm('services.cards.sprint.deliverables') as object || {}).map(i => rt(i)),
     highlighted: false,
     modalKey: "sprint"
   },
@@ -48,14 +48,14 @@ const services = computed(() => [
     title: t('services.cards.saas.title'),
     subtitle: t('services.cards.saas.subtitle'),
     image: "/img/services/launch.png",
-    features: Object.values(tm('services.cards.saas.features') as Record<string, string>),
-    deliverables: Object.values(tm('services.cards.saas.deliverables') as Record<string, string>),
+    features: Object.values(tm('services.cards.saas.features') as object || {}).map(i => rt(i)),
+    deliverables: Object.values(tm('services.cards.saas.deliverables') as object || {}).map(i => rt(i)),
     highlighted: false,
     modalKey: "saas"
   },
 ]);
 
-const otherServices = computed(() => Object.values(tm('services.other_services.list') as Record<string, string>));
+const otherServices = computed(() => Object.values(tm('services.other_services.list') as object || {}).map(i => rt(i)));
 
 const switchModal = (direction: 'next' | 'prev') => {
   const keys = services.value.map(s => s.modalKey);

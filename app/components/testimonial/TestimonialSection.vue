@@ -11,31 +11,34 @@ interface Testimonial {
 }
 
 // Data
-const testimonials = ref<Testimonial[]>([
+// Data
+const { t } = useI18n();
+
+const testimonials = computed<Testimonial[]>(() => [
   {
     id: 1,
-    content: 'MC Studio a réalisé notre site internet et le résultat est excellent. Travail rapide, professionnel et très soigné. Le site est moderne, fluide et parfaitement adapté à notre activité.',
+    content: t('testimonials.items.ra_energy.content'),
     author: {
       name: 'Yazid Chettah',
-      role: 'Co-fondateur, R&A Energy',
+      role: t('testimonials.items.ra_energy.role'),
       avatar: '/img/testimonials/yazid-ra-energy.jpeg'
     },
   },
   {
     id: 2,
-    content: 'MC Studio nous a réalisé un super site internet, très intuitif et très pro. De bons conseils et à l’écoute de ses clients, je recommande !',
+    content: t('testimonials.items.souji_nova.content'),
     author: {
       name: 'Nelson Maghoun',
-      role: 'Co-fondateur, Souji Nova',
+      role: t('testimonials.items.souji_nova.role'),
       avatar: '/img/testimonials/nelson-souji-nova.jpg'
     },
   },
   {
     id: 3,
-    content: 'MC studio m’a accompagné dans mon projet digital, entreprise très sérieuse professionnelle je la recommande !',
+    content: t('testimonials.items.fontaines_vtc.content'),
     author: {
       name: 'Mario Convertino',
-      role: 'Dirigeant, Fontaines VTC',
+      role: t('testimonials.items.fontaines_vtc.role'),
       avatar: '/img/testimonials/mario-fontaines-vtc.png'
     }
   }
@@ -57,22 +60,20 @@ const currentTestimonial = computed(() => testimonials.value[currentIndex.value]
 
 <template>
 
-  <p class="text-gradient text-center mb-2">Le studio Indépendant</p>
+  <p class="text-gradient text-center mb-2">{{ $t('testimonials.intro_label') }}</p>
 
-  <p class="text-gradient text-center text-xl sm:text-3xl">
-    Chez MC Studio on à le gout du travail bien fait, on itère vite <br> tout en ayant une attention particulière <br> au travail delivré
+  <p class="text-gradient text-center text-xl sm:text-3xl" v-html="$t('testimonials.intro_text')">
   </p>
   <section id="avis" class="testimonial-section">
     <div class="">
-      <h2 class="text-center font-manrope font-medium text-2xl sm:text-3xl md:text-[32px] mb-8 transition-colors duration-300" style="color: var(--text-primary);">
-        Ce qu'en disent <span class="text-gradient">nos clients</span>
+      <h2 class="text-center font-manrope font-medium text-2xl sm:text-3xl md:text-[32px] mb-8 transition-colors duration-300" style="color: var(--text-primary);" v-html="$t('testimonials.title')">
       </h2>
 
       <!-- Testimonial Card -->
       <div class="testimonial-card" v-if="currentTestimonial">
         <div class="card-content">
           <!-- Quote -->
-          <p class="text-white text-sm">
+          <p class="text-white sm:text-sm text-xs">
             {{ currentTestimonial.content }}
           </p>
 
@@ -80,7 +81,7 @@ const currentTestimonial = computed(() => testimonials.value[currentIndex.value]
           <div class="card-footer">
             <!-- Author Info -->
             <div class="author-info">
-              <NuxtImg :src="currentTestimonial.author.avatar" class="rounded-full max-h-12"/>
+              <NuxtImg :src="currentTestimonial.author.avatar" class="rounded-full max-h-10"/>
               <div class="author-details">
                 <span class="text-white">{{ currentTestimonial.author.name }}</span>
                 <span class="author-role">{{ currentTestimonial.author.role }}</span>

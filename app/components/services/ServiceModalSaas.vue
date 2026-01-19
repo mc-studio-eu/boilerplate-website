@@ -3,13 +3,13 @@ const isOpen = defineModel<boolean>('open', { required: true });
 const emit = defineEmits(['next', 'prev']);
 const colorMode = useColorMode();
 
-const { t, tm } = useI18n();
+const { t, tm, rt } = useI18n();
 
 const modalData = computed(() => ({
     id: "saas",
     title: t('services.modals.saas.title') || "Launch : SaaS",
     result: t('services.modals.saas.result'),
-    forWho: Object.values(tm('services.modals.saas.for_who') as Record<string, string>),
+    forWho: Object.values(tm('services.modals.saas.for_who') as object || {}).map(i => rt(i)),
   inclus: [
     { text: t('services.modals.saas.included.0'), icon: "i-heroicons-globe-alt" },
     { text: t('services.modals.saas.included.1'), icon: "i-heroicons-map" },
@@ -23,7 +23,7 @@ const modalData = computed(() => ({
     { text: t('services.modals.saas.included.9'), icon: "i-heroicons-shield-check" }
   ],
     delai: t('services.modals.saas.delay'),
-    scope: Object.values(tm('services.modals.saas.scope') as Record<string, string>),
+    scope: Object.values(tm('services.modals.saas.scope') as object || {}).map(i => rt(i)),
 }));
 
 const closeModal = () => {

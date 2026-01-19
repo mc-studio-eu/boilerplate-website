@@ -1,6 +1,7 @@
 <script setup lang="ts">
 // CTA section data
-const ctaSubtitle = 'Notre mission : aider les entrepreneurs et les entreprises à transformer une idée en produit concret'
+const { t } = useI18n();
+const ctaSubtitle = computed(() => t('cta.subtitle'));
 </script>
 
 <template>
@@ -8,7 +9,7 @@ const ctaSubtitle = 'Notre mission : aider les entrepreneurs et les entreprises 
     <div class="cta-container">
       <!-- Header -->
       <div class="cta-header">
-        <h2 class="cta-title ">Parlez nous de <span class="text-gradient">votre Projet</span></h2>
+        <h2 class="cta-title " v-html="$t('cta.title')"></h2>
         <p class="cta-subtitle">{{ ctaSubtitle }}</p>
       </div>
 

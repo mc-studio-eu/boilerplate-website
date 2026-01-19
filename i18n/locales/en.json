@@ -20,9 +20,28 @@
         },
         "badges": {
             "experience": "+5 years experience",
-            "projects": "+10 projects completed",
+            "projects": "+10 projects realized",
             "location": "Lyon"
-        }
+        },
+        "marquee": [
+            "design",
+            "SaaS",
+            "MVP",
+            "development",
+            "design",
+            "SaaS",
+            "branding",
+            "SEO",
+            "development",
+            "branding",
+            "UI/UX",
+            "AI",
+            "development",
+            "deployment",
+            "wireframe",
+            "UI/UX",
+            "AI"
+        ]
     },
     "services": {
         "title": "Our <span class=\"text-gradient\">Services</span>",
@@ -240,5 +259,86 @@
                 }
             }
         }
+    },
+    "process": {
+        "title": "Pro<span class=\"text-gradient\">cess</span>",
+        "subtitle": "A clear process. Concrete deliverables. Zero friction.",
+        "tabs": {
+            "landing": "Landing Page",
+            "saas": "Launch: SaaS",
+            "sprint": "Sprint: MVP"
+        },
+        "steps": {
+            "meeting": "Meeting Call",
+            "proposition": "Proposition",
+            "kickoff": "Kick-Off",
+            "branding": "Branding",
+            "ui_ux": "UI & UX",
+            "validation": "Validation",
+            "integration": "Integration",
+            "deployment": "Deployment"
+        },
+        "duration_label": "Project Time:",
+        "duration_value": "15 days"
+    },
+    "testimonials": {
+        "intro_label": "The Independent Studio",
+        "intro_text": "At MC Studio we have a taste for well-done work, we iterate fast <br> while paying particular attention <br> to delivered work",
+        "title": "What <span class=\"text-gradient\">our clients</span> say",
+        "items": {
+            "ra_energy": {
+                "content": "MC Studio created our website and the result is excellent. Fast, professional and very neat work. The site is modern, fluid and perfectly adapted to our activity.",
+                "role": "Co-founder, R&A Energy"
+            },
+            "souji_nova": {
+                "content": "MC Studio created a great website for us, very intuitive and very professional. Good advice and attentive to its clients, I recommend!",
+                "role": "Co-founder, Souji Nova"
+            },
+            "fontaines_vtc": {
+                "content": "MC Studio accompanied me in my digital project, very serious professional company I recommend it!",
+                "role": "Manager, Fontaines VTC"
+            }
+        }
+    },
+    "faq": {
+        "title": "<span class=\"text-gradient\">FAQ</span>",
+        "subtitle": "We answer your questions:",
+        "founder_role": "Founder {'@'}MC Studio",
+        "contact_text": "We don't answer all questions? Contact me directly here:",
+        "whatsapp_btn": "Message on WhatsApp",
+        "items": {
+            "0": {
+                "question": "What types of clients do you support?",
+                "answer": "We support entrepreneurs, startups and companies. Our projects range from conversion-oriented landing pages to more complete platforms (MVP, SaaS, dashboards), with an approach focused on design, clarity of offer and performance."
+            },
+            "1": {
+                "question": "How to get a quote and how long do you take to respond?",
+                "answer": "Book a call or contact us directly on WhatsApp. We usually respond within 24h with a few quick questions and a first estimate. A detailed quote is then sent after a scoping exchange (objectives, content, deadlines, scope)."
+            },
+            "2": {
+                "question": "What happens if the design doesn't match your expectations?",
+                "answer": "We move step by step with validations (creative direction, mockups, iterations). Each project includes revisions to adjust until we get a result aligned with your vision. The goal: a design that looks like you and converts."
+            },
+            "3": {
+                "question": "What is the cost of a project?",
+                "answer": "The budget depends on the scope (number of pages, features, animations, content, integrations). After a first exchange, we propose a clear recommendation with a transparent quote — no surprises."
+            },
+            "4": {
+                "question": "Who is behind MC Studio?",
+                "answer": "MC Studio brings together a team of 4 experts from different fields (product direction, design, frontend dev, backend dev and project management). Founded and led by Mohamed Chettah, the studio supports entrepreneurs, startups and companies from strategy to launch."
+            },
+            "5": {
+                "question": "How does the collaboration work?",
+                "answer": "You will have a private WhatsApp channel with us to streamline exchanges, briefs and delivery. If needed, we schedule follow-up points.\n\nEverything happens on Notion: you deposit your requests (text, video, docs), we analyze them and give you a deadline. In general, we deliver 2 to 3 tasks per week depending on complexity.\n\nOnce delivered, you validate or ask for revisions, then we move on to the next."
+            }
+        }
+    },
+    "cta": {
+        "title": "Tell us about <span class=\"text-gradient\">your Project</span>",
+        "subtitle": "Our mission: help entrepreneurs and companies transform an idea into a concrete product"
+    },
+    "meta": {
+        "title": "MC Studio - Design & Development Agency",
+        "description": "Design & Development to launch fast and right. Branding, landing page and apps: we support entrepreneurs and companies from concept to launch."
     }
 }

@@ -1,7 +1,7 @@
 <script setup lang="ts">
-const { tm } = useI18n();
+const { tm, rt } = useI18n();
 
-const keywords = computed(() => tm('services.marquee') as string[]);
+const keywords = computed(() => Object.values(tm('services.marquee') as Record<string, any> || {}).map(i => rt(i)));
 </script>
 
 <template>

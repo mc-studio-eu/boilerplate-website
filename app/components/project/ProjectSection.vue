@@ -17,7 +17,7 @@ interface Project {
 }
 
 // Data
-const { t, tm } = useI18n();
+const { t, tm, rt } = useI18n();
 
 const projects = computed<Project[]>(() => [
   {
@@ -25,7 +25,7 @@ const projects = computed<Project[]>(() => [
     title: 'Arises',
     description: t('projects.items.arises.description'),
     image: '/img/project/arises-tablet.jpeg',
-    tags: Object.values(tm('projects.items.arises.tags') as Record<string, string>),
+    tags: Object.values(tm('projects.items.arises.tags') as Record<string, any> || {}).map(tag => rt(tag)),
     testimonials: false,
     link: 'https://arises.app/'
   },
@@ -34,7 +34,7 @@ const projects = computed<Project[]>(() => [
     title: 'Souji Nova',
     description: t('projects.items.souji_nova.description'),
     image: '/img/project/souji-nova-desktop.png',
-    tags: Object.values(tm('projects.items.souji_nova.tags') as Record<string, string>),
+    tags: Object.values(tm('projects.items.souji_nova.tags') as Record<string, any> || {}).map(tag => rt(tag)),
     testimonials: true,
     testimonial: {
       avis: t('projects.items.souji_nova.testimonial.review'),
@@ -49,7 +49,7 @@ const projects = computed<Project[]>(() => [
     title: 'R&A Energy',
     description: t('projects.items.ra_energy.description'),
     image: '/img/project/ra-energy.png',
-    tags: Object.values(tm('projects.items.ra_energy.tags') as Record<string, string>),
+    tags: Object.values(tm('projects.items.ra_energy.tags') as Record<string, any> || {}).map(tag => rt(tag)),
     testimonials: true,
     testimonial: {
       avis: t('projects.items.ra_energy.testimonial.review'),
@@ -64,7 +64,7 @@ const projects = computed<Project[]>(() => [
     title: 'Fontaines VTC',
     description: t('projects.items.fontaines_vtc.description'),
     image: '/img/project/fontaines-vtc-dark.jpeg',
-    tags: Object.values(tm('projects.items.fontaines_vtc.tags') as Record<string, string>),
+    tags: Object.values(tm('projects.items.fontaines_vtc.tags') as Record<string, any> || {}).map(tag => rt(tag)),
     testimonials: true,
     testimonial: {
       avis: t('projects.items.fontaines_vtc.testimonial.review'),

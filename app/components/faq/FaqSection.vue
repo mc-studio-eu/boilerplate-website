@@ -7,42 +7,39 @@ interface FaqItem {
 }
 
 // Data
-const faqItems = ref<FaqItem[]>([
+// Data
+const { t } = useI18n();
+
+const faqItems = computed<FaqItem[]>(() => [
   {
     id: 0,
-    question: 'Quels types de clients accompagnez-vous ?',
-    answer:
-        "Nous accompagnons des entrepreneurs, startups et entreprises. Nos projets vont de la landing page orientée conversion à des plateformes plus complètes (MVP, SaaS, dashboards), avec une approche centrée sur le design, la clarté de l’offre et la performance."
+    question: t('faq.items.0.question'),
+    answer: t('faq.items.0.answer')
   },
   {
     id: 1,
-    question: 'Comment obtenir un devis et sous combien de temps répondez-vous ?',
-    answer:
-        "Réserver un appel ou contactez nous directement sur WhatsApp. Nous répondons généralement sous 24h avec quelques questions rapides et une première estimation. Un devis détaillé est ensuite envoyé après un échange de cadrage (objectifs, contenu, délais, périmètre)."
+    question: t('faq.items.1.question'),
+    answer: t('faq.items.1.answer')
   },
   {
     id: 5,
-    question: "Comment se déroule la collaboration ?",
-    answer:
-        "Vous aurez un canal WhatsApp privé avec nous pour fluidifier les échanges, les briefs et la livraison. Si besoin, on planifie des points de suivi.\n\nTout se passe sur Notion : vous déposez vos demandes (texte, vidéo, docs), on les analyse et on vous donne une deadline. En général, on livre 2 à 3 tâches par semaine selon la complexité.\n\nUne fois livré, vous validez ou demandez des retouches, puis on enchaîne sur la suite."
+    question: t('faq.items.5.question'),
+    answer: t('faq.items.5.answer')
   },
   {
     id: 2,
-    question: "Que se passe-t-il si le design ne correspond pas à vos attentes ?",
-    answer:
-        "On avance étape par étape avec des validations (direction créative, maquettes, itérations). Chaque projet inclut des révisions pour ajuster jusqu’à obtenir un rendu aligné avec votre vision. L’objectif : un design qui vous ressemble et qui convertit."
+    question: t('faq.items.2.question'),
+    answer: t('faq.items.2.answer')
   },
   {
     id: 3,
-    question: "Quel est le coût d'un projet ?",
-    answer:
-        "Le budget dépend du périmètre (nombre de pages, fonctionnalités, animations, contenu, intégrations). Après un premier échange, on vous propose une recommandation claire avec un devis transparent — sans surprise."
+    question: t('faq.items.3.question'),
+    answer: t('faq.items.3.answer')
   },
   {
     id: 4,
-    question: 'Qui est derrière MC Studio ?',
-    answer:
-        "MC Studio réunit une équipe de 4 experts de differents domaines (direction produit, design, dev frontend, dev backend et gestion de projet). Fondé et dirigé par Mohamed Chettah, le studio accompagne entrepreneurs, startups et entreprises de la stratégie au lancement."
+    question: t('faq.items.4.question'),
+    answer: t('faq.items.4.answer')
   }
 ])
 
@@ -62,10 +59,10 @@ const toggleItem = (id: number) => {
 const isOpen = (id: number) => openItems.value.includes(id)
 
 // Founder info
-const founder = {
+const founder = computed(() => ({
   name: 'Mohamed Chettah',
-  role: 'Fondateur @MC Studio'
-}
+  role: t('faq.founder_role')
+}))
 </script>
 
 <template>
@@ -74,10 +71,9 @@ const founder = {
       <div class="faq-content">
         <!-- Left Column - Info -->
         <div class="faq-info">
-          <h2 class="font-manrope font-medium text-2xl sm:text-3xl md:text-[32px] mb-8 transition-colors duration-300" style="color: var(--text-primary);">
-            <span class="text-gradient">FAQ</span>
+          <h2 class="font-manrope font-medium text-2xl sm:text-3xl md:text-[32px] mb-8 transition-colors duration-300" style="color: var(--text-primary);" v-html="$t('faq.title')">
           </h2>
-          <p class="faq-subtitle">On répond à vos questions :</p>
+          <p class="faq-subtitle">{{ $t('faq.subtitle') }}</p>
 
           <!-- Founder Card -->
           <div class="founder-card">
@@ -97,14 +93,14 @@ const founder = {
           </div>
 
           <p class="contact-text">
-            On ne répond pas à toutes les questions ? Contactez-moi directement ici :
+            {{ $t('faq.contact_text') }}
           </p>
 
           <UButton 
             size="md"
             class="whatsapp-btn w-43 cursor-pointer bg-[#232323] text-white"
           >
-            Message sur WhatsApp
+            {{ $t('faq.whatsapp_btn') }}
           </UButton>
         </div>
 
