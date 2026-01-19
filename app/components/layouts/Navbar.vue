@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const isMenuOpen = ref(false)
 const isScrolled = ref(false)
-const { locale, setLocale } = useI18n()
+const { t, locale, setLocale } = useI18n()
 const language = computed({
   get: () => locale.value.toUpperCase(),
   set: (value) => setLocale(value.toLowerCase() as 'en' | 'fr')
@@ -10,6 +10,14 @@ const languages = [
   { label: 'FR', value: 'FR' },
   { label: 'EN', value: 'EN' },
 ]
+
+const navItems = [
+  { key: 'projects', id: 'projets' },
+  { key: 'services', id: 'services' },
+  { key: 'reviews', id: 'avis' },
+  { key: 'faq', id: 'faq' }
+]
+
 const activeSection = ref('')
 const colorMode = useColorMode()
 
@@ -57,13 +65,13 @@ const closeMenu = () => isMenuOpen.value = false
 
     <!-- Nav desktop -->
     <nav class="hidden lg:flex items-center gap-[26px]">
-      <NuxtLink v-for="link in ['Projets', 'Services', 'Avis', 'FAQ']" :key="link" :to="`/#${link.toLowerCase()}`" class="font-inter font-medium text-sm text-white no-underline transition-colors duration-200 hover:text-[#f0bf6c]">{{ link }}</NuxtLink>
+      <NuxtLink v-for="item in navItems" :key="item.key" :to="`/#${item.id}`" class="font-inter font-medium text-sm text-white no-underline transition-colors duration-200 hover:text-[#f0bf6c]">{{ t(`nav.${item.key}`) }}</NuxtLink>
     </nav>
 
     <!-- CTA Desktop -->
     <div class="hidden lg:flex items-center gap-[11px] shrink-0">
       <USelect v-model="language" :items="languages" class="flex items-center justify-center w-[70px] h-[30px] bg-[#010201] border border-[#f0bf6c] rounded-lg font-inter font-medium text-xs text-[#f0eadb] cursor-pointer backdrop-blur-[12px] shadow-[0_4px_4px_rgba(0,0,0,0.25),0_10px_10px_rgba(11,32,103,0.05)] transition-all duration-200 hover:bg-[#1a1a1a]" />
-      <UButton to="#contact" class="flex items-center justify-center w-[164px] h-[30px] bg-[linear-gradient(to_right,white_50%,#f0bf6c)] border-none rounded-lg font-inter font-medium text-sm text-[#0f0f0f] cursor-pointer backdrop-blur-[12px] shadow-[0_4px_4px_rgba(0,0,0,0.25),0_10px_10px_rgba(11,32,103,0.05)] transition-all duration-200 hover:brightness-105">Réserver un appel</UButton>
+      <UButton to="#contact" class="flex items-center justify-center w-[164px] h-[30px] bg-[linear-gradient(to_right,white_50%,#f0bf6c)] border-none rounded-lg font-inter font-medium text-sm text-[#0f0f0f] cursor-pointer backdrop-blur-[12px] shadow-[0_4px_4px_rgba(0,0,0,0.25),0_10px_10px_rgba(11,32,103,0.05)] transition-all duration-200 hover:brightness-105">{{ t('nav.book_call') }}</UButton>
     </div>
 
   </header>
@@ -111,17 +119,17 @@ const closeMenu = () => isMenuOpen.value = false
             <!-- Desktop Links -->
             <div class="hidden md:flex items-center gap-1">
               <NuxtLink 
-                v-for="link in ['Projets', 'Services', 'Avis', 'FAQ']" 
-                :key="link" 
-                :to="`/#${link.toLowerCase()}`" 
+                v-for="item in navItems" 
+                :key="item.key" 
+                :to="`/#${item.id}`" 
                 :class="[
                   'font-inter font-medium text-[13px] px-3 py-1.5 rounded-full no-underline transition-all duration-200 whitespace-nowrap',
-                  activeSection === link.toLowerCase() 
+                  activeSection === item.id
                     ? (colorMode.value === 'dark' ? 'bg-[#333] text-white' : 'bg-[#e8e8e8] text-[#1a1a1a]')
                     : (colorMode.value === 'dark' ? 'text-white/80 hover:bg-[#2a2a2a]' : 'text-[#1a1a1a] hover:bg-[#f0f0f0]')
                 ]"
               >
-                {{ link }}
+                {{ t(`nav.${item.key}`) }}
               </NuxtLink>
             </div>
 
@@ -176,8 +184,8 @@ const closeMenu = () => isMenuOpen.value = false
             >
               <NuxtImg src="/img/main/founder.png" alt="MC Studio" class="w-6 h-6 md:w-7 md:h-7 rounded-full bg-gradient-to-br from-[#f0bf6c] to-[#e8a84c] flex items-center justify-center font-inter font-semibold text-[9px] md:text-[10px] text-[#0f0f0f] object-contain" />
               <div class="flex flex-col items-start gap-px">
-                <span :class="['font-inter font-semibold text-[11px] md:text-xs leading-tight', colorMode.value === 'dark' ? 'text-[#1a1a1a]' : 'text-white']">Réserver un appel</span>
-                <span :class="['font-inter font-normal text-[9px] leading-tight', colorMode.value === 'dark' ? 'text-[#1a1a1a]/60' : 'text-white/60']">Discussion gratuite</span>
+                <span :class="['font-inter font-semibold text-[11px] md:text-xs leading-tight', colorMode.value === 'dark' ? 'text-[#1a1a1a]' : 'text-white']">{{ t('nav.book_call') }}</span>
+                <span :class="['font-inter font-normal text-[9px] leading-tight', colorMode.value === 'dark' ? 'text-[#1a1a1a]/60' : 'text-white/60']">{{ t('nav.free_call') }}</span>
               </div>
             </NuxtLink>
           </div>
@@ -193,21 +201,21 @@ const closeMenu = () => isMenuOpen.value = false
               <!-- Navigation Links - Vertical list like the reference -->
               <div class="flex flex-col gap-1">
                   <NuxtLink 
-                  v-for="(link, index) in ['projects', 'services', 'reviews', 'faq']" 
-                  :key="link" 
-                  :to="`/#${link}`"
+                  v-for="(item, index) in navItems" 
+                  :key="item.key" 
+                  :to="`/#${item.id}`"
                   @click="closeMenu"
                   :class="[
                     'font-inter font-medium text-lg py-2 px-3 rounded-xl no-underline transition-all duration-200',
                     'transform transition-all duration-500',
                     isMenuOpen ? 'translate-x-0 opacity-100' : '-translate-x-4 opacity-0',
-                    activeSection === link 
+                    activeSection === item.id
                       ? (colorMode.value === 'dark' ? 'bg-[#2a2a2a] text-white' : 'bg-[#f0f0f0] text-[#1a1a1a]')
                       : (colorMode.value === 'dark' ? 'text-white/80 hover:bg-[#2a2a2a] hover:text-white' : 'text-[#1a1a1a] hover:bg-[#f5f5f5]')
                   ]"
                   :style="{ transitionDelay: isMenuOpen ? `${index * 50}ms` : '0ms' }"
                 >
-                  {{ $t(`nav.${link}`) }}
+                  {{ t(`nav.${item.key}`) }}
                 </NuxtLink>
               </div>
 
@@ -254,8 +262,8 @@ const closeMenu = () => isMenuOpen.value = false
                 >
                   <NuxtImg src="/img/main/founder.png" alt="MC Studio" class="w-6 h-6 md:w-7 md:h-7 object-contain rounded-full flex items-center justify-center font-inter font-semibold text-[10px] text-[#0f0f0f]" />
                   <div class="flex flex-col items-start gap-px">
-                    <span :class="['font-inter font-semibold text-xs leading-tight', colorMode.value === 'dark' ? 'text-[#1a1a1a]' : 'text-white']">{{ $t('nav.book_call') }}</span>
-                    <span :class="['font-inter font-normal text-[9px] leading-tight', colorMode.value === 'dark' ? 'text-[#1a1a1a]/60' : 'text-white/60']">{{ $t('nav.free_call') }}</span>
+                    <span :class="['font-inter font-semibold text-xs leading-tight', colorMode.value === 'dark' ? 'text-[#1a1a1a]' : 'text-white']">{{ t('nav.book_call') }}</span>
+                    <span :class="['font-inter font-normal text-[9px] leading-tight', colorMode.value === 'dark' ? 'text-[#1a1a1a]/60' : 'text-white/60']">{{ t('nav.free_call') }}</span>
                   </div>
                 </NuxtLink>
               </div>

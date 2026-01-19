@@ -113,6 +113,7 @@
         },
         "modals": {
             "landing": {
+                "title": "Landing Page",
                 "result": "A premium page designed to convert",
                 "for_who": {
                     "0": "You have a clear offer and want more requests",
@@ -134,6 +135,7 @@
                 "delay": "7–10 days"
             },
             "sprint": {
+                "title": "Sprint: MVP",
                 "result": "Validate your product in production",
                 "for_who": {
                     "0": "You have an idea and want to validate without burning 6 months",
@@ -154,6 +156,7 @@
                 "delay": "4–6 weeks (depending on complexity)"
             },
             "saas": {
+                "title": "Launch: SaaS",
                 "result": "A complete, robust product ready to scale.",
                 "for_who": {
                     "0": "You have validated interest and want to accelerate time-to-market",
