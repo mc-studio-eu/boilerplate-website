@@ -74,7 +74,7 @@ const switchModal = (direction: 'next' | 'prev') => {
 </script>
 
 <template>
-  <section id="services" class="py-16 md:py-20 lg:py-24 px-6 transition-colors duration-300" style="background-color: var(--bg-primary);">
+  <section id="services" class="py-5 md:py-10 lg:py-12 px-6 transition-colors duration-300" style="background-color: var(--bg-primary);">
     <div class="max-w-[1216px] mx-auto">
       <!-- Header -->
       <div class="text-center mb-10 md:mb-16">

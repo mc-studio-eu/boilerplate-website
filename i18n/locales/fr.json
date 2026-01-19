@@ -343,5 +343,21 @@
     "meta": {
         "title": "MC Studio - Agence Design & Développement",
         "description": "Design & Développement pour lancer vite, et bien. Branding, landing page et apps : nous accompagnons entrepreneurs et entreprises du concept au lancement."
+    },
+    "legal": {
+        "privacy": {
+            "title": "Politique de <span class=\"text-gradient\">Confidentialité</span>",
+            "subtitle": "Dernière mise à jour : Janvier 2026",
+            "content": "<h2>1. Introduction</h2><p>Bienvenue chez MC Studio. Nous respectons votre vie privée et nous engageons à collecter le moins de données possible.</p><h2>2. Collecte de données</h2><p>Nous pouvons collecter des informations d'identification personnelle auprès des utilisateurs telles que le nom, l'adresse e-mail, le numéro de téléphone lorsqu'ils visitent notre site, s'inscrivent sur le site, passent une commande, remplissent un formulaire, répondent à une enquête, et en relation avec d'autres activités, services, fonctionnalités ou ressources que nous mettons à disposition sur notre Site.</p><h2>3. Utilisation des données</h2><p>Nous collectons et utilisons les informations personnelles des Utilisateurs aux fins suivantes : Pour améliorer le service client, Pour personnaliser l'expérience utilisateur, Pour améliorer notre Site, Pour traiter les paiements, Pour envoyer des e-mails périodiques.</p><h2>4. Contact</h2><p>Si vous avez des questions concernant cette Politique de confidentialité, les pratiques de ce site ou vos relations avec ce site, veuillez nous contacter.</p>"
+        },
+        "terms": {
+            "title": "Conditions <span class=\"text-gradient\">Générales</span>",
+            "subtitle": "Dernière mise à jour : Janvier 2026",
+            "content": "<h2>1. Acceptation des conditions</h2><p>En accédant et en utilisant ce site web, vous acceptez d'être lié par les termes et dispositions de cet accord.</p><h2>2. Services</h2><p>MC Studio fournit des services de design et de développement. Tous les services font l'objet d'un contrat de service séparé.</p><h2>3. Propriété intellectuelle</h2><p>Le contenu, l'organisation, les graphiques, le design, la compilation, la traduction magnétique, la conversion numérique et d'autres questions liées au Site sont protégés par les droits d'auteur, marques déposées et autres droits de propriété (y compris, mais sans s'y limiter, la propriété intellectuelle) applicables.</p><h2>4. Modifications</h2><p>Nous nous réservons le droit de modifier ces conditions de temps à autre à notre seule discrétion.</p>"
+        },
+        "links": {
+            "privacy": "Politique de confidentialité",
+            "terms": "Conditions générales"
+        }
     }
 }

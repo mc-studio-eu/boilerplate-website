@@ -7,13 +7,21 @@
           <component :is="item.icon" class="size-6" aria-hidden="true" />
         </a>
       </div>
-      <p class="mt-8 text-center text-sm/6 text-gray-600 md:order-1 md:mt-0 dark:text-gray-400">&copy; {{ new Date().getFullYear() }} {{ $t('footer.copyright') }}</p>
+      <div class="mt-8 md:order-1 md:mt-0 flex flex-col md:flex-row items-center gap-4">
+        <p class="text-center text-sm/6 text-gray-600 dark:text-gray-400">&copy; {{ new Date().getFullYear() }} {{ $t('footer.copyright') }}</p>
+        <div class="flex gap-4 text-xs text-gray-500 dark:text-gray-500">
+          <NuxtLink :to="localePath('/privacy')" class="hover:text-gray-800 dark:hover:text-gray-300 transition-colors">{{ $t('legal.links.privacy') }}</NuxtLink>
+          <NuxtLink :to="localePath('/terms')" class="hover:text-gray-800 dark:hover:text-gray-300 transition-colors">{{ $t('legal.links.terms') }}</NuxtLink>
+        </div>
+      </div>
     </div>
   </footer>
 </template>
 
 <script setup>
 import { defineComponent, h } from 'vue'
+const localePath = useLocalePath()
+
 
 const navigation = [
   {

@@ -343,5 +343,21 @@
     "meta": {
         "title": "MC Studio - Design & Development Agency",
         "description": "Design & Development to launch fast and right. Branding, landing page and apps: we support entrepreneurs and companies from concept to launch."
+    },
+    "legal": {
+        "privacy": {
+            "title": "Privacy <span class=\"text-gradient\">Policy</span>",
+            "subtitle": "Last updated: January 2026",
+            "content": "<h2>1. Introduction</h2><p>Welcome to MC Studio. We respect your privacy and represent that we collect as little data as possible.</p><h2>2. Data Collection</h2><p>We may collect personal identification information from Users such as name, email address, phone number when they visit our site, register on the site, place an order, fill out a form, respond to a survey, and in connection with other activities, services, features or resources we make available on our Site.</p><h2>3. Use of Data</h2><p>We collect and use Users personal information for the following purposes: To improve customer service, To personalize user experience, To improve our Site, To process payments, To send periodic emails.</p><h2>4. Contact</h2><p>If you have any questions about this Privacy Policy, the practices of this site, or your dealings with this site, please contact us.</p>"
+        },
+        "terms": {
+            "title": "Terms of <span class=\"text-gradient\">Service</span>",
+            "subtitle": "Last updated: January 2026",
+            "content": "<h2>1. Acceptance of Terms</h2><p>By accessing and using this website, you accept and agree to be bound by the terms and provision of this agreement.</p><h2>2. Services</h2><p>MC Studio provides design and development services. All services are subject to a separate service agreement.</p><h2>3. Intellectual Property</h2><p>The content, organization, graphics, design, compilation, magnetic translation, digital conversion and other matters related to the Site are protected under applicable copyrights, trademarks and other proprietary (including but not limited to intellectual property) rights.</p><h2>4. Changes</h2><p>We reserve the right to modify these terms from time to time at our sole discretion.</p>"
+        },
+        "links": {
+            "privacy": "Privacy Policy",
+            "terms": "Terms of Service"
+        }
     }
 }
