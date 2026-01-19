@@ -54,7 +54,9 @@ const currentTestimonial = computed(() => testimonials.value[currentIndex.value]
 
 <template>
 
-  <p class="text-gradient text-center text-xl sm:text-2xl">
+  <p class="text-gradient text-center mb-2">Le studio Indépendant</p>
+
+  <p class="text-gradient text-center text-xl sm:text-3xl">
     Chez MC Studio on à le gout du travail bien fait, on itère vite <br> tout en ayant une attention particulière <br> au travail delivré
   </p>
   <section id="avis" class="testimonial-section">

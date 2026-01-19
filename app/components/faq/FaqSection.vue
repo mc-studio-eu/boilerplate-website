@@ -18,7 +18,7 @@ const faqItems = ref<FaqItem[]>([
     id: 1,
     question: 'Comment obtenir un devis et sous combien de temps répondez-vous ?',
     answer:
-        "Contactez-nous via le formulaire ou WhatsApp. Nous répondons généralement sous 24h avec quelques questions rapides et une première estimation. Un devis détaillé est ensuite envoyé après un échange de cadrage (objectifs, contenu, délais, périmètre)."
+        "Réserver un appel ou contactez nous directement sur WhatsApp. Nous répondons généralement sous 24h avec quelques questions rapides et une première estimation. Un devis détaillé est ensuite envoyé après un échange de cadrage (objectifs, contenu, délais, périmètre)."
   },
   {
     id: 2,
@@ -68,7 +68,9 @@ const founder = {
       <div class="faq-content">
         <!-- Left Column - Info -->
         <div class="faq-info">
-          <h2 class="faq-title">FAQ</h2>
+          <h2 class="font-manrope font-medium text-2xl sm:text-3xl md:text-[32px] mb-8 transition-colors duration-300" style="color: var(--text-primary);">
+            <span class="text-gradient">FAQ</span>
+          </h2>
           <p class="faq-subtitle">On répond à vos questions :</p>
 
           <!-- Founder Card -->

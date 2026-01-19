@@ -69,7 +69,7 @@ const services = [
 ];
 
 const otherServices = [
-  "Branding", "Web Design", "Site multi-pages", "Dev Ponctuel", "SEO", "Copywriting", "Accompagnement Stratégique",
+  "Branding", "Web Design", "Site Vitrines", "Dev Ponctuel", "SEO", "Copywriting", "Accompagnement Stratégique", "AI Intégration"
 ];
 </script>
 
@@ -146,7 +146,7 @@ const otherServices = [
           <span 
             v-for="svc in otherServices" 
             :key="svc"
-            class="inline-flex items-center px-3 sm:px-4 py-2 bg-white text-black border rounded-lg text-sm hover:border-[#f0bf6c] hover:text-[#f0bf6c] transition-colors cursor-default"
+            class="inline-flex items-center px-3 sm:px-4 py-2 bg-white text-black border rounded-lg text-xs sm:text-sm hover:border-[#f0bf6c] hover:text-[#f0bf6c] transition-colors cursor-default"
           >
             {{ svc }}
           </span>
