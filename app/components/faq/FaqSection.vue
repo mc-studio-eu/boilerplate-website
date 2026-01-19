@@ -36,7 +36,7 @@ const faqItems = ref<FaqItem[]>([
     id: 4,
     question: 'Qui est derrière MC Studio ?',
     answer:
-        "MC Studio réunit une équipe de 4 experts (direction produit, design, dev frontend, dev backend et gestion de projet). Fondé et dirigé par Mohamed Chettah, le studio accompagne entrepreneurs, startups et entreprises de la stratégie au lancement."
+        "MC Studio réunit une équipe de 4 experts de differents domaines (direction produit, design, dev frontend, dev backend et gestion de projet). Fondé et dirigé par Mohamed Chettah, le studio accompagne entrepreneurs, startups et entreprises de la stratégie au lancement."
   }
 ])
 

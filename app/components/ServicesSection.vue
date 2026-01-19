@@ -71,6 +71,20 @@ const services = [
 const otherServices = [
   "Branding", "Web Design", "Site Vitrines", "Dev Ponctuel", "SEO", "Copywriting", "Accompagnement Stratégique", "AI Intégration"
 ];
+const switchModal = (direction: 'next' | 'prev') => {
+  const keys = services.map(s => s.modalKey);
+  const currentIndex = keys.indexOf(activeModal.value!);
+  if (currentIndex === -1) return;
+
+  let newIndex;
+  if (direction === 'next') {
+    newIndex = (currentIndex + 1) % keys.length;
+  } else {
+    newIndex = (currentIndex - 1 + keys.length) % keys.length;
+  }
+  
+  activeModal.value = keys[newIndex] || null;
+};
 </script>
 
 <template>
@@ -126,7 +140,7 @@ const otherServices = [
             </div>
 
             <UButton 
-              class="bg-[#232323] mt-5 w-32 text-white cursor-pointer" 
+              class="bg-[#232323] mt-5 w-32 text-white cursor-pointer hover:bg-transparent focus:bg-transparent" 
               icon="i-heroicons-plus-small-solid"
               @click="openModal(service.modalKey)"
             >
@@ -155,9 +169,21 @@ const otherServices = [
     </div>
 
     <!-- Modals -->
-    <ServicesServiceModalLanding v-model:open="isLandingModalOpen" />
-    <ServicesServiceModalSprint v-model:open="isSprintModalOpen" />
-    <ServicesServiceModalSaas v-model:open="isSaasModalOpen" />
+    <ServicesServiceModalLanding 
+      v-model:open="isLandingModalOpen" 
+      @next="switchModal('next')" 
+      @prev="switchModal('prev')" 
+    />
+    <ServicesServiceModalSprint 
+      v-model:open="isSprintModalOpen" 
+      @next="switchModal('next')" 
+      @prev="switchModal('prev')" 
+    />
+    <ServicesServiceModalSaas 
+      v-model:open="isSaasModalOpen" 
+      @next="switchModal('next')" 
+      @prev="switchModal('prev')" 
+    />
   </section>
 </template>
 

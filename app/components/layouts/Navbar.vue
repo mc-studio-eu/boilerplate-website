@@ -59,7 +59,7 @@ const closeMenu = () => isMenuOpen.value = false
     <!-- CTA Desktop -->
     <div class="hidden lg:flex items-center gap-[11px] shrink-0">
       <USelect v-model="language" :items="languages" class="flex items-center justify-center w-[70px] h-[30px] bg-[#010201] border border-[#f0bf6c] rounded-lg font-inter font-medium text-xs text-[#f0eadb] cursor-pointer backdrop-blur-[12px] shadow-[0_4px_4px_rgba(0,0,0,0.25),0_10px_10px_rgba(11,32,103,0.05)] transition-all duration-200 hover:bg-[#1a1a1a]" />
-      <UButton class="flex items-center justify-center w-[164px] h-[30px] bg-[linear-gradient(to_right,white_50%,#f0bf6c)] border-none rounded-lg font-inter font-medium text-sm text-[#0f0f0f] cursor-pointer backdrop-blur-[12px] shadow-[0_4px_4px_rgba(0,0,0,0.25),0_10px_10px_rgba(11,32,103,0.05)] transition-all duration-200 hover:brightness-105">Réserver un appel</UButton>
+      <UButton to="#contact" class="flex items-center justify-center w-[164px] h-[30px] bg-[linear-gradient(to_right,white_50%,#f0bf6c)] border-none rounded-lg font-inter font-medium text-sm text-[#0f0f0f] cursor-pointer backdrop-blur-[12px] shadow-[0_4px_4px_rgba(0,0,0,0.25),0_10px_10px_rgba(11,32,103,0.05)] transition-all duration-200 hover:brightness-105">Réserver un appel</UButton>
     </div>
 
   </header>
@@ -163,7 +163,8 @@ const closeMenu = () => isMenuOpen.value = false
             </button>
 
             <!-- Desktop CTA -->
-            <button 
+            <NuxtLink 
+              to="#contact"
               :class="[
                 'hidden md:flex items-center gap-2 border-none rounded-full py-1 pr-3 pl-1 md:py-1.5 md:pr-4 md:pl-1.5 cursor-pointer transition-all duration-200 shrink-0 hover:scale-[1.02]',
                 colorMode.value === 'dark' ? 'flex items-center justify-center bg-[linear-gradient(to_right,white_50%,#f0bf6c)] border-none font-inter font-medium text-sm text-[#0f0f0f] cursor-pointer backdrop-blur-[12px] shadow-[0_4px_4px_rgba(0,0,0,0.25),0_10px_10px_rgba(11,32,103,0.05)] transition-all duration-200 hover:brightness-105' : 'bg-[#1a1a1a] hover:bg-[#2a2a2a]'
@@ -174,7 +175,7 @@ const closeMenu = () => isMenuOpen.value = false
                 <span :class="['font-inter font-semibold text-[11px] md:text-xs leading-tight', colorMode.value === 'dark' ? 'text-[#1a1a1a]' : 'text-white']">Réserver un appel</span>
                 <span :class="['font-inter font-normal text-[9px] leading-tight', colorMode.value === 'dark' ? 'text-[#1a1a1a]/60' : 'text-white/60']">Discussion gratuite</span>
               </div>
-            </button>
+            </NuxtLink>
           </div>
 
           <!-- Expanded content (mobile only) - Smooth expansion like the SUNDAY reference -->
@@ -240,7 +241,8 @@ const closeMenu = () => isMenuOpen.value = false
                 </div>
 
                 <!-- CTA Button -->
-                <button 
+                <NuxtLink 
+                  to="#contact"
                   :class="[
                     'flex items-center gap-2 border-none rounded-full py-1.5 pr-4 pl-1.5 cursor-pointer transition-all duration-200 hover:scale-[1.02]',
                     colorMode.value === 'dark' ? 'bg-white hover:bg-gray-100' : 'bg-[#1a1a1a] hover:bg-[#2a2a2a]'
@@ -251,7 +253,7 @@ const closeMenu = () => isMenuOpen.value = false
                     <span :class="['font-inter font-semibold text-xs leading-tight', colorMode.value === 'dark' ? 'text-[#1a1a1a]' : 'text-white']">Réserver un appel</span>
                     <span :class="['font-inter font-normal text-[9px] leading-tight', colorMode.value === 'dark' ? 'text-[#1a1a1a]/60' : 'text-white/60']">Discussion gratuite</span>
                   </div>
-                </button>
+                </NuxtLink>
               </div>
             </div>
           </div>

@@ -4,7 +4,7 @@ const ctaSubtitle = 'Notre mission : aider les entrepreneurs et les entreprises 
 </script>
 
 <template>
-  <section class="cta-section">
+  <section id="contact" class="cta-section">
     <div class="cta-container">
       <!-- Header -->
       <div class="cta-header">
@@ -42,7 +42,6 @@ const ctaSubtitle = 'Notre mission : aider les entrepreneurs et les entreprises 
 
 .cta-header {
   text-align: center;
-  margin-bottom: 48px;
 }
 
 .cta-title {
