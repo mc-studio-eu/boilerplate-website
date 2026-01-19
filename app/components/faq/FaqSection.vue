@@ -21,6 +21,12 @@ const faqItems = ref<FaqItem[]>([
         "Réserver un appel ou contactez nous directement sur WhatsApp. Nous répondons généralement sous 24h avec quelques questions rapides et une première estimation. Un devis détaillé est ensuite envoyé après un échange de cadrage (objectifs, contenu, délais, périmètre)."
   },
   {
+    id: 5,
+    question: "Comment se déroule la collaboration ?",
+    answer:
+        "Vous aurez un canal WhatsApp privé avec nous pour fluidifier les échanges, les briefs et la livraison. Si besoin, on planifie des points de suivi.\n\nTout se passe sur Notion : vous déposez vos demandes (texte, vidéo, docs), on les analyse et on vous donne une deadline. En général, on livre 2 à 3 tâches par semaine selon la complexité.\n\nUne fois livré, vous validez ou demandez des retouches, puis on enchaîne sur la suite."
+  },
+  {
     id: 2,
     question: "Que se passe-t-il si le design ne correspond pas à vos attentes ?",
     answer:
@@ -303,6 +309,7 @@ const founder = {
   line-height: 1.7;
   color: var(--text-secondary);
   transition: color 0.3s ease;
+  white-space: pre-line;
 }
 
 /* Accordion Animation */

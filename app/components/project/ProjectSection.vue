@@ -167,21 +167,35 @@ const currentProject = computed(() => projects.value[currentIndex.value])
         </div>
 
         <!-- Navigation -->
-        <div class="project-navigation">
-          <button 
-            class="nav-button nav-prev"
-            @click="prevProject"
-            aria-label="Projet précédent"
-          >
-            <UIcon name="i-lucide-chevron-left" />
-          </button>
-          <button 
-            class="nav-button nav-next"
-            @click="nextProject"
-            aria-label="Projet suivant"
-          >
-            <UIcon name="i-lucide-chevron-right" />
-          </button>
+        <div class="project-navigation-container">
+          <div class="project-navigation">
+            <button
+              class="nav-button nav-prev"
+              @click="prevProject"
+              aria-label="Projet précédent"
+            >
+              <UIcon name="i-lucide-chevron-left" />
+            </button>
+            <button
+              class="nav-button nav-next"
+              @click="nextProject"
+              aria-label="Projet suivant"
+            >
+              <UIcon name="i-lucide-chevron-right" />
+            </button>
+          </div>
+
+          <!-- Indicators -->
+          <div class="indicators">
+            <button
+              v-for="(project, index) in projects"
+              :key="project.id"
+              class="indicator"
+              :class="{ 'active': currentIndex === index }"
+              @click="currentIndex = index"
+              :aria-label="`Aller au projet ${index + 1}`"
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -190,6 +204,13 @@ const currentProject = computed(() => projects.value[currentIndex.value])
 
 <style scoped>
 @reference "@/assets/css/main.css";
+
+.project-navigation-container {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  margin-top: 10px;
+}
 
 .project-navigation {
   display: flex;
@@ -213,6 +234,32 @@ const currentProject = computed(() => projects.value[currentIndex.value])
 .nav-button:hover {
   border-color: var(--color-gold);
   color: var(--color-gold);
+}
+
+.indicators {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.indicator {
+  width: 24px;
+  height: 4px;
+  border-radius: 4px;
+  background: var(--border-subtle);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+.indicator.active {
+  background: var(--color-gold);
+  width: 32px;
+}
+
+.indicator:hover:not(.active) {
+  background: var(--text-secondary);
 }
 </style>
 
