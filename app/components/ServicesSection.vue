@@ -34,7 +34,7 @@ const services = [
       "Dev sur mesure (mobile et desktop)",
       "Tracking (GA) + Déploiement"
     ],
-    deliverables: ["Landing page live", "Tracking & analytics"],
+    deliverables: ["Landing page live", "Prêt à convertir"],
     highlighted: false,
     modalKey: "landing"
   },
@@ -69,7 +69,7 @@ const services = [
 ];
 
 const otherServices = [
-  "Branding", "Web Design", "Site Vitrines", "Dev Ponctuel", "SEO", "Copywriting", "Accompagnement Stratégique", "AI Intégration"
+  "Branding", "Web Design", "Site Vitrines", "SEO", "Copywriting", "Accompagnement Stratégique", "AI Intégration"
 ];
 const switchModal = (direction: 'next' | 'prev') => {
   const keys = services.map(s => s.modalKey);

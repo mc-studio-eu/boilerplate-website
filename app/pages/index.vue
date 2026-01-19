@@ -1,6 +1,7 @@
 <script setup lang="ts">
 // Auto-imports from Nuxt - no need to import components manually
 import ScrollingMarquee from "../components/hero/ScrollingMarquee.vue"
+import ServicesInterMarquee from "../components/services/ServicesInterMarquee.vue"
 </script>
 
 <template>
@@ -22,18 +23,19 @@ import ScrollingMarquee from "../components/hero/ScrollingMarquee.vue"
 
       <div class="section-separator"></div>
 
-      <div class="section-separator"></div>  
+      <ServicesInterMarquee />
+
+      <div class="section-separator mt-10"></div>  
       
       <!-- Services Section -->
       <ServicesSection id="services" />
- 
-      <div class="section-separator"></div>
-      
+
+      <!-- Process Section -->
+      <ProcessSection id="process" />
+       
       <div class="section-separator"></div>  
       
-      <!-- Process Section -->
-      <!-- <ProcessSection id="process" />
-      <div class="section-separator"></div> -->
+      <div class="section-separator"></div>
       
       <!-- Testimonials Section -->
       <TestimonialSection id="avis" />

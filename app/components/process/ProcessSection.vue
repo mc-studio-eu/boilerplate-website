@@ -32,8 +32,8 @@ const projectDuration = ref('15 jours')
   <section id="process" class="process-section">
     <div class="process-container">
       <!-- Header -->
-      <div class="process-header">
-        <h2 class="process-title">Processus</h2>
+      <div class="process-header text-center">
+        <h2 class="process-title">Pro<span class="text-gradient">cessus</span></h2>
         <p class="process-subtitle">
           Un process clair. Des livrables concrets. Zéro friction.
         </p>
@@ -81,13 +81,6 @@ const projectDuration = ref('15 jours')
         </div>
       </div>
 
-      <!-- Quote -->
-      <div class="process-quote">
-        <p class="quote-text">
-          Chez MC Studio on a le goût du travail bien fait, on itère vite tout en ayant 
-          une attention particulière au travail délivré
-        </p>
-      </div>
     </div>
   </section>
 </template>
