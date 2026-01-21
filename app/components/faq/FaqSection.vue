@@ -70,7 +70,7 @@ const founder = computed(() => ({
     <div class="max-w-[1216px] mx-auto">
       <div class="grid grid-cols-1 md:grid-cols-[280px_1fr] gap-12 md:gap-16">
         <!-- Left Column - Info -->
-        <div class="flex flex-col gap-4">
+        <div class="flex flex-col">
           <h2 class="font-manrope font-medium text-2xl sm:text-3xl md:text-[32px] mb-8 transition-colors duration-300 text-[var(--text-primary)]" v-html="$t('faq.title')">
           </h2>
           <p class="font-inter text-base text-[var(--text-secondary)] mb-4 transition-colors duration-300">{{ $t('faq.subtitle') }}</p>
@@ -96,9 +96,9 @@ const founder = computed(() => ({
             {{ $t('faq.contact_text') }}
           </p>
 
-          <UButton 
+          <UButton to="https://api.whatsapp.com/send/?phone=%2B33781724683&text&type=phone_number&app_absent=0" target="_blank"
             size="md"
-            class="mt-2 w-fit cursor-pointer bg-[#232323] text-white"
+            class="mt-2 w-fit cursor-pointer bg-[#232323] text-white hover:bg-transparent"
           >
             {{ $t('faq.whatsapp_btn') }}
           </UButton>

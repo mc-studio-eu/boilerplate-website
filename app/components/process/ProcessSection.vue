@@ -5,7 +5,7 @@ const steps = [1, 2, 3]
 const activeStep = ref(1)
 
 // Auto-rotate steps every 5 seconds if user hasn't interacted
-let interval: NodeJS.Timeout
+let interval: ReturnType<typeof setInterval>
 const isPaused = ref(false)
 
 const setStep = (step: number) => {
@@ -52,84 +52,26 @@ onUnmounted(() => {
               mode="out-in"
             >
               <!-- Visual 1: Discovery Call (Calendar) -->
+              <!-- Visual 1: Discovery Call (Calendar) -->
               <div v-if="activeStep === 1" key="step1" class="absolute inset-0 flex items-center justify-center">
-                 <div class="w-[320px] bg-[#1c1c1c] border border-white/5 rounded-2xl shadow-2xl p-5 flex flex-col gap-5 relative overflow-hidden group hover:border-[#f0bf6c]/30 transition-colors duration-500">
-                    <!-- Calendar Header -->
-                    <div class="flex justify-between items-center">
-                      <div class="flex flex-col gap-0.5">
-                        <span class="text-[10px] uppercase tracking-wider text-white/40 font-bold">September 2026</span>
-                        <span class="text-white font-semibold text-lg">Discovery Call</span>
-                      </div>
-                      <div class="w-9 h-9 rounded-full bg-[#f0bf6c]/10 flex items-center justify-center text-[#f0bf6c] group-hover:bg-[#f0bf6c] group-hover:text-black transition-colors duration-300">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                      </div>
-                    </div>
-                    
-                    <!-- Calendar Grid Mockup -->
-                    <div class="grid grid-cols-7 gap-2">
-                      <div v-for="day in ['M', 'T', 'W', 'T', 'F', 'S', 'S']" :key="day" class="h-6 flex items-center justify-center text-[10px] text-white/20 font-medium">{{ day }}</div>
-                      <div v-for="i in 28" :key="`d-${i}`" 
-                           class="aspect-square rounded-full flex items-center justify-center text-[11px] transition-all duration-300" 
-                           :class="i === 15 ? 'bg-[#f0bf6c] text-[#0f0f0f] font-bold shadow-[0_0_15px_rgba(240,191,108,0.4)] scale-110' : 'text-white/30 hover:bg-white/5 hover:text-white'">
-                        {{ i }}
-                      </div>
-                    </div>
-
-                    <!-- Selected Slot -->
-                    <div class="bg-[#2a2a2a] rounded-xl p-3 flex items-center justify-between border border-white/5 group-hover:border-[#f0bf6c]/20 transition-colors duration-300">
-                       <div class="flex items-center gap-3">
-                         <div class="w-10 h-10 rounded-full bg-gradient-to-br from-[#f0bf6c] to-[#d4a04b] flex items-center justify-center text-[#0f0f0f] font-bold text-xs">MC</div>
-                         <div class="flex flex-col">
-                           <span class="text-sm text-white font-medium">30 min Meeting</span>
-                           <span class="text-[10px] text-white/40">Google Meet • 10:00 AM</span>
-                         </div>
-                       </div>
-                       <div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
-                    </div>
+                 <div class="w-auto h-auto max-w-full max-h-full rounded-2xl shadow-2xl overflow-hidden border border-white/5 bg-[#1c1c1c]">
+                    <NuxtImg 
+                      src="/img/process/step1_calendar.png" 
+                      alt="Discovery Call Calendar" 
+                      class="w-full h-full object-contain"
+                    />
                  </div>
               </div>
 
               <!-- Visual 2: Proposal (Document) -->
+              <!-- Visual 2: Proposal (Document) -->
               <div v-if="activeStep === 2" key="step2" class="absolute inset-0 flex items-center justify-center">
-                 <div class="w-[300px] h-[400px] bg-white text-[#0f0f0f] rounded-lg shadow-2xl transform rotate-1 p-8 flex flex-col relative group hover:rotate-0 transition-transform duration-500">
-                    <div class="flex justify-between items-start mb-8">
-                       <div class="w-10 h-10 bg-[#0f0f0f] rounded-full flex items-center justify-center text-white font-bold tracking-tighter">MC</div>
-                       <div class="text-[10px] text-gray-400 font-mono">INV-2024-001</div>
-                    </div>
-                    
-                    <div class="h-3 w-1/3 bg-gray-100 rounded mb-6"></div>
-                    <div class="h-6 w-3/4 bg-[#0f0f0f] rounded mb-8"></div>
-                    
-                    <div class="space-y-4 mb-auto">
-                      <div class="flex justify-between items-center text-sm border-b border-gray-100 pb-3">
-                        <span class="text-gray-500 font-medium">UI/UX Design</span>
-                        <span class="font-mono font-bold">$4,500</span>
-                      </div>
-                      <div class="flex justify-between items-center text-sm border-b border-gray-100 pb-3">
-                        <span class="text-gray-500 font-medium">Development</span>
-                        <span class="font-mono font-bold">$5,000</span>
-                      </div>
-                      <div class="flex justify-between items-center text-sm border-b border-gray-100 pb-3">
-                        <span class="text-gray-500 font-medium">SEO & Perf.</span>
-                        <span class="font-mono font-bold">$1,000</span>
-                      </div>
-                    </div>
-
-                    <div class="mt-6">
-                      <div class="flex justify-between items-end mb-3">
-                        <span class="text-xs text-gray-400 uppercase tracking-wider font-bold">Total Estimate</span>
-                        <span class="text-2xl font-bold tracking-tight">$10,500</span>
-                      </div>
-                      <div class="w-full py-3 bg-[#f0bf6c] text-[#0f0f0f] font-bold text-sm text-center rounded-lg shadow-lg hover:brightness-105 transition-all cursor-pointer">
-                        Approve Proposal
-                      </div>
-                    </div>
-
-                    <!-- Badge -->
-                    <div class="absolute -top-2 -right-2 bg-[#22c55e] text-white text-[10px] uppercase tracking-wider font-bold px-3 py-1 rounded-full shadow-lg flex items-center gap-1.5">
-                       <span class="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span>
-                       Ready
-                    </div>
+                 <div class="w-auto h-auto max-w-full max-h-full rounded-2xl shadow-2xl overflow-hidden border border-white/5 bg-[#1c1c1c]">
+                    <NuxtImg 
+                      src="/img/process/step2_proposal.png" 
+                      alt="Proposal Document" 
+                      class="w-full h-full object-contain"
+                    />
                  </div>
               </div>
 

@@ -1,42 +1,55 @@
 <template>
   <footer id="footer" :style="{ backgroundImage: `url('/img/main/background.png')` }" class="rounded-lg bg-cover bg-center">
     <div class="mx-auto max-w-7xl px-6 py-8 lg:px-8">
-      <div class="flex flex-col md:flex-row justify-between items-center gap-6 md:gap-4 text-sm text-gray-400 font-inter">
-        
-        <!-- Left: Copyright & Legal -->
-        <div class="flex items-center gap-4 order-3 md:order-1">
-          <p>&copy; {{ new Date().getFullYear() }} MC Studio</p>
-          <span class="hidden md:inline text-gray-600">|</span>
-          <div class="flex gap-4">
-            <NuxtLink :to="localePath('/privacy')" class="hover:text-white transition-colors">{{ $t('legal.links.privacy') }}</NuxtLink>
-            <NuxtLink :to="localePath('/terms')" class="hover:text-white transition-colors">{{ $t('legal.links.terms') }}</NuxtLink>
+      
+      <!-- Main Container -->
+      <div class="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-4 text-sm font-inter">
+
+        <!-- Identity Group (Logo + Legal) -->
+        <!-- "contents" on mobile allows children to be sorted individually in the main flex container. 
+             "flex" on desktop groups them together on the left. -->
+        <div class="contents md:flex md:items-center md:gap-6 md:order-1 text-white">
+          
+          <!-- Logo Section (Mobile: Order 1) -->
+          <div class="flex items-center gap-3 order-1">
+            <NuxtImg src="/img/main/logo.svg" alt="MC Studio Logo" class="h-10 md:h-8 w-auto" />
+            <span class="font-inter text-lg font-medium text-white tracking-tight">Studio</span>
+          </div>
+
+          <!-- Legal Section (Mobile: Order 4) -->
+          <div class="flex flex-col md:flex-row items-center gap-2 md:gap-4 text-white order-4 md:order-none w-full md:w-auto mt-4 md:mt-0">
+             <p class="text-sm md:text-xs">&copy; {{ new Date().getFullYear() }} MC Studio</p>
+             <!-- Links -->
+             <div class="flex gap-4 text-xs">
+               <NuxtLink :to="localePath('/privacy')" class="hover:text-white transition-colors">{{ $t('legal.links.privacy') }}</NuxtLink>
+               <NuxtLink :to="localePath('/terms')" class="hover:text-white transition-colors">{{ $t('legal.links.terms') }}</NuxtLink>
+             </div>
           </div>
         </div>
 
-        <!-- Center: World Clock -->
-        <div class="flex items-center gap-6 order-1 md:order-2 font-medium text-gray-300">
+        <!-- Clocks Section (Mobile: Order 2, Desktop: Order 2) -->
+        <div class="flex flex-wrap justify-center items-center gap-4 md:gap-6 order-2 font-medium text-gray-300">
           <div class="flex flex-col items-center">
-            <span class="text-[10px] text-gray-500 uppercase tracking-wider">Montréal</span>
+            <span class="text-[10px] text-primary uppercase tracking-wider">Montréal</span>
             <span>{{ timeMontreal }}</span>
           </div>
-          <div class="w-px h-8 bg-gray-700/50"></div>
+          <div class="hidden md:block w-px h-8 bg-gray-700/50"></div>
           <div class="flex flex-col items-center">
-            <span class="text-[10px] text-gray-500 uppercase tracking-wider">Lyon</span>
+            <span class="text-[10px] text-primary uppercase tracking-wider">Lyon</span>
             <span>{{ timeLyon }}</span>
           </div>
-          <div class="w-px h-8 bg-gray-700/50"></div>
+          <div class="hidden md:block w-px h-8 bg-gray-700/50"></div>
           <div class="flex flex-col items-center">
-            <span class="text-[10px] text-gray-500 uppercase tracking-wider">London</span>
+            <span class="text-[10px] text-primary uppercase tracking-wider">London</span>
             <span>{{ timeLondon }}</span>
           </div>
         </div>
 
-        <!-- Right: Socials -->
-        <div class="flex items-center gap-6 order-2 md:order-3">
-          <div class="flex gap-4">
-            <a href="https://www.linkedin.com/in/mohamed-chettah/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">LinkedIn</a>
-            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Instagram</a>
-          </div>
+        <!-- Socials Section (Mobile: Order 3, Desktop: Order 3) -->
+        <div class="flex items-center gap-4 text-white order-3">
+          <a href="https://www.linkedin.com/in/mohamed-chettah/" target="_blank" rel="noopener noreferrer" class="hover:text-[var(--color-gold)] transition-colors">LinkedIn</a>
+          <a href="https://www.instagram.com/mc_studio_eu/" target="_blank" rel="noopener noreferrer" class="hover:text-[var(--color-gold)] transition-colors">Instagram</a>
+          <a href="https://x.com/MohameDevWeb" target="_blank" rel="noopener noreferrer" class="hover:text-[var(--color-gold)] transition-colors">X</a>
         </div>
 
       </div>

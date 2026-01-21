@@ -95,11 +95,11 @@ const switchModal = (direction: 'next' | 'prev') => {
           <!-- Card Content -->
           <div class="relative flex flex-col h-full">
             <!-- Title -->
-            <h3 class="font-semibold text-xl sm:text-2xl mb-1 transition-colors duration-300 text-[var(--text-primary)]">{{ service.title }}</h3>
-            <p class="text-xs mb-5 transition-colors duration-300 text-[var(--text-secondary)]">{{ service.subtitle }}</p>
+            <h3 class="font-semibold text-xl sm:text-2xl mb-2 transition-colors duration-300 text-[var(--text-primary)]">{{ service.title }}</h3>
+            <p class="text-xs mb-6 transition-colors duration-300 text-[var(--text-secondary)]">{{ service.subtitle }}</p>
 
             <!-- Image placeholder -->
-            <div class="w-full max-w-[244px] h-[100px] sm:h-[180px] rounded-lg mb-5 overflow-hidden transition-colors duration-300 bg-[var(--bg-card)]">
+            <div class="w-full h-[200px] rounded-lg mb-6 overflow-hidden transition-colors duration-300 bg-[var(--bg-card)] border border-[var(--border-subtle)]">
               <NuxtImg
                 :src="service.image"
                 alt="Service Image"

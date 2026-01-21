@@ -19,7 +19,7 @@ const testimonials = computed<Testimonial[]>(() => [
     id: 1,
     content: t('testimonials.items.ra_energy.content'),
     author: {
-      name: 'Yazid Chettah',
+      name: 'Yazid C.',
       role: t('testimonials.items.ra_energy.role'),
       avatar: '/img/testimonials/yazid-ra-energy.jpeg'
     },
@@ -28,7 +28,7 @@ const testimonials = computed<Testimonial[]>(() => [
     id: 2,
     content: t('testimonials.items.souji_nova.content'),
     author: {
-      name: 'Nelson Maghoun',
+      name: 'Nelson M.',
       role: t('testimonials.items.souji_nova.role'),
       avatar: '/img/testimonials/nelson-souji-nova.jpg'
     },
@@ -37,7 +37,7 @@ const testimonials = computed<Testimonial[]>(() => [
     id: 3,
     content: t('testimonials.items.fontaines_vtc.content'),
     author: {
-      name: 'Mario Convertino',
+      name: 'Mario C.',
       role: t('testimonials.items.fontaines_vtc.role'),
       avatar: '/img/testimonials/mario-fontaines-vtc.png'
     }
@@ -70,18 +70,18 @@ const currentTestimonial = computed(() => testimonials.value[currentIndex.value]
       </h2>
 
       <!-- Testimonial Card -->
-      <div class="w-full max-w-[460px] mx-auto p-6 bg-[#232323] border border-[var(--border-subtle)] rounded-2xl min-h-[180px] flex flex-col justify-center transition-colors duration-300 shadow-[0_2px_8px_rgba(0,0,0,0.06)] dark:shadow-none" v-if="currentTestimonial">
-        <div class="flex flex-col gap-6">
+      <div class="w-full max-w-[460px] mx-auto p-6 bg-[#232323] border border-[var(--border-subtle)] rounded-2xl h-[330px] sm:h-[200px] flex flex-col transition-colors duration-300 shadow-[0_2px_8px_rgba(0,0,0,0.06)] dark:shadow-none" v-if="currentTestimonial">
+        <div class="flex flex-col sm:gap-0 gap-4 justify-between h-full">
           <!-- Quote -->
           <p class="font-inter text-xs sm:text-sm leading-[1.7] text-[var(--text-secondary)] transition-colors duration-300">
             {{ currentTestimonial.content }}
           </p>
 
           <!-- Author & Navigation -->
-          <div class="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <div class="flex sm:flex-row flex-col sm:items-center justify-between gap-2 sm:gap-4">
             <!-- Author Info -->
             <div class="flex items-center gap-3">
-              <NuxtImg :src="currentTestimonial.author.avatar" class="w-11 h-11 rounded-full bg-gradient-to-br from-[var(--color-gold)] to-[#e8a84c] flex items-center justify-center object-cover"/>
+              <NuxtImg :src="currentTestimonial.author.avatar" class="w-11 h-11 rounded-full bg-gradient-to-br from-[var(--color-gold)] to-[#e8a84c] flex items-center justify-center object-cover shrink-0"/>
               <div class="flex flex-col gap-[2px]">
                 <span class="font-inter text-sm font-semibold text-[var(--text-primary)] transition-colors duration-300">{{ currentTestimonial.author.name }}</span>
                 <span class="font-inter text-xs text-[var(--text-secondary)] transition-colors duration-300">{{ currentTestimonial.author.role }}</span>
@@ -89,7 +89,7 @@ const currentTestimonial = computed(() => testimonials.value[currentIndex.value]
             </div>
 
             <!-- Navigation -->
-            <div class="flex gap-3 sm:self-auto">
+            <div class="flex gap-3 shrink-0">
               <button
                   class="flex items-center justify-center w-11 h-[42px] bg-[#232323] border border-[var(--border-subtle)] rounded-lg text-[var(--text-primary)] cursor-pointer transition-all duration-200 hover:border-[var(--color-gold)] hover:text-[var(--color-gold)]"
                   @click="prevTestimonial"

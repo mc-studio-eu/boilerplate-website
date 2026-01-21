@@ -38,7 +38,7 @@ const projects = computed<Project[]>(() => [
     testimonials: true,
     testimonial: {
       avis: t('projects.items.souji_nova.testimonial.review'),
-      name: "Nelson Maghoun",
+      name: "Nelson M.",
       job: t('projects.items.souji_nova.testimonial.job'),
       avatar: "/img/project/avis-souji-nova.jpg"
     },
@@ -53,7 +53,7 @@ const projects = computed<Project[]>(() => [
     testimonials: true,
     testimonial: {
       avis: t('projects.items.ra_energy.testimonial.review'),
-      name: "Yazid Chettah",
+      name: "Yazid C.",
       job: t('projects.items.ra_energy.testimonial.job'),
       avatar: "/img/project/avis-ra-energy.jpg"
     },
@@ -68,7 +68,7 @@ const projects = computed<Project[]>(() => [
     testimonials: true,
     testimonial: {
       avis: t('projects.items.fontaines_vtc.testimonial.review'),
-      name: "Mario Convertino",
+      name: "Mario C.",
       job: t('projects.items.fontaines_vtc.testimonial.job'),
       avatar: "/img/project/avis-fontaines-vtc.jpg"
     },

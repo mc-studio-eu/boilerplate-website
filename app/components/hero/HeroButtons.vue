@@ -6,15 +6,12 @@
     </a>
     
     <!-- Secondary CTA -->
-    <button class="cta-secondary flex items-center justify-center gap-2 w-full max-w-[280px] sm:max-w-none sm:w-auto min-w-0 sm:min-w-[160px] md:min-w-[180px] lg:min-w-[206px] h-11 sm:h-10 md:h-9 rounded-lg font-medium text-[15px] sm:text-sm md:text-[15px] lg:text-base text-[#f0eadb] cursor-pointer backdrop-blur-md transition-all duration-200 hover:-translate-y-0.5 active:scale-[0.98] relative border border-transparent">
+    <a href="https://api.whatsapp.com/send/?phone=%2B33781724683&text&type=phone_number&app_absent=0" target="_blank" class="flex items-center justify-center gap-2 w-full max-w-[280px] sm:max-w-none sm:w-auto min-w-0 sm:min-w-[160px] md:min-w-[180px] lg:min-w-[206px] h-11 sm:h-10 md:h-9 rounded-lg font-medium text-[15px] sm:text-sm md:text-[15px] lg:text-base text-[#f0eadb] cursor-pointer backdrop-blur-md transition-all duration-200 hover:-translate-y-0.5 active:scale-[0.98] relative border border-transparent">
       {{ $t('hero.cta.whatsapp') }}
-    </button>
+    </a>
   </div>
 </template>
 
 <style scoped>
-.cta-secondary:hover {
-  background: linear-gradient(#1a1a1a, #1a1a1a) padding-box, 
-              linear-gradient(270deg, #f0bf6c 0%, #fff 67.308%) border-box;
-}
+
 </style>
