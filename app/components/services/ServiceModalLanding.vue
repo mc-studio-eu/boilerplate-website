@@ -19,7 +19,8 @@ const modalData = computed(() => ({
     { text: t('services.modals.landing.included.6'), icon: "i-heroicons-arrow-trending-up" },
     { text: t('services.modals.landing.included.7'), icon: "i-heroicons-clipboard-document-list" },
     { text: t('services.modals.landing.included.8'), icon: "i-heroicons-chart-bar" },
-    { text: t('services.modals.landing.included.9'), icon: "i-heroicons-rocket-launch" }
+    { text: t('services.modals.landing.included.9'), icon: "i-heroicons-rocket-launch" },
+    { text: t('services.modals.landing.included.10'), icon: "i-heroicons-sparkles" }
   ],
   delai: t('services.modals.landing.delay'),
 }));

@@ -132,7 +132,8 @@
                     "6": "Optimisation SEO",
                     "7": "Formulaire (ou Calendly)",
                     "8": "Tracking : Google Analytics",
-                    "9": "Mise en ligne + QA (mobile/tablet/desktop)"
+                    "9": "Mise en ligne + QA (mobile/tablet/desktop)",
+                    "10": "Animations & Micro-interactions"
                 },
                 "delay": "7–10 jours"
             },
@@ -301,6 +302,10 @@
             "fontaines_vtc": {
                 "content": "MC studio m’a accompagné dans mon projet digital, entreprise très sérieuse professionnelle je la recommande !",
                 "role": "Dirigeant, Fontaines VTC"
+            },
+            "liquid_scan": {
+                "content": "Mohamed nous a accompagnés dans le développement de notre startup avec sérieux, énergie et passion. Nous recherchions quelqu’un de vaillant, investi et passionné, et il a pleinement répondu à nos attentes. Je le recommande vivement.",
+                "role": "Co-fondateur, Liquid Scan"
             }
         }
     },

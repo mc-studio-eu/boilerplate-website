@@ -132,7 +132,8 @@
                     "6": "SEO Optimization",
                     "7": "Form (or Calendly)",
                     "8": "Tracking: Google Analytics",
-                    "9": "Go live + QA (mobile/tablet/desktop)"
+                    "9": "Go live + QA (mobile/tablet/desktop)",
+                    "10": "Animations & Micro-interactions"
                 },
                 "delay": "7–10 days"
             },
@@ -301,6 +302,10 @@
             "fontaines_vtc": {
                 "content": "MC Studio accompanied me in my digital project, very serious professional company I recommend it!",
                 "role": "Manager, Fontaines VTC"
+            },
+            "liquid_scan": {
+                "content": "Mohamed supported us in the development of our startup.\nWe were looking for someone driven, committed, and passionate, and he fully met our expectations.\nI highly recommend him.",
+                "role": "Co-founder, Liquid Scan"
             }
         }
     },
