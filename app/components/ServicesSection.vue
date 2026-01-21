@@ -74,13 +74,13 @@ const switchModal = (direction: 'next' | 'prev') => {
 </script>
 
 <template>
-  <section id="services" class="py-5 md:py-10 lg:py-12 px-6 transition-colors duration-300" style="background-color: var(--bg-primary);">
+  <section id="services" class="py-5 md:py-10 lg:py-12 px-6 transition-colors duration-300 bg-[var(--bg-primary)]">
     <div class="max-w-[1216px] mx-auto">
       <!-- Header -->
       <div class="text-center mb-10 md:mb-16">
-        <h2 class="font-manrope font-medium text-2xl sm:text-3xl md:text-[32px] mb-3 transition-colors duration-300" style="color: var(--text-primary);" v-html="$t('services.title')">
+        <h2 class="font-manrope font-medium text-2xl sm:text-3xl md:text-[32px] mb-3 transition-colors duration-300 text-[var(--text-primary)]" v-html="$t('services.title')">
         </h2>
-        <p class="text-sm sm:text-base max-w-xl mx-auto leading-relaxed transition-colors duration-300" style="color: var(--text-secondary);" v-html="$t('services.subtitle')">
+        <p class="text-sm sm:text-base max-w-xl mx-auto leading-relaxed transition-colors duration-300 text-[var(--text-secondary)]" v-html="$t('services.subtitle')">
         </p>
       </div>
 
@@ -89,18 +89,17 @@ const switchModal = (direction: 'next' | 'prev') => {
         <div 
           v-for="(service, index) in services" 
           :key="index"
-          class="service-card relative rounded-lg p-6 sm:p-8 transition-colors duration-300"
-          :class="service.highlighted ? 'border-[3px] border-[#f0bf6c]' : 'border'"
-          style="border-color: var(--border-subtle);"
+          class="relative rounded-lg p-6 sm:p-8 transition-colors duration-300"
+          :class="service.highlighted ? 'border-[3px] border-[#f0bf6c]' : 'border border-[var(--border-subtle)]'"
         >
           <!-- Card Content -->
           <div class="relative flex flex-col h-full">
             <!-- Title -->
-            <h3 class="font-semibold text-xl sm:text-2xl mb-1 transition-colors duration-300" style="color: var(--text-primary);">{{ service.title }}</h3>
-            <p class="text-xs mb-5 transition-colors duration-300" style="color: var(--text-secondary);">{{ service.subtitle }}</p>
+            <h3 class="font-semibold text-xl sm:text-2xl mb-1 transition-colors duration-300 text-[var(--text-primary)]">{{ service.title }}</h3>
+            <p class="text-xs mb-5 transition-colors duration-300 text-[var(--text-secondary)]">{{ service.subtitle }}</p>
 
             <!-- Image placeholder -->
-            <div class="w-full max-w-[244px] h-[100px] sm:h-[180px] rounded-lg mb-5 overflow-hidden transition-colors duration-300" style="background-color: var(--bg-card);">
+            <div class="w-full max-w-[244px] h-[100px] sm:h-[180px] rounded-lg mb-5 overflow-hidden transition-colors duration-300 bg-[var(--bg-card)]">
               <NuxtImg
                 :src="service.image"
                 alt="Service Image"
@@ -110,7 +109,7 @@ const switchModal = (direction: 'next' | 'prev') => {
 
             <!-- Livrables -->
             <div class="mt-auto">
-              <p class="font-light text-sm sm:text-[15px] mb-2 transition-colors duration-300" style="color: var(--text-primary);">{{ $t('services.common.deliverables_label') }}</p>
+              <p class="font-light text-sm sm:text-[15px] mb-2 transition-colors duration-300 text-[var(--text-primary)]">{{ $t('services.common.deliverables_label') }}</p>
               <div class="flex flex-wrap gap-2">
                 <span 
                   v-for="deliverable in service.deliverables" 
@@ -134,10 +133,10 @@ const switchModal = (direction: 'next' | 'prev') => {
       </div>
 
       <!-- Other Services -->
-      <div class="p-6 sm:p-8 rounded-2xl border transition-colors duration-300" style="border-color: var(--border-subtle);">
+      <div class="p-6 sm:p-8 rounded-2xl border transition-colors duration-300 border-[var(--border-subtle)]">
         <div class="mb-5">
-          <h4 class="font-manrope font-semibold text-lg mb-1 transition-colors duration-300" style="color: var(--text-primary);">{{ $t('services.other_services.title') }}</h4>
-          <p class="text-sm transition-colors duration-300" style="color: var(--text-secondary);">{{ $t('services.other_services.subtitle') }}</p>
+          <h4 class="font-manrope font-semibold text-lg mb-1 transition-colors duration-300 text-[var(--text-primary)]">{{ $t('services.other_services.title') }}</h4>
+          <p class="text-sm transition-colors duration-300 text-[var(--text-secondary)]">{{ $t('services.other_services.subtitle') }}</p>
         </div>
         <div class="flex flex-wrap gap-2 sm:gap-3">
           <span 

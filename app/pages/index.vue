@@ -12,10 +12,10 @@ import ServicesInterMarquee from "../components/services/ServicesInterMarquee.vu
     <!-- Main Content with Border Frame -->
     <div class="relative mx-auto max-w-[1440px]">
       <!-- Left Border Line -->
-      <div class="border-line absolute left-[50px] top-0 bottom-0 w-px hidden lg:block"></div>
+      <div class="border-line absolute left-0 xl:left-[50px] top-0 bottom-0 w-px"></div>
       
       <!-- Right Border Line -->
-      <div class="border-line absolute right-[50px] top-0 bottom-0 w-px hidden lg:block"></div>
+      <div class="border-line absolute right-0 xl:right-[50px] top-0 bottom-0 w-px"></div>
       
       <!-- Projects Section -->
       <div class="section-separator"></div>
@@ -31,7 +31,7 @@ import ServicesInterMarquee from "../components/services/ServicesInterMarquee.vu
       <ServicesSection id="services" />
 
       <!-- Process Section -->
-<!--      <ProcessSection id="process" />-->
+      <ProcessSection id="process" />
        
       <div class="section-separator"></div>  
       

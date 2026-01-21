@@ -8,7 +8,7 @@ import ScrollingMarquee from "./ScrollingMarquee.vue"
 </script>
 
 <template>
-  <section class="hero-section relative w-full rounded-lg overflow-hidden">
+  <section class="relative w-full rounded-lg overflow-hidden min-h-[calc(100svh-48px)] min-[480px]:min-h-[620px] sm:min-h-[600px] md:min-h-[620px] lg:min-h-[643px]">
     <!-- Background Image -->
     <div 
       class="absolute inset-0 bg-cover bg-center rounded-lg"
@@ -27,34 +27,3 @@ import ScrollingMarquee from "./ScrollingMarquee.vue"
     <ScrollingMarquee />
   </section>
 </template>
-
-<style scoped>
-.hero-section {
-  /* Mobile first - puis ajuster pour les écrans plus grands */
-  min-height: calc(100svh - 48px); /* svh pour iOS Safari */
-}
-
-@media (min-width: 480px) {
-  .hero-section {
-    min-height: 620px;
-  }
-}
-
-@media (min-width: 640px) {
-  .hero-section {
-    min-height: 600px;
-  }
-}
-
-@media (min-width: 768px) {
-  .hero-section {
-    min-height: 620px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .hero-section {
-    min-height: 643px;
-  }
-}
-</style>

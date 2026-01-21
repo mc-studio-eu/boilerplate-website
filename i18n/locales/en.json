@@ -52,12 +52,14 @@
             "list": {
                 "branding": "Branding",
                 "web_design": "Web Design",
+                "product_design": "Product Design",
                 "showcase": "Showcase Sites",
                 "seo": "SEO",
                 "copywriting": "Copywriting",
                 "strategy": "Strategic Support",
                 "ai": "AI Integration",
-                "web_dev": "Web Development"
+                "web_dev": "Web Development",
+                "print": "Print"
             }
         },
         "cards": {
@@ -264,25 +266,24 @@
         }
     },
     "process": {
-        "title": "Pro<span class=\"text-gradient\">cess</span>",
-        "subtitle": "A clear process. Concrete deliverables. Zero friction.",
-        "tabs": {
-            "landing": "Landing Page",
-            "saas": "Launch: SaaS",
-            "sprint": "Sprint: MVP"
-        },
+        "title": "How we <span class=\"text-gradient\">work</span>",
+        "subtitle": "A simple 3-step approach to bring your project to life.",
+        "duration_label": "Average duration:",
+        "duration_value": "2-4 weeks",
         "steps": {
-            "meeting": "Meeting Call",
-            "proposition": "Proposition",
-            "kickoff": "Kick-Off",
-            "branding": "Branding",
-            "ui_ux": "UI & UX",
-            "validation": "Validation",
-            "integration": "Integration",
-            "deployment": "Deployment"
-        },
-        "duration_label": "Project Time:",
-        "duration_value": "15 days"
+            "1": {
+                "title": "1. Discovery Call",
+                "description": "We discuss your project, goals, and challenges. I then propose the best strategy tailored to your needs."
+            },
+            "2": {
+                "title": "2. Commercial Proposal",
+                "description": "You receive a detailed proposal including scope, budget, and timeline. Everything is clear, no surprises."
+            },
+            "3": {
+                "title": "3. Project Kickoff",
+                "description": "Once approved, we set up the kickoff. You get access to your Notion workspace and work begins immediately."
+            }
+        }
     },
     "testimonials": {
         "intro_label": "The Independent Studio",
@@ -312,7 +313,7 @@
         "items": {
             "0": {
                 "question": "What types of clients do you support?",
-                "answer": "We support entrepreneurs, startups and companies. Our projects range from conversion-oriented landing pages to more complete platforms (MVP, SaaS, dashboards), with an approach focused on design, clarity of offer and performance."
+                "answer": "We support entrepreneurs, influencer, startups and companies. Our projects range from conversion-oriented landing pages to more complete platforms (MVP, SaaS, dashboards), with an approach focused on design, solving problem, clarity of offer and performance."
             },
             "1": {
                 "question": "How to get a quote and how long do you take to respond?",

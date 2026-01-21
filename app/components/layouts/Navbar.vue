@@ -26,6 +26,8 @@ const toggleColorMode = () => {
   colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark'
 }
 
+const isFooterVisible = ref(false)
+
 onMounted(() => {
   const handleScroll = () => {
     isScrolled.value = window.scrollY > 200
@@ -44,8 +46,23 @@ onMounted(() => {
     }
     if (window.scrollY < 300) activeSection.value = ''
   }
+  
+  // Intersection Observer for Footer
+  const footerObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      isFooterVisible.value = entry.isIntersecting
+    })
+  }, { threshold: 0.1 }) // Trigger when 10% of footer is visible
+
+  const footerEl = document.getElementById('footer')
+  if (footerEl) footerObserver.observe(footerEl)
+
   window.addEventListener('scroll', handleScroll)
-  onUnmounted(() => window.removeEventListener('scroll', handleScroll))
+  
+  onUnmounted(() => {
+    window.removeEventListener('scroll', handleScroll)
+    if (footerEl) footerObserver.unobserve(footerEl)
+  })
 })
 
 const toggleMenu = () => isMenuOpen.value = !isMenuOpen.value
@@ -80,7 +97,7 @@ const closeMenu = () => isMenuOpen.value = false
 
   <!-- Floating Navbar -->
   <Transition enter-active-class="transition-all duration-400 ease-[cubic-bezier(0.16,1,0.3,1)]" leave-active-class="transition-all duration-400 ease-[cubic-bezier(0.16,1,0.3,1)]" enter-from-class="opacity-0 translate-y-24" leave-to-class="opacity-0 translate-y-24">
-    <nav v-if="isScrolled" class="fixed bottom-3 md:bottom-6 left-1/2 -translate-x-1/2 z-[1000] px-3 md:px-6 w-full pointer-events-none" :class="[isMenuOpen ? 'max-w-[340px]' : 'max-w-[700px]']">
+    <nav v-if="isScrolled && !isFooterVisible" class="fixed bottom-3 md:bottom-6 left-1/2 -translate-x-1/2 z-[1000] px-3 md:px-6 w-full pointer-events-none" :class="[isMenuOpen ? 'max-w-[340px]' : 'max-w-[700px]']">
       <div 
         :class="[
           'backdrop-blur-[20px] pointer-events-auto overflow-hidden',

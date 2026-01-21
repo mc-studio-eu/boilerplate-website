@@ -64,41 +64,41 @@ const currentTestimonial = computed(() => testimonials.value[currentIndex.value]
 
   <p class="text-gradient text-center text-xl sm:text-3xl" v-html="$t('testimonials.intro_text')">
   </p>
-  <section id="avis" class="testimonial-section">
-    <div class="">
-      <h2 class="text-center font-manrope font-medium text-2xl sm:text-3xl md:text-[32px] mb-8 transition-colors duration-300" style="color: var(--text-primary);" v-html="$t('testimonials.title')">
+  <section id="avis" class="py-12 px-6 sm:py-20 bg-[var(--bg-primary)] transition-colors duration-300 ease-out">
+    <div class="max-w-[1216px] mx-auto">
+      <h2 class="text-center font-manrope font-medium text-2xl sm:text-3xl md:text-[32px] mb-6 sm:mb-8 transition-colors duration-300 text-[var(--text-primary)]" v-html="$t('testimonials.title')">
       </h2>
 
       <!-- Testimonial Card -->
-      <div class="testimonial-card" v-if="currentTestimonial">
-        <div class="card-content">
+      <div class="w-full max-w-[460px] mx-auto p-6 bg-[#232323] border border-[var(--border-subtle)] rounded-2xl min-h-[180px] flex flex-col justify-center transition-colors duration-300 shadow-[0_2px_8px_rgba(0,0,0,0.06)] dark:shadow-none" v-if="currentTestimonial">
+        <div class="flex flex-col gap-6">
           <!-- Quote -->
-          <p class="text-white sm:text-sm text-xs">
+          <p class="font-inter text-xs sm:text-sm leading-[1.7] text-[var(--text-secondary)] transition-colors duration-300">
             {{ currentTestimonial.content }}
           </p>
 
           <!-- Author & Navigation -->
-          <div class="card-footer">
+          <div class="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
             <!-- Author Info -->
-            <div class="author-info">
-              <NuxtImg :src="currentTestimonial.author.avatar" class="rounded-full max-h-10"/>
-              <div class="author-details">
-                <span class="text-white">{{ currentTestimonial.author.name }}</span>
-                <span class="author-role">{{ currentTestimonial.author.role }}</span>
+            <div class="flex items-center gap-3">
+              <NuxtImg :src="currentTestimonial.author.avatar" class="w-11 h-11 rounded-full bg-gradient-to-br from-[var(--color-gold)] to-[#e8a84c] flex items-center justify-center object-cover"/>
+              <div class="flex flex-col gap-[2px]">
+                <span class="font-inter text-sm font-semibold text-[var(--text-primary)] transition-colors duration-300">{{ currentTestimonial.author.name }}</span>
+                <span class="font-inter text-xs text-[var(--text-secondary)] transition-colors duration-300">{{ currentTestimonial.author.role }}</span>
               </div>
             </div>
 
             <!-- Navigation -->
-            <div class="testimonial-navigation">
+            <div class="flex gap-3 sm:self-auto">
               <button
-                  class="nav-button nav-prev"
+                  class="flex items-center justify-center w-11 h-[42px] bg-[#232323] border border-[var(--border-subtle)] rounded-lg text-[var(--text-primary)] cursor-pointer transition-all duration-200 hover:border-[var(--color-gold)] hover:text-[var(--color-gold)]"
                   @click="prevTestimonial"
                   aria-label="Projet précédent"
               >
                 <UIcon name="i-lucide-chevron-left" />
               </button>
               <button
-                  class="nav-button nav-next"
+                  class="flex items-center justify-center w-11 h-[42px] bg-[#232323] border border-[var(--border-subtle)] rounded-lg text-[var(--text-primary)] cursor-pointer transition-all duration-200 hover:border-[var(--color-gold)] hover:text-[var(--color-gold)]"
                   @click="nextTestimonial"
                   aria-label="Projet suivant"
               >
@@ -111,148 +111,4 @@ const currentTestimonial = computed(() => testimonials.value[currentIndex.value]
     </div>
   </section>
 </template>
-
-<style scoped>
-@reference "@/assets/css/main.css";
-
-.testimonial-section {
-  padding: 80px 24px;
-  background: var(--bg-primary);
-  transition: background-color 0.3s ease;
-}
-
-.testimonial-container {
-  max-width: 1216px;
-  margin: 0 auto;
-}
-
-.testimonial-header {
-  text-align: center;
-  margin-bottom: 48px;
-}
-
-.testimonial-title {
-  font-family: var(--font-manrope);
-  font-size: 36px;
-  font-weight: 600;
-  color: var(--text-primary);
-  transition: color 0.3s ease;
-}
-
-/* Testimonial Card */
-.testimonial-card {
-  max-width: 460px;
-  margin: 0 auto;
-  padding: 24px;
-  background: #232323;
-  border: 1px solid var(--border-subtle);
-  border-radius: 16px;
-  height: 180px;
-  align-content: center;
-  transition: background-color 0.3s ease, border-color 0.3s ease;
-}
-
-:global(.light) .testimonial-card {
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-}
-
-.card-content {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.testimonial-quote {
-  font-family: var(--font-inter);
-  font-size: 14px;
-  line-height: 1.7;
-  color: var(--text-secondary);
-  transition: color 0.3s ease;
-}
-
-.card-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-}
-
-/* Author */
-.author-info {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.author-avatar {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--color-gold) 0%, #e8a84c 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-inter);
-  font-weight: 600;
-  font-size: 16px;
-  color: var(--color-black);
-}
-
-.author-details {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.author-name {
-  font-family: var(--font-inter);
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--text-primary);
-  transition: color 0.3s ease;
-}
-
-.author-role {
-  font-family: var(--font-inter);
-  font-size: 12px;
-  color: var(--text-secondary);
-  transition: color 0.3s ease;
-}
-
-/* Navigation */
-.testimonial-navigation {
-  display: flex;
-  gap: 12px;
-}
-
-.nav-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 42px;
-  background: #232323;
-  border: 1px solid var(--border-subtle);
-  border-radius: 8px;
-  color: var(--text-primary);
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.nav-button:hover {
-  border-color: var(--color-gold);
-  color: var(--color-gold);
-}
-/* Responsive */
-@media (max-width: 480px) {
-  .card-footer {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .testimonial-navigation {
-    align-self: flex-end;
-  }
-}
-</style>
 

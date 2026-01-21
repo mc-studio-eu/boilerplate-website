@@ -52,12 +52,14 @@
             "list": {
                 "branding": "Branding",
                 "web_design": "Web Design",
+                "product_design": "Product Design",
                 "showcase": "Site Vitrines",
                 "seo": "SEO",
                 "copywriting": "Copywriting",
                 "strategy": "Accompagnement Stratégique",
                 "ai": "AI Intégration",
-                "web_dev": "Développement Web"
+                "web_dev": "Développement Web",
+                "print": "Print"
             }
         },
         "cards": {
@@ -264,25 +266,24 @@
         }
     },
     "process": {
-        "title": "Pro<span class=\"text-gradient\">cessus</span>",
-        "subtitle": "Un process clair. Des livrables concrets. Zéro friction.",
-        "tabs": {
-            "landing": "Landing Page",
-            "saas": "Launch : SaaS",
-            "sprint": "Sprint : MVP"
-        },
+        "title": "Comment on <span class=\"text-gradient\">fonctionne</span>",
+        "subtitle": "Une approche simple en 3 étapes pour donner vie à votre projet.",
+        "duration_label": "Durée moyenne :",
+        "duration_value": "2-4 semaines",
         "steps": {
-            "meeting": "Meeting Call",
-            "proposition": "Proposition",
-            "kickoff": "Kick-Off",
-            "branding": "Branding",
-            "ui_ux": "UI & UX",
-            "validation": "Validation",
-            "integration": "Intégration",
-            "deployment": "Déploiement"
-        },
-        "duration_label": "Temps du Projet :",
-        "duration_value": "15 jours"
+            "1": {
+                "title": "1. Appel de Découverte",
+                "description": "On échange sur votre projet, vos objectifs et vos challenges. Je vous propose ensuite la stratégie la plus adaptée à vos besoins."
+            },
+            "2": {
+                "title": "2. Proposition Commerciale",
+                "description": "Vous recevez une proposition détaillée avec le périmètre, le budget et le planning. Tout est clair, sans surprise."
+            },
+            "3": {
+                "title": "3. Lancement du Projet",
+                "description": "Une fois validé, on organise le kickoff. Vous accédez à votre espace Notion et le travail commence immédiatement."
+            }
+        }
     },
     "testimonials": {
         "intro_label": "Le studio Indépendant",
@@ -312,7 +313,7 @@
         "items": {
             "0": {
                 "question": "Quels types de clients accompagnez-vous ?",
-                "answer": "Nous accompagnons des entrepreneurs, startups et entreprises. Nos projets vont de la landing page orientée conversion à des plateformes plus complètes (MVP, SaaS, dashboards), avec une approche centrée sur le design, la clarté de l’offre et la performance."
+                "answer": "Nous accompagnons des entrepreneurs, influenceurs, startups et entreprises. Nos projets vont de la landing page orientée conversion à des plateformes plus complètes (MVP, SaaS, dashboards), avec une approche centrée sur le design, la résolutionn de problème, la clarté de l’offre et la performance."
             },
             "1": {
                 "question": "Comment obtenir un devis et sous combien de temps répondez-vous ?",

@@ -93,13 +93,14 @@ const currentProject = computed(() => projects.value[currentIndex.value])
 </script>
 
 <template>
-  <section id="projets" class="py-16 md:py-20 px-6 transition-colors duration-300" style="background-color: var(--bg-primary);">
+
+  <section id="projets" class="py-16 md:py-20 px-6 transition-colors duration-300 bg-[var(--bg-primary)]">
     <div class="max-w-[1000px] mx-auto">
       <!-- Header -->
       <div class="text-center mb-10 md:mb-16">
-        <h2 class="font-manrope font-medium text-2xl sm:text-3xl md:text-[32px] mb-3 transition-colors duration-300" style="color: var(--text-primary);" v-html="$t('projects.title')">
+        <h2 class="font-manrope font-medium text-2xl sm:text-3xl md:text-[32px] mb-3 transition-colors duration-300 text-[var(--text-primary)]" v-html="$t('projects.title')">
         </h2>
-        <p class="text-sm sm:text-base max-w-xl mx-auto leading-relaxed transition-colors duration-300" style="color: var(--text-secondary);" v-html="$t('projects.subtitle')">
+        <p class="text-sm sm:text-base max-w-xl mx-auto leading-relaxed transition-colors duration-300 text-[var(--text-secondary)]" v-html="$t('projects.subtitle')">
         </p>
       </div>
 
@@ -111,14 +112,14 @@ const currentProject = computed(() => projects.value[currentIndex.value])
             <NuxtImg 
               :src="currentProject.image" 
               :alt="currentProject.title"
-              class="w-full h-[400px] object-cover"
+              class="w-full h-[250px] sm:h-[400px] object-cover"
             />
           </div>
 
           <!-- Project Info -->
           <div class="flex flex-col gap-4">
-            <h3 class="font-manrope text-2xl font-semibold transition-colors duration-300" style="color: var(--text-primary);">{{ currentProject.title }}</h3>
-            <p class="font-inter text-sm leading-relaxed transition-colors duration-300" style="color: var(--text-secondary);">{{ currentProject.description }}</p>
+            <h3 class="font-manrope text-2xl font-semibold transition-colors duration-300 text-[var(--text-primary)]">{{ currentProject.title }}</h3>
+            <p class="font-inter text-xs sm:text-sm leading-relaxed transition-colors duration-300 text-[var(--text-secondary)]">{{ currentProject.description }}</p>
 
             <!-- Tags -->
             <div class="flex flex-wrap gap-2">
@@ -143,7 +144,6 @@ const currentProject = computed(() => projects.value[currentIndex.value])
             </UButton>
 
             <!-- Testimonials -->
-
             <div v-if="currentProject.testimonials && currentProject?.testimonial">
               <div class="flex flex-col p-3 gap-3 rounded-xl text-white bg-[#232323]">
 
@@ -163,17 +163,17 @@ const currentProject = computed(() => projects.value[currentIndex.value])
         </div>
 
         <!-- Navigation -->
-        <div class="project-navigation-container">
-          <div class="project-navigation">
+        <div class="flex gap-8 mt-2.5 justify-start sm:flex-row flex-col">
+          <div class="flex gap-[18px]">
             <button
-              class="nav-button nav-prev"
+              class="flex items-center justify-center w-[44px] h-[42px] bg-[#232323] border border-[var(--border-subtle)] rounded-lg text-[var(--text-primary)] cursor-pointer transition-all duration-200 hover:border-[var(--color-gold)] hover:text-[var(--color-gold)]"
               @click="prevProject"
               aria-label="Projet précédent"
             >
               <UIcon name="i-lucide-chevron-left" />
             </button>
             <button
-              class="nav-button nav-next"
+              class="flex items-center justify-center w-[44px] h-[42px] bg-[#232323] border border-[var(--border-subtle)] rounded-lg text-[var(--text-primary)] cursor-pointer transition-all duration-200 hover:border-[var(--color-gold)] hover:text-[var(--color-gold)]"
               @click="nextProject"
               aria-label="Projet suivant"
             >
@@ -182,12 +182,12 @@ const currentProject = computed(() => projects.value[currentIndex.value])
           </div>
 
           <!-- Indicators -->
-          <div class="indicators">
+          <div class="flex items-center gap-3">
             <button
               v-for="(project, index) in projects"
               :key="project.id"
-              class="indicator"
-              :class="{ 'active': currentIndex === index }"
+              class="w-6 h-1 rounded bg-[var(--border-subtle)] border-none cursor-pointer p-0 transition-all duration-300 hover:bg-[var(--text-secondary)]"
+              :class="{ '!bg-[var(--color-gold)] !w-8': currentIndex === index }"
               @click="currentIndex = index"
               :aria-label="`Aller au projet ${index + 1}`"
             />
@@ -197,65 +197,4 @@ const currentProject = computed(() => projects.value[currentIndex.value])
     </div>
   </section>
 </template>
-
-<style scoped>
-@reference "@/assets/css/main.css";
-
-.project-navigation-container {
-  display: flex;
-  align-items: center;
-  gap: 32px;
-  margin-top: 10px;
-}
-
-.project-navigation {
-  display: flex;
-  gap: 18px;
-}
-
-.nav-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 42px;
-  background: #232323;
-  border: 1px solid var(--border-subtle);
-  border-radius: 8px;
-  color: var(--text-primary);
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.nav-button:hover {
-  border-color: var(--color-gold);
-  color: var(--color-gold);
-}
-
-.indicators {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.indicator {
-  width: 24px;
-  height: 4px;
-  border-radius: 4px;
-  background: var(--border-subtle);
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  transition: all 0.3s ease;
-}
-
-.indicator.active {
-  background: var(--color-gold);
-  width: 32px;
-}
-
-.indicator:hover:not(.active) {
-  background: var(--text-secondary);
-}
-</style>
 

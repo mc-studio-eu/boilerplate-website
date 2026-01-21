@@ -66,64 +66,70 @@ const founder = computed(() => ({
 </script>
 
 <template>
-  <section id="faq" class="faq-section">
-    <div class="faq-container">
-      <div class="faq-content">
+  <section id="faq" class="py-20 px-6 bg-[var(--bg-primary)] transition-colors duration-300">
+    <div class="max-w-[1216px] mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-[280px_1fr] gap-12 md:gap-16">
         <!-- Left Column - Info -->
-        <div class="faq-info">
-          <h2 class="font-manrope font-medium text-2xl sm:text-3xl md:text-[32px] mb-8 transition-colors duration-300" style="color: var(--text-primary);" v-html="$t('faq.title')">
+        <div class="flex flex-col gap-4">
+          <h2 class="font-manrope font-medium text-2xl sm:text-3xl md:text-[32px] mb-8 transition-colors duration-300 text-[var(--text-primary)]" v-html="$t('faq.title')">
           </h2>
-          <p class="faq-subtitle">{{ $t('faq.subtitle') }}</p>
+          <p class="font-inter text-base text-[var(--text-secondary)] mb-4 transition-colors duration-300">{{ $t('faq.subtitle') }}</p>
 
           <!-- Founder Card -->
-          <div class="founder-card">
-            <div class="founder-avatar">
+          <div class="flex items-center gap-3.5 py-4">
+            <div class="w-[55px] h-[55px] rounded-lg bg-[linear-gradient(135deg,var(--color-gold)_0%,#e8a84c_100%)] flex items-center justify-center font-inter font-bold text-lg text-black shrink-0 relative overflow-hidden">
               <NuxtImg
                 src="/img/main/founder.png"
                 alt="Avatar de Mohamed Chettah"
                 width="55"
                 height="55"
-                class="rounded-md object-cover"
+                class="rounded-md object-cover absolute inset-0 w-full h-full"
               />
             </div>
-            <div class="founder-details">
-              <span class="founder-name">{{ founder.name }}</span>
-              <span class="founder-role">{{ founder.role }}</span>
+            <div class="flex flex-col gap-1">
+              <span class="font-inter text-sm font-semibold text-[var(--text-primary)] transition-colors duration-300">{{ founder.name }}</span>
+              <span class="font-inter text-[13px] text-[var(--text-secondary)] transition-colors duration-300">{{ founder.role }}</span>
             </div>
           </div>
 
-          <p class="contact-text">
+          <p class="font-inter text-sm leading-relaxed text-[var(--text-secondary)] mt-4 transition-colors duration-300">
             {{ $t('faq.contact_text') }}
           </p>
 
           <UButton 
             size="md"
-            class="whatsapp-btn w-43 cursor-pointer bg-[#232323] text-white"
+            class="mt-2 w-fit cursor-pointer bg-[#232323] text-white"
           >
             {{ $t('faq.whatsapp_btn') }}
           </UButton>
         </div>
 
         <!-- Right Column - Accordion -->
-        <div class="faq-accordion">
+        <div class="flex flex-col">
           <div 
             v-for="item in faqItems" 
             :key="item.id"
-            class="accordion-item"
-            :class="{ 'accordion-item--open': isOpen(item.id) }"
+            class="border-b border-[var(--border-subtle)] transition-colors duration-300"
           >
             <button 
-              class="accordion-header"
+              class="flex items-center justify-between gap-4 w-full py-6 bg-transparent border-none cursor-pointer text-left"
               @click="toggleItem(item.id)"
             >
-              <span class="accordion-question">{{ item.question }}</span>
-              <div class="accordion-icon">
+              <span class="font-inter text-[15px] font-medium text-[var(--text-primary)] leading-normal transition-colors duration-300">{{ item.question }}</span>
+              <div class="flex items-center justify-center w-8 h-8 shrink-0 rounded-full bg-[var(--border-subtle)] text-[var(--text-secondary)] transition-all duration-200" :class="{ '!bg-[var(--color-gold)] !text-[#0f0f0f]': isOpen(item.id) }">
                 <UIcon :name="isOpen(item.id) ? 'i-lucide-minus' : 'i-lucide-plus'" />
               </div>
             </button>
-            <Transition name="accordion">
-              <div v-if="isOpen(item.id)" class="accordion-content">
-                <p class="accordion-answer">{{ item.answer }}</p>
+            <Transition 
+              enter-active-class="transition-all duration-300 ease-out"
+              leave-active-class="transition-all duration-300 ease-in"
+              enter-from-class="opacity-0 max-h-0"
+              enter-to-class="opacity-100 max-h-[200px]"
+              leave-from-class="opacity-100 max-h-[200px]"
+              leave-to-class="opacity-0 max-h-0"
+            >
+              <div v-if="isOpen(item.id)" class="pb-6 overflow-hidden">
+                <p class="font-inter text-sm leading-relaxed text-[var(--text-secondary)] transition-colors duration-300 whitespace-pre-line">{{ item.answer }}</p>
               </div>
             </Transition>
           </div>
@@ -132,194 +138,4 @@ const founder = computed(() => ({
     </div>
   </section>
 </template>
-
-<style scoped>
-@reference "@/assets/css/main.css";
-
-.faq-section {
-  padding: 80px 24px;
-  background: var(--bg-primary);
-  transition: background-color 0.3s ease;
-}
-
-.faq-container {
-  max-width: 1216px;
-  margin: 0 auto;
-}
-
-.faq-content {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 48px;
-}
-
-@media (min-width: 768px) {
-  .faq-content {
-    grid-template-columns: 280px 1fr;
-    gap: 64px;
-  }
-}
-
-/* Left Column */
-.faq-info {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.faq-title {
-  font-family: var(--font-manrope);
-  font-size: 36px;
-  font-weight: 600;
-  color: var(--text-primary);
-  transition: color 0.3s ease;
-}
-
-.faq-subtitle {
-  font-family: var(--font-inter);
-  font-size: 16px;
-  color: var(--text-secondary);
-  margin-bottom: 16px;
-  transition: color 0.3s ease;
-}
-
-/* Founder Card */
-.founder-card {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 16px 0;
-}
-
-.founder-avatar {
-  width: 55px;
-  height: 55px;
-  border-radius: 8px;
-  background: linear-gradient(135deg, var(--color-gold) 0%, #e8a84c 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-inter);
-  font-weight: 700;
-  font-size: 18px;
-  color: var(--color-black);
-}
-
-.founder-details {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.founder-name {
-  font-family: var(--font-inter);
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--text-primary);
-  transition: color 0.3s ease;
-}
-
-.founder-role {
-  font-family: var(--font-inter);
-  font-size: 13px;
-  color: var(--text-secondary);
-  transition: color 0.3s ease;
-}
-
-.contact-text {
-  font-family: var(--font-inter);
-  font-size: 14px;
-  line-height: 1.6;
-  color: var(--text-secondary);
-  margin-top: 16px;
-  transition: color 0.3s ease;
-}
-
-.whatsapp-btn {
-  margin-top: 8px;
-}
-
-/* Accordion */
-.faq-accordion {
-  display: flex;
-  flex-direction: column;
-}
-
-.accordion-item {
-  border-bottom: 1px solid var(--border-subtle);
-  transition: border-color 0.3s ease;
-}
-
-.accordion-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  width: 100%;
-  padding: 24px 0;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  text-align: left;
-}
-
-.accordion-question {
-  font-family: var(--font-inter);
-  font-size: 15px;
-  font-weight: 500;
-  color: var(--text-primary);
-  line-height: 1.5;
-  transition: color 0.3s ease;
-}
-
-.accordion-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  flex-shrink: 0;
-  border-radius: 50%;
-  background: var(--border-subtle);
-  color: var(--text-secondary);
-  transition: all 0.2s ease;
-}
-
-.accordion-item--open .accordion-icon {
-  background: var(--color-gold);
-  color: #0f0f0f;
-}
-
-.accordion-content {
-  padding-bottom: 24px;
-  overflow: hidden;
-}
-
-.accordion-answer {
-  font-family: var(--font-inter);
-  font-size: 14px;
-  line-height: 1.7;
-  color: var(--text-secondary);
-  transition: color 0.3s ease;
-  white-space: pre-line;
-}
-
-/* Accordion Animation */
-.accordion-enter-active,
-.accordion-leave-active {
-  transition: all 0.3s ease;
-}
-
-.accordion-enter-from,
-.accordion-leave-to {
-  opacity: 0;
-  max-height: 0;
-}
-
-.accordion-enter-to,
-.accordion-leave-from {
-  opacity: 1;
-  max-height: 200px;
-}
-</style>
 
