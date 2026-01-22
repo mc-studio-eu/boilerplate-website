@@ -8,13 +8,14 @@ const screenProject = [
   '/img/project/logo-raenergy.png',
   '/img/project/souji-nova-section.png',
   '/img/project/arises-login.png',
+  '/img/project/arises-before-after.png',
 ]
 </script>
 
 <template>
 
   <div class="w-[80%%] mx-auto">
-    <UMarquee pause-on-hover class="" :overlay="false"       :ui="{
+    <UMarquee pause-on-hover class="" :overlay="false" :ui="{
         root: '[--duration:40s]'
       }">
       <div v-for="screen in screenProject">
@@ -24,7 +25,7 @@ const screenProject = [
               alt="Project Screen"
               width="700"
               height="400"
-              class="shadow-xl border-[5px] border-primary/40"
+              class="shadow-xl"
               :lazy="true"
           />
         </div>

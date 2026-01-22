@@ -52,7 +52,6 @@ onUnmounted(() => {
               mode="out-in"
             >
               <!-- Visual 1: Discovery Call (Calendar) -->
-              <!-- Visual 1: Discovery Call (Calendar) -->
               <div v-if="activeStep === 1" key="step1" class="absolute inset-0 flex items-center justify-center">
                  <div class="w-auto h-auto max-w-full max-h-full rounded-2xl shadow-2xl overflow-hidden border border-white/5 bg-[#1c1c1c]">
                     <NuxtImg 
@@ -77,75 +76,12 @@ onUnmounted(() => {
 
               <!-- Visual 3: Kickoff (Dashboard) -->
               <div v-if="activeStep === 3" key="step3" class="absolute inset-0 flex items-center justify-center">
-                 <div class="w-[360px] bg-[#1c1c1c] border border-white/5 rounded-xl shadow-2xl overflow-hidden flex flex-col group">
-                    <!-- Toolbar -->
-                    <div class="h-10 bg-[#252525] border-b border-white/5 px-4 flex items-center justify-between">
-                       <div class="flex items-center gap-2">
-                          <div class="w-3 h-3 rounded-full bg-[#f0bf6c]"></div>
-                          <div class="text-[10px] uppercase font-bold text-white/40 tracking-wider">Sprint 1</div>
-                       </div>
-                       <div class="flex -space-x-1.5">
-                          <div class="w-5 h-5 rounded-full bg-blue-500 border border-[#252525]"></div>
-                          <div class="w-5 h-5 rounded-full bg-purple-500 border border-[#252525]"></div>
-                          <div class="w-5 h-5 rounded-full bg-[#f0bf6c] border border-[#252525] flex items-center justify-center text-[8px] text-black font-bold">+</div>
-                       </div>
-                    </div>
-                    
-                    <!-- Kanban Board -->
-                    <div class="p-5 flex gap-4 h-[300px] bg-[#1c1c1c]">
-                       <!-- Col 1 -->
-                       <div class="flex-1 flex flex-col gap-3">
-                          <div class="text-[10px] uppercase text-white/30 font-bold tracking-wider flex items-center gap-2">
-                             To Do <span class="bg-white/5 px-1.5 py-0.5 rounded text-white/50 text-[9px]">3</span>
-                          </div>
-                          
-                          <!-- Card 1 -->
-                          <div class="bg-[#2a2a2a] p-3 rounded-lg border border-white/5 hover:border-[#f0bf6c]/30 transition-colors shadow-sm cursor-pointer group/card">
-                            <div class="flex justify-between items-start mb-2">
-                               <div class="w-8 h-1 bg-[#f0bf6c] rounded-full"></div>
-                               <div class="text-[9px] text-white/30">PRI-1</div>
-                            </div>
-                            <div class="h-2 w-3/4 bg-white/20 rounded mb-1.5 group-hover/card:bg-white/30 transition-colors"></div>
-                            <div class="h-2 w-1/2 bg-white/10 rounded"></div>
-                          </div>
-                          
-                          <!-- Card 2 -->
-                          <div class="bg-[#2a2a2a] p-3 rounded-lg border border-white/5 hover:border-[#f0bf6c]/30 transition-colors shadow-sm cursor-pointer">
-                            <div class="flex justify-between items-start mb-2">
-                               <div class="w-8 h-1 bg-blue-400 rounded-full"></div>
-                               <div class="text-[9px] text-white/30">PRI-2</div>
-                            </div>
-                            <div class="h-2 w-full bg-white/20 rounded"></div>
-                          </div>
-                       </div>
-                       
-                       <!-- Col 2 -->
-                       <div class="flex-1 flex flex-col gap-3">
-                          <div class="text-[10px] uppercase text-white/30 font-bold tracking-wider flex items-center gap-2">
-                             In Progress <span class="bg-white/5 px-1.5 py-0.5 rounded text-white/50 text-[9px]">1</span>
-                          </div>
-                          
-                          <div class="bg-[#2a2a2a] p-3 rounded-lg border border-white/5 border-l-2 border-l-[#22c55e] shadow-lg relative overflow-hidden group/active">
-                            <div class="absolute top-0 right-0 p-2 opacity-0 group-hover/active:opacity-100 transition-opacity">
-                               <div class="w-1.5 h-1.5 rounded-full bg-[#22c55e] animate-ping"></div>
-                            </div>
-                            <div class="pl-1 mb-2">
-                               <div class="flex gap-1.5 mb-2">
-                                  <span class="text-[9px] bg-[#22c55e]/20 text-[#22c55e] px-1.5 rounded">Dev</span>
-                               </div>
-                               <div class="h-2 w-5/6 bg-white/80 rounded mb-1.5 shadow-[0_0_10px_rgba(255,255,255,0.1)]"></div>
-                               <div class="h-1.5 w-1/2 bg-white/20 rounded"></div>
-                            </div>
-                            <div class="flex items-center justify-between border-t border-white/5 pt-2 mt-2">
-                               <div class="flex -space-x-1.5">
-                                  <div class="w-4 h-4 rounded-full bg-gray-500 border border-[#2a2a2a]"></div>
-                                  <div class="w-4 h-4 rounded-full bg-gray-400 border border-[#2a2a2a]"></div>
-                               </div>
-                               <span class="text-[9px] text-white/30">Due Tmrw</span>
-                            </div>
-                          </div>
-                       </div>
-                    </div>
+                 <div class="w-auto h-auto max-w-full max-h-full rounded-2xl shadow-2xl overflow-hidden border border-white/5 bg-[#1c1c1c]">
+                    <NuxtImg 
+                      src="/img/process/step3_kickoff.png" 
+                      alt="Project Kickoff Dashboard" 
+                      class="w-full h-full object-contain"
+                    />
                  </div>
               </div>
             </TransitionGroup>

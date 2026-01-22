@@ -32,28 +32,26 @@ const closeModal = () => {
 </script>
 
 <template>
-  <UModal v-model:open="isOpen" class="service-modal">
+  <UModal v-model:open="isOpen" class="service-modal" :overlay="false">
     <template #content>
+      <div class="modal-content flex justify-end items-center gap-1" style="background-color: var(--bg-secondary);">
+      <button @click="emit('prev')" class="p-1.5 rounded-lg transition-colors hover:opacity-70" style="color: var(--text-secondary);">
+        <UIcon name="i-heroicons-arrow-left" class="w-5 h-5" />
+      </button>
+      <button @click="emit('next')" class="p-1.5 rounded-lg transition-colors hover:opacity-70" style="color: var(--text-secondary);">
+        <UIcon name="i-heroicons-arrow-right" class="w-5 h-5" />
+      </button>
+      <div class="w-px h-4 mx-1" style="background-color: var(--border-subtle);"></div>
+      <button @click="closeModal" class="p-1.5 rounded-lg transition-colors hover:opacity-70" style="color: var(--text-secondary);">
+        <UIcon name="i-heroicons-x-mark" class="w-5 h-5" />
+      </button>
+      </div>
       <div class="modal-content rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto scrollbar-hide" style="background-color: var(--bg-secondary);">
         <!-- Header -->
         <div class="sticky top-0 p-6 pb-4 flex justify-between items-center z-10" style="background-color: var(--bg-secondary); border-bottom: 1px solid var(--border-subtle);">
           <div>
             <h2 class="text-xl font-semibold mb-1" style="color: var(--text-primary);">{{ modalData.title }}</h2>
             <p class="text-sm leading-relaxed" style="color: var(--text-secondary);">{{ modalData.result }}</p>
-          </div>
-          <div class="flex items-center gap-3">
-            <div class="flex items-center gap-1">
-              <button @click="emit('prev')" class="p-1.5 rounded-lg transition-colors hover:opacity-70" style="color: var(--text-secondary);">
-                <UIcon name="i-heroicons-arrow-left" class="w-5 h-5" />
-              </button>
-              <button @click="emit('next')" class="p-1.5 rounded-lg transition-colors hover:opacity-70" style="color: var(--text-secondary);">
-                <UIcon name="i-heroicons-arrow-right" class="w-5 h-5" />
-              </button>
-              <div class="w-px h-4 mx-1" style="background-color: var(--border-subtle);"></div>
-              <button @click="closeModal" class="p-1.5 rounded-lg transition-colors hover:opacity-70" style="color: var(--text-secondary);">
-                <UIcon name="i-heroicons-x-mark" class="w-5 h-5" />
-              </button>
-            </div>
           </div>
         </div>
          

@@ -5,7 +5,7 @@ const keywords = computed(() => Object.values(tm('services.marquee') as Record<s
 </script>
 
 <template>
-  <div class="relative overflow-hidden py-4 bg-black mx-auto w-full md:max-w-[calc(100%-146px)] rounded-xl">
+  <div class="relative overflow-hidden py-4 bg-black mx-auto w-full md:max-w-[calc(100%-146px)] rounded-xl ">
     <div class="marquee flex gap-12 w-max">
       <span v-for="(word, index) in [...keywords, ...keywords, ...keywords, ...keywords]" :key="index" class="font-medium text-sm sm:text-base text-white whitespace-nowrap opacity-90">
         {{ word }}
@@ -13,8 +13,8 @@ const keywords = computed(() => Object.values(tm('services.marquee') as Record<s
     </div>
     
     <!-- Gradient Overlays for smooth fade effect -->
-    <div class="absolute top-0 left-0 bottom-0 w-20 bg-gradient-to-r from-black to-transparent pointer-events-none z-10"></div>
-    <div class="absolute top-0 right-0 bottom-0 w-20 bg-gradient-to-l from-black to-transparent pointer-events-none z-10"></div>
+    <div class="absolute top-0 left-0 bottom-0 w-20 bg-gradient-to-r from-black to-transparent pointer-events-none"></div>
+    <div class="absolute top-0 right-0 bottom-0 w-20 bg-gradient-to-l from-black to-transparent pointer-events-none "></div>
   </div>
 </template>
 
