@@ -89,8 +89,8 @@ const switchModal = (direction: 'next' | 'prev') => {
         <div 
           v-for="(service, index) in services" 
           :key="index"
-          class="relative rounded-lg p-6 sm:p-8 transition-colors duration-300"
-          :class="service.highlighted ? 'border-[3px] border-[#f0bf6c]' : 'border border-[var(--border-subtle)]'"
+          class="relative rounded-lg p-6 sm:p-8 transition-colors duration-300  rounded-2xl overflow-hidden bg-[#1a1a1a] p-2 shadow-[0_8px_30px_rgba(0,0,0,0.4)] border border-white/10"
+
         >
           <!-- Card Content -->
           <div class="relative flex flex-col h-full">
@@ -133,7 +133,7 @@ const switchModal = (direction: 'next' | 'prev') => {
       </div>
 
       <!-- Other Services -->
-      <div class="p-6 sm:p-8 rounded-2xl border transition-colors duration-300 border-[var(--border-subtle)]">
+      <div class="p-6 sm:p-8  rounded-2xl overflow-hidden bg-[#1a1a1a] p-2 shadow-[0_8px_30px_rgba(0,0,0,0.4)] border border-white/10">
         <div class="mb-5">
           <h4 class="font-manrope font-semibold text-lg mb-1 transition-colors duration-300 text-[var(--text-primary)]">{{ $t('services.other_services.title') }}</h4>
           <p class="text-sm transition-colors duration-300 text-[var(--text-secondary)]">{{ $t('services.other_services.subtitle') }}</p>

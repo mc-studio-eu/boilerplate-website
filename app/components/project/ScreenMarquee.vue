@@ -19,13 +19,13 @@ const screenProject = [
         root: '[--duration:40s]'
       }">
       <div v-for="screen in screenProject">
-        <div class="w-[250px] md:w-[400px] lg:w-[500px] border-[10px] rounded-lg border-[#232323]">
+        <div class="w-[300px] md:w-[480px] lg:w-[600px] h-[190px] md:h-[300px] lg:h-[375px] rounded-2xl overflow-hidden bg-[#1a1a1a] p-2 shadow-[0_8px_30px_rgba(0,0,0,0.4)] border border-white/10">
           <NuxtImg
               :src="screen"
               alt="Project Screen"
               width="700"
               height="400"
-              class="shadow-xl"
+              class="shadow-lg w-full h-full rounded-xl"
               :lazy="true"
           />
         </div>
