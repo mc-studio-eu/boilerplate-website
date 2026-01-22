@@ -1,7 +1,7 @@
 <script setup lang="ts">
 // Auto-imports from Nuxt - no need to import components manually
-import ScrollingMarquee from "../components/hero/ScrollingMarquee.vue"
 import ServicesInterMarquee from "../components/services/ServicesInterMarquee.vue"
+import ScreenMarquee from "../components/project/ScreenMarquee.vue";
 </script>
 
 <template>
@@ -29,6 +29,8 @@ import ServicesInterMarquee from "../components/services/ServicesInterMarquee.vu
       
       <!-- Services Section -->
       <ServicesSection id="services" />
+
+      <ScreenMarquee />
 
       <!-- Process Section -->
       <ProcessSection id="process" />

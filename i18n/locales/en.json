@@ -58,8 +58,7 @@
                 "copywriting": "Copywriting",
                 "strategy": "Strategic Support",
                 "ai": "AI Integration",
-                "web_dev": "Web Development",
-                "print": "Print"
+                "web_dev": "Web Development"
             }
         },
         "cards": {
@@ -274,7 +273,7 @@
         "steps": {
             "1": {
                 "title": "1. Discovery Call",
-                "description": "We discuss your project, goals, and challenges. I then propose the best strategy tailored to your needs."
+                "description": "We discuss your project, goals, and challenges. We then propose the best strategy tailored to your needs."
             },
             "2": {
                 "title": "2. Commercial Proposal",

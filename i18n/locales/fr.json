@@ -58,8 +58,7 @@
                 "copywriting": "Copywriting",
                 "strategy": "Accompagnement Stratégique",
                 "ai": "AI Intégration",
-                "web_dev": "Développement Web",
-                "print": "Print"
+                "web_dev": "Développement Web"
             }
         },
         "cards": {
@@ -274,7 +273,7 @@
         "steps": {
             "1": {
                 "title": "1. Appel de Découverte",
-                "description": "On échange sur votre projet, vos objectifs et vos challenges. Je vous propose ensuite la stratégie la plus adaptée à vos besoins."
+                "description": "On échange sur votre projet, vos objectifs et vos challenges. Nous vous proposons ensuite la stratégie la plus adaptée à vos besoins."
             },
             "2": {
                 "title": "2. Proposition Commerciale",
@@ -318,7 +317,7 @@
         "items": {
             "0": {
                 "question": "Quels types de clients accompagnez-vous ?",
-                "answer": "Nous accompagnons des entrepreneurs, influenceurs, startups et entreprises. Nos projets vont de la landing page orientée conversion à des plateformes plus complètes (MVP, SaaS, dashboards), avec une approche centrée sur le design, la résolutionn de problème, la clarté de l’offre et la performance."
+                "answer": "Nous accompagnons des entrepreneurs, influenceurs, startups et entreprises. Nos projets vont de la landing page orientée conversion à des plateformes plus complètes (MVP, SaaS, dashboards), avec une approche centrée sur le design, la résolution de problème, la clarté de l’offre et la performance."
             },
             "1": {
                 "question": "Comment obtenir un devis et sous combien de temps répondez-vous ?",

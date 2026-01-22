@@ -85,7 +85,7 @@ const switchModal = (direction: 'next' | 'prev') => {
       </div>
 
       <!-- Service Cards -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-12 md:mb-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-8 md:mb-10">
         <div 
           v-for="(service, index) in services" 
           :key="index"
