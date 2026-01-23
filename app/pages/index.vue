@@ -32,6 +32,10 @@ import ScreenMarquee from "../components/project/ScreenMarquee.vue";
 
       <ScreenMarquee />
 
+      <div class="section-separator mt-10"></div>
+
+      <div class="section-separator"></div>
+
       <!-- Process Section -->
       <ProcessSection id="process" />
        
