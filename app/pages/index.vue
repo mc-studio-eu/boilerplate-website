@@ -66,6 +66,9 @@ import ScreenMarquee from "../components/project/ScreenMarquee.vue";
     
     <!-- Footer -->
     <FooterSection />
+
+    <!-- Scroll to Top Button -->
+    <ScrollToTop />
   </main>
 </template>
 
