@@ -53,7 +53,7 @@ const screenProject = [
   top: 0;
   bottom: 0;
   width: 40px;
-  z-index: 10;
+  z-index: 5;
   pointer-events: none;
 }
 
