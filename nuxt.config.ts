@@ -21,13 +21,13 @@ export default defineNuxtConfig({
         { property: 'og:title', content: "MC Studio" },
         { property: 'og:type', content: 'website' },
         { property: 'og:url', content: 'https://www.mc-studio.eu' },
-        { property: 'og:image', content: 'https://www.mc-studio.eu/img/fond-site.jpg' },
         { property: 'og:image:width', content: '1200' },
         { property: 'og:image:height', content: '630' }
       ],
       link: [
-        { rel: 'icon', type: 'image/x-icon', href: '/favicon-new.png' },
-        { rel: 'shortcut icon', type: 'image/x-icon', href: '/favicon-new.png' }
+        { rel: 'icon', type: 'image/png', href: '/favicon-new.png' },
+        { rel: 'shortcut icon', type: 'image/png', href: '/favicon-new.png' },
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
       ],
       script: [
         {

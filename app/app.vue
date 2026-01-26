@@ -11,10 +11,11 @@ useHead({
   script: [
     {
       src: 'https://www.googletagmanager.com/gtag/js?id=G-0PT349TFG7',
-      async: true
+      async: true,
+      defer: true
     },
     {
-      children: `
+      innerHTML: `
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
