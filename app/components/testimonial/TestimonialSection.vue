@@ -71,7 +71,7 @@ const currentTestimonial = computed(() => testimonials.value[currentIndex.value]
 
   <p class="text-gradient text-center mb-2">{{ $t('testimonials.intro_label') }}</p>
 
-  <p class="text-gradient text-center text-xl sm:text-3xl" v-html="$t('testimonials.intro_text')">
+  <p class="text-gradient text-center text-lg sm:text-xl md:text-3xl" v-html="$t('testimonials.intro_text')">
   </p>
   <section id="avis" class="py-12 px-6 sm:py-20 bg-[var(--bg-primary)] transition-colors duration-300 ease-out">
     <div class="max-w-[1216px] mx-auto">
@@ -79,7 +79,7 @@ const currentTestimonial = computed(() => testimonials.value[currentIndex.value]
       </h2>
 
       <!-- Testimonial Card -->
-      <div class="w-full max-w-[460px] mx-auto p-6 bg-[#232323] border border-[var(--border-subtle)] rounded-2xl h-[330px] sm:h-[230px] flex flex-col transition-colors duration-300 shadow-[0_2px_8px_rgba(0,0,0,0.06)] dark:shadow-none" v-if="currentTestimonial">
+      <div class="w-full max-w-[460px] mx-auto p-6 bg-[#232323] border border-[var(--border-subtle)] rounded-2xl h-[300px] sm:h-[230px] flex flex-col transition-colors duration-300 shadow-[0_2px_8px_rgba(0,0,0,0.06)] dark:shadow-none" v-if="currentTestimonial">
         <div class="flex flex-col sm:gap-0 gap-4 justify-between h-full">
           <!-- Quote -->
           <p class="font-inter text-xs sm:text-sm leading-[1.7] text-[var(--text-secondary)] transition-colors duration-300">
