@@ -93,9 +93,7 @@ const otherServices = computed(() => Object.values(tm('services.other_services.l
         <div 
           v-for="(service, index) in services" 
           :key="index"
-          class="service-card rounded-2xl overflow-hidden bg-[#1a1a1a] shadow-[0_8px_30px_rgba(0,0,0,0.4)] border transition-all duration-300"
-          :class="expandedCard === index ? 'border-[#F0BF6C]/40' : 'border-white/10'"
-        >
+          class="service-card border-white/10 rounded-2xl overflow-hidden bg-[#1a1a1a] shadow-[0_8px_30px_rgba(0,0,0,0.4)] border transition-all duration-300"        >
           <!-- Card Content -->
           <div class="p-6 sm:p-8">
             <!-- Title -->
@@ -127,10 +125,7 @@ const otherServices = computed(() => Object.values(tm('services.other_services.l
 
             <!-- Details Button -->
             <button 
-              class="details-btn flex items-center gap-2 px-4 py-2 rounded-lg transition-all duration-300"
-              :class="expandedCard === index 
-                ? 'bg-[#F0BF6C] text-black' 
-                : 'bg-[#232323] text-white hover:bg-[#2a2a2a]'"
+              class="details-btn bg-[#2a2a2a] text-white shadow-[0_2px_8px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(255,255,255,0.1)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.15)] flex items-center gap-2 px-4 py-2 rounded-lg transition-all duration-300"
               @click="toggleExpand(index)"
             >
               <UIcon 
@@ -175,10 +170,7 @@ const otherServices = computed(() => Object.values(tm('services.other_services.l
                 </div>
 
                 <!-- Delay -->
-                <div class="flex items-center gap-3 p-3 rounded-lg bg-[var(--bg-card)]">
-                  <div class="w-8 h-8 rounded-lg bg-[#F0BF6C]/10 flex items-center justify-center">
-                    <UIcon name="i-heroicons-clock" class="w-4 h-4 text-[#F0BF6C]" />
-                  </div>
+                <div class="flex items-center gap-3 px-3 py-2 rounded-lg bg-[var(--bg-card)]">
                   <div>
                     <span class="text-[10px] uppercase tracking-wider text-[var(--text-secondary)]">{{ $t('services.common.delay') }}</span>
                     <p class="text-sm font-medium text-[var(--text-primary)]">{{ service.delay }}</p>

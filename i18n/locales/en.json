@@ -155,7 +155,7 @@
                     "7": "Basic Analytics / logs",
                     "8": "1 iteration post-feedback (small improvement loop)"
                 },
-                "delay": "4–6 weeks (depending on complexity)"
+                "delay": "3–6 weeks (depending on complexity)"
             },
             "saas": {
                 "title": "Launch: SaaS",
@@ -172,12 +172,12 @@
                     "3": "Complete Full-stack Dev (front + back)",
                     "4": "Auth + roles/permissions",
                     "5": "Back-office / admin (user management, content, etc.)",
-                    "6": "Payments (Stripe): checkout + subscriptions (if needed)",
+                    "6": "Payments (Stripe): checkout + subscriptions",
                     "7": "Transactional emails + onboarding",
                     "8": "CI/CD + deployment (staging + prod) + monitoring",
                     "9": "Baseline security + backups + handover docs"
                 },
-                "delay": "6–10+ weeks (depending on scope)",
+                "delay": "6–10+ weeks (depending on complexity)",
                 "scope": {
                     "0": "Complete product",
                     "1": "solid tech foundations",
