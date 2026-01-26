@@ -6,8 +6,8 @@
     duration-200 no-underline">
      <NuxtImg src="/img/main/founder.png" alt="MC Studio" class="w-6 h-6 md:w-8 md:h-8 object-contain rounded-lg flex items-center justify-center font-inter font-semibold text-[10px] text-[#0f0f0f]" />
       <div class="flex flex-col items-start gap-px">
-        <span class="font-inter text-sm leading-tight font-semibold" >Réserver un appel</span>
-        <span class="font-inter font-normal text-[9px] leading-tight">Discution gratuite</span>
+        <span class="font-inter text-sm leading-tight font-semibold" >{{ $t('hero.cta.book') }}</span>
+        <span class="font-inter font-normal text-[9px] leading-tight">{{ $t('nav.free_call') }}</span>
       </div>
     </a>
     
