@@ -109,7 +109,7 @@ onUnmounted(() => {
       <div class="w-full max-w-[460px] mx-auto p-6 bg-[#232323] border border-[var(--border-subtle)] rounded-2xl h-[300px] sm:h-[230px] flex flex-col transition-colors duration-300 shadow-[0_2px_8px_rgba(0,0,0,0.06)] dark:shadow-none" v-if="currentTestimonial">
         <div class="flex flex-col sm:gap-0 gap-4 justify-between h-full">
           <!-- Quote -->
-          <p class="font-inter text-xs sm:text-sm leading-[1.7] text-[var(--text-secondary)] transition-colors duration-300">
+          <p class="font-inter text-xs sm:text-sm leading-[1.7] text-white transition-colors duration-300">
             {{ currentTestimonial.content }}
           </p>
 
