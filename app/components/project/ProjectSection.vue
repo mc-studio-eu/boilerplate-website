@@ -85,6 +85,8 @@ const projects = computed<Project[]>(() => [
 
 
 const currentIndex = ref(0)
+const isPaused = ref(false)
+let autoScrollInterval: ReturnType<typeof setInterval> | null = null
 
 // Navigation
 const nextProject = () => {
@@ -97,11 +99,37 @@ const prevProject = () => {
 
 // Current project computed
 const currentProject = computed(() => projects.value[currentIndex.value])
+
+// Auto-scroll
+const startAutoScroll = () => {
+  if (autoScrollInterval) clearInterval(autoScrollInterval)
+  autoScrollInterval = setInterval(() => {
+    if (!isPaused.value) {
+      nextProject()
+    }
+  }, 5000)
+}
+
+const pauseAutoScroll = () => {
+  isPaused.value = true
+}
+
+const resumeAutoScroll = () => {
+  isPaused.value = false
+}
+
+onMounted(() => {
+  startAutoScroll()
+})
+
+onUnmounted(() => {
+  if (autoScrollInterval) clearInterval(autoScrollInterval)
+})
 </script>
 
 <template>
 
-  <section id="projets" class="py-16 md:py-20 px-6 transition-colors duration-300 bg-[var(--bg-primary)]">
+  <section id="projets" class="py-16 md:py-20 px-6 transition-colors duration-300 bg-[var(--bg-primary)]" @mouseenter="pauseAutoScroll" @mouseleave="resumeAutoScroll">
     <div class="max-w-[1000px] mx-auto">
       <!-- Header -->
       <div class="text-center mb-10 md:mb-16">

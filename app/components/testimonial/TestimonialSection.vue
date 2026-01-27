@@ -11,7 +11,6 @@ interface Testimonial {
 }
 
 // Data
-// Data
 const { t } = useI18n();
 
 const testimonials = computed<Testimonial[]>(() => [
@@ -54,6 +53,8 @@ const testimonials = computed<Testimonial[]>(() => [
 ])
 
 const currentIndex = ref(0)
+const isPaused = ref(false)
+let autoScrollInterval: ReturnType<typeof setInterval> | null = null
 
 // Navigation
 const nextTestimonial = () => {
@@ -65,6 +66,32 @@ const prevTestimonial = () => {
 }
 
 const currentTestimonial = computed(() => testimonials.value[currentIndex.value])
+
+// Auto-scroll
+const startAutoScroll = () => {
+  if (autoScrollInterval) clearInterval(autoScrollInterval)
+  autoScrollInterval = setInterval(() => {
+    if (!isPaused.value) {
+      nextTestimonial()
+    }
+  }, 5000)
+}
+
+const pauseAutoScroll = () => {
+  isPaused.value = true
+}
+
+const resumeAutoScroll = () => {
+  isPaused.value = false
+}
+
+onMounted(() => {
+  startAutoScroll()
+})
+
+onUnmounted(() => {
+  if (autoScrollInterval) clearInterval(autoScrollInterval)
+})
 </script>
 
 <template>
@@ -73,7 +100,7 @@ const currentTestimonial = computed(() => testimonials.value[currentIndex.value]
 
   <p class="text-gradient text-center text-lg sm:text-xl md:text-3xl" v-html="$t('testimonials.intro_text')">
   </p>
-  <section id="avis" class="py-12 px-6 sm:py-20 bg-[var(--bg-primary)] transition-colors duration-300 ease-out">
+  <section id="avis" class="py-12 px-6 sm:py-20 bg-[var(--bg-primary)] transition-colors duration-300 ease-out" @mouseenter="pauseAutoScroll" @mouseleave="resumeAutoScroll">
     <div class="max-w-[1216px] mx-auto">
       <h2 class="section-title text-center font-manrope font-medium text-2xl sm:text-3xl md:text-[32px] mb-6 sm:mb-8 transition-colors duration-300 text-[var(--text-primary)]" v-html="$t('testimonials.title')">
       </h2>
