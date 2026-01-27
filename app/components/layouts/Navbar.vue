@@ -102,7 +102,7 @@ const closeMenu = () => isMenuOpen.value = false
         :class="[
           'backdrop-blur-[20px] pointer-events-auto overflow-hidden',
           'transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)]',
-          isMenuOpen ? 'rounded-[24px] md:rounded-full' : 'rounded-full',
+          isMenuOpen ? 'rounded-[24px] md:rounded-lg' : 'rounded-lg',
           colorMode.value === 'dark' 
             ? 'bg-[#1a1a1a]/95 shadow-[0_8px_32px_rgba(0,0,0,0.4),0_2px_8px_rgba(0,0,0,0.3),inset_0_0_0_1px_rgba(255,255,255,0.1)]' 
             : 'bg-white/95 shadow-[0_8px_32px_rgba(0,0,0,0.12),0_2px_8px_rgba(0,0,0,0.08),inset_0_0_0_1px_rgba(255,255,255,0.5)]'
@@ -121,7 +121,7 @@ const closeMenu = () => isMenuOpen.value = false
             <NuxtLink 
               to="/" 
               :class="[
-                'flex items-center gap-1.5 rounded-full py-1 px-2 md:py-1.5 md:px-3 shrink-0 transition-colors',
+                'flex items-center gap-1.5 rounded-lg py-1 px-2 md:py-1.5 md:px-3 shrink-0 transition-colors',
                 colorMode.value === 'dark' ? 'bg-[#2a2a2a] hover:bg-[#333]' : 'bg-[#f5f5f5] hover:bg-[#ebebeb]'
               ]"
             >
@@ -141,7 +141,7 @@ const closeMenu = () => isMenuOpen.value = false
                 :key="item.key" 
                 :to="`${localePath('/')}#${item.id}`" 
                 :class="[
-                  'font-inter font-medium text-[13px] px-3 py-1.5 rounded-full no-underline transition-all duration-200 whitespace-nowrap',
+                  'font-inter font-medium text-[13px] px-3 py-1.5 rounded-lg no-underline transition-all duration-200 whitespace-nowrap',
                   activeSection === item.id
                     ? (colorMode.value === 'dark' ? 'bg-[#333] text-white' : 'bg-[#e8e8e8] text-[#1a1a1a]')
                     : (colorMode.value === 'dark' ? 'text-white/80 hover:bg-[#2a2a2a]' : 'text-[#1a1a1a] hover:bg-[#f0f0f0]')
@@ -154,7 +154,7 @@ const closeMenu = () => isMenuOpen.value = false
             <!-- Desktop Language Selector -->
             <div 
               :class="[
-                'hidden md:flex items-center gap-0.5 rounded-full p-0.5 shrink-0',
+                'hidden md:flex items-center gap-0.5 rounded-lg p-0.5 shrink-0',
                 colorMode.value === 'dark' ? 'bg-[#2a2a2a]' : 'bg-[#f5f5f5]'
               ]"
             >
@@ -163,7 +163,7 @@ const closeMenu = () => isMenuOpen.value = false
                 :key="lang"
                 @click="language = lang"
                 :class="[
-                  'font-inter font-medium text-xs px-2.5 py-1 rounded-full transition-all duration-200',
+                  'font-inter font-medium text-xs px-2.5 py-1 rounded-lg transition-all duration-200',
                   language === lang 
                     ? (colorMode.value === 'dark' ? 'bg-[#3a3a3a] text-white shadow-sm' : 'bg-white text-[#1a1a1a] shadow-sm')
                     : (colorMode.value === 'dark' ? 'text-white/60 hover:text-white' : 'text-[#666] hover:text-[#1a1a1a]')
@@ -177,7 +177,7 @@ const closeMenu = () => isMenuOpen.value = false
             <button 
               @click="toggleMenu"
               :class="[
-                'md:hidden flex items-center justify-center w-9 h-9 rounded-full cursor-pointer transition-all duration-300',
+                'md:hidden flex items-center justify-center w-9 h-9 rounded-lg cursor-pointer transition-all duration-300',
                 isMenuOpen 
                   ? (colorMode.value === 'dark' ? 'bg-[#2a2a2a] hover:bg-[#333]' : 'bg-[#f0f0f0] hover:bg-[#e5e5e5]')
                   : (colorMode.value === 'dark' ? 'bg-white hover:bg-gray-100' : 'bg-[#1a1a1a] hover:bg-[#2a2a2a]')
@@ -196,11 +196,11 @@ const closeMenu = () => isMenuOpen.value = false
             <NuxtLink 
               :to="`${localePath('/')}#contact`"
               :class="[
-                'hidden md:flex items-center gap-2 border-none rounded-full py-1 pr-3 pl-1 md:py-1.5 md:pr-4 md:pl-1.5 cursor-pointer transition-all duration-200 shrink-0 hover:scale-[1.02]',
+                'hidden md:flex items-center gap-2 border-none rounded-lg py-1 pr-3 pl-1 md:py-1.5 md:pr-4 md:pl-1.5 cursor-pointer transition-all duration-200 shrink-0 hover:scale-[1.02]',
                 colorMode.value === 'dark' ? 'flex items-center justify-center bg-[linear-gradient(to_right,white_50%,#f0bf6c)] border-none font-inter font-medium text-sm text-[#0f0f0f] cursor-pointer backdrop-blur-[12px] shadow-[0_4px_4px_rgba(0,0,0,0.25),0_10px_10px_rgba(11,32,103,0.05)] transition-all duration-200 hover:brightness-105' : 'bg-[#1a1a1a] hover:bg-[#2a2a2a]'
               ]"
             >
-              <NuxtImg src="/img/main/founder.png" alt="MC Studio" class="w-6 h-6 md:w-7 md:h-7 rounded-full bg-gradient-to-br from-[#f0bf6c] to-[#e8a84c] flex items-center justify-center font-inter font-semibold text-[9px] md:text-[10px] text-[#0f0f0f] object-contain" />
+              <NuxtImg src="/img/main/founder.png" alt="MC Studio" class="w-6 h-6 md:w-7 md:h-7 rounded-lg bg-gradient-to-br from-[#f0bf6c] to-[#e8a84c] flex items-center justify-center font-inter font-semibold text-[9px] md:text-[10px] text-[#0f0f0f] object-contain" />
               <div class="flex flex-col items-start gap-px">
                 <span :class="['font-inter font-semibold text-[11px] md:text-xs leading-tight', colorMode.value === 'dark' ? 'text-[#1a1a1a]' : 'text-white']">{{ t('nav.book_call') }}</span>
                 <span :class="['font-inter font-normal text-[9px] leading-tight', colorMode.value === 'dark' ? 'text-[#1a1a1a]/60' : 'text-white/60']">{{ t('nav.free_call') }}</span>
@@ -251,7 +251,7 @@ const closeMenu = () => isMenuOpen.value = false
                 <!-- Language Selector -->
                 <div 
                   :class="[
-                    'flex items-center gap-0.5 rounded-full p-0.5',
+                    'flex items-center gap-0.5 rounded-lg p-0.5',
                     colorMode.value === 'dark' ? 'bg-[#2a2a2a]' : 'bg-[#f5f5f5]'
                   ]"
                 >
@@ -260,7 +260,7 @@ const closeMenu = () => isMenuOpen.value = false
                     :key="lang"
                     @click="language = lang"
                     :class="[
-                      'font-inter font-medium text-xs px-3 py-1.5 rounded-full transition-all duration-200',
+                      'font-inter font-medium text-xs px-3 py-1.5 rounded-lg transition-all duration-200',
                       language === lang 
                         ? (colorMode.value === 'dark' ? 'bg-[#3a3a3a] text-white shadow-sm' : 'bg-white text-[#1a1a1a] shadow-sm')
                         : (colorMode.value === 'dark' ? 'text-white/60 hover:text-white' : 'text-[#666] hover:text-[#1a1a1a]')
@@ -274,11 +274,11 @@ const closeMenu = () => isMenuOpen.value = false
                 <NuxtLink 
                   :to="`${localePath('/')}#contact`"
                   :class="[
-                    'flex items-center gap-2 border-none rounded-full py-1.5 pr-4 pl-1.5 cursor-pointer transition-all bg-[linear-gradient(to_right,white_50%,#f0bf6c)] border-none font-inter font-medium text-sm text-[#0f0f0f] cursor-pointer backdrop-blur-[12px] shadow-[0_4px_4px_rgba(0,0,0,0.25),0_10px_10px_rgba(11,32,103,0.05)] transition-all duration-200 hover:brightness-105',
+                    'flex items-center gap-2 border-none rounded-lg py-1.5 pr-4 pl-1.5 cursor-pointer transition-all bg-[linear-gradient(to_right,white_50%,#f0bf6c)] border-none font-inter font-medium text-sm text-[#0f0f0f] cursor-pointer backdrop-blur-[12px] shadow-[0_4px_4px_rgba(0,0,0,0.25),0_10px_10px_rgba(11,32,103,0.05)] transition-all duration-200 hover:brightness-105',
                     colorMode.value === 'dark' ? 'bg-white hover:bg-gray-100' : 'bg-[#1a1a1a] hover:bg-[#2a2a2a]'
                   ]"
                 >
-                  <NuxtImg src="/img/main/founder.png" alt="MC Studio" class="w-6 h-6 md:w-7 md:h-7 object-contain rounded-full flex items-center justify-center font-inter font-semibold text-[10px] text-[#0f0f0f]" />
+                  <NuxtImg src="/img/main/founder.png" alt="MC Studio" class="w-6 h-6 md:w-7 md:h-7 object-contain rounded-lg flex items-center justify-center font-inter font-semibold text-[10px] text-[#0f0f0f]" />
                   <div class="flex flex-col items-start gap-px">
                     <span :class="['font-inter font-semibold text-xs leading-tight', colorMode.value === 'dark' ? 'text-[#1a1a1a]' : 'text-white']">{{ t('nav.book_call') }}</span>
                     <span :class="['font-inter font-normal text-[9px] leading-tight', colorMode.value === 'dark' ? 'text-[#1a1a1a]/60' : 'text-white/60']">{{ t('nav.free_call') }}</span>
