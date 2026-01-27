@@ -63,4 +63,12 @@ export default defineNuxtConfig({
       redirectOn: 'root',
     }
   },
+  gsap: {
+    composables: true,
+    provide: false,
+    extraPlugins: {
+      scrollTrigger: true,
+      motionPath: true
+    },
+  },
 })

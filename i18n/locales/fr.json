@@ -21,7 +21,11 @@
         "badges": {
             "experience": "+5 ans d'expériences",
             "projects": "+10 projets réalisés",
-            "location": "Lyon"
+            "location": [
+                "Lyon",
+                "Londres",
+                "Montréal"
+            ]
         },
         "marquee": [
             "design",

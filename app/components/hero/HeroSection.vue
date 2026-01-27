@@ -8,7 +8,7 @@ import ScrollingMarquee from "./ScrollingMarquee.vue"
 </script>
 
 <template>
-  <section class="relative w-full rounded-lg overflow-hidden min-h-[calc(90svh-10px)] sm:min-h-[600px] md:min-h-[620px] lg:min-h-[643px]">
+  <section class="relative w-full rounded-lg overflow-hidden min-h-[calc(85svh-10px)] sm:min-h-[600px] md:min-h-[620px] lg:min-h-[643px]">
     <!-- Background Image -->
     <!-- Background Image -->
     <NuxtImg 

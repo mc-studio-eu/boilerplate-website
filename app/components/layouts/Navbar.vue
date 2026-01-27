@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import gsap from 'gsap'
+
 const isMenuOpen = ref(false)
 const isScrolled = ref(false)
 const { t, locale, setLocale } = useI18n()
@@ -27,6 +29,52 @@ const toggleColorMode = () => {
 }
 
 const isFooterVisible = ref(false)
+
+// Refs pour les boutons CTA avec animation text slide
+const desktopCtaBtn = ref(null)
+const desktopCtaWrapper1 = ref(null)
+const desktopCtaWrapper2 = ref(null)
+const mobileCtaBtn = ref(null)
+const mobileCtaWrapper1 = ref(null)
+const mobileCtaWrapper2 = ref(null)
+
+// Animation text slide pour les CTAs - initialisée après que la navbar flottante apparaît
+let desktopAnimationSetup = false
+let mobileAnimationSetup = false
+
+watch(isScrolled, (scrolled) => {
+  if (scrolled) {
+    nextTick(() => {
+      // Setup desktop CTA animation
+      if (!desktopAnimationSetup && desktopCtaBtn.value && desktopCtaWrapper1.value) {
+        const btn = desktopCtaBtn.value.$el || desktopCtaBtn.value
+        const wrappers = [desktopCtaWrapper1.value, desktopCtaWrapper2.value].filter(Boolean)
+        
+        btn.addEventListener('mouseenter', () => {
+          gsap.to(wrappers, { yPercent: -50, duration: 0.35, ease: 'power2.inOut', stagger: 0.05 })
+        })
+        btn.addEventListener('mouseleave', () => {
+          gsap.to(wrappers, { yPercent: 0, duration: 0.35, ease: 'power2.inOut', stagger: 0.05 })
+        })
+        desktopAnimationSetup = true
+      }
+      
+      // Setup mobile CTA animation
+      if (!mobileAnimationSetup && mobileCtaBtn.value && mobileCtaWrapper1.value) {
+        const btn = mobileCtaBtn.value.$el || mobileCtaBtn.value
+        const wrappers = [mobileCtaWrapper1.value, mobileCtaWrapper2.value].filter(Boolean)
+        
+        btn.addEventListener('mouseenter', () => {
+          gsap.to(wrappers, { yPercent: -50, duration: 0.35, ease: 'power2.inOut', stagger: 0.05 })
+        })
+        btn.addEventListener('mouseleave', () => {
+          gsap.to(wrappers, { yPercent: 0, duration: 0.35, ease: 'power2.inOut', stagger: 0.05 })
+        })
+        mobileAnimationSetup = true
+      }
+    })
+  }
+})
 
 onMounted(() => {
   const handleScroll = () => {
@@ -194,6 +242,7 @@ const closeMenu = () => isMenuOpen.value = false
 
             <!-- Desktop CTA -->
             <NuxtLink 
+              ref="desktopCtaBtn"
               :to="`${localePath('/')}#contact`"
               :class="[
                 'hidden md:flex items-center gap-2 border-none rounded-lg py-1 pr-3 pl-1 md:py-1.5 md:pr-4 md:pl-1.5 cursor-pointer transition-all duration-200 shrink-0 hover:scale-[1.02]',
@@ -202,8 +251,18 @@ const closeMenu = () => isMenuOpen.value = false
             >
               <NuxtImg src="/img/main/founder.png" alt="MC Studio" class="w-6 h-6 md:w-7 md:h-7 rounded-lg bg-gradient-to-br from-[#f0bf6c] to-[#e8a84c] flex items-center justify-center font-inter font-semibold text-[9px] md:text-[10px] text-[#0f0f0f] object-contain" />
               <div class="flex flex-col items-start gap-px">
-                <span :class="['font-inter font-semibold text-[11px] md:text-xs leading-tight', colorMode.value === 'dark' ? 'text-[#1a1a1a]' : 'text-white']">{{ t('nav.book_call') }}</span>
-                <span :class="['font-inter font-normal text-[9px] leading-tight', colorMode.value === 'dark' ? 'text-[#1a1a1a]/60' : 'text-white/60']">{{ t('nav.free_call') }}</span>
+                <span class="text-slide-container h-[14px]">
+                  <span ref="desktopCtaWrapper1" class="text-slide-wrapper">
+                    <span :class="['text-slide-text h-[14px] leading-[14px] font-inter font-semibold text-[11px] md:text-xs', colorMode.value === 'dark' ? 'text-[#1a1a1a]' : 'text-white']">{{ t('nav.book_call') }}</span>
+                    <span :class="['text-slide-text h-[14px] leading-[14px] font-inter font-semibold text-[11px] md:text-xs', colorMode.value === 'dark' ? 'text-[#1a1a1a]' : 'text-white']">{{ t('nav.book_call') }}</span>
+                  </span>
+                </span>
+                <span class="text-slide-container h-[11px]">
+                  <span ref="desktopCtaWrapper2" class="text-slide-wrapper">
+                    <span :class="['text-slide-text h-[11px] leading-[11px] font-inter font-normal text-[9px]', colorMode.value === 'dark' ? 'text-[#1a1a1a]/60' : 'text-white/60']">{{ t('nav.free_call') }}</span>
+                    <span :class="['text-slide-text h-[11px] leading-[11px] font-inter font-normal text-[9px]', colorMode.value === 'dark' ? 'text-[#1a1a1a]/60' : 'text-white/60']">{{ t('nav.free_call') }}</span>
+                  </span>
+                </span>
               </div>
             </NuxtLink>
           </div>
@@ -272,6 +331,7 @@ const closeMenu = () => isMenuOpen.value = false
 
                 <!-- CTA Button -->
                 <NuxtLink 
+                  ref="mobileCtaBtn"
                   :to="`${localePath('/')}#contact`"
                   :class="[
                     'flex items-center gap-2 border-none rounded-lg py-1.5 pr-4 pl-1.5 cursor-pointer transition-all bg-[linear-gradient(to_right,white_50%,#f0bf6c)] border-none font-inter font-medium text-sm text-[#0f0f0f] cursor-pointer backdrop-blur-[12px] shadow-[0_4px_4px_rgba(0,0,0,0.25),0_10px_10px_rgba(11,32,103,0.05)] transition-all duration-200 hover:brightness-105',
@@ -280,8 +340,18 @@ const closeMenu = () => isMenuOpen.value = false
                 >
                   <NuxtImg src="/img/main/founder.png" alt="MC Studio" class="w-6 h-6 md:w-7 md:h-7 object-contain rounded-lg flex items-center justify-center font-inter font-semibold text-[10px] text-[#0f0f0f]" />
                   <div class="flex flex-col items-start gap-px">
-                    <span :class="['font-inter font-semibold text-xs leading-tight', colorMode.value === 'dark' ? 'text-[#1a1a1a]' : 'text-white']">{{ t('nav.book_call') }}</span>
-                    <span :class="['font-inter font-normal text-[9px] leading-tight', colorMode.value === 'dark' ? 'text-[#1a1a1a]/60' : 'text-white/60']">{{ t('nav.free_call') }}</span>
+                    <span class="text-slide-container h-[14px]">
+                      <span ref="mobileCtaWrapper1" class="text-slide-wrapper">
+                        <span :class="['text-slide-text h-[14px] leading-[14px] font-inter font-semibold text-xs', colorMode.value === 'dark' ? 'text-[#1a1a1a]' : 'text-white']">{{ t('nav.book_call') }}</span>
+                        <span :class="['text-slide-text h-[14px] leading-[14px] font-inter font-semibold text-xs', colorMode.value === 'dark' ? 'text-[#1a1a1a]' : 'text-white']">{{ t('nav.book_call') }}</span>
+                      </span>
+                    </span>
+                    <span class="text-slide-container h-[11px]">
+                      <span ref="mobileCtaWrapper2" class="text-slide-wrapper">
+                        <span :class="['text-slide-text h-[11px] leading-[11px] font-inter font-normal text-[9px]', colorMode.value === 'dark' ? 'text-[#1a1a1a]/60' : 'text-white/60']">{{ t('nav.free_call') }}</span>
+                        <span :class="['text-slide-text h-[11px] leading-[11px] font-inter font-normal text-[9px]', colorMode.value === 'dark' ? 'text-[#1a1a1a]/60' : 'text-white/60']">{{ t('nav.free_call') }}</span>
+                      </span>
+                    </span>
                   </div>
                 </NuxtLink>
               </div>
@@ -293,3 +363,20 @@ const closeMenu = () => isMenuOpen.value = false
   </Transition>
   </div>
 </template>
+
+<style scoped>
+.text-slide-container {
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+.text-slide-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.text-slide-text {
+  display: block;
+}
+</style>
