@@ -170,11 +170,11 @@ onUnmounted(() => {
             </div>
 
             <!-- Call to Action -->
-            <UButton ref="projectCtaBtn"
-                     :to="currentProject.link"
-                     target="_blank"
-                     class="w-36 flex items-center justify-center h-[30px] bg-[linear-gradient(to_right,white_50%,#f0bf6c)] border-none rounded-lg font-inter font-medium text-sm text-[#0f0f0f] cursor-pointer backdrop-blur-[12px] shadow-[0_4px_4px_rgba(0,0,0,0.25),0_10px_10px_rgba(11,32,103,0.05)] transition-all duration-200 hover:brightness-105"
-                     trailing-icon="i-heroicons-arrow-right-20-solid"
+            <!-- Call to Action -->
+            <a ref="projectCtaBtn"
+               :href="currentProject.link"
+               target="_blank"
+               class="w-36 flex items-center justify-center h-[30px] bg-[linear-gradient(to_right,white_50%,#f0bf6c)] border-none rounded-lg font-inter font-medium text-sm text-[#0f0f0f] cursor-pointer backdrop-blur-[12px] shadow-[0_4px_4px_rgba(0,0,0,0.25),0_10px_10px_rgba(11,32,103,0.05)] transition-all duration-200 hover:brightness-105 no-underline"
             >
               <span class="text-slide-container h-[20px]">
                 <span ref="projectCtaWrapper" class="text-slide-wrapper">
@@ -182,7 +182,8 @@ onUnmounted(() => {
                   <span class="text-slide-text h-[20px] leading-[20px]">{{ $t('projects.cta') }}</span>
                 </span>
               </span>
-            </UButton>
+              <UIcon name="i-heroicons-arrow-right-20-solid" class="ml-1 w-5 h-5" />
+            </a>
 
             <!-- Testimonials -->
             <div v-if="currentProject.testimonials && currentProject?.testimonial">
