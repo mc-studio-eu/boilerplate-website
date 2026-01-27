@@ -75,7 +75,7 @@ const currentTestimonial = computed(() => testimonials.value[currentIndex.value]
   </p>
   <section id="avis" class="py-12 px-6 sm:py-20 bg-[var(--bg-primary)] transition-colors duration-300 ease-out">
     <div class="max-w-[1216px] mx-auto">
-      <h2 class="text-center font-manrope font-medium text-2xl sm:text-3xl md:text-[32px] mb-6 sm:mb-8 transition-colors duration-300 text-[var(--text-primary)]" v-html="$t('testimonials.title')">
+      <h2 class="section-title text-center font-manrope font-medium text-2xl sm:text-3xl md:text-[32px] mb-6 sm:mb-8 transition-colors duration-300 text-[var(--text-primary)]" v-html="$t('testimonials.title')">
       </h2>
 
       <!-- Testimonial Card -->

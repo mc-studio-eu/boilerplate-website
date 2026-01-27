@@ -92,7 +92,7 @@ onUnmounted(() => {
         <!-- Right: Clickable Steps -->
         <div class="lg:order-2 order-1">
           <div class="mb-10">
-            <h2 class="font-manrope font-medium text-2xl sm:text-3xl md:text-[32px] mb-3 transition-colors duration-300" v-html="$t('process.title')"></h2>
+            <h2 class="section-title font-manrope font-medium text-2xl sm:text-3xl md:text-[32px] mb-3 transition-colors duration-300" v-html="$t('process.title')"></h2>
             <p class="text-sm sm:text-base max-w-xl mx-auto leading-relaxed transition-colors duration-300 text-[var(--text-secondary)]">
               {{ $t('process.subtitle') }}
             </p>

@@ -82,7 +82,7 @@ const otherServices = computed(() => Object.values(tm('services.other_services.l
     <div class="max-w-[1216px] mx-auto">
       <!-- Header -->
       <div class="text-center mb-10 md:mb-16">
-        <h2 class="font-manrope font-medium text-2xl sm:text-3xl md:text-[32px] mb-3 transition-colors duration-300 text-[var(--text-primary)]" v-html="$t('services.title')">
+        <h2 class="section-title font-manrope font-medium text-2xl sm:text-3xl md:text-[32px] mb-3 transition-colors duration-300 text-[var(--text-primary)]" v-html="$t('services.title')">
         </h2>
         <p class="text-sm sm:text-base max-w-xl mx-auto leading-relaxed transition-colors duration-300 text-[var(--text-secondary)]" v-html="$t('services.subtitle')">
         </p>
