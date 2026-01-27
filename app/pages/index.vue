@@ -62,6 +62,8 @@ import ScreenMarquee from "../components/project/ScreenMarquee.vue";
       
       <!-- CTA Section -->
       <CtaSection />
+
+      <ScreenMarquee class="mb-10 -mt-20"/>
     </div>
     
     <!-- Footer -->

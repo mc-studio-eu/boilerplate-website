@@ -21,6 +21,7 @@ export default defineNuxtConfig({
         { property: 'og:title', content: "MC Studio" },
         { property: 'og:type', content: 'website' },
         { property: 'og:url', content: 'https://www.mc-studio.eu' },
+        { property: 'og:image', content: 'https://www.mc-studio.eu/hero.png' },
         { property: 'og:image:width', content: '1200' },
         { property: 'og:image:height', content: '630' }
       ],
