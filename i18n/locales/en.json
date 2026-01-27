@@ -19,9 +19,22 @@
             "whatsapp": "Chat on WhatsApp"
         },
         "badges": {
-            "experience": "+5 years experience",
-            "projects": "+10 projects realized",
-            "location": "Lyon"
+            "rotating_stats": [
+                "+10 projects delivered",
+                "100% satisfaction",
+                "+5 years experience"
+            ],
+            "location": [
+                "Lyon",
+                "London",
+                "Montreal"
+            ],
+            "rotating_services": [
+                "Branding",
+                "Design",
+                "Development",
+                "Delivery"
+            ]
         },
         "marquee": [
             "design",

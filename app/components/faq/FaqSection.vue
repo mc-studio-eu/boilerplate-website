@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import gsap from 'gsap'
+
 // Types
 interface FaqItem {
   id: number
@@ -7,8 +9,12 @@ interface FaqItem {
 }
 
 // Data
-// Data
 const { t } = useI18n();
+
+// Text slide animation refs
+const faqWhatsappBtn = ref(null)
+const faqWhatsappWrapper = ref(null)
+useTextSlideAnimation(faqWhatsappBtn, faqWhatsappWrapper)
 
 const faqItems = computed<FaqItem[]>(() => [
   {
@@ -96,11 +102,16 @@ const founder = computed(() => ({
             {{ $t('faq.contact_text') }}
           </p>
 
-          <UButton to="https://api.whatsapp.com/send/?phone=%2B33781724683&text&type=phone_number&app_absent=0" target="_blank"
+          <UButton ref="faqWhatsappBtn" to="https://api.whatsapp.com/send/?phone=%2B33781724683&text&type=phone_number&app_absent=0" target="_blank"
             size="md"
             class="mt-2 w-fit cursor-pointer bg-[#232323] text-white hover:bg-transparent"
           >
-            {{ $t('faq.whatsapp_btn') }}
+            <span class="text-slide-container h-[20px]">
+              <span ref="faqWhatsappWrapper" class="text-slide-wrapper">
+                <span class="text-slide-text h-[20px] leading-[20px]">{{ $t('faq.whatsapp_btn') }}</span>
+                <span class="text-slide-text h-[20px] leading-[20px]">{{ $t('faq.whatsapp_btn') }}</span>
+              </span>
+            </span>
           </UButton>
         </div>
 
@@ -139,3 +150,19 @@ const founder = computed(() => ({
   </section>
 </template>
 
+<style scoped>
+.text-slide-container {
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+.text-slide-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.text-slide-text {
+  display: block;
+}
+</style>

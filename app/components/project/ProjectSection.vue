@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import gsap from 'gsap'
+
 // Types
 interface Project {
   id: number
@@ -18,6 +20,11 @@ interface Project {
 
 // Data
 const { t, tm, rt } = useI18n();
+
+// Text slide animation refs
+const projectCtaBtn = ref(null)
+const projectCtaWrapper = ref(null)
+useTextSlideAnimation(projectCtaBtn, projectCtaWrapper)
 
 const projects = computed<Project[]>(() => [
   {
@@ -135,12 +142,18 @@ const currentProject = computed(() => projects.value[currentIndex.value])
             </div>
 
             <!-- Call to Action -->
-            <UButton :to="currentProject.link"
+            <UButton ref="projectCtaBtn"
+                     :to="currentProject.link"
                      target="_blank"
                      class="w-36 flex items-center justify-center h-[30px] bg-[linear-gradient(to_right,white_50%,#f0bf6c)] border-none rounded-lg font-inter font-medium text-sm text-[#0f0f0f] cursor-pointer backdrop-blur-[12px] shadow-[0_4px_4px_rgba(0,0,0,0.25),0_10px_10px_rgba(11,32,103,0.05)] transition-all duration-200 hover:brightness-105"
                      trailing-icon="i-heroicons-arrow-right-20-solid"
             >
-              {{ $t('projects.cta') }}
+              <span class="text-slide-container h-[20px]">
+                <span ref="projectCtaWrapper" class="text-slide-wrapper">
+                  <span class="text-slide-text h-[20px] leading-[20px]">{{ $t('projects.cta') }}</span>
+                  <span class="text-slide-text h-[20px] leading-[20px]">{{ $t('projects.cta') }}</span>
+                </span>
+              </span>
             </UButton>
 
             <!-- Testimonials -->
@@ -198,3 +211,19 @@ const currentProject = computed(() => projects.value[currentIndex.value])
   </section>
 </template>
 
+<style scoped>
+.text-slide-container {
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+.text-slide-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.text-slide-text {
+  display: block;
+}
+</style>

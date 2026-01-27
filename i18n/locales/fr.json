@@ -21,10 +21,21 @@
         "badges": {
             "experience": "+5 ans d'expériences",
             "projects": "+10 projets réalisés",
+            "rotating_stats": [
+                "+10 projets réalisés",
+                "100% de satisfaction",
+                "+5 ans d'expériences"
+            ],
             "location": [
                 "Lyon",
                 "Londres",
                 "Montréal"
+            ],
+            "rotating_services": [
+                "Branding",
+                "Design",
+                "Développement",
+                "Livraison"
             ]
         },
         "marquee": [

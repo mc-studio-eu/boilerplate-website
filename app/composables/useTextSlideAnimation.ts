@@ -14,17 +14,26 @@ export function useTextSlideAnimation(
 ) {
     const { duration = 0.35, ease = 'power2.inOut', stagger = 0.05 } = options
 
+    const getElement = (ref: any): HTMLElement | null => {
+        if (!ref) return null
+        // Handle Vue component instances
+        if (ref.$el) return ref.$el
+        // Handle template refs that are components
+        if (ref.value && ref.value.$el) return ref.value.$el
+        // Handle direct DOM elements
+        if (ref instanceof HTMLElement) return ref
+        return ref
+    }
+
     const setupAnimation = () => {
-        // Handle both DOM elements and Vue component instances (like NuxtLink)
         const btnRef = buttonRef.value
-        const btn = btnRef && '$el' in btnRef ? btnRef.$el : btnRef
+        const btn = getElement(btnRef)
 
         const wrappers = Array.isArray(wrapperRefs)
             ? wrapperRefs.map(r => r.value).filter(Boolean)
             : [wrapperRefs.value].filter(Boolean)
 
         if (btn && wrappers.length > 0) {
-            // Remove existing listeners to avoid duplicates
             const enterHandler = () => {
                 gsap.to(wrappers, {
                     yPercent: -50,
@@ -52,20 +61,22 @@ export function useTextSlideAnimation(
     }
 
     onMounted(() => {
-        // Try immediately
-        if (!setupAnimation()) {
-            // If not ready, watch for changes
-            const stopWatch = watch(
-                () => buttonRef.value,
-                () => {
-                    nextTick(() => {
-                        if (setupAnimation()) {
-                            stopWatch()
-                        }
-                    })
-                },
-                { immediate: false }
-            )
-        }
+        // Try with a small delay to ensure component is fully mounted
+        setTimeout(() => {
+            if (!setupAnimation()) {
+                // If not ready, watch for changes
+                const stopWatch = watch(
+                    () => buttonRef.value,
+                    () => {
+                        nextTick(() => {
+                            if (setupAnimation()) {
+                                stopWatch()
+                            }
+                        })
+                    },
+                    { immediate: true }
+                )
+            }
+        }, 100)
     })
 }
