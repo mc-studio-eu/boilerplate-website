@@ -89,7 +89,7 @@ const otherServices = computed(() => Object.values(tm('services.other_services.l
       </div>
 
       <!-- Service Cards Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-8 md:mb-10">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-8 md:mb-10 items-start">
         <div 
           v-for="(service, index) in services" 
           :key="index"
