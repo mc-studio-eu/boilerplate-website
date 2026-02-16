@@ -71,7 +71,8 @@
                 "copywriting": "Copywriting",
                 "strategy": "Strategic Support",
                 "ai": "AI Integration",
-                "web_dev": "Web Development"
+                "web_dev": "Web Development",
+                "mobile_dev": "Mobile Development"
             }
         },
         "cards": {
