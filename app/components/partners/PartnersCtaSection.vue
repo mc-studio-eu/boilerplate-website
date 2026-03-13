@@ -1,3 +1,9 @@
+<script setup lang="ts">
+const { t } = useI18n()
+const config = useRuntimeConfig()
+const platformUrl = computed(() => String(config.public.partnerPlatformUrl || ''))
+</script>
+
 <template>
   <section
     id="rejoindre-programme"
@@ -9,29 +15,30 @@
       <div class="relative z-10 grid grid-cols-1 md:grid-cols-[1.1fr_0.9fr] gap-10 md:gap-16 items-center p-6 sm:p-8">
         <div class="space-y-4">
           <p class="font-inter text-[11px] uppercase tracking-[0.16em] text-[var(--color-gold)]">
-            Rejoindre le programme
+            {{ t('partners.cta.eyebrow') }}
           </p>
           <h2
             class="section-title font-manrope font-medium text-2xl sm:text-3xl md:text-[32px] mb-3 transition-colors duration-300 text-[var(--text-primary)]"
           >
-            Vous avez un bon réseau et envie de le monétiser intelligemment&nbsp;?
+            {{ t('partners.cta.title') }}
           </h2>
           <p
             class="text-sm sm:text-base max-w-xl leading-relaxed transition-colors duration-300 text-[var(--text-secondary)]"
           >
-            Prenez 20 minutes pour comprendre le fonctionnement concret du programme Partner, voir si votre
-            profil est adapté et clarifier toutes vos questions.
+            {{ t('partners.cta.subtitle') }}
           </p>
 
           <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-5 mt-6">
             <a
-              href="#partner-cal"
+              :href="platformUrl"
+              target="_blank"
+              rel="noopener noreferrer"
               class="cta-primary inline-flex items-center justify-center rounded-lg px-5 py-2.5 font-inter text-sm font-medium text-[#0f0f0f] no-underline cursor-pointer hover:brightness-105 transition-all duration-200"
             >
-              Planifier un échange
+              {{ t('partners.cta.primary') }}
             </a>
             <p class="font-inter text-xs text-[var(--text-secondary)] max-w-[260px]">
-              Échange sans engagement, pour valider ensemble si le programme a du sens pour vous.
+              {{ t('partners.cta.helper') }}
             </p>
           </div>
         </div>
@@ -53,10 +60,10 @@
             </div>
             <div class="flex flex-col">
               <span class="font-inter text-xs font-semibold text-[var(--text-primary)]">
-                Échange direct avec MC Studio
+                {{ t('partners.cta.card_title') }}
               </span>
               <span class="font-inter text-[11px] text-[var(--text-secondary)]">
-                Compréhension de votre profil, de votre réseau et de vos attentes.
+                {{ t('partners.cta.card_text') }}
               </span>
             </div>
           </div>
@@ -64,7 +71,7 @@
           <div class="grid grid-cols-2 gap-3">
             <div class="rounded-lg border border-[var(--border-subtle)] bg-black/30 px-3 py-3">
               <p class="font-inter text-[11px] text-[var(--text-secondary)]">
-                Commission de
+                {{ t('partners.cta.commission_label') }}
               </p>
               <p class="font-manrope text-lg font-semibold text-[var(--color-gold)]">
                 10&nbsp;%
@@ -72,10 +79,10 @@
             </div>
             <div class="rounded-lg border border-[var(--border-subtle)] bg-black/30 px-3 py-3">
               <p class="font-inter text-[11px] text-[var(--text-secondary)]">
-                Suivi des recommandations
+                {{ t('partners.cta.tracking_label') }}
               </p>
               <p class="font-manrope text-lg font-semibold text-[var(--text-primary)]">
-                Structuré
+                {{ t('partners.cta.tracking_value') }}
               </p>
             </div>
           </div>

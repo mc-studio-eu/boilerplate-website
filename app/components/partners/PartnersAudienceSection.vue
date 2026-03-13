@@ -3,18 +3,12 @@
     class="py-16 px-0 sm:px-4 bg-[var(--bg-primary)] transition-colors duration-300"
   >
     <div class="max-w-[1216px] mx-auto px-4 sm:px-0 grid grid-cols-1 md:grid-cols-[0.9fr_1.1fr] gap-10 md:gap-16">
+
       <div class="space-y-4">
-        <p class="font-inter text-[11px] uppercase tracking-[0.16em] text-[var(--color-gold)]">
-          À qui s’adresse le programme
-        </p>
-        <h2
-          class="section-title font-manrope font-medium text-2xl sm:text-3xl md:text-[32px] mb-3 transition-colors duration-300 text-[var(--text-primary)]"
-        >
-          Pour les personnes qui créent de la confiance autour d’elles.
+          <h2 class="section-title font-manrope font-medium text-2xl sm:text-3xl md:text-[32px] mb-3 transition-colors duration-300 text-gradient">
+            À qui s’adresse le programme
         </h2>
-        <p
-          class="text-sm sm:text-base max-w-xl leading-relaxed transition-colors duration-300 text-[var(--text-secondary)]"
-        >
+        <p class="font-inter text-sm sm:text-base max-w-xl leading-relaxed transition-colors duration-300 text-[var(--text-secondary)]">
           Le programme a été pensé pour les profils avec un réseau actif et une vraie crédibilité auprès
           de leurs contacts.
         </p>

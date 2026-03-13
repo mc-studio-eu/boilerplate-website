@@ -4,6 +4,7 @@
 <template>
   <main class="main-container min-h-screen p-6 transition-colors duration-300">
     <PartnersHeroSection />
+    <PartnersFloatingNavbar />
 
     <!-- Main Content with Border Frame -->
     <div class="relative mx-auto max-w-[1440px]">
@@ -14,12 +15,11 @@
       <div class="border-line absolute right-0 xl:right-[50px] top-0 bottom-0 w-px"></div>
 
       <!-- Le principe -->
-      <div class="section-separator"></div>
       <PartnersPrincipleSection />
 
-      <!-- À qui s’adresse le programme -->
+      <!-- À qui s’adresse le programme
       <div class="section-separator"></div>
-      <PartnersAudienceSection />
+      <PartnersAudienceSection /> -->
 
       <!-- Pourquoi rejoindre -->
       <div class="section-separator"></div>
@@ -126,6 +126,11 @@
   .section-separator {
     max-width: 100%;
   }
+}
+
+main > div > section,
+main > section {
+  scroll-margin-top: 80px;
 }
 </style>
 

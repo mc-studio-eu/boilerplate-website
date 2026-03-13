@@ -5,6 +5,13 @@ export default defineNuxtConfig({
   modules: ['@nuxt/ui', '@nuxt/image', '@nuxtjs/i18n', 'nuxt-simple-sitemap'],
   css: ['~/assets/css/main.css'],
 
+  runtimeConfig: {
+    public: {
+      partnerPlatformUrl:
+        process.env.NUXT_PUBLIC_PARTNER_PLATFORM_URL || 'https://app.mc-studio.eu'
+    }
+  },
+
   app: {
     head: {
       charset: 'utf-8',
