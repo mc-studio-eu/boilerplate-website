@@ -14,7 +14,7 @@ const team: TeamMember[] = [
   { id: 1, name: 'Mohamed Chettah', role: t('team.members.mohamed.role'), initials: 'MC', image: '/img/main/mohamed.jpg', accent: false },
   { id: 2, name: 'Liam Faucitano', role: t('team.members.liam.role'), initials: 'LF', image: '/img/main/liam.jpg', accent: false },
   { id: 3, name: 'Mateo Carciu', role: t('team.members.mateo.role'), initials: 'MC', image: '/img/main/mateo.jpeg', accent: false },
-  { id: 4, name: 'Romain Grange', role: t('team.members.romain.role'), initials: 'RG', image: '/img/main/romain.jpeg', accent: false }
+  { id: 4, name: 'Romain Grange', role: t('team.members.romain.role'), initials: 'RG', image: '/img/main/romain.jpg', accent: false }
 ]
 </script>
 
