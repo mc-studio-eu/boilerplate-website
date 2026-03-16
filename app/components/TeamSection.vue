@@ -29,7 +29,7 @@ const team: TeamMember[] = [
           class="section-title font-manrope font-medium text-2xl sm:text-3xl md:text-[32px] mb-3 transition-colors duration-300 text-[var(--text-primary)]"  v-html="$t('team.title')"
         ></h2>
         <p
-          class="text-sm sm:text-base max-w-lg leading-relaxed transition-colors duration-300 text-[var(--text-secondary)]"
+          class="text-sm sm:text-base leading-relaxed transition-colors duration-300 text-[var(--text-secondary)]"
         >
           {{ $t('team.subtitle') }}
         </p>
