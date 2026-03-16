@@ -11,6 +11,8 @@ const heroPrimaryWrapper2 = ref<HTMLElement | null>(null)
 const heroSecondaryBtn = ref<HTMLElement | null>(null)
 const heroSecondaryWrapper = ref<HTMLElement | null>(null)
 
+const commissionValue = ref<HTMLElement | null>(null)
+
 useTextSlideAnimation(heroPrimaryBtn, [heroPrimaryWrapper1, heroPrimaryWrapper2])
 useTextSlideAnimation(heroSecondaryBtn, heroSecondaryWrapper)
 
@@ -54,6 +56,22 @@ onMounted(() => {
       ease: 'power2.out'
     }
   )
+
+  const targetCommission = 10
+  if (commissionValue.value) {
+    const counter = { value: 0 }
+    gsap.to(counter, {
+      value: targetCommission,
+      duration: 1.2,
+      delay: 0.6,
+      ease: 'power2.out',
+      onUpdate: () => {
+        if (commissionValue.value) {
+          commissionValue.value.textContent = String(Math.round(counter.value))
+        }
+      }
+    })
+  }
 })
 </script>
 
@@ -185,7 +203,7 @@ onMounted(() => {
               {{ t('partners.hero.commission_label') }}
             </p>
             <p class="font-manrope text-2xl font-semibold text-white mt-1">
-              10&nbsp;%
+              <span ref="commissionValue">0</span>&nbsp;%
             </p>
             <p class="font-inter text-[11px] text-white/60 mt-1">
               {{ t('partners.hero.commission_note') }}

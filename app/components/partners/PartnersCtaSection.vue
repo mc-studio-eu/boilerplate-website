@@ -17,16 +17,15 @@ const platformUrl = computed(() => String(config.public.partnerPlatformUrl || ''
           <p class="font-inter text-[11px] uppercase tracking-[0.16em] text-[var(--color-gold)]">
             {{ t('partners.cta.eyebrow') }}
           </p>
-          <h2
-            class="section-title font-manrope font-medium text-2xl sm:text-3xl md:text-[32px] mb-3 transition-colors duration-300 text-[var(--text-primary)]"
-          >
+          <div class="space-y-4">
+          <h2 class="section-title font-manrope font-medium text-2xl sm:text-3xl md:text-[32px] mb-3 transition-colors duration-300 text-gradient">
             {{ t('partners.cta.title') }}
           </h2>
           <p
-            class="text-sm sm:text-base max-w-xl leading-relaxed transition-colors duration-300 text-[var(--text-secondary)]"
-          >
-            {{ t('partners.cta.subtitle') }}
-          </p>
+            class="font-inter text-sm sm:text-base max-w-xl leading-relaxed transition-colors duration-300 text-[var(--text-secondary)]"
+            v-html="t('partners.cta.subtitle')"
+          ></p>
+        </div>
 
           <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-5 mt-6">
             <a

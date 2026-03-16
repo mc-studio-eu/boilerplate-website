@@ -114,16 +114,15 @@ onUnmounted(() => {
             >
               {{ t('partners.rewards.label') }}
             </p>
-            <h2
-              class="section-title font-manrope font-medium text-2xl sm:text-3xl md:text-[32px] transition-colors duration-300 text-[var(--text-primary)]"
-            >
-              {{ t('partners.rewards.title') }}
-            </h2>
-            <p
-              class="font-inter text-sm sm:text-base max-w-xl leading-relaxed transition-colors duration-300 text-[var(--text-secondary)]"
-            >
-              {{ t('partners.rewards.subtitle') }}
-            </p>
+            <div class="space-y-4">
+          <h2 class="section-title font-manrope font-medium text-2xl sm:text-3xl md:text-[32px] mb-3 transition-colors duration-300 text-gradient">
+            {{ t('partners.rewards.title') }}
+          </h2>
+          <p
+            class="font-inter text-sm sm:text-base max-w-xl leading-relaxed transition-colors duration-300 text-[var(--text-secondary)]"
+            v-html="t('partners.rewards.subtitle')"
+          ></p>
+        </div>
           </div>
 
           <div class="space-y-5">
