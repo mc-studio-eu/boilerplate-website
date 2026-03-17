@@ -6,7 +6,8 @@
         "reviews": "Avis",
         "faq": "FAQ",
         "book_call": "Réserver un appel",
-        "free_call": "Discussion gratuite"
+        "free_call": "Discussion gratuite",
+        "team": "Équipe"
     },
     "footer": {
         "copyright": "MC Studio. Tous droits réservés."
@@ -360,6 +361,220 @@
     "cta": {
         "title": "Parlez nous de <span class=\"text-gradient\">votre Projet</span>",
         "subtitle": "Notre mission : aider les entrepreneurs et les entreprises à transformer une idée en produit concret"
+    },
+    "team": {
+        "title": "L’équipe <span class=\"text-gradient\">MC Studio</span>",
+        "subtitle": "Stratégie, design et développement pour transformer une vision en produit clair, utile et bien exécuté.",
+        "cards": {
+            "collective": {
+                "title": "Une équipe au service du produit.",
+                "text": "Stratégie, cadrage, design et développement réunis dans une équipe. Lean, expérimentée, focalisée sur l’essentiel. Une équipe alignée pour faire avancer le produit avec clarté et impact."
+            },
+            "specialists": {
+                "title": "De la stratégie à l’exécution.",
+                "text": "De la réflexion business au design d’interface et au développement, chaque compétence est alignée pour livrer des produits digitaux cohérents, utiles et pensés pour soutenir de vrais objectifs."
+            }
+        },
+        "members": {
+            "mohamed": {
+                "role": "Fondateur — Creative Director"
+            },
+            "liam": {
+                "role": "Head of Product"
+            },
+            "mateo": {
+                "role": "Développeur Backend"
+            },
+            "romain": {
+                "role": "Développeur Frontend"
+            }
+        },
+        "badge": "Notre équipe",
+        "specialist_badges": [
+            "Stratégie business",
+            "Stratégie produit",
+            "Cadrage",
+            "UX/UI",
+            "Design system",
+            "Prototypage",
+            "Front-end",
+            "Back-end",
+            "Roadmap",
+            "Lancement",
+            "Exécution",
+            "Delivery"
+        ]
+    },
+    "partners": {
+        "nav": {
+            "cta": "S’inscrire"
+        },
+        "hero": {
+            "badge": "Programme Partner · MC Studio",
+            "title": "Devenez partenaire de croissance de MC Studio.",
+            "subtitle": "Recommandez des projets stratégiques à MC Studio et contribuez directement à la croissance du studio.",
+            "primary_main": "Rejoindre le programme Partner",
+            "primary_sub": "Accès via la plateforme",
+            "secondary": "Comment ça fonctionne",
+            "example_label": "Exemple concret",
+            "example_text": "Projet signé à <span class=\"font-semibold text-[var(--color-gold)]\">15&nbsp;000&nbsp;€</span> → vous touchez <span class=\"font-semibold text-[var(--color-gold)]\">1&nbsp;500&nbsp;€</span>.",
+            "commission_label": "Commission",
+            "commission_note": "sur chaque projet signé"
+        },
+        "principle": {
+            "title": "Le principe du programme Partner.",
+            "subtitle": "Vous recommandez un prospect qualifié, MC Studio gère les échanges, et si le projet est signé, vous êtes rémunéré à hauteur de 10&nbsp;% du montant.",
+            "steps": {
+                "1": {
+                    "label": "01",
+                    "title": "Vous recommandez un prospect qualifié",
+                    "text": "Vous identifiez un besoin clair en design produit, UX/UI ou front et nous présentez la personne (ou l’équipe) en charge du projet."
+                },
+                "2": {
+                    "label": "02",
+                    "title": "MC Studio gère les échanges",
+                    "text": "Nous cadrons le besoin, construisons la proposition, pilotons les échanges et tenons informé le partenaire de l’avancement."
+                },
+                "3": {
+                    "label": "03",
+                    "title": "Vous touchez 10 % si le projet est signé",
+                    "text": "Dès que la mission est signée et payée, vous percevez 10 % du montant HT de la première facture, de manière claire et tracée."
+                }
+            }
+        },
+        "why": {
+            "title": "Pourquoi rejoindre le programme",
+            "subtitle": "Un revenu complémentaire sérieux, adossé à un studio exigeant, avec un espace partenaire dédié pour suivre vos résultats.",
+            "side": "MC Studio accompagne des entrepreneurs, créateurs, startups et PME sur des sujets à fort enjeu produit. En tant que partenaire, vous associez votre nom à une équipe sérieuse, impliquée et sélective sur les projets.",
+            "items": {
+                "income": {
+                    "title": "Revenu complémentaire",
+                    "text": "Chaque projet signé via vos recommandations génère une commission claire, matérialisée et suivie dans le temps."
+                },
+                "transparency": {
+                    "title": "Transparence sur chaque dossier",
+                    "text": "Vous savez où en est chaque prospect : premier échange, proposition envoyée, signé, non retenu. Pas de zone grise."
+                },
+                "tracking": {
+                    "title": "Suivi structuré de vos recommandations",
+                    "text": "Toutes vos introductions sont tracées, historisées et associées aux projets concernés."
+                },
+                "monetization": {
+                    "title": "Monétisation intelligente de votre réseau",
+                    "text": "Vous créez de la valeur pour votre réseau tout en générant un revenu aligné avec la qualité des projets transmis."
+                },
+                "app": {
+                    "title": "Application partenaire dédiée",
+                    "text": "Accès à un dashboard en ligne pour enregistrer vos leads, suivre les projets que vous apportez et visualiser vos commissions."
+                },
+                "long_term": {
+                    "title": "Relation de long terme",
+                    "text": "Notre objectif n’est pas le one shot, mais la construction d’un réseau de partenaires solides et engagés."
+                }
+            }
+        },
+        "tracking": {
+            "title": "Une vision claire sur la valeur que vous créez.",
+            "subtitle": "Via une application partenaire dédiée, vous ne recommandez pas « à l’aveugle ». Chaque introduction est suivie, tracée et documentée, avec des points réguliers si nécessaire.",
+            "items": {
+                "prospects": {
+                    "title": "Prospects envoyés",
+                    "text": "Liste claire de toutes les personnes que vous nous avez présentées, avec les informations clés associées."
+                },
+                "contracts": {
+                    "title": "Contrats signés",
+                    "text": "Pour chaque prospect, vous savez si le projet a été signé, à quelle date et pour quel montant."
+                },
+                "revenue": {
+                    "title": "Chiffre généré",
+                    "text": "Suivi du cumul de chiffre d’affaires généré par vos recommandations sur la période."
+                },
+                "commissions": {
+                    "title": "Commissions gagnées",
+                    "text": "Vision claire des commissions dues, à venir et déjà versées, avec les justificatifs associés."
+                }
+            }
+        },
+        "rewards": {
+            "label": "Paliers & récompenses",
+            "title": "Un système de reconnaissance pensé pour la durée.",
+            "subtitle": "Les commissions constituent le socle du programme. À mesure que vous faites grandir la collaboration, des paliers viennent structurer la manière dont nous reconnaissons votre rôle dans la croissance du studio.",
+            "card": {
+                "badge": "Récompense évolutive",
+                "note": "Détails partagés lors de votre intégration au programme.",
+                "tier_1_title": "3 recommandations abouties",
+                "tier_1_text": "Vous commencez à générer un flux récurrent de projets qualifiés. Chaque mission signée est tracée, et vos premières commissions posent les bases de la collaboration.",
+                "tier_2_title": "10 recommandations abouties",
+                "tier_2_text": "Vous débloquez une récompense premium dédiée aux partenaires les plus engagés, pensée pour s’intégrer à votre quotidien professionnel, pas comme un simple gadget ponctuel.",
+                "tier_3_title": "20+ recommandations abouties",
+                "tier_3_text": "Le programme devient un véritable levier de revenu complémentaire. Nous ajustons avec vous les modalités de suivi, de reporting et de reconnaissance pour construire une relation long terme."
+            },
+            "list": {
+                "tier_1_title": "Premier palier : 3 recommandations abouties",
+                "tier_1_text": "Vous structurez votre participation au programme et commencez à construire un revenu complémentaire sérieux.",
+                "tier_2_title": "Seuil clé : 10 recommandations abouties",
+                "tier_2_text": "Vous entrez dans le cercle des partenaires clés, avec une reconnaissance renforcée et des avantages dédiés.",
+                "tier_3_title": "Palier avancé : 20+ recommandations abouties",
+                "tier_3_text": "Le programme devient un partenariat stratégique : suivi détaillé, échanges réguliers et ajustements communs."
+            }
+        },
+        "faq": {
+            "title": "Questions fréquentes sur le programme Partner.",
+            "subtitle": "Si vous avez d’autres questions, nous pourrons les aborder lors de notre premier échange. Le cadre du programme est pensé pour être clair dès le départ.",
+            "items": {
+                "0": {
+                    "question": "Qui peut rejoindre le programme ?",
+                    "answer": "Le programme Partner MC Studio est ouvert à toute personne disposant d’un bon réseau : indépendants, freelances, créatifs, commerciaux, agences, ainsi que votre réseau personnel et professionnel.\n\nL’essentiel : comprendre nos offres, recommander des prospects sérieux et qualifiés, et respecter une posture professionnelle."
+                },
+                "1": {
+                    "question": "Comment fonctionne la commission de 10 % ?",
+                    "answer": "Vous nous mettez en relation avec un prospect pour un besoin en design produit, UX/UI ou développement front.\nNous échangeons directement avec lui, cadrons le besoin et réalisons une proposition.\n\nSi le projet est signé, vous touchez 10 % du montant total HT facturé sur la première mission (hors renouvellement, hors abonnements récurrents éventuels)."
+                },
+                "2": {
+                    "question": "Quand la commission est-elle versée ?",
+                    "answer": "La commission est versée une fois la facture réglée par le client et les fonds effectivement reçus par MC Studio.\n\nEn pratique, le versement intervient généralement entre 30 et 45 jours après la signature, selon les modalités de paiement du client."
+                },
+                "3": {
+                    "question": "Puis-je suivre mes recommandations et mes gains ?",
+                    "answer": "Oui. Chaque partenaire dispose d’un suivi structuré :\n- liste des prospects transmis\n- statut des échanges (en cours, signé, non retenu)\n- montant des projets signés\n- commissions associées.\n\nVous gardez ainsi une vision claire et transparente de la valeur générée."
+                },
+                "4": {
+                    "question": "Y a-t-il des récompenses supplémentaires ?",
+                    "answer": "Oui. Au-delà des 10 % de commission par projet signé, nous mettons en place un système de paliers.\n\nPar exemple, à partir de 10 recommandations abouties, vous débloquez une récompense premium pensée pour les partenaires les plus engagés.\n\nL’objectif : construire une relation sur le long terme, gagnant-gagnant."
+                }
+            }
+        },
+        "cta": {
+            "eyebrow": "Rejoindre le programme",
+            "title": "Vous avez un bon réseau et envie de le monétiser intelligemment ?",
+            "subtitle": "Prenez 20 minutes pour comprendre le fonctionnement concret du programme Partner, voir si votre profil est adapté et clarifier toutes vos questions.",
+            "primary": "S’inscrire sur la plateforme",
+            "helper": "Créez votre compte partenaire pour soumettre des leads et suivre vos commissions.",
+            "card_title": "Échange direct avec MC Studio",
+            "card_text": "Compréhension de votre profil, de votre réseau et de vos attentes.",
+            "commission_label": "Commission de",
+            "tracking_label": "Suivi des recommandations",
+            "tracking_value": "Structuré"
+        },
+        "cal": {
+            "eyebrow": "Planifier un échange",
+            "title": "Réservez un créneau pour parler du programme Partner.",
+            "subtitle": "Choisissez directement un créneau dans l’agenda pour discuter du fonctionnement du programme, de votre profil et des prochaines étapes possibles.",
+            "iframe_title": "Réserver un appel Partner MC Studio"
+        },
+        "example": {
+            "title": "Un exemple simple pour vous projeter.",
+            "subtitle": "Vous recommandez un prospect qui a un besoin clair pour refondre son produit ou lancer une nouvelle interface. Après cadrage, le projet est signé à <span class=\"font-semibold text-[var(--color-gold)]\">15&nbsp;000&nbsp;€ HT</span>.",
+            "amount_label": "Montant du projet",
+            "amount_value": "15&nbsp;000&nbsp;€",
+            "rate_label": "Taux de commission",
+            "rate_value": "10&nbsp;%",
+            "commission_label": "Commission versée",
+            "commission_value": "1&nbsp;500&nbsp;€",
+            "quote": "« L’ambition du programme Partner n’est pas de multiplier les leads, mais de concentrer notre énergie sur des recommandations vraiment qualifiées. Si vous partagez cette vision, on avancera très bien ensemble. »",
+            "founder_name": "Mohamed Chettah",
+            "founder_role": "Fondateur · MC Studio"
+        }
     },
     "meta": {
         "title": "MC Studio - Le Studio de Design & Développement",
