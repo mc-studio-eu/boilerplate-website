@@ -426,7 +426,7 @@
                 "1": {
                     "label": "01",
                     "title": "You recommend a qualified prospect",
-                    "text": "You identify a clear need in product design, UX/UI or front-end and introduce us to the person (or team) in charge of the project."
+                    "text": "You identify a clear need to create an application or a website and introduce us to the person (or team) in charge of the project."
                 },
                 "2": {
                     "label": "02",
@@ -526,11 +526,11 @@
                 },
                 "1": {
                     "question": "How does the 10% commission work?",
-                    "answer": "You introduce us to a prospect with a product design, UX/UI or front-end need.\nWe talk directly with them, scope the need and send a proposal.\n\nIf the project is signed, you receive 10% of the total ex-VAT amount billed on the first engagement (excluding renewals and any recurring subscriptions)."
+                    "answer": "You introduce us to a prospect with a clear need in design, product or application development.\nWe talk directly with them, scope the need and send a proposal.\n\nIf the project is signed, you receive 10% of the total ex‑VAT amount billed on the first engagement (excluding renewals and any recurring subscriptions)."
                 },
                 "2": {
                     "question": "When is the commission paid?",
-                    "answer": "The commission is paid once the invoice has been settled by the client and the funds have effectively been received by MC Studio.\n\nIn practice this usually happens between 30 and 45 days after signature, depending on the client’s payment terms."
+                    "answer": "The commission is paid as soon as the deposit has been received.\n\nIn practice, the payment happens right after signature."
                 },
                 "3": {
                     "question": "Can I track my referrals and earnings?",

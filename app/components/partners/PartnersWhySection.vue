@@ -21,14 +21,6 @@ const { t } = useI18n()
             {{ t('partners.why.subtitle') }}
           </p>
         </div>
-
-        <div
-          class="rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-secondary)]/60 px-5 py-4 max-w-[360px]"
-        >
-          <p class="font-inter text-xs text-[var(--text-secondary)] leading-relaxed">
-            {{ t('partners.why.side') }}
-          </p>
-        </div>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">

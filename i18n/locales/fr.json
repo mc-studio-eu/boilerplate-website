@@ -428,7 +428,7 @@
                 "1": {
                     "label": "01",
                     "title": "Vous recommandez un prospect qualifié",
-                    "text": "Vous identifiez un besoin clair en design produit, UX/UI ou front et nous présentez la personne (ou l’équipe) en charge du projet."
+                    "text": "Vous identifiez un besoin clair sur la création d'une application ou d'un site internet et nous présentez la personne (ou l’équipe) en charge du projet."
                 },
                 "2": {
                     "label": "02",
@@ -528,11 +528,11 @@
                 },
                 "1": {
                     "question": "Comment fonctionne la commission de 10 % ?",
-                    "answer": "Vous nous mettez en relation avec un prospect pour un besoin en design produit, UX/UI ou développement front.\nNous échangeons directement avec lui, cadrons le besoin et réalisons une proposition.\n\nSi le projet est signé, vous touchez 10 % du montant total HT facturé sur la première mission (hors renouvellement, hors abonnements récurrents éventuels)."
+                    "answer": "Vous nous mettez en relation avec un prospect pour un besoin clair en design, développement d'application...\nNous échangeons directement avec lui, cadrons le besoin et réalisons une proposition.\n\nSi le projet est signé, vous touchez 10 % du montant total HT facturé sur la première mission (hors renouvellement, hors abonnements récurrents éventuels)."
                 },
                 "2": {
                     "question": "Quand la commission est-elle versée ?",
-                    "answer": "La commission est versée une fois la facture réglée par le client et les fonds effectivement reçus par MC Studio.\n\nEn pratique, le versement intervient généralement entre 30 et 45 jours après la signature, selon les modalités de paiement du client."
+                    "answer": "La commission est versée dès réception de l'acompte.\n\nEn pratique, le versement intervient dès la signature."
                 },
                 "3": {
                     "question": "Puis-je suivre mes recommandations et mes gains ?",
@@ -564,7 +564,7 @@
         },
         "example": {
             "title": "Un exemple simple pour vous projeter.",
-            "subtitle": "Vous recommandez un prospect qui a un besoin clair pour refondre son produit ou lancer une nouvelle interface. Après cadrage, le projet est signé à <span class=\"font-semibold text-[var(--color-gold)]\">15&nbsp;000&nbsp;€ HT</span>.",
+            "subtitle": "Vous recommandez un prospect qui a un besoin au niveau de la création d'une application ou d'un site internet. Après cadrage, le projet est signé à <span class=\"font-semibold text-[var(--color-gold)]\">15&nbsp;000&nbsp;€ HT</span>.",
             "amount_label": "Montant du projet",
             "amount_value": "15&nbsp;000&nbsp;€",
             "rate_label": "Taux de commission",

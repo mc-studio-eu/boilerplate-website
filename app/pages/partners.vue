@@ -29,13 +29,13 @@
       <div class="section-separator"></div>
       <PartnersExampleSection />
 
-      <!-- Suivi et visibilité -->
-      <div class="section-separator"></div>
-      <PartnersTrackingSection />
-
       <!-- Paliers & récompenses -->
       <div class="section-separator"></div>
       <PartnersRewardsSection />
+
+      <!-- Team Section -->
+      <div class="section-separator"></div>
+      <TeamSection />
 
       <!-- FAQ Partner -->
       <div class="section-separator"></div>
@@ -48,6 +48,7 @@
       <!-- Cal.com Partner Integration -->
       <div class="section-separator"></div>
       <PartnersCalSection />
+
 
       <div class="section-separator mb-10"></div>
     </div>
