@@ -6,7 +6,8 @@
         "reviews": "Reviews",
         "faq": "FAQ",
         "book_call": "Book a call",
-        "free_call": "Free discussion"
+        "free_call": "Free discussion",
+        "team": "Team"
     },
     "footer": {
         "copyright": "MC Studio. All rights reserved."
@@ -362,13 +363,23 @@
     "team": {
         "badge": "Our team",
         "title": "The <span class=\"text-gradient\">MC Studio</span> team",
-        "subtitle": "Product strategy, design and development in one team.",
+        "subtitle": "Strategy, design and development to turn a vision into a clear, useful, well-executed product.",
+        "cards": {
+            "collective": {
+                "title": "A team at the service of the product.",
+                "text": "Strategic thinking, product framing, design and development brought together in a team. Lean, experienced, and focused on what truly matters."
+            },
+            "specialists": {
+                "title": "From strategy to execution.",
+                "text": "From business thinking to interface design and development, each skill is aligned to deliver coherent, useful digital products built to support real goals."
+            }
+        },
         "members": {
             "mohamed": {
                 "role": "Founder — Creative Director"
             },
             "liam": {
-                "role": "Product Manager"
+                "role": "Head of Product"
             },
             "mateo": {
                 "role": "Backend Developer"
@@ -376,7 +387,21 @@
             "romain": {
                 "role": "Frontend Developer"
             }
-        }
+        },
+        "specialist_badges": [
+            "Business strategy",
+            "Product strategy",
+            "Product framing",
+            "UX/UI",
+            "Design system",
+            "Prototyping",
+            "Front-end",
+            "Back-end",
+            "Roadmap",
+            "Launch",
+            "Execution",
+            "Delivery"
+        ]
     },
     "partners": {
         "nav": {

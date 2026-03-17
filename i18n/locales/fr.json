@@ -6,7 +6,8 @@
         "reviews": "Avis",
         "faq": "FAQ",
         "book_call": "Réserver un appel",
-        "free_call": "Discussion gratuite"
+        "free_call": "Discussion gratuite",
+        "team": "Équipe"
     },
     "footer": {
         "copyright": "MC Studio. Tous droits réservés."
@@ -363,13 +364,23 @@
     },
     "team": {
         "title": "L’équipe <span class=\"text-gradient\">MC Studio</span>",
-        "subtitle": "Stratégie produit, design et développement dans une équipe.",
+        "subtitle": "Stratégie, design et développement pour transformer une vision en produit clair, utile et bien exécuté.",
+        "cards": {
+            "collective": {
+                "title": "Une équipe au service du produit.",
+                "text": "Stratégie, cadrage, design et développement réunis dans une équipe. Lean, expérimentée, focalisée sur l’essentiel. Une équipe alignée pour faire avancer le produit avec clarté et impact."
+            },
+            "specialists": {
+                "title": "De la stratégie à l’exécution.",
+                "text": "De la réflexion business au design d’interface et au développement, chaque compétence est alignée pour livrer des produits digitaux cohérents, utiles et pensés pour soutenir de vrais objectifs."
+            }
+        },
         "members": {
             "mohamed": {
                 "role": "Fondateur — Creative Director"
             },
             "liam": {
-                "role": "Product Manager"
+                "role": "Head of Product"
             },
             "mateo": {
                 "role": "Développeur Backend"
@@ -378,7 +389,21 @@
                 "role": "Développeur Frontend"
             }
         },
-        "badge": "Notre équipe"
+        "badge": "Notre équipe",
+        "specialist_badges": [
+            "Stratégie business",
+            "Stratégie produit",
+            "Cadrage",
+            "UX/UI",
+            "Design system",
+            "Prototypage",
+            "Front-end",
+            "Back-end",
+            "Roadmap",
+            "Lancement",
+            "Exécution",
+            "Delivery"
+        ]
     },
     "partners": {
         "nav": {
