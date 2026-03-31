@@ -1,0 +1,354 @@
+{
+    "nav": {
+        "projects": "Projets",
+        "services": "Accompagnement",
+        "reviews": "Avis",
+        "faq": "FAQ",
+        "book_call": "Réserver un appel",
+        "free_call": "Discussion gratuite",
+        "team": "Équipe"
+    },
+    "hero": {
+        "title": "Développez votre communauté<br class=\"hidden xs:inline\"> grâce à une app sur mesure.",
+        "subtitle": "Plus de valeur pour vos followers, nouveau revenu pour vous.<br>On conçoit et développe l'app web ou mobile qui prolonge votre contenu.",
+        "cta": {
+            "book": "Réserver un appel",
+            "whatsapp": "Discuter sur WhatsApp"
+        },
+        "badges": {
+            "experience": "+5 ans d'expériences",
+            "projects": "+10 projets réalisés",
+            "rotating_stats": [
+                "+10 projets réalisés",
+                "10 000 users générés",
+                "+5 ans d'expériences"
+            ],
+            "location": [
+                "Lyon",
+                "Londres",
+                "Montréal"
+            ],
+            "rotating_services": [
+                "App Mobile",
+                "App Web",
+                "SaaS",
+                "Communauté"
+            ]
+        },
+        "marquee": [
+            "creator economy",
+            "app mobile",
+            "communauté",
+            "monétisation",
+            "app web",
+            "SaaS",
+            "contenu",
+            "audience",
+            "followers",
+            "revenus",
+            "distribution",
+            "branding",
+            "UI/UX",
+            "développement",
+            "lancement"
+        ]
+    },
+    "case_study": {
+        "badge": "Case Study",
+        "title": "Maison AWL — <span class=\"text-gradient\">180k abonnés</span>, 10 000 users.",
+        "subtitle": "Nous avons accompagné Maison AWL dans la conception et le développement de sa plateforme. Résultat : 10 000 utilisateurs actifs issus directement de sa communauté.",
+        "stats": {
+            "followers": {
+                "value": "180k",
+                "label": "Abonnés"
+            },
+            "users": {
+                "value": "10 000",
+                "label": "Utilisateurs"
+            },
+            "conversion": {
+                "value": "5.5%",
+                "label": "Taux de conversion"
+            }
+        },
+        "quote": "La force d'un créateur, c'est sa distribution. On transforme cette audience en utilisateurs d'un produit concret.",
+        "author": "Mohamed Chettah",
+        "author_role": "Fondateur · MC Studio"
+    },
+    "pitch": {
+        "title": "Votre audience est votre <span class=\"text-gradient\">plus grand atout</span>.",
+        "blocks": [
+            {
+                "title": "La distribution, c'est tout.",
+                "text": "Aujourd'hui n'importe qui peut développer une app classique, web ou mobile. Mais ce qui fait la différence — et ce qui fera toujours la différence — c'est la distribution. Vous avez une audience ciblée, dans une niche, qui vous connaît et vous fait confiance."
+            },
+            {
+                "title": "Vos revenus se limitent à votre contenu.",
+                "text": "Sponsoring, affiliation, placements… C'est bien, mais c'est plafonné. Et ces revenus dépendent de plateformes que vous ne contrôlez pas. Il est temps de construire quelque chose qui vous appartient."
+            },
+            {
+                "title": "On développe l'app qui change la donne.",
+                "text": "On conçoit et développe une app web ou mobile pour rajouter une nouvelle plus-value à votre profil, offrir plus à votre communauté, et vous permettre de toucher un nouveau revenu — récurrent, scalable, à vous."
+            }
+        ]
+    },
+    "services": {
+        "title": "Notre <span class=\"text-gradient\">Accompagnement</span>",
+        "subtitle": "De l'idée au lancement — on s'occupe de tout, vous gardez le focus sur votre contenu.",
+        "steps": {
+            "business": {
+                "number": "01",
+                "title": "Business & Étude de marché",
+                "description": "On valide l'idée avec vous : étude de marché, faisabilité, positionnement. On va plus loin qu'un simple sondage — prospection active pour avoir des vrais avis, formulaires sur vos réseaux, analyse de la concurrence.",
+                "items": [
+                    "Étude de marché & faisabilité",
+                    "Prospection active (avis réels)",
+                    "Formulaires sur vos réseaux",
+                    "Positionnement & stratégie"
+                ]
+            },
+            "design": {
+                "number": "02",
+                "title": "Design",
+                "description": "On crée l'identité visuelle de votre app et on conçoit chaque écran pour offrir la meilleure expérience à vos utilisateurs.",
+                "items": [
+                    "Direction Artistique",
+                    "Identité de Marque",
+                    "UI/UX Design",
+                    "Design Produit"
+                ]
+            },
+            "development": {
+                "number": "03",
+                "title": "Développement",
+                "description": "On code votre app sur mesure — frontend, backend, infrastructure. Tout est pensé pour être solide, performant et évolutif.",
+                "items": [
+                    "Développement Frontend",
+                    "Développement Backend",
+                    "Infrastructure & DevOps",
+                    "Gestion de projet"
+                ]
+            },
+            "launch": {
+                "number": "04",
+                "title": "Lancement & Mise en ligne",
+                "description": "On déploie votre app en production. Tout est prêt pour accueillir vos premiers utilisateurs. La distribution ? On vous conseille, mais c'est vous qui avez la puissance de feu.",
+                "items": [
+                    "Déploiement production",
+                    "QA & tests",
+                    "Conseils distribution",
+                    "Support post-lancement"
+                ]
+            }
+        },
+        "distribution_note": "La distribution, c'est votre super pouvoir — on vous accompagne avec des conseils, mais c'est votre audience qui fait le reste.",
+        "marquee": [
+            "Creator Economy",
+            "App Sur Mesure",
+            "Nouvelle Source de Revenus",
+            "Votre Communauté",
+            "Distribution",
+            "Monétisation",
+            "Design Premium",
+            "100% de satisfaction",
+            "SaaS Ready",
+            "Scalable",
+            "Mobile First",
+            "Pixel Perfect"
+        ]
+    },
+    "process": {
+        "title": "Comment on <span class=\"text-gradient\">fonctionne</span>",
+        "subtitle": "Une approche simple en 3 étapes pour transformer votre audience en utilisateurs.",
+        "duration_label": "Durée moyenne :",
+        "duration_value": "4-10 semaines",
+        "steps": {
+            "1": {
+                "title": "1. Appel de Découverte",
+                "description": "On échange sur votre audience, votre niche et l'idée d'app. On vous propose la stratégie la plus adaptée pour transformer vos followers en utilisateurs."
+            },
+            "2": {
+                "title": "2. Proposition & Cadrage",
+                "description": "Vous recevez une proposition détaillée avec le périmètre, le budget et le planning. Étude de marché, design, développement, lancement — tout est inclus."
+            },
+            "3": {
+                "title": "3. On Construit Votre App",
+                "description": "Le projet démarre. Design, développement, tests — vous suivez l'avancement en temps réel. À la fin, votre app est en ligne, prête à accueillir votre communauté."
+            }
+        }
+    },
+    "testimonials": {
+        "intro_label": "Le studio des Créateurs",
+        "intro_text": "On accompagne les créateurs de contenu <br> à transformer leur audience <br> en un produit concret et rentable.",
+        "title": "Ce qu'en disent <span class=\"text-gradient\">nos clients</span>",
+        "items": {
+            "ra_energy": {
+                "content": "MC Studio a réalisé notre site internet et le résultat est excellent. Travail rapide, professionnel et très soigné. Le site est moderne, fluide et parfaitement adapté à notre activité.",
+                "role": "Co-fondateur, R&A Energy"
+            },
+            "souji_nova": {
+                "content": "MC Studio nous a réalisé un super site internet, très intuitif et très pro. De bons conseils et à l'écoute de ses clients, je recommande !",
+                "role": "Co-fondateur, Souji Nova"
+            },
+            "fontaines_vtc": {
+                "content": "MC studio m'a accompagné dans mon projet digital, entreprise très sérieuse professionnelle je la recommande !",
+                "role": "Dirigeant, Fontaines VTC"
+            },
+            "liquid_scan": {
+                "content": "Mohamed nous a accompagnés dans le développement de notre startup avec sérieux, énergie et passion. Nous recherchions quelqu'un de vaillant, investi et passionné, et il a pleinement répondu à nos attentes. Je le recommande vivement.",
+                "role": "Co-fondateur, Liquid Scan"
+            }
+        }
+    },
+    "faq": {
+        "title": "<span class=\"text-gradient\">FAQ</span>",
+        "subtitle": "Questions fréquentes pour les créateurs :",
+        "founder_role": "Fondateur @MC Studio",
+        "contact_text": "Vous avez d'autres questions ? Contactez-moi directement ici :",
+        "whatsapp_btn": "Message sur WhatsApp",
+        "items": {
+            "0": {
+                "question": "Je suis créateur de contenu, est-ce que c'est pour moi ?",
+                "answer": "Oui, si vous avez une audience engagée (même modeste) et que vous voulez aller au-delà du contenu : proposer un outil, une plateforme ou un service digital à votre communauté. On accompagne des créateurs Instagram, YouTube, LinkedIn, Twitch et d'autres niches."
+            },
+            "1": {
+                "question": "Combien ça coûte de développer une app ?",
+                "answer": "Le budget dépend du périmètre : app web simple, app mobile complète, nombre de fonctionnalités. Après un premier échange, on vous propose un budget clair et transparent — sans surprise. On s'adapte aussi à différents niveaux d'ambition (MVP vs produit complet)."
+            },
+            "2": {
+                "question": "Je n'ai pas d'idée précise, vous pouvez m'aider ?",
+                "answer": "Absolument. On commence toujours par un appel de découverte pour comprendre votre audience, votre niche et vos objectifs. On vous propose ensuite des idées concrètes basées sur ce qui fonctionne dans la creator economy. L'étude de marché est incluse dans notre accompagnement."
+            },
+            "3": {
+                "question": "Est-ce que vous gérez aussi la distribution ?",
+                "answer": "On vous conseille sur la stratégie de lancement (teasing, formulaires, early access…) mais la distribution, c'est votre super pouvoir. Vous avez l'audience — on vous donne l'app. C'est cette combinaison qui fait la différence."
+            },
+            "4": {
+                "question": "Combien de temps ça prend ?",
+                "answer": "En moyenne 4 à 10 semaines selon la complexité du projet. Un MVP peut être prêt en 3-4 semaines, un produit plus complet en 8-10 semaines. Tout dépend du nombre de fonctionnalités et du niveau de polish souhaité."
+            },
+            "5": {
+                "question": "D'autres créateurs ont déjà fait ça ?",
+                "answer": "Oui ! Nous avons travaillé avec Maison AWL (180k abonnés) : 10 000 utilisateurs sur la plateforme. Et c'est une tendance forte — de plus en plus de créateurs développent leur propre app pour diversifier leurs revenus et offrir plus de valeur à leur communauté."
+            }
+        }
+    },
+    "cta": {
+        "title": "Prêt à lancer <span class=\"text-gradient\">votre app</span> ?",
+        "subtitle": "Transformez votre audience en utilisateurs. On développe l'app qui prolonge votre contenu et génère un nouveau revenu."
+    },
+    "team": {
+        "title": "L'équipe <span class=\"text-gradient\">MC Studio</span>",
+        "subtitle": "Stratégie, design et développement pour transformer votre audience en un produit concret.",
+        "cards": {
+            "collective": {
+                "title": "Une équipe au service des créateurs.",
+                "text": "Stratégie, design et développement réunis dans une équipe expérimentée. On comprend la creator economy et on sait construire des produits qui convertissent une audience en utilisateurs."
+            },
+            "specialists": {
+                "title": "De l'idée au lancement.",
+                "text": "De la réflexion business au design d'interface et au développement, chaque compétence est alignée pour livrer un produit digital cohérent, utile et pensé pour votre communauté."
+            }
+        },
+        "members": {
+            "mohamed": {
+                "role": "Fondateur — Creative Director"
+            },
+            "liam": {
+                "role": "Head of Product"
+            },
+            "mateo": {
+                "role": "Développeur Backend"
+            },
+            "romain": {
+                "role": "Développeur Frontend"
+            }
+        },
+        "badge": "Notre équipe",
+        "specialist_badges": [
+            "Creator Economy",
+            "Stratégie produit",
+            "Étude de marché",
+            "UX/UI",
+            "Design system",
+            "Prototypage",
+            "Front-end",
+            "Back-end",
+            "App Mobile",
+            "Lancement",
+            "Monétisation",
+            "Distribution"
+        ]
+    },
+    "projects": {
+        "title": "Nos <span class=\"text-gradient\">Projets</span>",
+        "subtitle": "Une sélection de projets où design, code et stratégie se rencontrent.",
+        "cta": "Voir le projet",
+        "items": {
+            "arises": {
+                "description": "Arises est un SaaS IA qui transforme votre calendrier en plan d'action.\nOn a conçu ce SaaS du logo jusqu'au lancement en ligne, tout sur mesure pour maximiser l'activation.",
+                "tags": [
+                    "Launch",
+                    "AI SaaS",
+                    "Landing Page",
+                    "Design",
+                    "UI/UX",
+                    "Copywriting",
+                    "Branding"
+                ]
+            },
+            "souji_nova": {
+                "description": "Souji Nova est une société de nettoyage pour particuliers et professionnels.\nLanding page sur-mesure : design rassurant, offre claire, parcours optimisé pour générer plus de demandes.",
+                "tags": [
+                    "Landing Page",
+                    "Branding",
+                    "Design",
+                    "UI/UX",
+                    "Copywriting",
+                    "Société de nettoyage"
+                ],
+                "testimonial": {
+                    "review": "MC Studio nous a réalisé un super site internet, très intuitif et très pro. De bons conseils et à l'écoute de ses clients, je recommande !",
+                    "job": "Co-fondateur Souji Nova"
+                }
+            },
+            "ra_energy": {
+                "description": "R&A Energy est un courtier en énergie dédié aux entreprises et aux pros.\n\nBranding & landing page premium : message simplifié, réassurance renforcée et parcours orienté prise de contact.",
+                "tags": [
+                    "Landing Page",
+                    "Branding",
+                    "Design",
+                    "UI/UX",
+                    "Copywriting",
+                    "Logo",
+                    "Courtage en énergie"
+                ],
+                "testimonial": {
+                    "review": "MC Studio a réalisé notre site internet et le résultat est excellent. Travail rapide, professionnel et très soigné. Le site est moderne, fluide et parfaitement adapté à notre activité.",
+                    "job": "Co-fondateur R&A Energy"
+                }
+            },
+            "fontaines_vtc": {
+                "description": "Fontaines VTC est une entreprise de transport privé (réservations en ligne).\nOptimisation SEO + CTA : meilleure visibilité locale et plus de conversions sur la prise de réservation.",
+                "tags": [
+                    "SEO",
+                    "Optimisation CTA",
+                    "Design",
+                    "Copywriting",
+                    "Entreprise VTC"
+                ],
+                "testimonial": {
+                    "review": "MC studio m'a accompagné dans mon projet digital, entreprise très sérieuse professionnelle je la recommande !",
+                    "job": "Dirigeant Fontaines VTC"
+                }
+            }
+        }
+    },
+    "footer": {
+        "copyright": "MC Studio. Tous droits réservés."
+    },
+    "meta": {
+        "title": "MC Studio - App sur mesure pour Créateurs de Contenu",
+        "description": "Développez votre communauté grâce à une app sur mesure. Plus de valeur pour vos followers, nouveau revenu pour vous."
+    }
+}

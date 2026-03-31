@@ -1,7 +1,5 @@
 <template>
-  <NuxtLink 
-    to="https://share.google/yo1oHEU6RO9rgz5g8"
-    target="_blank"
+  <span 
     class="google-badge"
   >
     <div class="inline-flex items-center gap-1.5 sm:gap-2 mt-6 sm:mt-8 md:mt-10 px-2 sm:px-2.5 h-5 sm:h-6 border border-[#f0bf6c] rounded-md sm:rounded-lg bg-transparent hover:bg-white/5 transition-colors">
@@ -29,5 +27,5 @@
         </svg>
       </div>
     </div>
-  </NuxtLink>
+  </span>
 </template>
