@@ -17,25 +17,7 @@
           </div>
 
         </div>
-
-        <!-- Clocks Section (Mobile: Order 2, Desktop: Order 2) -->
-        <div class="flex flex-wrap justify-center items-center gap-4 md:gap-6 order-2 font-medium text-gray-300">
-          <div class="flex flex-col items-center">
-            <span class="text-[10px] text-primary uppercase tracking-wider">Montréal</span>
-            <span>{{ timeMontreal }}</span>
-          </div>
-          <div class="hidden md:block w-px h-8 bg-gray-700/50"></div>
-          <div class="flex flex-col items-center">
-            <span class="text-[10px] text-primary uppercase tracking-wider">Lyon</span>
-            <span>{{ timeLyon }}</span>
-          </div>
-          <div class="hidden md:block w-px h-8 bg-gray-700/50"></div>
-          <div class="flex flex-col items-center">
-            <span class="text-[10px] text-primary uppercase tracking-wider">London</span>
-            <span>{{ timeLondon }}</span>
-          </div>
-        </div>
-
+        
         <!-- Socials Section (Mobile: Order 3, Desktop: Order 3) -->
         <div class="flex items-center gap-4 text-white order-3">
           <a href="https://www.linkedin.com/in/mohamed-chettah/" target="_blank" rel="noopener noreferrer" class="hover:text-[var(--color-gold)] transition-colors">LinkedIn</a>
