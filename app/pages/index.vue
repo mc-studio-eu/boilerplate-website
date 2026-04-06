@@ -19,7 +19,7 @@ import ScreenMarquee from "../components/project/ScreenMarquee.vue";
       
       <!-- Projects Section -->
       <div class="section-separator"></div>
-      <ProjectSection id="projets" />
+      <ProjectSection />
 
       <div class="section-separator"></div>
 
@@ -28,7 +28,7 @@ import ScreenMarquee from "../components/project/ScreenMarquee.vue";
       <div class="section-separator mt-10"></div>  
       
       <!-- Services Section -->
-      <ServicesSection id="services" />
+      <ServicesSection />
 
       <ScreenMarquee />
 
@@ -41,14 +41,14 @@ import ScreenMarquee from "../components/project/ScreenMarquee.vue";
 
       <div class="section-separator"></div>
 
-      <ProcessSection id="process" />
+      <ProcessSection />
        
       <div class="section-separator"></div>  
       
       <div class="section-separator"></div>
       
       <!-- Testimonials Section -->
-      <TestimonialSection id="avis" />
+      <TestimonialSection />
 
 
       <div class="section-separator"></div>
@@ -58,7 +58,7 @@ import ScreenMarquee from "../components/project/ScreenMarquee.vue";
       <div class="section-separator mt-10"></div>
 
       <!-- FAQ Section -->
-      <FaqSection id="faq" />
+      <FaqSection />
   
       <div class="section-separator"></div>
       

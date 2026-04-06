@@ -3,7 +3,8 @@ import gsap from 'gsap'
 
 const isMenuOpen = ref(false)
 const isScrolled = ref(false)
-const { t, locale, setLocale } = useI18n()
+const site = useBoilerplateSite()
+const { locale, setLocale } = useI18n()
 const localePath = useLocalePath()
 const language = computed({
   get: () => locale.value.toUpperCase(),
@@ -14,12 +15,7 @@ const languages = [
   { label: 'EN', value: 'EN' },
 ]
 
-const navItems = [
-  { key: 'projects', id: 'projets' },
-  { key: 'services', id: 'services' },
-  { key: 'reviews', id: 'avis' },
-  { key: 'faq', id: 'faq' }
-]
+const navItems = computed(() => site.navigation.value)
 
 const activeSection = ref('')
 const colorMode = useColorMode()
@@ -85,8 +81,7 @@ onMounted(() => {
   const handleScroll = () => {
     isScrolled.value = window.scrollY > 200
     
-    // Detect active section based on scroll position
-    const sections = ['projets', 'services', 'avis', 'faq']
+    const sections = site.navigation.value.map((item) => item.id)
     for (const section of sections.reverse()) {
       const el = document.getElementById(section)
       if (el) {
@@ -129,14 +124,14 @@ const closeMenu = () => isMenuOpen.value = false
     <!-- Logo -->
     <div class="flex items-center gap-2.5 shrink-0">
       <NuxtLink to="/" class="flex items-center">
-        <NuxtImg src="/img/main/logo.svg" alt="MC Studio" class="w-9 h-[34px] md:w-[50px] md:h-12 object-contain" />
+        <NuxtImg :src="site.logoUrl" :alt="site.companyName" class="w-9 h-[34px] md:w-[50px] md:h-12 object-contain" />
       </NuxtLink>
-      <span class="font-inter font-normal text-sm md:text-[18px] text-white">Studio</span>
+      <span class="font-inter font-normal text-sm md:text-[18px] text-white">{{ site.companyName }}</span>
     </div>
 
     <!-- Nav desktop -->
     <nav class="hidden lg:flex items-center gap-[26px]">
-      <NuxtLink v-for="item in navItems" :key="item.key" :to="`${localePath('/')}#${item.id}`" class="font-inter font-medium text-sm text-white no-underline transition-colors duration-200 hover:text-[#f0bf6c]">{{ t(`nav.${item.key}`) }}</NuxtLink>
+      <NuxtLink v-for="item in navItems" :key="item.key" :to="`${localePath('/')}#${item.id}`" class="font-inter font-medium text-sm text-white no-underline transition-colors duration-200 hover:text-[#f0bf6c]">{{ item.label }}</NuxtLink>
     </nav>
 
     <!-- CTA Desktop -->
@@ -145,8 +140,8 @@ const closeMenu = () => isMenuOpen.value = false
       <a ref="initialCtaBtn" :href="`${localePath('/')}#contact`" class="flex items-center justify-center w-[164px] h-[30px] bg-[linear-gradient(to_right,white_50%,#f0bf6c)] border-none rounded-lg font-inter font-medium text-sm text-[#0f0f0f] cursor-pointer backdrop-blur-[12px] shadow-[0_4px_4px_rgba(0,0,0,0.25),0_10px_10px_rgba(11,32,103,0.05)] transition-all duration-200 hover:brightness-105 no-underline">
         <span class="text-slide-container h-[20px]">
           <span ref="initialCtaWrapper" class="text-slide-wrapper">
-            <span class="text-slide-text h-[20px] leading-[20px]">{{ t('nav.book_call') }}</span>
-            <span class="text-slide-text h-[20px] leading-[20px]">{{ t('nav.book_call') }}</span>
+            <span class="text-slide-text h-[20px] leading-[20px]">{{ site.copy.value.nav.contact }}</span>
+            <span class="text-slide-text h-[20px] leading-[20px]">{{ site.copy.value.nav.contact }}</span>
           </span>
         </span>
       </a>
@@ -185,13 +180,13 @@ const closeMenu = () => isMenuOpen.value = false
                 colorMode.value === 'dark' ? 'bg-[#2a2a2a] hover:bg-[#333]' : 'bg-[#f5f5f5] hover:bg-[#ebebeb]'
               ]"
             >
-              <NuxtImg src="/img/main/logo.svg" alt="MC Studio" class="w-6 h-6 md:w-7 md:h-7 object-contain" />
+              <NuxtImg :src="site.logoUrl" :alt="site.companyName" class="w-6 h-6 md:w-7 md:h-7 object-contain" />
               <span 
                 :class="[
                   'font-inter font-medium text-xs md:text-sm',
                   colorMode.value === 'dark' ? 'text-white' : 'text-[#1a1a1a]'
                 ]"
-              >Studio</span>
+              >{{ site.companyName }}</span>
             </NuxtLink>
 
             <!-- Desktop Links -->
@@ -207,7 +202,7 @@ const closeMenu = () => isMenuOpen.value = false
                     : (colorMode.value === 'dark' ? 'text-white/80 hover:bg-[#2a2a2a]' : 'text-[#1a1a1a] hover:bg-[#f0f0f0]')
                 ]"
               >
-                {{ t(`nav.${item.key}`) }}
+                {{ item.label }}
               </NuxtLink>
             </div>
 
@@ -261,18 +256,20 @@ const closeMenu = () => isMenuOpen.value = false
                 colorMode.value === 'dark' ? 'flex items-center justify-center bg-[linear-gradient(to_right,white_50%,#f0bf6c)] border-none font-inter font-medium text-sm text-[#0f0f0f] cursor-pointer backdrop-blur-[12px] shadow-[0_4px_4px_rgba(0,0,0,0.25),0_10px_10px_rgba(11,32,103,0.05)] transition-all duration-200 hover:brightness-105' : 'bg-[#1a1a1a] hover:bg-[#2a2a2a]'
               ]"
             >
-              <NuxtImg src="/img/main/founder.png" alt="MC Studio" class="w-6 h-6 md:w-7 md:h-7 rounded-lg bg-gradient-to-br from-[#f0bf6c] to-[#e8a84c] flex items-center justify-center font-inter font-semibold text-[9px] md:text-[10px] text-[#0f0f0f] object-contain" />
+              <div class="w-6 h-6 md:w-7 md:h-7 rounded-lg bg-[#0f0f0f] text-white flex items-center justify-center font-inter font-semibold text-[9px] md:text-[10px]">
+                {{ site.companyInitials }}
+              </div>
               <div class="flex flex-col items-start gap-px">
                 <span class="text-slide-container h-[14px]">
                   <span ref="desktopCtaWrapper1" class="text-slide-wrapper">
-                    <span :class="['text-slide-text h-[14px] leading-[14px] font-inter font-semibold text-[11px] md:text-xs', colorMode.value === 'dark' ? 'text-[#1a1a1a]' : 'text-white']">{{ t('nav.book_call') }}</span>
-                    <span :class="['text-slide-text h-[14px] leading-[14px] font-inter font-semibold text-[11px] md:text-xs', colorMode.value === 'dark' ? 'text-[#1a1a1a]' : 'text-white']">{{ t('nav.book_call') }}</span>
+                    <span :class="['text-slide-text h-[14px] leading-[14px] font-inter font-semibold text-[11px] md:text-xs', colorMode.value === 'dark' ? 'text-[#1a1a1a]' : 'text-white']">{{ site.copy.value.nav.contact }}</span>
+                    <span :class="['text-slide-text h-[14px] leading-[14px] font-inter font-semibold text-[11px] md:text-xs', colorMode.value === 'dark' ? 'text-[#1a1a1a]' : 'text-white']">{{ site.copy.value.nav.contact }}</span>
                   </span>
                 </span>
                 <span class="text-slide-container h-[11px]">
                   <span ref="desktopCtaWrapper2" class="text-slide-wrapper">
-                    <span :class="['text-slide-text h-[11px] leading-[11px] font-inter font-normal text-[9px]', colorMode.value === 'dark' ? 'text-[#1a1a1a]/60' : 'text-white/60']">{{ t('nav.free_call') }}</span>
-                    <span :class="['text-slide-text h-[11px] leading-[11px] font-inter font-normal text-[9px]', colorMode.value === 'dark' ? 'text-[#1a1a1a]/60' : 'text-white/60']">{{ t('nav.free_call') }}</span>
+                    <span :class="['text-slide-text h-[11px] leading-[11px] font-inter font-normal text-[9px]', colorMode.value === 'dark' ? 'text-[#1a1a1a]/60' : 'text-white/60']">{{ site.copy.value.nav.freeAudit }}</span>
+                    <span :class="['text-slide-text h-[11px] leading-[11px] font-inter font-normal text-[9px]', colorMode.value === 'dark' ? 'text-[#1a1a1a]/60' : 'text-white/60']">{{ site.copy.value.nav.freeAudit }}</span>
                   </span>
                 </span>
               </div>
@@ -304,7 +301,7 @@ const closeMenu = () => isMenuOpen.value = false
                   ]"
                   :style="{ transitionDelay: isMenuOpen ? `${index * 50}ms` : '0ms' }"
                 >
-                  {{ t(`nav.${item.key}`) }}
+                  {{ item.label }}
                 </NuxtLink>
               </div>
 
@@ -350,18 +347,20 @@ const closeMenu = () => isMenuOpen.value = false
                     colorMode.value === 'dark' ? 'bg-white hover:bg-gray-100' : 'bg-[#1a1a1a] hover:bg-[#2a2a2a]'
                   ]"
                 >
-                  <NuxtImg src="/img/main/founder.png" alt="MC Studio" class="w-6 h-6 md:w-7 md:h-7 object-contain rounded-lg flex items-center justify-center font-inter font-semibold text-[10px] text-[#0f0f0f]" />
+                  <div class="w-6 h-6 md:w-7 md:h-7 rounded-lg bg-[#0f0f0f] text-white flex items-center justify-center font-inter font-semibold text-[10px]">
+                    {{ site.companyInitials }}
+                  </div>
                   <div class="flex flex-col items-start gap-px">
                     <span class="text-slide-container h-[14px]">
                       <span ref="mobileCtaWrapper1" class="text-slide-wrapper">
-                        <span :class="['text-slide-text h-[14px] leading-[14px] font-inter font-semibold text-xs', colorMode.value === 'dark' ? 'text-[#1a1a1a]' : 'text-white']">{{ t('nav.book_call') }}</span>
-                        <span :class="['text-slide-text h-[14px] leading-[14px] font-inter font-semibold text-xs', colorMode.value === 'dark' ? 'text-[#1a1a1a]' : 'text-white']">{{ t('nav.book_call') }}</span>
+                        <span :class="['text-slide-text h-[14px] leading-[14px] font-inter font-semibold text-xs', colorMode.value === 'dark' ? 'text-[#1a1a1a]' : 'text-white']">{{ site.copy.value.nav.contact }}</span>
+                        <span :class="['text-slide-text h-[14px] leading-[14px] font-inter font-semibold text-xs', colorMode.value === 'dark' ? 'text-[#1a1a1a]' : 'text-white']">{{ site.copy.value.nav.contact }}</span>
                       </span>
                     </span>
                     <span class="text-slide-container h-[11px]">
                       <span ref="mobileCtaWrapper2" class="text-slide-wrapper">
-                        <span :class="['text-slide-text h-[11px] leading-[11px] font-inter font-normal text-[9px]', colorMode.value === 'dark' ? 'text-[#1a1a1a]/60' : 'text-white/60']">{{ t('nav.free_call') }}</span>
-                        <span :class="['text-slide-text h-[11px] leading-[11px] font-inter font-normal text-[9px]', colorMode.value === 'dark' ? 'text-[#1a1a1a]/60' : 'text-white/60']">{{ t('nav.free_call') }}</span>
+                        <span :class="['text-slide-text h-[11px] leading-[11px] font-inter font-normal text-[9px]', colorMode.value === 'dark' ? 'text-[#1a1a1a]/60' : 'text-white/60']">{{ site.copy.value.nav.freeAudit }}</span>
+                        <span :class="['text-slide-text h-[11px] leading-[11px] font-inter font-normal text-[9px]', colorMode.value === 'dark' ? 'text-[#1a1a1a]/60' : 'text-white/60']">{{ site.copy.value.nav.freeAudit }}</span>
                       </span>
                     </span>
                   </div>

@@ -1,12 +1,44 @@
 <script setup lang="ts">
-const { t } = useI18n()
 const localePath = useLocalePath()
+const site = useBoilerplateSite()
+
+const title = computed(() => (site.locale.value === 'fr' ? "Conditions d'utilisation" : 'Terms of Use'))
+const subtitle = computed(() =>
+  site.locale.value === 'fr'
+    ? 'Base générique à compléter avant mise en production.'
+    : 'Generic base to complete before going live.'
+)
+const content = computed(() =>
+  site.locale.value === 'fr'
+    ? `
+      <h2>1. Acceptation</h2>
+      <p>En utilisant ce site, vous acceptez les présentes conditions. Elles doivent être adaptées à l’activité réelle de ${site.companyName.value}.</p>
+      <h2>2. Services</h2>
+      <p>Décrivez ici les services, produits ou contenus réellement proposés via le site.</p>
+      <h2>3. Propriété intellectuelle</h2>
+      <p>Les textes, composants, visuels et éléments de marque présents sur le site sont protégés selon le droit applicable.</p>
+      <h2>4. Responsabilité</h2>
+      <p>Précisez ici vos limites de responsabilité, vos exclusions et les conditions d’usage du contenu.</p>
+      <h2>5. Modifications</h2>
+      <p>Ces conditions peuvent être mises à jour. Pensez à dater la version publiée.</p>
+    `
+    : `
+      <h2>1. Acceptance</h2>
+      <p>By using this site, you agree to these terms. They should be adapted to the actual activity of ${site.companyName.value}.</p>
+      <h2>2. Services</h2>
+      <p>Describe here the actual services, products or content offered through the site.</p>
+      <h2>3. Intellectual property</h2>
+      <p>Texts, components, visuals and brand assets on the site are protected under applicable law.</p>
+      <h2>4. Liability</h2>
+      <p>Specify your liability limits, exclusions and content usage rules here.</p>
+      <h2>5. Changes</h2>
+      <p>These terms may be updated. Add a published version date before launch.</p>
+    `
+)
 
 useHead({
-  title: t('legal.terms.title').replace(/<[^>]*>/g, '') + ' | MC Studio',
-  meta: [
-    { name: 'description', content: t('legal.terms.subtitle') }
-  ]
+  title: computed(() => `${title.value} | ${site.companyName.value}`),
+  meta: [{ name: 'description', content: subtitle }]
 })
 </script>
 
@@ -14,16 +46,16 @@ useHead({
   <div class="min-h-screen bg-[#010201] text-white pt-24 pb-12 sm:pt-32 sm:pb-20 px-4 sm:px-6">
     <div class="max-w-3xl mx-auto">
       <div class="mb-12 text-center">
-        <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 font-manrope" v-html="$t('legal.terms.title')"></h1>
-        <p class="text-white/60 font-inter">{{ $t('legal.terms.subtitle') }}</p>
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 font-manrope">{{ title }}</h1>
+        <p class="text-white/60 font-inter">{{ subtitle }}</p>
       </div>
-      
-      <div class="prose prose-invert prose-gold max-w-none font-inter text-white/80" v-html="$t('legal.terms.content')"></div>
-      
+
+      <div class="prose prose-invert prose-gold max-w-none font-inter text-white/80" v-html="content" />
+
       <div class="mt-12 text-center">
         <NuxtLink :to="localePath('/')" class="inline-flex items-center gap-2 text-[#f0bf6c] hover:text-[#e8a84c] transition-colors font-medium">
           <UIcon name="i-heroicons-arrow-left" />
-          {{ t('nav.book_call') === 'Book a call' ? 'Back to home' : 'Retour à l\'accueil' }}
+          {{ site.locale.value === 'en' ? 'Back to home' : "Retour à l'accueil" }}
         </NuxtLink>
       </div>
     </div>

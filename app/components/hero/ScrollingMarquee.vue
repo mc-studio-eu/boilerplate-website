@@ -1,6 +1,6 @@
 <script setup lang="ts">
-const { tm, rt } = useI18n();
-const keywords = computed(() => Object.values(tm('hero.marquee') as Record<string, any> || {}).map(i => rt(i)));
+const site = useBoilerplateSite()
+const keywords = computed(() => site.heroMarquee.value)
 </script>
 
 <template>
@@ -27,4 +27,3 @@ const keywords = computed(() => Object.values(tm('hero.marquee') as Record<strin
   }
 }
 </style>
-

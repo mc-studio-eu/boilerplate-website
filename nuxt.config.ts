@@ -7,8 +7,15 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
-      partnerPlatformUrl:
-        process.env.NUXT_PUBLIC_PARTNER_PLATFORM_URL || 'https://app.mc-studio.eu'
+      partnerPlatformUrl: process.env.NUXT_PUBLIC_PARTNER_PLATFORM_URL || '',
+      siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://example.com',
+      calendarUrl: process.env.NUXT_PUBLIC_CALENDAR_URL || '',
+      contactEmail: process.env.NUXT_PUBLIC_CONTACT_EMAIL || '',
+      whatsappUrl: process.env.NUXT_PUBLIC_WHATSAPP_URL || '',
+      linkedinUrl: process.env.NUXT_PUBLIC_LINKEDIN_URL || '',
+      instagramUrl: process.env.NUXT_PUBLIC_INSTAGRAM_URL || '',
+      xUrl: process.env.NUXT_PUBLIC_X_URL || '',
+      googleAnalyticsId: process.env.NUXT_PUBLIC_GA_ID || ''
     }
   },
 
@@ -16,19 +23,19 @@ export default defineNuxtConfig({
     head: {
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
-      title: "MC Studio | Création d'expériences digital",
+      title: 'Boilerplate marketing générique',
       htmlAttrs: {
         lang: 'en'
       },
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { name: 'description', content: 'Le Studio de Design & Développement' },
+        { name: 'description', content: 'Boilerplate Nuxt générique pour générer un site à partir d’un nom d’entreprise ou d’une URL.' },
         { name: 'format-detection', content: 'telephone=no' },
-        { property: 'og:title', content: "MC Studio" },
+        { property: 'og:title', content: 'Boilerplate marketing générique' },
         { property: 'og:type', content: 'website' },
-        { property: 'og:url', content: 'https://www.mc-studio.eu' },
-        { property: 'og:image', content: 'https://www.mc-studio.eu/hero.png' },
+        { property: 'og:url', content: 'https://example.com' },
+        { property: 'og:image', content: 'https://example.com/hero.png' },
         { property: 'og:image:width', content: '1200' },
         { property: 'og:image:height', content: '630' }
       ],

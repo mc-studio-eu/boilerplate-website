@@ -2,31 +2,10 @@
 import { ref, onMounted, onUnmounted, computed } from 'vue'
 import gsap from 'gsap'
 
-const { t, tm, rt } = useI18n()
-
-// Get rotating stats from i18n
-const rotatingStats = computed(() => {
-  const stats = tm('hero.badges.rotating_stats')
-  return Object.values(stats || {}).map(s => rt(s))
-})
-
-// Get locations from i18n
-const locationNames = computed(() => {
-  const locs = tm('hero.badges.location')
-  return Object.values(locs || {}).map(l => rt(l))
-})
-
-// Get rotating services from i18n
-const rotatingServices = computed(() => {
-  const services = tm('hero.badges.rotating_services')
-  return Object.values(services || {}).map(s => rt(s))
-})
-
-const locations = computed(() => [
-  { city: locationNames.value[0] || 'Lyon', flag: 'france' },
-  { city: locationNames.value[1] || 'London', flag: 'uk' },
-  { city: locationNames.value[2] || 'Montreal', flag: 'canada' }
-])
+const site = useBoilerplateSite()
+const rotatingStats = computed(() => site.trustStats.value)
+const rotatingServices = computed(() => site.trustServices.value)
+const locations = computed(() => site.trustMarkets.value.map((city) => ({ city })))
 
 const statsIndex = ref(0)
 const locationIndex = ref(0)
@@ -36,7 +15,7 @@ const locationWrapper = ref(null)
 const servicesWrapper = ref(null)
 
 const currentStat = computed(() => rotatingStats.value[statsIndex.value] || '')
-const currentLocation = computed(() => locations.value[locationIndex.value])
+const currentLocation = computed(() => locations.value[locationIndex.value] || { city: '' })
 const currentService = computed(() => rotatingServices.value[servicesIndex.value] || '')
 
 let mainInterval = null
@@ -111,40 +90,19 @@ onUnmounted(() => {
       </div>
     </div>
     
-    <!-- Badge 3: Location with rotating cities and flags -->
+    <!-- Badge 3: Market / reach -->
     <div class="badge-fixed flex items-center justify-center h-7 sm:h-8 md:h-9 py-1 sm:py-1.5 px-2.5 sm:px-3 md:px-4 bg-white border border-[#f0bf6c] rounded-md sm:rounded-lg transition-all duration-200 hover:-translate-y-px hover:shadow-[0_2px_8px_rgba(240,191,108,0.2)]">
       <div class="text-container w-[75px] sm:w-[90px]">
         <div ref="locationWrapper" class="location-content">
-          <!-- France Flag -->
-          <div v-if="currentLocation.flag === 'france'" class="flex w-5 h-3 sm:w-6 sm:h-4 rounded-[2px] overflow-hidden shadow-sm shrink-0">
-            <div class="w-1/3 bg-[#002395]"></div>
-            <div class="w-1/3 bg-white border-y border-gray-200"></div>
-            <div class="w-1/3 bg-[#ED2939]"></div>
-          </div>
-          <!-- UK Flag -->
-          <div v-else-if="currentLocation.flag === 'uk'" class="flex w-5 h-3 sm:w-6 sm:h-4 rounded-[2px] overflow-hidden shadow-sm shrink-0 relative bg-[#012169]">
-            <svg viewBox="0 0 60 40" class="w-full h-full">
-              <clipPath id="uk-clip"><rect width="60" height="40"/></clipPath>
-              <g clip-path="url(#uk-clip)">
-                <rect width="60" height="40" fill="#012169"/>
-                <path d="M0,0 L60,40 M60,0 L0,40" stroke="#fff" stroke-width="8"/>
-                <path d="M0,0 L60,40 M60,0 L0,40" stroke="#C8102E" stroke-width="4"/>
-                <path d="M30,0 V40 M0,20 H60" stroke="#fff" stroke-width="12"/>
-                <path d="M30,0 V40 M0,20 H60" stroke="#C8102E" stroke-width="6"/>
-              </g>
+          <div class="flex w-5 h-5 sm:w-6 sm:h-6 rounded-full overflow-hidden shadow-sm shrink-0 items-center justify-center bg-[#0f0f0f]">
+            <svg viewBox="0 0 24 24" class="w-3.5 h-3.5 text-[#F0BF6C]" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M3 12h18"/>
+              <path d="M12 3a14.9 14.9 0 0 1 0 18"/>
+              <path d="M12 3a14.9 14.9 0 0 0 0 18"/>
+              <path d="M5 7.5h14"/>
+              <path d="M5 16.5h14"/>
             </svg>
           </div>
-          <!-- Canada Flag -->
-          <div v-else-if="currentLocation.flag === 'canada'" class="flex w-5 h-3 sm:w-6 sm:h-4 rounded-[2px] overflow-hidden shadow-sm shrink-0">
-            <div class="w-1/4 bg-[#FF0000]"></div>
-            <div class="w-2/4 bg-white flex items-center justify-center">
-              <svg viewBox="0 0 24 24" class="w-2 h-2 sm:w-2.5 sm:h-2.5 text-[#FF0000]" fill="currentColor">
-                <path d="M12 2L9.5 8.5L3 9L7.5 14L6 21L12 17L18 21L16.5 14L21 9L14.5 8.5L12 2Z"/>
-              </svg>
-            </div>
-            <div class="w-1/4 bg-[#FF0000]"></div>
-          </div>
-          <!-- City name -->
           <span class="font-medium text-[11px] sm:text-xs md:text-sm text-[#474747] whitespace-nowrap">
             {{ currentLocation.city }}
           </span>
