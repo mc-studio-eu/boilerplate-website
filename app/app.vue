@@ -1,39 +1,15 @@
 <script setup lang="ts">
-const site = useBoilerplateSite()
-
 useHead({
-  title: computed(() => site.metaTitle.value),
+  title: 'Nuxt Website Boilerplate',
   meta: [
-    { name: 'description', content: computed(() => site.metaDescription.value) },
-    { property: 'og:title', content: computed(() => site.metaTitle.value) },
-    { property: 'og:description', content: computed(() => site.metaDescription.value) }
+    {
+      name: 'description',
+      content: 'Base Nuxt minimale pour générer des sites à partir d’une URL source.'
+    }
   ],
   htmlAttrs: {
-    class: 'nuxt-ui-scrollbars',
-  },
-});
-
-const runtimeConfig = useRuntimeConfig()
-
-useHead({
-  script: runtimeConfig.public.googleAnalyticsId
-    ? [
-        {
-          src: `https://www.googletagmanager.com/gtag/js?id=${runtimeConfig.public.googleAnalyticsId}`,
-          async: true,
-          defer: true
-        },
-        {
-          innerHTML: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${runtimeConfig.public.googleAnalyticsId}');
-          `,
-          type: 'text/javascript'
-        }
-      ]
-    : []
+    lang: 'fr'
+  }
 })
 </script>
 

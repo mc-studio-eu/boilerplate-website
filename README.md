@@ -1,66 +1,34 @@
-# Generic Website Boilerplate
+# Nuxt Website Boilerplate
 
-Boilerplate Nuxt 4 pour générer rapidement la structure d’un site marketing à partir d’un nom d’entreprise ou d’une URL.
+Boilerplate Nuxt volontairement minimal.
 
-Le projet garde les briques existantes:
+## But
 
-- `Nuxt 4`
-- `Nuxt UI`
-- `GSAP`
-- thème `dark/light`
-- sections animées et responsive
+Cette base sert à générer un nouveau site à partir d’une URL source que tu donnes à une IA.
 
-## Objectif
+Le projet ne contient plus :
 
-La home principale est désormais pilotée par un profil générique calculé depuis:
+- pages métier
+- composants de design spécifiques
+- contenu de marque
+- logique d’internationalisation
+- routes annexes
 
-- `company`
-- `website`
-- `sector`
-- `offer`
-- `audience`
+## Utilisation
 
-Exemple:
+1. Lance le projet.
+2. Donne une URL source à l’IA.
+3. Demande-lui de reconstruire la homepage ou le site à partir de cette base.
 
-```bash
-http://localhost:3000/?company=Acme&website=https://acme.com
-```
-
-Exemple plus précis:
-
-```bash
-http://localhost:3000/?company=Acme&website=https://acme.com&sector=saas&offer=une plateforme RH simple&audience=les équipes RH de PME
-```
-
-## Variables publiques
-
-Tu peux brancher les vrais liens du boilerplate avec:
-
-```bash
-NUXT_PUBLIC_SITE_URL=https://example.com
-NUXT_PUBLIC_CALENDAR_URL=https://cal.com/your-team/intro?embed=true
-NUXT_PUBLIC_CONTACT_EMAIL=hello@example.com
-NUXT_PUBLIC_WHATSAPP_URL=https://wa.me/33123456789
-NUXT_PUBLIC_LINKEDIN_URL=https://linkedin.com/company/example
-NUXT_PUBLIC_INSTAGRAM_URL=https://instagram.com/example
-NUXT_PUBLIC_X_URL=https://x.com/example
-NUXT_PUBLIC_GA_ID=G-XXXXXXXXXX
-```
-
-## Développement
+## Commandes
 
 ```bash
 npm install
 npm run dev
 ```
 
-## Ce que fait le boilerplate
+## Stack gardée
 
-- génère un hero cohérent
-- met à jour la navigation, les CTA et le footer
-- garde les animations et la structure visuelle
-- prépare des blocs génériques pour services, process, preuves, FAQ et contact
-
-## Limite actuelle
-
-Le boilerplate ne scrape pas automatiquement un site distant. Il génère une première base propre depuis un nom d’entreprise ou une URL. Si tu veux une extraction réelle du contenu d’un site, il faudra ajouter un flux d’analyse côté assistant ou backend.
+- Nuxt 4
+- @nuxt/ui
+- @nuxt/image

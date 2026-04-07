@@ -1,151 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import "tailwindcss";
 @import "@nuxt/ui";
+
+:root {
+  color-scheme: dark;
+  --page-bg: #0b1020;
+  --surface: #121933;
+  --surface-muted: #1a2345;
+  --text-primary: #f5f7ff;
+  --text-secondary: #a7b0d6;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --accent: #7dd3fc;
+}
 
 html {
   scroll-behavior: smooth;
 }
 
-@theme {
-  --color-black-light: #232323;
-  --color-gold: #F0BF6C;
-  --degrad-gold: linear-gradient(270deg, #F0BF6C 0%, #FFF 67.31%);
-  --color-grey: #5D5D5D;
-  --color-black: #0F0F0F;
-  --color-white: #FFFFFF;
-  --color-grey-light: #62748E;
-  --font-host-grotesk: 'Host Grotesk', sans-serif;
-  --font-inter: Inter, sans-serif;
-  --font-manrope: Manrope, sans-serif;
-}
-
-:root {
-  --ui-primary: var(--color-gold);
-  --ui-secondary: var(--color-grey);
-  --ui-success: var(--color-black);
-  --ui-info: var(--color-black);
-  --ui-warning: var(--color-black);
-  --ui-error: var(--color-black);
-
-  /* Theme colors - Default dark */
-  --bg-primary: #0F0F0F;
-  --bg-secondary: #151515;
-  --bg-card: #232323;
-  --text-primary: #FFFFFF;
-  --text-secondary: #a1a1a1;
-  --text-muted: #6b7280;
-  --border-color: rgba(240, 191, 108, 0.2);
-  --border-subtle: rgba(255, 255, 255, 0.1);
-  --gold-gradient: linear-gradient(270deg, #F0BF6C 0%, #FFF 67.31%);
-}
-
-.light {
-  --bg-primary: #EEEEF4;
-  --bg-secondary: #FFFFFF;
-  --bg-card: #FFFFFF;
-  --text-primary: #1a1a1a;
-  --text-secondary: #5D5D5D;
-  --text-muted: #6b7280;
-  --border-color: rgba(26, 26, 26, 0.1);
-  --border-subtle: rgba(26, 26, 26, 0.08);
-  --gold-gradient: linear-gradient(270deg, #F0BF6C 0%, #1a1a1a 67.31%);
-
-  /* Override Tailwind's color variables */
-  --color-black-light: #f5f5f5;
-  --color-white: #1a1a1a;
-  --color-grey-light: #5D5D5D;
-}
-
-.dark {
-  --ui-primary: var(--color-gold);
-  --ui-secondary: var(--color-grey);
-  --ui-success: var(--color-black);
-  --ui-info: var(--color-black);
-  --ui-warning: var(--color-black);
-  --ui-error: var(--color-black);
-
-  --bg-primary: #0F0F0F;
-  --bg-secondary: #151515;
-  --bg-card: #232323;
-  --text-primary: #FFFFFF;
-  --text-secondary: #a1a1a1;
-  --text-muted: #6b7280;
-  --border-color: rgba(240, 191, 108, 0.2);
-  --border-subtle: rgba(255, 255, 255, 0.1);
-  --gold-gradient: linear-gradient(270deg, #F0BF6C 0%, #FFF 67.31%);
-
-  --color-black-light: #232323;
-  --color-white: #FFFFFF;
-  --color-grey-light: #62748E;
-}
-
-/* Base body transition for smooth theme switching */
 body {
-  background-color: var(--bg-primary);
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top, rgba(125, 211, 252, 0.16), transparent 30%),
+    linear-gradient(180deg, #0b1020 0%, #0d1328 100%);
   color: var(--text-primary);
-  transition: background-color 0.4s ease, color 0.3s ease;
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
 }
 
-/* Utility classes for theme colors */
-.theme-bg {
-  background-color: var(--bg-primary);
-}
-
-.theme-bg-card {
-  background-color: var(--bg-card);
-}
-
-.theme-text {
-  color: var(--text-primary);
-}
-
-.theme-text-secondary {
-  color: var(--text-secondary);
-}
-
-.theme-border {
-  border-color: var(--border-subtle);
-}
-
-h1 {
-  font-family: "Manrope", sans-serif;
-  background: var(--gold-gradient);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-}
-
-p {
-  font-family: "Inter", sans-serif;
-}
-
-/* Hide scrollbar but keep functionality */
-.scrollbar-hide {
-  -ms-overflow-style: none;
-  /* IE and Edge */
-  scrollbar-width: none;
-  /* Firefox */
-}
-
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;
-  /* Chrome, Safari and Opera */
-}
-
-.text-gradient {
-  background: linear-gradient(270deg, #f0bf6c 0%, white 67.308%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.cta-primary {
-  background: linear-gradient(270deg, #f0bf6c 0%, white 67.308%);
-  border: none;
-  box-shadow:
-          0px 4px 4px 0px rgba(0, 0, 0, 0.25),
-          0px 9.736px 9.736px 0px rgba(11, 32, 103, 0.05),
-          0px 1.391px 2.782px 0px rgba(11, 32, 103, 0.14),
-          0px 36.247px 48.329px 0px rgba(0, 0, 0, 0.03);
+a {
+  color: inherit;
 }

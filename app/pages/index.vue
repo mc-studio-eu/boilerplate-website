@@ -1,129 +1,67 @@
 <script setup lang="ts">
-// Auto-imports from Nuxt - no need to import components manually
-import ServicesInterMarquee from "../components/services/ServicesInterMarquee.vue"
-import ScreenMarquee from "../components/project/ScreenMarquee.vue";
+const sourceUrl = ref('https://example.com')
+const promptTemplate = computed(() =>
+  [
+    'Analyse ce site et génère une nouvelle homepage à partir de ce boilerplate.',
+    `URL source: ${sourceUrl.value}`,
+    'Objectif: extraire le positionnement, la structure d’offre, les éléments de réassurance et proposer une version plus claire et plus premium.',
+    'Contrainte: produire uniquement le contenu et la structure de la homepage, sans garder le design existant.'
+  ].join('\n')
+)
 </script>
 
 <template>
-  <main class="main-container min-h-screen p-6 transition-colors duration-300">
-    <!-- Hero Section -->
-    <HeroSection />
-    
-    <!-- Main Content with Border Frame -->
-    <div class="relative mx-auto max-w-[1440px]">
-      <!-- Left Border Line -->
-      <div class="border-line absolute left-0 xl:left-[50px] top-0 bottom-0 w-px"></div>
-      
-      <!-- Right Border Line -->
-      <div class="border-line absolute right-0 xl:right-[50px] top-0 bottom-0 w-px"></div>
-      
-      <!-- Projects Section -->
-      <div class="section-separator"></div>
-      <ProjectSection />
+  <main class="min-h-screen px-6 py-10">
+    <div class="mx-auto flex max-w-5xl flex-col gap-8">
+      <section class="rounded-3xl border border-[var(--border-color)] bg-[var(--surface)] px-8 py-10 shadow-2xl shadow-black/20">
+        <span class="mb-4 inline-flex rounded-full border border-cyan-400/20 bg-cyan-400/10 px-3 py-1 text-xs font-medium text-cyan-200">
+          Nuxt Boilerplate
+        </span>
+        <h1 class="max-w-3xl text-4xl font-semibold tracking-tight sm:text-5xl">
+          Base minimale pour générer des sites à partir d’une URL source.
+        </h1>
+        <p class="mt-4 max-w-2xl text-base leading-7 text-[var(--text-secondary)]">
+          Ce projet ne contient plus de pages métier, de composants de design ou de contenu spécifique.
+          Il sert uniquement de point de départ pour qu’une IA puisse reconstruire un site à partir d’un lien.
+        </p>
+      </section>
 
-      <div class="section-separator"></div>
+      <section class="grid gap-6 md:grid-cols-2">
+        <div class="rounded-2xl border border-[var(--border-color)] bg-[var(--surface)] p-6">
+          <h2 class="text-lg font-semibold">Usage prévu</h2>
+          <ul class="mt-4 space-y-3 text-sm leading-6 text-[var(--text-secondary)]">
+            <li>1. Tu fournis une URL source à une IA.</li>
+            <li>2. L’IA analyse l’offre, les sections et le positionnement du site.</li>
+            <li>3. Elle génère une nouvelle homepage dans ce repo à partir de cette base Nuxt.</li>
+          </ul>
+        </div>
 
-      <ServicesInterMarquee />
+        <div class="rounded-2xl border border-[var(--border-color)] bg-[var(--surface)] p-6">
+          <h2 class="text-lg font-semibold">Ce que contient encore le projet</h2>
+          <ul class="mt-4 space-y-3 text-sm leading-6 text-[var(--text-secondary)]">
+            <li>Nuxt 4</li>
+            <li>@nuxt/ui</li>
+            <li>@nuxt/image</li>
+            <li>Une seule page d’accueil neutre</li>
+          </ul>
+        </div>
+      </section>
 
-      <div class="section-separator mt-10"></div>  
-      
-      <!-- Services Section -->
-      <ServicesSection />
+      <section class="rounded-2xl border border-[var(--border-color)] bg-[var(--surface)] p-6">
+        <label for="source-url" class="text-sm font-medium text-[var(--text-secondary)]">URL source</label>
+        <input
+          id="source-url"
+          v-model="sourceUrl"
+          type="url"
+          class="mt-2 w-full rounded-xl border border-[var(--border-color)] bg-[var(--surface-muted)] px-4 py-3 text-sm text-white outline-none transition focus:border-cyan-300"
+          placeholder="https://example.com"
+        >
 
-      <ScreenMarquee />
-
-      <div class="section-separator mt-10"></div>
-
-      <div class="section-separator"></div>
-
-      <!-- Process Section -->
-      <TeamSection />
-
-      <div class="section-separator"></div>
-
-      <ProcessSection />
-       
-      <div class="section-separator"></div>  
-      
-      <div class="section-separator"></div>
-      
-      <!-- Testimonials Section -->
-      <TestimonialSection />
-
-
-      <div class="section-separator"></div>
-
-      <ServicesInterMarquee />
-
-      <div class="section-separator mt-10"></div>
-
-      <!-- FAQ Section -->
-      <FaqSection />
-  
-      <div class="section-separator"></div>
-      
-      <div class="section-separator"></div>  
-      
-      <!-- CTA Section -->
-      <CtaSection />
-
-      <ScreenMarquee class="mb-10 sm:-mt-20"/>
+        <div class="mt-6 rounded-2xl border border-[var(--border-color)] bg-black/20 p-4">
+          <p class="mb-3 text-sm font-medium">Prompt de base à donner à une IA</p>
+          <pre class="overflow-x-auto whitespace-pre-wrap text-sm leading-6 text-[var(--text-secondary)]">{{ promptTemplate }}</pre>
+        </div>
+      </section>
     </div>
-    
-    <!-- Footer -->
-    <FooterSection />
-
-    <!-- Scroll to Top Button -->
-    <ScrollToTop />
   </main>
 </template>
-
-<style scoped>
-/* Main container */
-.main-container {
-  background-color: var(--bg-primary);
-}
-
-/* Border lines */
-.border-line {
-  background: linear-gradient(to bottom, var(--border-color) 0%, var(--border-color) 50%, transparent 100%);
-}
-
-:global(.dark) .border-line {
-  background: linear-gradient(to bottom, rgba(240, 191, 108, 0.4) 0%, rgba(240, 191, 108, 0.2) 50%, transparent 100%);
-}
-
-:global(.light) .border-line {
-  background: linear-gradient(to bottom, rgba(26, 26, 26, 0.15) 0%, rgba(26, 26, 26, 0.08) 50%, transparent 100%);
-}
-
-/* Section separator line */
-.section-separator {
-  height: 1px;
-  background: linear-gradient(90deg, transparent 0%, var(--border-color) 20%, var(--border-color) 80%, transparent 100%);
-  margin-bottom: 40px;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: calc(100% - 146px);
-}
-
-:global(.dark) .section-separator {
-  background: linear-gradient(90deg, transparent 0%, rgba(240, 191, 108, 0.25) 20%, rgba(240, 191, 108, 0.25) 80%, transparent 100%);
-}
-
-:global(.light) .section-separator {
-  background: linear-gradient(90deg, transparent 0%, rgba(26, 26, 26, 0.12) 20%, rgba(26, 26, 26, 0.12) 80%, transparent 100%);
-}
-
-@media (max-width: 1024px) {
-  .section-separator {
-    max-width: 100%;
-  }
-}
-
-/* Section spacing */
-main > div > section,
-main > section {
-  scroll-margin-top: 80px;
-}
-</style>
