@@ -1,10 +1,15 @@
 <script setup lang="ts">
 useHead({
-  title: 'Nuxt Website Boilerplate',
+  titleTemplate: (titleChunk) => (titleChunk ? `${titleChunk} · Château de Rajat` : 'Château de Rajat'),
+  link: [
+    { rel: 'icon', href: 'data:,' },
+    { rel: 'shortcut icon', href: 'data:,' },
+    { rel: 'apple-touch-icon', href: 'data:,' }
+  ],
   meta: [
     {
       name: 'description',
-      content: 'Base Nuxt minimale pour générer des sites à partir d’une URL source.'
+      content: 'Château de Rajat, lieu de réception premium près de Lyon pour événements d’entreprise, mariages et réceptions.'
     }
   ],
   htmlAttrs: {
@@ -15,6 +20,8 @@ useHead({
 
 <template>
   <UApp>
-    <NuxtPage />
+    <NuxtLayout>
+      <NuxtPage />
+    </NuxtLayout>
   </UApp>
 </template>
